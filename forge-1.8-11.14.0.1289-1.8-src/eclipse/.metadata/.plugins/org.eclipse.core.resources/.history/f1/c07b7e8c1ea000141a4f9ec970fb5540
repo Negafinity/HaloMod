@@ -1,0 +1,7 @@
+package io.github.hsyyid;
+
+import net.minecraft.item.Item;
+
+public class swordEnergySword extends Item{
+	
+}

@@ -1,0 +1,58 @@
+[16:04:33] [Client thread/INFO]: Setting user: Player609
+[16:04:36] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:04:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:MODID
+[16:04:42] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:04:42] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[16:04:42] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:04:42] [Thread-7/INFO]: OpenAL initialized.
+[16:04:42] [Sound Library Loader/INFO]: Sound engine started
+[16:04:46] [Client thread/INFO]: Created: 512x512 textures-atlas
+[16:04:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:MODID
+[16:04:47] [Client thread/INFO]: SoundSystem shutting down...
+[16:04:48] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[16:04:48] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:04:48] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[16:04:48] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:04:48] [Thread-9/INFO]: OpenAL initialized.
+[16:04:48] [Sound Library Loader/INFO]: Sound engine started
+[16:04:50] [Client thread/INFO]: Created: 512x512 textures-atlas
+[16:04:56] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[16:04:56] [Server thread/INFO]: Generating keypair
+[16:04:57] [Server thread/INFO]: Preparing start region for level 0
+[16:04:58] [Server thread/INFO]: Preparing spawn area: 38%
+[16:04:59] [Server thread/INFO]: Preparing spawn area: 69%
+[16:05:00] [Server thread/INFO]: Changing view distance to 12, from 10
+[16:05:00] [Server thread/INFO]: Player609[local:E:97ece540] logged in with entity id 262 at (112.5, 77.0, 241.5)
+[16:05:00] [Server thread/INFO]: Player609 joined the game
+[16:05:04] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3207ms behind, skipping 64 tick(s)
+[16:05:05] [Server thread/INFO]: Player609 has just earned the achievement [Taking Inventory]
+[16:05:05] [Client thread/INFO]: [CHAT] Player609 has just earned the achievement [Taking Inventory]
+[16:05:07] [Client thread/INFO]: [CHAT] Unknown command. Try /help for a list of commands
+[16:05:13] [Client thread/INFO]: [CHAT] Unknown command. Try /help for a list of commands
+[16:05:14] [Server thread/INFO]: Saving and pausing game...
+[16:05:14] [Server thread/INFO]: Saving chunks for level 'lol'/Overworld
+[16:05:15] [Server thread/INFO]: Saving chunks for level 'lol'/Nether
+[16:05:15] [Server thread/INFO]: Saving chunks for level 'lol'/The End
+[16:05:25] [Server thread/INFO]: Saving and pausing game...
+[16:05:25] [Server thread/INFO]: Saving chunks for level 'lol'/Overworld
+[16:05:25] [Server thread/INFO]: Saving chunks for level 'lol'/Nether
+[16:05:25] [Server thread/INFO]: Saving chunks for level 'lol'/The End
+[16:05:30] [Client thread/INFO]: Started on 60808
+[16:05:30] [Client thread/INFO]: [CHAT] Local game hosted on port 60808
+[16:05:32] [Server thread/INFO]: <Player609> hi
+[16:05:32] [Client thread/INFO]: [CHAT] <Player609> hi
+[16:05:33] [Client thread/INFO]: [CHAT] Unknown command. Try /help for a list of commands
+[16:05:35] [Server thread/INFO]: [Player609: Set own game mode to Creative Mode]
+[16:05:35] [Client thread/INFO]: [CHAT] Your game mode has been updated
+[16:05:50] [Server thread/INFO]: Player609 lost connection: TextComponent{text='Disconnected', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}}
+[16:05:50] [Server thread/INFO]: Player609 left the game
+[16:05:50] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[16:05:50] [Server thread/INFO]: Stopping server
+[16:05:50] [Server thread/INFO]: Saving players
+[16:05:50] [Server thread/INFO]: Saving worlds
+[16:05:50] [Server thread/INFO]: Saving chunks for level 'lol'/Overworld
+[16:05:51] [Server thread/INFO]: Saving chunks for level 'lol'/Nether
+[16:05:51] [Server thread/INFO]: Saving chunks for level 'lol'/The End
+[16:05:53] [Client thread/INFO]: Stopping!
+[16:05:53] [Client thread/INFO]: SoundSystem shutting down...
+[16:05:53] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
