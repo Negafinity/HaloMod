@@ -1,0 +1,13 @@
+package io.github.hsyyid;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class forerunnerBlock extends Block{
+
+	protected forerunnerBlock(Material materialIn) {
+		super(materialIn);
+		// TODO Auto-generated constructor stub
+	}
+
+}
