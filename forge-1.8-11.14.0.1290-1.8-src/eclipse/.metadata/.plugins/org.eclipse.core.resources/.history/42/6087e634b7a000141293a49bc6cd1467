@@ -1,0 +1,15 @@
+package halocraft;
+
+import net.minecraft.entity.monster.EntityMob;
+
+public class EntityElite extends EntityMob {
+	public static void mainRegistry(){
+		registerEntity();
+	}
+	public static void registerEntity(){
+		
+	}
+	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor){
+		
+	}
+}
