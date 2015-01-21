@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "minecraftbyexample:blocks/HaloOre0",
+        "up": "minecraftbyexample:blocks/HaloOre1",
+        "north": "minecraftbyexample:blocks/HaloOre2",
+        "east": "minecraftbyexample:blocks/HaloOre5",
+        "south": "minecraftbyexample:blocks/HaloOre3",
+        "west": "minecraftbyexample:blocks/HaloOre4",
+        "particle": "blocks/lapis_block"
+    }
+}

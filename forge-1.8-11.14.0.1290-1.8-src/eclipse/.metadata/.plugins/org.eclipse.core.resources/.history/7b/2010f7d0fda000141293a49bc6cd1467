@@ -1,0 +1,7 @@
+package halocraft;
+
+import net.minecraft.item.Item;
+
+public class SpartanChestplate extends Item {
+
+}

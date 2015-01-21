@@ -1,0 +1,12 @@
+package halocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class HaloIngot extends Item {
+	public HaloIngot(int maxStackSize, CreativeTabs tab, int texture) {
+        setMaxStackSize(maxStackSize);
+        setCreativeTab(tab);
+        setUnlocalizedName("HaloIngot");
+}
+}

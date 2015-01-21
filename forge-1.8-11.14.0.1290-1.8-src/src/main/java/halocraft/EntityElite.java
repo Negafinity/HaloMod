@@ -16,11 +16,13 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.world.World;
+import halocraft.Main;
 
 public class EntityElite extends EntityMob{
-
 	public EntityElite(World worldIn) {
 		super(worldIn);
 		this.setSize(0.9F, 1.5F);
@@ -33,7 +35,11 @@ public class EntityElite extends EntityMob{
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.tasks.addTask(6, new EntityAIMoveTowardsRestriction(this, 1.0D));
 	}
-
+	@Override
+	public ItemStack getHeldItem()
+	{
+		return new ItemStack(halocraft.Main.swordEnergySword, 1);
+	}
 	protected boolean isAIEnabled()
 	{
 	   return true;
