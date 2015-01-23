@@ -86,3 +86,12 @@ java.io.FileNotFoundException: halocraft:models/item/forerunnerBlock.json
 [15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Overworld
 [15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Nether
 [15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/The End
+[15:16:34] [Server thread/INFO]: Stopping server
+[15:16:34] [Server thread/INFO]: Saving players
+[15:16:34] [Server thread/INFO]: Saving worlds
+[15:16:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Overworld
+[15:16:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Nether
+[15:16:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/The End
+[15:16:35] [Client thread/INFO]: Stopping!
+[15:16:35] [Client thread/INFO]: SoundSystem shutting down...
+[15:16:36] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

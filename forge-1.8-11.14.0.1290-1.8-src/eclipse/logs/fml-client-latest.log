@@ -2983,3 +2983,26 @@
 [15:06:03] [Netty Server IO #1/DEBUG] [FML/]:   Next: DONE
 [15:06:06] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save Tester 2
 [15:06:34] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save Tester 2
+[15:16:34] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStoppingEvent to mod mcp
+[15:16:34] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStoppingEvent to mod mcp
+[15:16:34] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStoppingEvent to mod FML
+[15:16:34] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStoppingEvent to mod FML
+[15:16:34] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerStoppingEvent to mod Forge
+[15:16:34] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerStoppingEvent to mod Forge
+[15:16:34] [Server thread/TRACE] [halocraft/halocraft]: Sending event FMLServerStoppingEvent to mod halocraft
+[15:16:34] [Server thread/TRACE] [halocraft/halocraft]: Sent event FMLServerStoppingEvent to mod halocraft
+[15:16:34] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save Tester 2
+[15:16:34] [Server thread/INFO] [FML/]: Unloading dimension 0
+[15:16:34] [Server thread/INFO] [FML/]: Unloading dimension -1
+[15:16:34] [Server thread/INFO] [FML/]: Unloading dimension 1
+[15:16:34] [Server thread/DEBUG] [FML/]: Reverting to frozen data state.
+[15:16:34] [Server thread/INFO] [FML/]: Applying holder lookups
+[15:16:34] [Server thread/INFO] [FML/]: Holder lookups applied
+[15:16:34] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStoppedEvent to mod mcp
+[15:16:34] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStoppedEvent to mod mcp
+[15:16:35] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStoppedEvent to mod FML
+[15:16:35] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStoppedEvent to mod FML
+[15:16:35] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerStoppedEvent to mod Forge
+[15:16:35] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerStoppedEvent to mod Forge
+[15:16:35] [Server thread/TRACE] [halocraft/halocraft]: Sending event FMLServerStoppedEvent to mod halocraft
+[15:16:35] [Server thread/TRACE] [halocraft/halocraft]: Sent event FMLServerStoppedEvent to mod halocraft
