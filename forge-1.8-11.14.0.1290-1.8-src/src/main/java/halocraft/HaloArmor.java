@@ -11,18 +11,16 @@ public class HaloArmor extends ItemArmor {
 		super(material, renderIndex, armorType);
 		setCreativeTab(CreativeTabs.tabCombat);
 	}
-	public String getArmorTexture(ItemStack armor, Entity entity, int slot, String type) {
-        if(armor.getItem() == halocraft.Main.SpartanHelmet) {
-                return "halocraft:textures/armor/SpartanHelmet";
-        }
-        else if(armor.getItem() == halocraft.Main.SpartanChestplate) {
-                return "halocraft:textures/armor/SpartanChestplate.png";
-        }
-        else if(armor.getItem() == halocraft.Main.SpartanLeggings){
-                return "halocraft:textures/armor/SpartanLeggings";
-        }
-        else{
-                return "halocraft:textures/armor/SpartanBoots";
-        }
-    }
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer){
+		if(stack.getItem().equals(halocraft.Main.SpartanHelmet)|| stack.getItem().equals(halocraft.Main.SpartanChestplate)|| stack.getItem().equals(halocraft.Main.SpartanBoots)){
+			return "halocraft:textures/armor/haloarmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.SpartanLeggings)){
+			return "halocraft:textures/armor/haloarmor_layer_2.png";
+		}
+		
+		else return null;
+	}
 }

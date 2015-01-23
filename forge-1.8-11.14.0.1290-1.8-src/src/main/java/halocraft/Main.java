@@ -4,6 +4,7 @@ import net.minecraft.world.World;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -31,6 +32,8 @@ import net.minecraftforge.common.util.EnumHelper;
 public class Main{
 	public static String MODID = "halocraft";
 	public static String VERSION = "1";
+	//World Generation
+	public static HaloGenerationClass HaloOreGen;
 	//Armor Material
 	public static ArmorMaterial HaloArmor;
 	//Weapons
@@ -53,7 +56,8 @@ public class Main{
 	public static Item HaloIngot = new HaloIngot();
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
-		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/armor/HaloArmor.png", 100, new int[]{4, 4, 10, 8}, 30);
+		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{4, 4, 10, 8}, 30);
+		HaloOreGen = new HaloGenerationClass();
 	}
 	@EventHandler
 	public void init(FMLInitializationEvent e){
@@ -77,6 +81,10 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SpartanLeggings, 0, res5);
 		ModelResourceLocation res6 = new ModelResourceLocation("halocraft:SpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SpartanBoots, 0, res6);
+		Item haloOreSimple = GameRegistry.findItem("halocraft", "tile.HaloOre.name");
+		    ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
+		    final int DEFAULT_ITEM_SUBTYPE = 0;
+		    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(haloOreSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		mobElite = new EntityElite(null);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
@@ -94,6 +102,8 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
+		//World Gen
+		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
 	}
 	public static CreativeTabs haloWeapons = new CreativeTabs("Halo Weapons"){
 	public Item getTabIconItem(){
