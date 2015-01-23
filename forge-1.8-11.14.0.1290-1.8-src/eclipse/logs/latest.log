@@ -1,21 +1,21 @@
-[17:55:51] [Client thread/INFO]: Setting user: Player984
-[17:55:56] [Client thread/INFO]: LWJGL Version: 2.9.1
-[17:56:05] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[17:56:06] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:56:07] [Thread-7/INFO]: Initializing LWJGL OpenAL
-[17:56:07] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:56:07] [Thread-7/INFO]: OpenAL initialized.
-[17:56:07] [Sound Library Loader/INFO]: Sound engine started
-[17:56:12] [Client thread/INFO]: Created: 512x512 textures-atlas
-[17:56:14] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[17:56:14] [Client thread/INFO]: SoundSystem shutting down...
-[17:56:14] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[17:56:14] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:56:14] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[17:56:14] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:56:14] [Thread-9/INFO]: OpenAL initialized.
-[17:56:15] [Sound Library Loader/INFO]: Sound engine started
-[17:56:16] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
+[15:05:24] [Client thread/INFO]: Setting user: Player484
+[15:05:28] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:05:33] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[15:05:34] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[15:05:34] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[15:05:34] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[15:05:34] [Thread-7/INFO]: OpenAL initialized.
+[15:05:34] [Sound Library Loader/INFO]: Sound engine started
+[15:05:47] [Client thread/INFO]: Created: 512x512 textures-atlas
+[15:05:49] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[15:05:49] [Client thread/INFO]: SoundSystem shutting down...
+[15:05:49] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[15:05:49] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[15:05:49] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[15:05:49] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[15:05:49] [Thread-9/INFO]: OpenAL initialized.
+[15:05:50] [Sound Library Loader/INFO]: Sound engine started
+[15:05:51] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
 java.lang.RuntimeException: Encountered an exception when loading model definition of model halocraft:blockstates/forerunnerBlock.json
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:177) ~[ModelBakery.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.loadVariants(ModelBakery.java:118) [ModelBakery.class:?]
@@ -42,7 +42,7 @@ Caused by: java.io.FileNotFoundException: halocraft:blockstates/forerunnerBlock.
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getAllResources(SimpleReloadableResourceManager.java:81) ~[SimpleReloadableResourceManager.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:152) ~[ModelBakery.class:?]
 	... 19 more
-[17:56:17] [Client thread/WARN]: Unable to load item model: 'halocraft:item/forerunnerBlock' for item: 'halocraft:forerunnerBlock'
+[15:05:51] [Client thread/WARN]: Unable to load item model: 'halocraft:item/forerunnerBlock' for item: 'halocraft:forerunnerBlock'
 java.io.FileNotFoundException: halocraft:models/item/forerunnerBlock.json
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -66,30 +66,23 @@ java.io.FileNotFoundException: halocraft:models/item/forerunnerBlock.json
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[17:56:18] [Client thread/INFO]: Created: 512x512 textures-atlas
-[17:56:18] [Client thread/WARN]: Missing model for: halocraft:item/forerunnerBlock
-[17:56:36] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[17:56:36] [Server thread/INFO]: Generating keypair
-[17:56:37] [Server thread/INFO]: Preparing start region for level 0
-[17:56:38] [Server thread/INFO]: Preparing spawn area: 36%
-[17:56:39] [Server thread/INFO]: Changing view distance to 12, from 10
-[17:56:40] [Server thread/INFO]: Player984[local:E:dc1d74af] logged in with entity id 205 at (53.23476125670003, 74.0, 319.6114013217515)
-[17:56:40] [Server thread/INFO]: Player984 joined the game
-[17:56:41] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2042ms behind, skipping 40 tick(s)
-[17:56:43] [Server thread/INFO]: Saving and pausing game...
-[17:56:43] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[17:56:43] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[17:56:43] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[17:56:54] [Server thread/INFO]: Saving and pausing game...
-[17:56:54] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[17:56:54] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[17:56:54] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[17:56:55] [Server thread/INFO]: Stopping server
-[17:56:55] [Server thread/INFO]: Saving players
-[17:56:55] [Server thread/INFO]: Saving worlds
-[17:56:55] [Server thread/INFO]: Saving chunks for level 'test'/Overworld
-[17:56:55] [Server thread/INFO]: Saving chunks for level 'test'/Nether
-[17:56:55] [Server thread/INFO]: Saving chunks for level 'test'/The End
-[17:57:29] [Client thread/INFO]: Stopping!
-[17:57:29] [Client thread/INFO]: SoundSystem shutting down...
-[17:57:29] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[15:05:52] [Client thread/INFO]: Created: 512x512 textures-atlas
+[15:05:52] [Client thread/WARN]: Missing model for: halocraft:item/forerunnerBlock
+[15:05:59] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[15:05:59] [Server thread/INFO]: Generating keypair
+[15:06:00] [Server thread/INFO]: Preparing start region for level 0
+[15:06:01] [Server thread/INFO]: Preparing spawn area: 36%
+[15:06:02] [Server thread/INFO]: Changing view distance to 12, from 10
+[15:06:03] [Server thread/INFO]: Player484[local:E:124ba963] logged in with entity id 324 at (-63.71932827252235, 81.0, -76.7798795050345)
+[15:06:03] [Server thread/INFO]: Player484 joined the game
+[15:06:05] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2436ms behind, skipping 48 tick(s)
+[15:06:06] [Server thread/INFO]: Saving and pausing game...
+[15:06:06] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Overworld
+[15:06:07] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Nether
+[15:06:07] [Server thread/INFO]: Saving chunks for level 'Tester 2'/The End
+[15:06:32] [Server thread/INFO]: Player484 has just earned the achievement [Taking Inventory]
+[15:06:32] [Client thread/INFO]: [CHAT] Player484 has just earned the achievement [Taking Inventory]
+[15:06:34] [Server thread/INFO]: Saving and pausing game...
+[15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Overworld
+[15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/Nether
+[15:06:34] [Server thread/INFO]: Saving chunks for level 'Tester 2'/The End

@@ -81,10 +81,10 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SpartanLeggings, 0, res5);
 		ModelResourceLocation res6 = new ModelResourceLocation("halocraft:SpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SpartanBoots, 0, res6);
-		Item haloOreSimple = GameRegistry.findItem("halocraft", "tile.HaloOre.name");
-		    ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
-		    final int DEFAULT_ITEM_SUBTYPE = 0;
-		    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(haloOreSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
+		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
+		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
+		final int DEFAULT_ITEM_SUBTYPE = 0;
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		mobElite = new EntityElite(null);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
