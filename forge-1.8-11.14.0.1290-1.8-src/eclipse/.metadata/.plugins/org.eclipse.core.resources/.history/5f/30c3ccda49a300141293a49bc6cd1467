@@ -1,0 +1,13 @@
+package halocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+
+public class itemRocket extends Item{
+	public itemRocket() {
+		super();
+		setCreativeTab(CreativeTabs.tabMisc);
+		setUnlocalizedName("itemRocket");
+	}
+}

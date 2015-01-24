@@ -1,0 +1,12 @@
+package halocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class itemAssaultRifle extends Item {
+	public itemAssaultRifle(){
+		setCreativeTab(CreativeTabs.tabCombat);
+		setUnlocalizedName("itemAssaultRifle");
+		setMaxStackSize(1);
+	}
+}

@@ -1,0 +1,12 @@
+package halocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class rocketLauncher extends Item {
+	public rocketLauncher(){
+	     super();
+	     setCreativeTab(CreativeTabs.tabCombat);
+	     setUnlocalizedName("blasterRifle");
+	}
+}

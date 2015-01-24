@@ -7,3 +7,7 @@ item.SpartanLeggings.name=Spartan Leggings
 item.SpartanBoots.name=Spartan Boots
 item.HaloIngot.name=Halo Ingot
 tile.HaloOre.name=Halo Ore
+item.ammoRocket.name=Rocket
+item.rocketLauncher.name=Rocket Launcher
+item.ammoAssaultRifle.name=Assault Rifle Ammo
+item.itemAssaultRifle.name=Assault Rifle
