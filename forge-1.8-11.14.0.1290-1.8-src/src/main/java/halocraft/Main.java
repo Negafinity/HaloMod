@@ -46,6 +46,7 @@ public class Main{
 	public static Entity mobElite;
 	public static Entity rocket;
 	public static Entity bullet;
+	public static Entity entityMongoose;
 	//Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
@@ -62,6 +63,7 @@ public class Main{
 	public static Item itemAssaultRifle;
 	public static Item ammoAssaultRifle;
 	public static Item itemBattleRifle;
+	public static Item itemMongoose;
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{4, 4, 10, 8}, 30);
@@ -71,6 +73,7 @@ public class Main{
 		ammoAssaultRifle = new ammoAssaultRifle();
 		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
+		itemMongoose = new ItemMongoose();
 		SpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("SpartanHelmet");
 		SpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("SpartanChestplate");
 		SpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("SpartanLeggings");
@@ -78,6 +81,7 @@ public class Main{
 		swordEnergySword = new swordEnergySword(ToolMaterial.EMERALD);
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		forerunnerBlock = new forerunnerBlock(Material.rock);
+		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerBlock(forerunnerBlock, "forerunnerBlock");
 		GameRegistry.registerItem(SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(SpartanChestplate, "SpartanChestplate");
@@ -130,10 +134,16 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemAssaultRifle, 0, res10);
 		ModelResourceLocation res11 = new ModelResourceLocation("halocraft:itemBattleRifle", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBattleRifle, 0, res11);
+		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemMongoose, 0, res12);
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
+		entityMongoose = new EntityMongoose(null);
+		int randomID4 = EntityRegistry.findGlobalUniqueEntityId();
+		EntityRegistry.registerGlobalEntityID(EntityMongoose.class, "Mongoose", randomID4, 255, 70);
+		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		bullet = new EntityBullet(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityBullet.class, "Bullet", randomID3, 230, 78);

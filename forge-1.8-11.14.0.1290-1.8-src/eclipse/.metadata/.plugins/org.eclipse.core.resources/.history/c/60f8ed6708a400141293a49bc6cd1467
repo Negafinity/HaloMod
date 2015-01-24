@@ -1,0 +1,7 @@
+package halocraft;
+
+import net.minecraft.client.model.ModelBase;
+
+public class ModelMongoose extends ModelBase {
+
+}

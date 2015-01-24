@@ -12,3 +12,5 @@ item.rocketLauncher.name=Rocket Launcher
 item.ammoAssaultRifle.name=Ammo
 item.itemAssaultRifle.name=Assault Rifle
 item.BattleRifle.name=Battle Rifle
+entity.Mongoose.name=Mongoose
+item.itemMongoose.name=Mongoose
