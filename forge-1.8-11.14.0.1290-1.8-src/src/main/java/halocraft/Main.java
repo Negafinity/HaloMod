@@ -107,9 +107,11 @@ public class Main{
 		bullet = new EntityBullet(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityBullet.class, "Bullet", randomID3, 230, 78);
+		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		rocket = new EntityRocket(null);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityRocket.class, "Rocket", randomID2, 230, 78);
+		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
 		mobElite = new EntityElite(null);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
