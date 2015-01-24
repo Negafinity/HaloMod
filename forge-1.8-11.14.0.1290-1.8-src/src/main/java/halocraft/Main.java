@@ -61,6 +61,7 @@ public class Main{
 	public static Item ammoRocket;
 	public static Item itemAssaultRifle;
 	public static Item ammoAssaultRifle;
+	public static Item itemBattleRifle;
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{4, 4, 10, 8}, 30);
@@ -69,9 +70,7 @@ public class Main{
 		ammoRocket = new itemRocket();
 		ammoAssaultRifle = new ammoAssaultRifle();
 		itemAssaultRifle = new itemAssaultRifle();
-	}
-	@EventHandler
-	public void init(FMLInitializationEvent e){
+		itemBattleRifle = new itemBattleRifle();
 		SpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("SpartanHelmet");
 		SpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("SpartanChestplate");
 		SpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("SpartanLeggings");
@@ -80,6 +79,35 @@ public class Main{
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		forerunnerBlock = new forerunnerBlock(Material.rock);
 		GameRegistry.registerBlock(forerunnerBlock, "forerunnerBlock");
+		GameRegistry.registerItem(SpartanHelmet, "SpartanHelmet");
+		GameRegistry.registerItem(SpartanChestplate, "SpartanChestplate");
+		GameRegistry.registerItem(SpartanLeggings, "SpartanLeggings");
+		GameRegistry.registerItem(SpartanBoots, "SpartanBoots");
+		GameRegistry.registerBlock(HaloOre, "HaloOre");
+		GameRegistry.registerItem(HaloIngot, "HaloIngot");
+		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
+		GameRegistry.registerItem(ammoRocket, "ammoRocket");
+		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
+		GameRegistry.registerItem(itemAssaultRifle, "itemAssaultRifle");
+		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
+		//Recipies
+		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
+		ItemStack gunStack = new ItemStack(Items.gunpowder);
+		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XXX", "XYX", "XYX", 'X', HaloIngot, 'Y', gunStack});
+		ItemStack ironStack = new ItemStack(Items.iron_ingot);
+		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
+		ItemStack goldStack = new ItemStack(Items.gold_ingot);
+		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
+		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
+		//World Gen
+		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
+	}
+	@EventHandler
+	public void init(FMLInitializationEvent e){
 		ModelResourceLocation res = new ModelResourceLocation("halocraft:energySword", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(swordEnergySword, 0, res);
 		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:HaloIngot", "inventory");
@@ -100,6 +128,8 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ammoAssaultRifle, 0, res9);
 		ModelResourceLocation res10 = new ModelResourceLocation("halocraft:itemAssaultRifle", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemAssaultRifle, 0, res10);
+		ModelResourceLocation res11 = new ModelResourceLocation("halocraft:itemBattleRifle", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBattleRifle, 0, res11);
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
@@ -117,31 +147,6 @@ public class Main{
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 5, 1, 2, EnumCreatureType.MONSTER);
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		GameRegistry.registerItem(SpartanHelmet, "SpartanHelmet");
-		GameRegistry.registerItem(SpartanChestplate, "SpartanChestplate");
-		GameRegistry.registerItem(SpartanLeggings, "SpartanLeggings");
-		GameRegistry.registerItem(SpartanBoots, "SpartanBoots");
-		GameRegistry.registerBlock(HaloOre, "HaloOre");
-		GameRegistry.registerItem(HaloIngot, "HaloIngot");
-		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
-		GameRegistry.registerItem(ammoRocket, "ammoRocket");
-		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
-		GameRegistry.registerItem(itemAssaultRifle, "itemAssaultRifle");
-		//Recipies
-		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
-		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
-		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
-		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
-		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
-		ItemStack gunStack = new ItemStack(Items.gunpowder);
-		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XXX", "XYX", "XYX", 'X', HaloIngot, 'Y', gunStack});
-		ItemStack ironStack = new ItemStack(Items.iron_ingot);
-		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
-		ItemStack goldStack = new ItemStack(Items.gold_ingot);
-		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
-		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
-		//World Gen
-		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
 	}
 	public static CreativeTabs haloWeapons = new CreativeTabs("Halo Weapons"){
 	public Item getTabIconItem(){

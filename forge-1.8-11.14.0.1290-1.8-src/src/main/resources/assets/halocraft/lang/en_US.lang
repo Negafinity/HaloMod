@@ -9,5 +9,6 @@ item.HaloIngot.name=Halo Ingot
 tile.HaloOre.name=Halo Ore
 item.ammoRocket.name=Rocket
 item.rocketLauncher.name=Rocket Launcher
-item.ammoAssaultRifle.name=Assault Rifle Ammo
+item.ammoAssaultRifle.name=Ammo
 item.itemAssaultRifle.name=Assault Rifle
+item.BattleRifle.name=Battle Rifle
