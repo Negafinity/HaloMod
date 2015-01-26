@@ -86,11 +86,11 @@ public class Main{
 		bullet = new EntityBullet(null);
 		mobElite = new EntityElite(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityBullet.class, "Bullet", randomID3);
+		EntityRegistry.registerGlobalEntityID(EntityBullet.class, "Bullet", randomID3, 230, 78);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityMongoose.class, "Mongoose", randomID4);
+		EntityRegistry.registerGlobalEntityID(EntityMongoose.class, "Mongoose", randomID4, 255, 70);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityRocket.class, "Rocket", randomID2);
+		EntityRegistry.registerGlobalEntityID(EntityRocket.class, "Rocket", randomID2, 230, 78);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 5, 1, 2, EnumCreatureType.MONSTER);
