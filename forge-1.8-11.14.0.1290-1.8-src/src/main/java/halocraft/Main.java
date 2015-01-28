@@ -1,21 +1,21 @@
 package halocraft;
 
-import net.minecraft.world.World;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -23,11 +23,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraftforge.common.util.EnumHelper;
 
 @Mod(modid="halocraft", version="pre1.0")
 public class Main{
@@ -56,6 +51,10 @@ public class Main{
 	public static Item SpartanChestplate;
 	public static Item SpartanLeggings;
 	public static Item SpartanBoots;
+	public static Item RedSpartanHelmet;
+	public static Item RedSpartanChestplate;
+	public static Item RedSpartanLeggings;
+	public static Item RedSpartanBoots;
 	//Items
 	public static Item HaloIngot = new HaloIngot();
 	public static Item rocketLauncher;
@@ -74,6 +73,10 @@ public class Main{
 		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
 		itemMongoose = new ItemMongoose();
+		RedSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("RedSpartanHelmet");
+		RedSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("RedSpartanChestplate");
+		RedSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("RedSpartanLeggings");
+		RedSpartanBoots = new HaloArmor(HaloArmor, bootID, 3).setUnlocalizedName("RedSpartanBoots");
 		SpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("SpartanHelmet");
 		SpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("SpartanChestplate");
 		SpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("SpartanLeggings");
@@ -107,12 +110,20 @@ public class Main{
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(itemAssaultRifle, "itemAssaultRifle");
 		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
+		GameRegistry.registerItem(RedSpartanHelmet, "RedSpartanHelmet");
+		GameRegistry.registerItem(RedSpartanChestplate, "RedSpartanChestplate");
+		GameRegistry.registerItem(RedSpartanLeggings, "RedSpartanLeggings");
+		GameRegistry.registerItem(RedSpartanBoots, "RedSpartanBoots");
 		//Recipies
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
+		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), SpartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), SpartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), SpartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), SpartanBoots);
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XXX", "XYX", "XYX", 'X', HaloIngot, 'Y', gunStack});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
@@ -149,6 +160,14 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBattleRifle, 0, res11);
 		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemMongoose, 0, res12);
+		ModelResourceLocation res13 = new ModelResourceLocation("halocraft:RedSpartanChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanChestplate, 0, res13);
+		ModelResourceLocation res14 = new ModelResourceLocation("halocraft:RedSpartanHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanHelmet, 0, res14);
+		ModelResourceLocation res15 = new ModelResourceLocation("halocraft:RedSpartanLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanLeggings, 0, res15);
+		ModelResourceLocation res16 = new ModelResourceLocation("halocraft:RedSpartanBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanBoots, 0, res16);
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;

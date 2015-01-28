@@ -20,6 +20,13 @@ public class HaloArmor extends ItemArmor {
 		if(stack.getItem().equals(halocraft.Main.SpartanLeggings)){
 			return "halocraft:textures/armor/haloarmor_layer_2.png";
 		}
+		if(stack.getItem().equals(halocraft.Main.RedSpartanHelmet)|| stack.getItem().equals(halocraft.Main.RedSpartanChestplate)|| stack.getItem().equals(halocraft.Main.RedSpartanBoots)){
+			return "halocraft:textures/armor/redhaloarmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.RedSpartanLeggings)){
+			return "halocraft:textures/armor/redhaloarmor_layer_2.png";
+		}
 		
 		else return null;
 	}

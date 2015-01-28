@@ -5,7 +5,7 @@
       <description>Blogs related to JBoss technology</description>
       <link>http://pipes.yahoo.com/pipes/pipe.info?_id=cd806417dc77bdc49d15956faa318a78</link>
       <atom:link rel="next" href="http://pipes.yahoo.com/pipes/pipe.run?_id=cd806417dc77bdc49d15956faa318a78&amp;_render=rss&amp;page=2" />
-      <pubDate>Tue, 20 Jan 2015 00:14:09 +0000</pubDate>
+      <pubDate>Wed, 28 Jan 2015 20:15:38 +0000</pubDate>
       <generator>http://pipes.yahoo.com/pipes/</generator>
       <feedburner:info uri="jbosscentralblogs" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><image><url>http://design.jboss.org/jbossorg/branding/jbosscommunity_logos/jbosscommunity_logo_stack_white.png</url></image><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://planet.jboss.org/feeds/blogs" /><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Fplanet.jboss.org%2Ffeeds%2Fblogs" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Fplanet.jboss.org%2Ffeeds%2Fblogs" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Fplanet.jboss.org%2Ffeeds%2Fblogs" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.plusmo.com/add?url=http%3A%2F%2Fplanet.jboss.org%2Ffeeds%2Fblogs" src="http://plusmo.com/res/graphics/fbplusmo.gif">Subscribe with Plusmo</feedburner:feedFlare><feedburner:feedFlare href="http://www.live.com/?add=http%3A%2F%2Fplanet.jboss.org%2Ffeeds%2Fblogs" src="http://tkfiles.storage.msn.com/x1piYkpqHC_35nIp1gLE68-wvzLZO8iXl_JMledmJQXP-XTBOLfmQv4zhj4MhcWEJh_GtoBIiAl1Mjh-ndp9k47If7hTaFno0mxW9_i3p_5qQw">Subscribe with Live.com</feedburner:feedFlare><feedburner:browserFriendly>This is a curated feed with blogs and highlights concerning JBoss technology.</feedburner:browserFriendly><item>
          <title>JBoss Tools 4.1.2.Final and Developer Studio 7.1.1.GA released</title>
@@ -200,4 +200,4 @@
          <pubDate>Fri, 22 Mar 2013 20:10:55 +0000</pubDate>
       <feedburner:origLink>https://developer.jboss.org/community/tools/blog/2013/03/22/jboss-tools-at-eclipsecon-and-devoxx</feedburner:origLink></item>
    </channel>
-</rss><!-- fe8.yql.bf1.yahoo.com compressed/chunked Tue Jan 20 00:14:08 UTC 2015 -->
+</rss><!-- fe2.yql.bf1.yahoo.com compressed/chunked Wed Jan 28 20:15:37 UTC 2015 -->
