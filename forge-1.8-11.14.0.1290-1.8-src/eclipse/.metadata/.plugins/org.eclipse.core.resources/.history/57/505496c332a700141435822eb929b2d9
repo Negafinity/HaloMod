@@ -56,10 +56,6 @@ public class Main{
 	public static Item RedSpartanChestplate;
 	public static Item RedSpartanLeggings;
 	public static Item RedSpartanBoots;
-	public static Item CovenantHelmet;
-	public static Item CovenantChestplate;
-	public static Item CovenantLeggings;
-	public static Item CovenantBoots;
 	//Items
 	public static Item HaloIngot = new HaloIngot();
 	public static Item rocketLauncher;
@@ -70,7 +66,7 @@ public class Main{
 	public static Item itemMongoose;
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
-		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
+		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{4, 4, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
 		HaloOreGen = new HaloGenerationClass();
 		rocketLauncher = new rocketLauncher();
@@ -87,10 +83,6 @@ public class Main{
 		SpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("SpartanChestplate");
 		SpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("SpartanLeggings");
 		SpartanBoots = new HaloArmor(HaloArmor, bootID, 3).setUnlocalizedName("SpartanBoots");
-		CovenantHelmet = new CovenantArmor(CovenantArmor, helmetID, 0).setUnlocalizedName("CovenantHelmet");
-		CovenantChestplate = new CovenantArmor(CovenantArmor, chestplateID, 1).setUnlocalizedName("CovenantChestplate");
-		CovenantLeggings = new CovenantArmor(CovenantArmor, leggingID, 2).setUnlocalizedName("CovenantLeggings");
-		CovenantBoots = new CovenantArmor(CovenantArmor, bootID, 3).setUnlocalizedName("CovenantBoots");
 		swordEnergySword = new swordEnergySword(ToolMaterial.EMERALD);
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		forerunnerBlock = new forerunnerBlock(Material.rock);
