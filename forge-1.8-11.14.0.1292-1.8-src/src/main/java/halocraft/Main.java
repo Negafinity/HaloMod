@@ -56,6 +56,14 @@ public class Main{
 	public static Item RedSpartanChestplate;
 	public static Item RedSpartanLeggings;
 	public static Item RedSpartanBoots;
+	public static Item GreenSpartanHelmet;
+	public static Item GreenSpartanChestplate;
+	public static Item GreenSpartanLeggings;
+	public static Item GreenSpartanBoots;
+	public static Item BlueSpartanHelmet;
+	public static Item BlueSpartanChestplate;
+	public static Item BlueSpartanLeggings;
+	public static Item BlueSpartanBoots;
 	public static Item CovenantHelmet;
 	public static Item CovenantChestplate;
 	public static Item CovenantLeggings;
@@ -79,6 +87,14 @@ public class Main{
 		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
 		itemMongoose = new ItemMongoose();
+		BlueSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
+		BlueSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
+		BlueSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
+		BlueSpartanBoots = new HaloArmor(HaloArmor, bootID, 3).setUnlocalizedName("BlueSpartanBoots");
+		GreenSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("GreenSpartanHelmet");
+		GreenSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("GreenSpartanChestplate");
+		GreenSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("GreenSpartanLeggings");
+		GreenSpartanBoots = new HaloArmor(HaloArmor, bootID, 3).setUnlocalizedName("GreenSpartanBoots");
 		RedSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("RedSpartanHelmet");
 		RedSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("RedSpartanChestplate");
 		RedSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("RedSpartanLeggings");
@@ -124,16 +140,35 @@ public class Main{
 		GameRegistry.registerItem(RedSpartanChestplate, "RedSpartanChestplate");
 		GameRegistry.registerItem(RedSpartanLeggings, "RedSpartanLeggings");
 		GameRegistry.registerItem(RedSpartanBoots, "RedSpartanBoots");
+		GameRegistry.registerItem(GreenSpartanHelmet, "GreenSpartanHelmet");
+		GameRegistry.registerItem(GreenSpartanChestplate, "GreenSpartanChestplate");
+		GameRegistry.registerItem(GreenSpartanLeggings, "GreenSpartanLeggings");
+		GameRegistry.registerItem(GreenSpartanBoots, "GreenSpartanBoots");
+		GameRegistry.registerItem(BlueSpartanHelmet, "BlueSpartanHelmet");
+		GameRegistry.registerItem(BlueSpartanChestplate, "BlueSpartanChestplate");
+		GameRegistry.registerItem(BlueSpartanLeggings, "BlueSpartanLeggings");
+		GameRegistry.registerItem(BlueSpartanBoots, "BlueSpartanBoots");
 		//Recipies
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
+		//Red Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), SpartanChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), SpartanBoots);
+		//Green Spartan Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanHelmet, 1), new ItemStack(Items.dye, 1, 10), SpartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanChestplate, 1), new ItemStack(Items.dye, 1, 10), SpartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanLeggings, 1), new ItemStack(Items.dye, 1, 10), SpartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanBoots, 1), new ItemStack(Items.dye, 1, 10), SpartanBoots);
+		//Blue Spartan Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanHelmet, 1), new ItemStack(Items.dye, 1, 6), SpartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanChestplate, 1), new ItemStack(Items.dye, 1, 6), SpartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), SpartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), SpartanBoots);
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XXX", "XYX", "XYX", 'X', HaloIngot, 'Y', gunStack});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
@@ -170,6 +205,7 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBattleRifle, 0, res11);
 		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemMongoose, 0, res12);
+		//Registering Red Spartan Armor
 		ModelResourceLocation res13 = new ModelResourceLocation("halocraft:RedSpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanChestplate, 0, res13);
 		ModelResourceLocation res14 = new ModelResourceLocation("halocraft:RedSpartanHelmet", "inventory");
@@ -178,6 +214,25 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanLeggings, 0, res15);
 		ModelResourceLocation res16 = new ModelResourceLocation("halocraft:RedSpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedSpartanBoots, 0, res16);
+		//Rendering Green Spartan Armor
+		ModelResourceLocation res17 = new ModelResourceLocation("halocraft:GreenSpartanChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenSpartanChestplate, 0, res17);
+		ModelResourceLocation res18 = new ModelResourceLocation("halocraft:GreenSpartanHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenSpartanHelmet, 0, res18);
+		ModelResourceLocation res19 = new ModelResourceLocation("halocraft:GreenSpartanLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenSpartanLeggings, 0, res19);
+		ModelResourceLocation res20 = new ModelResourceLocation("halocraft:GreenSpartanBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenSpartanBoots, 0, res20);
+		//Rendering Blue Spartan Armor
+		ModelResourceLocation res21 = new ModelResourceLocation("halocraft:BlueSpartanChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanChestplate, 0, res21);
+		ModelResourceLocation res22 = new ModelResourceLocation("halocraft:BlueSpartanHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanHelmet, 0, res22);
+		ModelResourceLocation res23 = new ModelResourceLocation("halocraft:BlueSpartanLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanLeggings, 0, res23);
+		ModelResourceLocation res24 = new ModelResourceLocation("halocraft:BlueSpartanBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanBoots, 0, res24);
+		//Rendering Halo Ore
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
