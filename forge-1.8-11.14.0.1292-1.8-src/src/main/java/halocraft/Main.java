@@ -68,6 +68,7 @@ public class Main{
 	public static Item CovenantChestplate;
 	public static Item CovenantLeggings;
 	public static Item CovenantBoots;
+	public static Item covenantPiece;
 	//Items
 	public static Item HaloIngot = new HaloIngot();
 	public static Item rocketLauncher;
@@ -81,6 +82,7 @@ public class Main{
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
 		HaloOreGen = new HaloGenerationClass();
+		covenantPiece = new CovenantPiece();
 		rocketLauncher = new rocketLauncher();
 		ammoRocket = new itemRocket();
 		ammoAssaultRifle = new ammoAssaultRifle();
@@ -124,6 +126,7 @@ public class Main{
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 5, 1, 2, EnumCreatureType.MONSTER);
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
+		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerBlock(forerunnerBlock, "forerunnerBlock");
 		GameRegistry.registerItem(SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(SpartanChestplate, "SpartanChestplate");
@@ -148,11 +151,19 @@ public class Main{
 		GameRegistry.registerItem(BlueSpartanChestplate, "BlueSpartanChestplate");
 		GameRegistry.registerItem(BlueSpartanLeggings, "BlueSpartanLeggings");
 		GameRegistry.registerItem(BlueSpartanBoots, "BlueSpartanBoots");
+		GameRegistry.registerItem(CovenantHelmet, "CovenantHelmet");
+		GameRegistry.registerItem(CovenantChestplate, "CovenantChestplate");
+		GameRegistry.registerItem(CovenantLeggings, "CovenantLeggings");
+		GameRegistry.registerItem(CovenantBoots, "CovenantBoots");
 		//Recipies
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
-		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', covenantPiece});
+		GameRegistry.addRecipe(new ItemStack(CovenantHelmet, 1), new Object[]{"XXX","X X", 'X', covenantPiece});
+		GameRegistry.addRecipe(new ItemStack(CovenantChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', covenantPiece});
+		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[]{"XXX","X X","X X", 'X', covenantPiece});
+		GameRegistry.addRecipe(new ItemStack(CovenantBoots, 1), new Object[]{"X X","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
 		//Red Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), SpartanHelmet);
@@ -176,6 +187,7 @@ public class Main{
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
+		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
 	}
@@ -232,20 +244,27 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanLeggings, 0, res23);
 		ModelResourceLocation res24 = new ModelResourceLocation("halocraft:BlueSpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanBoots, 0, res24);
+		//Rendering Default Covenant Armor
+		ModelResourceLocation res26 = new ModelResourceLocation("halocraft:CovenantChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CovenantChestplate, 0, res26);
+		ModelResourceLocation res27 = new ModelResourceLocation("halocraft:CovenantHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CovenantHelmet, 0, res27);
+		ModelResourceLocation res28 = new ModelResourceLocation("halocraft:CovenantLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CovenantLeggings, 0, res28);
+		ModelResourceLocation res29 = new ModelResourceLocation("halocraft:CovenantBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CovenantBoots, 0, res29);
 		//Rendering Halo Ore
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
+		//Rendering Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
+		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:CovenantPiece", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(covenantPiece, 0, res25);
 	}
-	public static CreativeTabs haloWeapons = new CreativeTabs("Halo Weapons"){
-	public Item getTabIconItem(){
-	return Items.diamond_sword;
-	}
-	};
 }
 
