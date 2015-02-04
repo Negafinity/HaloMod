@@ -24,14 +24,10 @@ public class EntityBullet extends EntityThrowable{
     {
         if (p_70184_1_.entityHit != null)
         {
-            byte b0 = 0;
-
-            if (p_70184_1_.entityHit instanceof EntityBlaze)
-            {
-                b0 = 3;
-            }
-
-            p_70184_1_.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)b0);
+            p_70184_1_.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+        }
+        if(!this.worldObj.isRemote){
+        	this.setDead();
         }
     }
 }
