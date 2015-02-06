@@ -1,5 +1,7 @@
 package halocraft;
 
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBoat;
 import net.minecraft.client.renderer.GlStateManager;
@@ -12,56 +14,84 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderMongooseEntity extends Render{
-    private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entity/MongooseRender.png");
-    protected ModelBase modelBoat = new ModelMongoose();
-    private static final String __OBFID = "CL_00000981";
+public class RenderMongooseEntity extends Render
+{
+	protected RenderMongooseEntity(RenderManager renderManager, ModelBase par1Model) {
+		super(renderManager);
+		// TODO Auto-generated constructor stub
+	}
 
-    public RenderMongooseEntity(RenderManager p_i46190_1_)
-    {
-        super(p_i46190_1_);
-        this.shadowSize = 0.5F;
-    }
+	public ModelBase model;
 
-    public void doRender(EntityMongoose p_180552_1_, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_){
-        GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.25F, (float)p_180552_6_);
-        GlStateManager.rotate(180.0F - p_180552_8_, 0.0F, 1.0F, 0.0F);
-        float f2 = (float)p_180552_1_.getTimeSinceHit() - p_180552_9_;
-        float f3 = p_180552_1_.getDamageTaken() - p_180552_9_;
+	public void doRenderCar(EntityMongoose car, double x, double y, double z, float rotationYaw, float par1)
+	{
+		if (!car.isDead)
+		{
+			GL11.glPushMatrix();
+			GL11.glTranslatef((float)x, (float)y + 1.1F, (float)z);
+			GL11.glRotatef(180.0F - rotationYaw, 0.0F, 1.0F, 0.0F);
+			float timeSinceHit = (float)car.getTimeSinceHit() - par1;
+			float damageTaken = car.getDamageTaken() - par1;
 
-        if (f3 < 0.0F)
-        {
-            f3 = 0.0F;
-        }
+			if (damageTaken < 0.0F)
+			{
+				damageTaken = 0.0F;
+			}
 
-        if (f2 > 0.0F)
-        {
-            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)p_180552_1_.getForwardDirection(), 1.0F, 0.0F, 0.0F);
-        }
+			if (timeSinceHit > 0.0F)
+			{
+				GL11.glRotatef(MathHelper.sin(timeSinceHit) * timeSinceHit * damageTaken / 10.0F * (float)car.getForwardDirection(), 0.0F, 0.0F, 1.0F);
+			}
 
-        float f4 = 0.75F;
-        GlStateManager.scale(f4, f4, f4);
-        GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        this.bindEntityTexture(p_180552_1_);
-        GlStateManager.scale(-1.0F, -1.0F, 1.0F);
-        this.modelBoat.render(p_180552_1_, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-        GlStateManager.popMatrix();
-        super.doRender(p_180552_1_, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
-    }
+			float f4 = 0.75F;
+			GL11.glScalef(f4, f4, f4);
+			GL11.glScalef(1.0F / f4, 1.0F / f4, 1.0F / f4);
+			this.bindEntityTexture(car);
+			GL11.glScalef(-1.0F, -1.0F, 1.0F);
+			this.model.render(car, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+			GL11.glPopMatrix();
+		}
+	}
 
-    protected ResourceLocation getEntityTexture(EntityMongoose p_180553_1_)
-    {
-        return boatTextures;
-    }
+	@Override
+	public void doRender(Entity entity, double x, double y, double z, float rotationYaw, float par1) 
+	{
+		doRenderCar((EntityMongoose) entity, x, y, z, rotationYaw, par1);
+	}
 
-    protected ResourceLocation getEntityTexture(Entity entity)
-    {
-        return this.getEntityTexture((EntityMongoose)entity);
-    }
+	@Override
+	protected ResourceLocation getEntityTexture(Entity entity) 
+	{
+		return getCarTexture((EntityMongoose) entity);
+	}
 
-    public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
-    {
-        this.doRender((EntityMongoose)entity, x, y, z, p_76986_8_, partialTicks);
-    }
+	public ResourceLocation getCarTexture(EntityMongoose car)
+	{
+		switch (car.carColour) 
+		{
+		case 0:
+			return new ResourceLocation("halocraft", "textures/entities/White Car.png");
+
+		case 1:
+			return new ResourceLocation("halocraft", "textures/entities/Red Car.png");
+
+		case 2:
+			return new ResourceLocation("halocraft", "textures/entities/Blue Car.png");
+
+		case 3:
+			return new ResourceLocation("halocraft", "textures/entities/Yellow Car.png");
+
+		case 4:
+			return new ResourceLocation("halocraft", "textures/entities/Green Car.png");
+
+		case 5:
+			return new ResourceLocation("halocraft", "textures/entities/Orange Car.png");
+
+		case 10:
+			return new ResourceLocation("javalcars", "textures/entities/Rainbow Car.png");
+
+		default:
+			return new ResourceLocation("javalcars", "textures/entities/White Car.png");
+		}
+	}
 }

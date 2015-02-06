@@ -97,7 +97,7 @@ public class Main{
 		ammoAssaultRifle = new ammoAssaultRifle();
 		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
-		itemMongoose = new ItemMongoose();
+		itemMongoose = new ItemMongoose(0);
 		BlueSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		BlueSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
 		BlueSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
@@ -296,11 +296,11 @@ public class Main{
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		//Rendering Entities
-		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager(), new ModelMongoose()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:CovenantPiece", "inventory");
+		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:covenantPiece", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(covenantPiece, 0, res25);
 	}
 }
