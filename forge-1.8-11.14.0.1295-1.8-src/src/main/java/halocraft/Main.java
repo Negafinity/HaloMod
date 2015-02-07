@@ -97,7 +97,7 @@ public class Main{
 		ammoAssaultRifle = new ammoAssaultRifle();
 		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
-		itemMongoose = new ItemMongoose(0);
+		itemMongoose = new ItemMongoose();
 		BlueSpartanHelmet = new HaloArmor(HaloArmor, helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		BlueSpartanChestplate = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
 		BlueSpartanLeggings = new HaloArmor(HaloArmor, leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
@@ -130,12 +130,15 @@ public class Main{
 		bullet = new EntityBullet(null);
 		mobElite = new EntityElite(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityBullet.class, "Bullet", randomID3);
+		System.out.println("RENDERING BULLET");
+		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityMongoose.class, "Mongoose", randomID4);
+		System.out.println("RENDERING MONGOOSE");
+		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 250, 50, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityRocket.class, "Rocket", randomID2);
+		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
+		System.out.println("RENDERING ELITE");
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
@@ -143,7 +146,7 @@ public class Main{
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
-		EntityRegistry.registerModEntity(EntityElite.class,"Elite", randomID, this, 250, 50, true);
+		//EntityRegistry.registerModEntity(EntityElite.class,"Elite", randomID, this, 250, 50, true);
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerBlock(forerunnerBlock, "forerunnerBlock");
@@ -296,7 +299,7 @@ public class Main{
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		//Rendering Entities
-		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager(), new ModelMongoose()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
