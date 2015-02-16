@@ -54,11 +54,16 @@ public class RenderMongooseEntity extends Render
         super.doRender(par1EntityMongoose, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
     }
 
+    protected ResourceLocation getEntityTexture(EntityMongoose p_180553_1_)
+    {
+        return boatTextures;
+    }
+
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        System.out.println("IT'S WORKING BUT SOMETHING ELSE IS SCREWED!");
-    	return boatTextures;
+        return this.getEntityTexture((EntityMongoose)entity);
     }
+
     public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
     {
         this.doRender((EntityMongoose)entity, x, y, z, p_76986_8_, partialTicks);

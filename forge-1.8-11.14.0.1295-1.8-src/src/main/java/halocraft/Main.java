@@ -130,15 +130,12 @@ public class Main{
 		bullet = new EntityBullet(null);
 		mobElite = new EntityElite(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
-		System.out.println("RENDERING BULLET");
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
-		int randomID4 = EntityRegistry.findGlobalUniqueEntityId();
-		System.out.println("RENDERING MONGOOSE");
-		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 240, 30, true);
-		int randomID2 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 260, 80, true);
+		int randomID4 = EntityRegistry.findGlobalUniqueEntityId() + 1;
+		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 250, 50, true);
+		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
+		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
-		System.out.println("RENDERING ELITE");
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 

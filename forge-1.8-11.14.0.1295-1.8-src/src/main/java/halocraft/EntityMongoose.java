@@ -124,7 +124,7 @@ public class EntityMongoose extends Entity
 
                     if (!flag)
                     {
-                        this.dropItemWithOffset(halocraft.Main.itemMongoose, 1, 0.0F);
+                        this.dropItemWithOffset(Items.boat, 1, 0.0F);
                     }
 
                     this.setDead();

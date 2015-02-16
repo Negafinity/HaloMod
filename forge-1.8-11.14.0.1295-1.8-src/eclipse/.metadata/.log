@@ -7060,3 +7060,2356 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SESSION 2015-02-16 10:19:39.720 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.chain.rcp 4 0 2015-02-16 10:19:43.720
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.chain.rcp [321]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.collect' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+
+Chain 2:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp)(bundle-version>=2.0.0))
+     |
+    provide: [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] osgi.wiring.bundle; {osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp, bundle-version=2.1.9.v20140917-1240}
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp 4 0 2015-02-16 10:19:43.834
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp [322]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.e4.ui.di 2 0 2015-02-16 10:19:43.861
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_0.10.1.v20120523-1955 [586]
+]
+Component2: Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_1.0.0.v20140328-2112 [95]
+]  
+
+!ENTRY org.eclipse.equinox.event 2 0 2015-02-16 10:19:43.872
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.200.v20120522-2049 [631]
+]
+Component2: Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.3.100.v20140115-1647 [136]
+]  
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-02-16 10:19:43.878
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.0.100.v20120913-155635 [638]
+]
+Component2: Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.0.v20140408-1354 [169]
+]  
+
+!ENTRY org.eclipse.recommenders.completion.rcp.calls 4 0 2015-02-16 10:19:44.579
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.calls [854]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.extdoc.rcp [862]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.chain 4 0 2015-02-16 10:19:44.818
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.chain [855]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.overrides 4 0 2015-02-16 10:19:45.009
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.overrides [857]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.templates 4 0 2015-02-16 10:19:45.137
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.templates [859]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp.calls
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp.calls; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp.calls [854]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+              org.eclipse.recommenders.extdoc.rcp [862]
+                No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+           -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+              org.eclipse.recommenders.completion.rcp [322]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.extdoc.rcp 4 0 2015-02-16 10:19:45.214
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.extdoc.rcp [862]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 4 0 2015-02-16 10:19:47.435
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.m2e.logback.configuration.LogPlugin.start() of bundle org.eclipse.m2e.logback.configuration.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 12 more
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+Root exception:
+java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-16 10:21:11.256
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2015-02-16 10:21:40.294
+!MESSAGE Could not load repository template extension contributed by org.jboss.tools.common.mylyn with connectorKind jira
+
+!ENTRY org.eclipse.ui 4 4 2015-02-16 10:21:55.458
+!MESSAGE Conflicting handlers for org.eclipse.vjet.eclipse.debug.ui.launchShortcut.run: {org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@543f0b7a} vs {org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@770aa1cb}
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 10:22:01.746
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 10:22:01.750
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Hassan'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.workbench 4 2 2015-02-16 10:22:05.836
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.UnsatisfiedLinkError: Error looking up function 'a': The specified procedure could not be found.
+
+	at com.sun.jna.Function.<init>(Function.java:179)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:350)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:330)
+	at com.sun.jna.Library$Handler.invoke(Library.java:203)
+	at com.sencha.eclipse.ftp.$Proxy17.a(Unknown Source)
+	at com.sencha.eclipse.ftp.a.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.VjetLaunchEarlyStartup.earlyStartup(Unknown Source)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2015-02-16 10:22:05.846
+!MESSAGE Unhandled Exception
+
+!ENTRY com.sencha.vjet.extjs.ftp 4 0 2015-02-16 10:22:05.850
+!MESSAGE Unable to execute early startup code for an extension
+!STACK 0
+java.lang.UnsatisfiedLinkError: Error looking up function 'a': The specified procedure could not be found.
+
+	at com.sun.jna.Function.<init>(Function.java:179)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:350)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:330)
+	at com.sun.jna.Library$Handler.invoke(Library.java:203)
+	at com.sencha.eclipse.ftp.$Proxy17.a(Unknown Source)
+	at com.sencha.eclipse.ftp.a.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.VjetLaunchEarlyStartup.earlyStartup(Unknown Source)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 566 2015-02-16 17:35:03.770
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+
+!ENTRY org.eclipse.core.jobs 4 1 2015-02-16 17:35:03.853
+!MESSAGE Worker thread ended job: Refreshing workspace(10), but still holds rule: ThreadJob(Refreshing workspace(10),[F/Minecraft/build/tmp/recompSrc/assets/minecraft])
+
+!ENTRY org.eclipse.core.resources 4 566 2015-02-16 17:35:04.970
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+!SESSION 2015-02-16 17:35:24.908 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.chain.rcp 4 0 2015-02-16 17:35:27.716
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.chain.rcp [321]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.collect' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+
+Chain 2:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp)(bundle-version>=2.0.0))
+     |
+    provide: [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] osgi.wiring.bundle; {osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp, bundle-version=2.1.9.v20140917-1240}
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp 4 0 2015-02-16 17:35:27.849
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp [322]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.e4.ui.di 2 0 2015-02-16 17:35:27.880
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_0.10.1.v20120523-1955 [586]
+]
+Component2: Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_1.0.0.v20140328-2112 [95]
+]  
+
+!ENTRY org.eclipse.equinox.event 2 0 2015-02-16 17:35:27.897
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.200.v20120522-2049 [631]
+]
+Component2: Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.3.100.v20140115-1647 [136]
+]  
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-02-16 17:35:27.907
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.0.100.v20120913-155635 [638]
+]
+Component2: Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.0.v20140408-1354 [169]
+]  
+
+!ENTRY org.eclipse.recommenders.completion.rcp.calls 4 0 2015-02-16 17:35:28.386
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.calls [854]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.extdoc.rcp [862]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.chain 4 0 2015-02-16 17:35:28.600
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.chain [855]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.overrides 4 0 2015-02-16 17:35:28.724
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.overrides [857]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.templates 4 0 2015-02-16 17:35:28.837
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.templates [859]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp.calls
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp.calls; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp.calls [854]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+              org.eclipse.recommenders.extdoc.rcp [862]
+                No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+           -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+              org.eclipse.recommenders.completion.rcp [322]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.extdoc.rcp 4 0 2015-02-16 17:35:28.908
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.extdoc.rcp [862]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 4 0 2015-02-16 17:35:29.823
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.m2e.logback.configuration.LogPlugin.start() of bundle org.eclipse.m2e.logback.configuration.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 12 more
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+Root exception:
+java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-16 17:35:56.319
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 4 0 2015-02-16 17:36:01.197
+!MESSAGE An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+Root exception:
+java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+
+!ENTRY org.eclipse.osgi 4 0 2015-02-16 17:36:01.277
+!MESSAGE An error occurred while automatically activating bundle org.eclipse.jdt.ui (659).
+!STACK 0
+org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 49 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+Root exception:
+java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+
+!ENTRY org.eclipse.osgi 4 0 2015-02-16 17:36:01.304
+!MESSAGE An error occurred while automatically activating bundle org.hibernate.eclipse.console (1054).
+!STACK 0
+org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/jdt/ui/text/JavaTextTools
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 28 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.jdt.ui (659).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 46 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 49 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+Root exception:
+java.lang.NoClassDefFoundError: org/eclipse/jdt/ui/text/JavaTextTools
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.jdt.ui (659).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 46 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 49 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+
+!ENTRY org.eclipse.core.resources 4 2 2015-02-16 17:36:01.314
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NoClassDefFoundError: org/hibernate/eclipse/nature/HibernateNature
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.hibernate.eclipse.console (1054).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 16 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 25 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/jdt/ui/text/JavaTextTools
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 28 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.jdt.ui (659).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 46 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 49 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+
+!ENTRY org.eclipse.core.resources 4 75 2015-02-16 17:36:01.334
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.jdt.core 4 75 2015-02-16 17:36:01.334
+!MESSAGE Errors running builder 'Java Builder' on project 'Minecraft'.
+!STACK 0
+java.lang.NoClassDefFoundError: org/hibernate/eclipse/nature/HibernateNature
+	at org.hibernate.eclipse.jdt.ui.internal.HQLExpressionCompilerParticipant.isActive(HQLExpressionCompilerParticipant.java:56)
+	at org.eclipse.jdt.internal.core.JavaModelManager$CompilationParticipants.getCompilationParticipants(JavaModelManager.java:328)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.initializeBuilder(JavaBuilder.java:587)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:167)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.hibernate.eclipse.console (1054).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 16 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 25 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/jdt/ui/text/JavaTextTools
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 28 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.jdt.ui (659).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: org.osgi.framework.BundleException: Error starting module.
+	at org.eclipse.osgi.container.Module.doStart(Module.java:580)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 46 more
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/ui/editors/text/templates/ContributionTemplateStore
+	at java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source)
+	at java.lang.Class.getConstructor0(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	... 49 more
+Caused by: java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.ui.editors (347).
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:116)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 58 more
+Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.ui.internal.editors.text.EditorsPlugin.start() of bundle org.eclipse.ui.editors.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	... 67 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.ui.internal.themes.WorkbenchThemeManager.<clinit>(WorkbenchThemeManager.java:58)
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.editors.text.EditorsPlugin.start(EditorsPlugin.java:214)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 74 more
+Caused by: org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1258)
+	at org.eclipse.swt.widgets.Display.checkDevice(Display.java:764)
+	at org.eclipse.swt.widgets.Display.getSystemFont(Display.java:2462)
+	at org.eclipse.jface.preference.PreferenceConverter.<clinit>(PreferenceConverter.java:84)
+	... 81 more
+
+!ENTRY org.eclipse.osgi 4 0 2015-02-16 17:36:02.825
+!MESSAGE Application error
+!STACK 1
+java.lang.NoClassDefFoundError: Could not initialize class org.eclipse.ui.internal.themes.WorkbenchThemeManager
+	at org.eclipse.ui.internal.Workbench.getThemeManager(Workbench.java:3468)
+	at org.eclipse.ui.internal.Workbench$29.runWithException(Workbench.java:1824)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:32)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2897)
+	at org.eclipse.ui.internal.Workbench.access$8(Workbench.java:2797)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:633)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.core.resources 4 566 2015-02-16 17:36:04.143
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+
+!ENTRY org.eclipse.core.jobs 4 1 2015-02-16 17:36:04.150
+!MESSAGE Worker thread ended job: Refreshing workspace(10), but still holds rule: ThreadJob(Refreshing workspace(10),[F/Minecraft/eclipse/.metadata/.plugins/org.eclipse.core.resources/.history])
+!SESSION 2015-02-16 17:39:57.093 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.recommenders.chain.rcp 4 0 2015-02-16 17:39:59.858
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.chain.rcp [321]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.collect' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+
+Chain 2:
+  org.eclipse.recommenders.chain.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.chain.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp)(bundle-version>=2.0.0))
+     |
+    provide: [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] osgi.wiring.bundle; {osgi.wiring.bundle=org.eclipse.recommenders.completion.rcp, bundle-version=2.1.9.v20140917-1240}
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp 4 0 2015-02-16 17:40:00.064
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp [322]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"; singleton:="true"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.e4.ui.di 2 0 2015-02-16 17:40:00.105
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_0.10.1.v20120523-1955 [586]
+]
+Component2: Component[
+	name = org.eclipse.e4.ui.di.events
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.e4.ui.internal.di.UIEventObjectSupplier
+	state = Unsatisfied
+	properties = {dependency.injection.annotation=org.eclipse.e4.ui.di.UIEventTopic}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier]
+	references = null
+	located in bundle = org.eclipse.e4.ui.di_1.0.0.v20140328-2112 [95]
+]  
+
+!ENTRY org.eclipse.equinox.event 2 0 2015-02-16 17:40:00.173
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.2.200.v20120522-2049 [631]
+]
+Component2: Component[
+	name = org.eclipse.equinox.event
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.event.EventComponent
+	state = Unsatisfied
+	properties = 
+	serviceFactory = false
+	serviceInterface = [org.osgi.service.event.EventAdmin]
+	references = null
+	located in bundle = org.eclipse.equinox.event_1.3.100.v20140115-1647 [136]
+]  
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-02-16 17:40:00.182
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.0.100.v20120913-155635 [638]
+]
+Component2: Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.0.v20140408-1354 [169]
+]  
+
+!ENTRY org.eclipse.recommenders.completion.rcp.calls 4 0 2015-02-16 17:40:00.622
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.calls [854]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.extdoc.rcp [862]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.calls [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.calls"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.chain 4 0 2015-02-16 17:40:00.762
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.chain [855]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.chain [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.chain"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.overrides 4 0 2015-02-16 17:40:00.881
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.overrides [857]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.overrides [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.overrides"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.completion.rcp.templates 4 0 2015-02-16 17:40:01.011
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.completion.rcp.templates [859]
+  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp [322]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp.calls
+    -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp.calls; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+       org.eclipse.recommenders.completion.rcp.calls [854]
+         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.extdoc.rcp; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.recommenders.extdoc.rcp; bundle-version="1.0.3.v20130211-0152-b208"; singleton:="true"
+              org.eclipse.recommenders.extdoc.rcp [862]
+                No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.recommenders.completion.rcp
+           -> Bundle-SymbolicName: org.eclipse.recommenders.completion.rcp; bundle-version="2.1.9.v20140917-1240"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.completion.rcp.templates [osgi.identity; osgi.identity="org.eclipse.recommenders.completion.rcp.templates"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.recommenders.extdoc.rcp 4 0 2015-02-16 17:40:01.095
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.recommenders.extdoc.rcp [862]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"] because it is exposed to package 'com.google.common.primitives' from resources com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"] and com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=10.0.0)(!(bundle-version>=11.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="10.0.1.v201203051515"]
+
+Chain 2:
+  org.eclipse.recommenders.extdoc.rcp [osgi.identity; osgi.identity="org.eclipse.recommenders.extdoc.rcp"; type="osgi.bundle"; version:Version="1.0.3.v20130211-0152-b208"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.recommenders.utils)
+     |
+    provide: osgi.wiring.bundle; osgi.wiring.bundle="org.eclipse.recommenders.utils"; bundle-version:Version="2.1.9.v20140917-1240"
+  org.eclipse.recommenders.utils [osgi.identity; osgi.identity="org.eclipse.recommenders.utils"; type="osgi.bundle"; version:Version="2.1.9.v20140917-1240"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=15.0.0)(!(version>=16.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.primitives
+    export: osgi.wiring.package=com.google.common.primitives
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 4 0 2015-02-16 17:40:01.867
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.m2e.logback.configuration.LogPlugin.start() of bundle org.eclipse.m2e.logback.configuration.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:792)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	... 12 more
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+Root exception:
+java.lang.NoClassDefFoundError: org/eclipse/osgi/framework/internal/core/FrameworkProperties
+	at org.eclipse.m2e.logback.configuration.LogPlugin.systemOut(LogPlugin.java:103)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.start(LogPlugin.java:95)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.framework.internal.core.FrameworkProperties cannot be found by org.eclipse.m2e.logback.configuration_1.3.0.20130129-0926
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 18 more
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-16 17:40:12.133
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2015-02-16 17:40:17.559
+!MESSAGE Could not load repository template extension contributed by org.jboss.tools.common.mylyn with connectorKind jira
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 17:40:30.272
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 17:40:30.276
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Hassan'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 4 4 2015-02-16 17:40:30.675
+!MESSAGE Conflicting handlers for org.eclipse.vjet.eclipse.debug.ui.launchShortcut.run: {org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@6c611073} vs {org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension$LaunchCommandHandler@587f259b}
+
+!ENTRY org.eclipse.ui.workbench 4 2 2015-02-16 17:40:34.706
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.UnsatisfiedLinkError: Error looking up function 'a': The specified procedure could not be found.
+
+	at com.sun.jna.Function.<init>(Function.java:179)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:350)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:330)
+	at com.sun.jna.Library$Handler.invoke(Library.java:203)
+	at com.sencha.eclipse.ftp.$Proxy17.a(Unknown Source)
+	at com.sencha.eclipse.ftp.a.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.VjetLaunchEarlyStartup.earlyStartup(Unknown Source)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2015-02-16 17:40:34.710
+!MESSAGE Unhandled Exception
+
+!ENTRY com.sencha.vjet.extjs.ftp 4 0 2015-02-16 17:40:34.714
+!MESSAGE Unable to execute early startup code for an extension
+!STACK 0
+java.lang.UnsatisfiedLinkError: Error looking up function 'a': The specified procedure could not be found.
+
+	at com.sun.jna.Function.<init>(Function.java:179)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:350)
+	at com.sun.jna.NativeLibrary.getFunction(NativeLibrary.java:330)
+	at com.sun.jna.Library$Handler.invoke(Library.java:203)
+	at com.sencha.eclipse.ftp.$Proxy17.a(Unknown Source)
+	at com.sencha.eclipse.ftp.a.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.e.a(Unknown Source)
+	at com.sencha.eclipse.ftp.VjetLaunchEarlyStartup.earlyStartup(Unknown Source)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

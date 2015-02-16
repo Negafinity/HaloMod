@@ -13,7 +13,11 @@ public class RenderEliteEntity extends RenderLiving{
 		super(p_i46153_1_, par1Model, par2);
 		// TODO Auto-generated constructor stub
 	}
-	protected ResourceLocation getEntityTexture(Entity entity){
+	protected ResourceLocation getEntityTexture(EntityElite entity){
 		return mobTextures;
+	}
+	protected ResourceLocation getEntityTexture(Entity entity){
+		return this.getEntityTexture((EntityElite)entity);	
+
 	}
 }
