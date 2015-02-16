@@ -134,9 +134,9 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("RENDERING MONGOOSE");
-		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 240, 30, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 260, 80, true);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("RENDERING ELITE");
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
