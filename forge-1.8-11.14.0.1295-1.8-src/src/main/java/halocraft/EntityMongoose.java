@@ -369,15 +369,9 @@ public class EntityMongoose extends Entity
                 if (!this.worldObj.isRemote && !this.isDead)
                 {
                     this.setDead();
-
-                    for (l = 0; l < 3; ++l)
-                    {
-                        this.dropItemWithOffset(Item.getItemFromBlock(Blocks.planks), 1, 0.0F);
-                    }
-
                     for (l = 0; l < 2; ++l)
                     {
-                        this.dropItemWithOffset(Items.stick, 1, 0.0F);
+                        this.dropItemWithOffset(halocraft.Main.HaloIngot, 2, 0.0F);
                     }
                 }
             }

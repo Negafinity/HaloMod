@@ -23,6 +23,7 @@ public class ItemMongoose extends Item {
 	    {
 	        this.maxStackSize = 1;
 	        this.setCreativeTab(CreativeTabs.tabTransport);
+	        setUnlocalizedName("Mongoose");
 	    }
 
 	    public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)

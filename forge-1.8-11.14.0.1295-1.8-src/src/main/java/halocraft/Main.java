@@ -42,11 +42,6 @@ public class Main{
 	//Blocks
 	public static Block forerunnerBlock;
 	public final static Block HaloOre = new HaloOre(Material.rock);
-	//Entities
-	public static Entity mobElite;
-	public static Entity rocket;
-	public static Entity bullet;
-	public static Entity entityMongoose;
 	//Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
@@ -125,10 +120,6 @@ public class Main{
 		swordEnergySword = new swordEnergySword(ToolMaterial.EMERALD);
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		forerunnerBlock = new forerunnerBlock(Material.rock);
-		entityMongoose = new EntityMongoose(null);
-		rocket = new EntityRocket(null);
-		bullet = new EntityBullet(null);
-		mobElite = new EntityElite(null);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId() + 1;
@@ -188,6 +179,8 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[]{"XXX","X X","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantBoots, 1), new Object[]{"X X","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " X ", 'X', HaloIngot});
+		ItemStack coalStack = new ItemStack(Items.coal);
+		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"XXX","X X", "Y Y", 'X', HaloIngot, 'Y', coalStack});
 		//Active Camo Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(ActiveCamoHelmet, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(ActiveCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), SpartanChestplate);
