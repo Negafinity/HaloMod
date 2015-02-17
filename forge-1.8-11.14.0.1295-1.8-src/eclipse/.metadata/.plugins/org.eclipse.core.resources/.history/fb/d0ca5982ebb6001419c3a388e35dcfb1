@@ -80,11 +80,8 @@ public class Main{
 	public static Item ammoAssaultRifle;
 	public static Item itemBattleRifle;
 	public static Item itemMongoose;
-	//Tool Materials
-	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
-		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
@@ -120,7 +117,7 @@ public class Main{
 		ActiveCamoChestplate = new ActiveCamoArmor(ActiveCamoArmor, chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
 		ActiveCamoLeggings = new ActiveCamoArmor(ActiveCamoArmor, leggingID, 2).setUnlocalizedName("ActiveCamoLeggings");
 		ActiveCamoBoots = new ActiveCamoArmor(ActiveCamoArmor, bootID, 3).setUnlocalizedName("ActiveCamoBoots");
-		swordEnergySword = new swordEnergySword(HaloMaterial);
+		swordEnergySword = new swordEnergySword(ToolMaterial.EMERALD);
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		forerunnerBlock = new forerunnerBlock(Material.rock);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
