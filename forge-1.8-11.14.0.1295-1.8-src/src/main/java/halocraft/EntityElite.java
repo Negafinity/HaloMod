@@ -35,11 +35,11 @@ public class EntityElite extends EntityMob{
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.tasks.addTask(6, new EntityAIMoveTowardsRestriction(this, 1.0D));
 	}
-	@Override
-	public ItemStack getHeldItem()
-	{
-		return new ItemStack(halocraft.Main.swordEnergySword, 1);
-	}
+	//@Override
+	//public ItemStack getHeldItem()
+	//{
+	//	return new ItemStack(halocraft.Main.swordEnergySword, 1);
+	//}
 	protected boolean isAIEnabled()
 	{
 	   return true;

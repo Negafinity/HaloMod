@@ -1,5 +1,6 @@
 item.energySword.name=Energy Sword
 entity.Elite.name=Elite
+entity.Grunt.name=Grunt
 tile.forerunnerBlock.name=Forerunner Block
 item.SpartanHelmet.name=Spartan Helmet
 item.SpartanChestplate.name=Spartan Chestplate

@@ -1,12 +1,12 @@
-[16:26:32] [Client thread/INFO]: Setting user: Player125
-[16:26:35] [Client thread/INFO]: LWJGL Version: 2.9.1
-[16:26:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[16:26:42] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[16:26:43] [Thread-7/INFO]: Initializing LWJGL OpenAL
-[16:26:43] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[16:26:43] [Thread-7/INFO]: OpenAL initialized.
-[16:26:43] [Sound Library Loader/INFO]: Sound engine started
-[16:26:56] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
+[16:49:24] [Client thread/INFO]: Setting user: Player390
+[16:49:27] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:49:31] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[16:49:32] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:49:33] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[16:49:33] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:49:33] [Thread-7/INFO]: OpenAL initialized.
+[16:49:33] [Sound Library Loader/INFO]: Sound engine started
+[16:49:37] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
 java.lang.RuntimeException: Encountered an exception when loading model definition of model halocraft:blockstates/forerunnerBlock.json
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:177) ~[ModelBakery.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.loadVariants(ModelBakery.java:118) [ModelBakery.class:?]
@@ -30,7 +30,7 @@ Caused by: java.io.FileNotFoundException: halocraft:blockstates/forerunnerBlock.
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getAllResources(SimpleReloadableResourceManager.java:81) ~[SimpleReloadableResourceManager.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:152) ~[ModelBakery.class:?]
 	... 16 more
-[16:26:57] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantLeggings.png
+[16:49:37] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantLeggings.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantLeggings.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -50,7 +50,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantLeggings.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:26:57] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantChestplate.png
+[16:49:37] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantChestplate.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantChestplate.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -70,7 +70,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantChestplate.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:26:57] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantBoots.png
+[16:49:37] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantBoots.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantBoots.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -90,7 +90,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantBoots.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:26:57] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantHelmet.png
+[16:49:37] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantHelmet.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantHelmet.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -110,16 +110,16 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantHelmet.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:26:57] [Client thread/INFO]: Created: 512x512 textures-atlas
-[16:26:59] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[16:26:59] [Client thread/INFO]: SoundSystem shutting down...
-[16:26:59] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[16:26:59] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[16:26:59] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[16:26:59] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[16:26:59] [Thread-9/INFO]: OpenAL initialized.
-[16:26:59] [Sound Library Loader/INFO]: Sound engine started
-[16:27:01] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
+[16:49:38] [Client thread/INFO]: Created: 512x512 textures-atlas
+[16:49:39] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[16:49:39] [Client thread/INFO]: SoundSystem shutting down...
+[16:49:40] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[16:49:40] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:49:40] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[16:49:40] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:49:40] [Thread-9/INFO]: OpenAL initialized.
+[16:49:40] [Sound Library Loader/INFO]: Sound engine started
+[16:49:42] [Client thread/WARN]: Unable to load definition halocraft:forerunnerBlock#normal
 java.lang.RuntimeException: Encountered an exception when loading model definition of model halocraft:blockstates/forerunnerBlock.json
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:177) ~[ModelBakery.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.loadVariants(ModelBakery.java:118) [ModelBakery.class:?]
@@ -146,7 +146,7 @@ Caused by: java.io.FileNotFoundException: halocraft:blockstates/forerunnerBlock.
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getAllResources(SimpleReloadableResourceManager.java:81) ~[SimpleReloadableResourceManager.class:?]
 	at net.minecraft.client.resources.model.ModelBakery.getModelBlockDefinition(ModelBakery.java:152) ~[ModelBakery.class:?]
 	... 19 more
-[16:27:01] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantLeggings.png
+[16:49:42] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantLeggings.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantLeggings.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -169,7 +169,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantLeggings.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:27:01] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantChestplate.png
+[16:49:42] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantChestplate.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantChestplate.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -192,7 +192,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantChestplate.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:27:01] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantBoots.png
+[16:49:42] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantBoots.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantBoots.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -215,7 +215,7 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantBoots.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:27:01] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantHelmet.png
+[16:49:42] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/armor/CovenantHelmet.png
 java.io.FileNotFoundException: halocraft:textures/armor/CovenantHelmet.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -238,41 +238,4 @@ java.io.FileNotFoundException: halocraft:textures/armor/CovenantHelmet.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:78) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[16:27:02] [Client thread/INFO]: Created: 512x512 textures-atlas
-[16:27:10] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[16:27:10] [Server thread/INFO]: Generating keypair
-[16:27:10] [Server thread/INFO]: Preparing start region for level 0
-[16:27:11] [Server thread/INFO]: Preparing spawn area: 43%
-[16:27:13] [Server thread/INFO]: Changing view distance to 12, from 10
-[16:27:13] [Server thread/INFO]: Player125[local:E:a9a76e64] logged in with entity id 286 at (-47.91843908292334, 114.81207262437891, 205.02729675618912)
-[16:27:13] [Server thread/INFO]: Player125 joined the game
-[16:27:15] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2041ms behind, skipping 40 tick(s)
-[16:27:15] [Server thread/INFO]: Saving and pausing game...
-[16:27:15] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[16:27:15] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[16:27:15] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[16:27:22] [Server thread/INFO]: Saving and pausing game...
-[16:27:22] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[16:27:22] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[16:27:22] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[16:27:23] [Server thread/INFO]: Player125 has just earned the achievement [Taking Inventory]
-[16:27:24] [Client thread/INFO]: [CHAT] Player125 has just earned the achievement [Taking Inventory]
-[16:28:07] [Server thread/INFO]: Saving and pausing game...
-[16:28:07] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[16:28:07] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[16:28:07] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[16:28:38] [Server thread/INFO]: [Player125: Set own game mode to Survival Mode]
-[16:28:38] [Client thread/INFO]: [CHAT] Your game mode has been updated
-[16:28:56] [Server thread/INFO]: Saving and pausing game...
-[16:28:56] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[16:28:56] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[16:28:56] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[16:28:57] [Server thread/INFO]: Stopping server
-[16:28:57] [Server thread/INFO]: Saving players
-[16:28:57] [Server thread/INFO]: Saving worlds
-[16:28:57] [Server thread/INFO]: Saving chunks for level 'Test'/Overworld
-[16:28:57] [Server thread/INFO]: Saving chunks for level 'Test'/Nether
-[16:28:57] [Server thread/INFO]: Saving chunks for level 'Test'/The End
-[16:28:58] [Client thread/INFO]: Stopping!
-[16:28:58] [Client thread/INFO]: SoundSystem shutting down...
-[16:28:58] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[16:49:42] [Client thread/INFO]: Created: 512x512 textures-atlas
