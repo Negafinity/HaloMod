@@ -80,6 +80,7 @@ public class Main{
 	public static Item ammoAssaultRifle;
 	public static Item itemBattleRifle;
 	public static Item itemMongoose;
+	public static Item itemHealthPack;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
@@ -88,6 +89,7 @@ public class Main{
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
+		itemHealthPack = new ItemHealthPack();
 		HaloOreGen = new HaloGenerationClass();
 		covenantPiece = new CovenantPiece();
 		rocketLauncher = new rocketLauncher();
@@ -140,7 +142,7 @@ public class Main{
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 		int randomID5 = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("Random ID 5: " + randomID5);
-		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID5, 150, 78);
+		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID5, 78, 230);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -182,6 +184,7 @@ public class Main{
 		GameRegistry.registerItem(ActiveCamoChestplate, "ActiveCamoChestplate");
 		GameRegistry.registerItem(ActiveCamoLeggings, "ActiveCamoLeggings");
 		GameRegistry.registerItem(ActiveCamoBoots, "ActiveCamoBoots");
+		GameRegistry.registerItem(itemHealthPack, "HealthPack");
 		//Recipies
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
@@ -296,6 +299,9 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ActiveCamoLeggings, 0, res32);
 		ModelResourceLocation res33 = new ModelResourceLocation("halocraft:ActiveCamoBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ActiveCamoBoots, 0, res33);
+		//Rendering Health Pack
+		ModelResourceLocation res34 = new ModelResourceLocation("halocraft:HealthPack", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemHealthPack, 0, res34);
 		//Rendering Halo Ore
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
