@@ -1,0 +1,7 @@
+package halocraft;
+
+
+public class EntityFragGrenade extends Entity
+{
+  
+}

@@ -1,0 +1,6 @@
+package halocraft;
+
+public class FragGrenade extends Item{
+	
+	
+}

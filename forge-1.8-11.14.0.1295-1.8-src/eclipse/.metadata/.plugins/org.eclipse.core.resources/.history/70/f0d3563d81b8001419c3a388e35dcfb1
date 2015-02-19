@@ -1,0 +1,17 @@
+package halocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class FragGrenade extends Item{
+	public FragGrenade(){
+		setUnlocalizedName("fragGrenade");
+		setCreativeTab(CreativeTabs.tabRedstone);
+	}
+	
+	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){
+	
+	}
+}

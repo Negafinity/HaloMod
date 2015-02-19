@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -42,6 +43,7 @@ public class Main{
 	//Blocks
 	public static Block forerunnerBlock;
 	public final static Block HaloOre = new HaloOre(Material.rock);
+	public static Item fragGrenade;
 	//Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
@@ -85,6 +87,8 @@ public class Main{
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void init(FMLPreInitializationEvent e){
+		//Initializing Grenades
+		fragGrenade = new FragGrenade();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
@@ -150,6 +154,9 @@ public class Main{
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 		//EntityRegistry.registerModEntity(EntityElite.class,"Elite", randomID, this, 250, 50, true);
+		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
+		System.out.println("Random ID 6" + randomID6);
+		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerBlock(forerunnerBlock, "forerunnerBlock");
@@ -157,6 +164,7 @@ public class Main{
 		GameRegistry.registerItem(SpartanChestplate, "SpartanChestplate");
 		GameRegistry.registerItem(SpartanLeggings, "SpartanLeggings");
 		GameRegistry.registerItem(SpartanBoots, "SpartanBoots");
+		GameRegistry.registerItem(fragGrenade, "fragGrenade");
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
 		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
@@ -302,12 +310,16 @@ public class Main{
 		//Rendering Health Pack
 		ModelResourceLocation res34 = new ModelResourceLocation("halocraft:HealthPack", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemHealthPack, 0, res34);
+		//Rendering Grenades
+		ModelResourceLocation res35 = new ModelResourceLocation("halocraft:fragGrenade", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(fragGrenade, 0, res35);
 		//Rendering Halo Ore
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		//Rendering Entities
+		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), fragGrenade, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));

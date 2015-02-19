@@ -18,7 +18,7 @@ public class EntityRocket extends EntityThrowable{
     {
         super(par1World, par2, par4, par6);
     }
-    float explosionRadius = 1.0F;
+    float explosionRadius = 4.0F;
     @Override
     protected void onImpact(MovingObjectPosition par1MovingObjectPosition) {
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius, true);
