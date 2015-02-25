@@ -2,8 +2,8 @@
 {
   "modid": "halocraft",
   "name": "HaloCraft",
-  "description": "A Halo Mod, containing many Halo like blocks, items, mobs and weapons!",
-  "version": "1.0",
+  "description": "A Halo Mod, containing many Halo like blocks and weapons!",
+  "version": "pre1.0",
   "mcversion": "1.8",
   "url": "",
   "updateUrl": "",
