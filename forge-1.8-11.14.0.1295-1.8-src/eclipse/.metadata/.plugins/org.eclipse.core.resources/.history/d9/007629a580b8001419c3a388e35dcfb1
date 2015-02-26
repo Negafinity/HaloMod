@@ -1,9 +1,0 @@
-package halocraft;
-
-import net.minecraft.entity.Entity;
-
-
-public class EntityFragGrenade extends Entity
-{
-  
-}

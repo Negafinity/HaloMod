@@ -1,8 +1,0 @@
-package halocraft;
-
-import net.minecraft.item.Item;
-
-public class FragGrenade extends Item{
-	
-	
-}
