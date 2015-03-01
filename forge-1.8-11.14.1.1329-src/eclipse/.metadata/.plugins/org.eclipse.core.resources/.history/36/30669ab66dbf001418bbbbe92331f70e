@@ -1,0 +1,82 @@
+package halocraft;
+
+import org.lwjgl.opengl.GL11;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+
+public class HaloArmor extends ItemArmor {
+
+	public HaloArmor(ArmorMaterial material, int renderIndex, int armorType) {
+		super(material, renderIndex, armorType);
+		setCreativeTab(CreativeTabs.tabCombat);
+	}
+	@Override
+	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
+		if (armor.getItem() == halocraft.Main.SpartanHelmet || armor.getItem() == halocraft.Main.GreenSpartanHelmet || armor.getItem() == halocraft.Main.RedSpartanHelmet || armor.getItem() == halocraft.Main.BlueSpartanHelmet){
+			Minecraft mc = Minecraft.getMinecraft();
+			ResourceLocation res = new ResourceLocation("halocraft:textures/gui/HealthBar.png");
+			mc.getTextureManager().bindTexture(res);
+			GL11.glPushMatrix();
+			drawTexturedModalRect(mc.displayWidth / 2, 10, 0, 0, 90, 60);
+			int width = (int) (((double) 90) * (mc.thePlayer.getHealth() / mc.thePlayer.getMaxHealth()));
+			drawTexturedModalRect(mc.displayWidth / 2, 10, 0, 6, width, 60);
+		}
+	}
+	public static void drawTexturedModalRect(int par1, int par2, int par3, int par4, int par5, int par6) {
+		float f = 0.00390625F;
+		float f1 = 0.00390625F;
+		WorldRenderer worldrenderer = Tessellator.getInstance().getWorldRenderer();
+		worldrenderer.startDrawingQuads();
+		worldrenderer.addVertexWithUV((double) (par1 + 0), (double) (par2 + par6), 1, (double) ((float) (par3 + 0) * f), (double) ((float) (par4 + par6) * f1));
+		worldrenderer.addVertexWithUV((double) (par1 + par5), (double) (par2 + par6), 1, (double) ((float) (par3 + par5) * f), (double) ((float) (par4 + par6) * f1));
+		worldrenderer.addVertexWithUV((double) (par1 + par5), (double) (par2 + 0), 1, (double) ((float) (par3 + par5) * f), (double) ((float) (par4 + 0) * f1));
+		worldrenderer.addVertexWithUV((double) (par1 + 0), (double) (par2 + 0), 1, (double) ((float) (par3 + 0) * f), (double) ((float) (par4 + 0) * f1));
+		Tessellator.getInstance().draw();
+	}
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer){
+		if(stack.getItem().equals(halocraft.Main.SpartanHelmet)|| stack.getItem().equals(halocraft.Main.SpartanChestplate)|| stack.getItem().equals(halocraft.Main.SpartanBoots)){
+			return "halocraft:textures/armor/HaloArmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.SpartanLeggings)){
+			return "halocraft:textures/armor/HaloArmor_layer_2.png";
+		}
+		if(stack.getItem().equals(halocraft.Main.RedSpartanHelmet)|| stack.getItem().equals(halocraft.Main.RedSpartanChestplate)|| stack.getItem().equals(halocraft.Main.RedSpartanBoots)){
+			return "halocraft:textures/armor/RedHaloArmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.RedSpartanLeggings)){
+			return "halocraft:textures/armor/RedHaloArmor_layer_2.png";
+		}
+		if(stack.getItem().equals(halocraft.Main.GreenSpartanHelmet)|| stack.getItem().equals(halocraft.Main.GreenSpartanChestplate)|| stack.getItem().equals(halocraft.Main.GreenSpartanBoots)){
+			return "halocraft:textures/armor/GreenHaloArmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.GreenSpartanLeggings)){
+			return "halocraft:textures/armor/GreenHaloArmor_layer_2.png";
+		}
+		if(stack.getItem().equals(halocraft.Main.BlueSpartanHelmet)|| stack.getItem().equals(halocraft.Main.BlueSpartanChestplate)|| stack.getItem().equals(halocraft.Main.BlueSpartanBoots)){
+			return "halocraft:textures/armor/BlueHaloArmor_layer_1.png";
+		}
+		
+		if(stack.getItem().equals(halocraft.Main.BlueSpartanLeggings)){
+			return "halocraft:textures/armor/BlueHaloArmor_layer_2.png";
+		}
+		else return null;
+	}
+}

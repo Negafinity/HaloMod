@@ -1,0 +1,19 @@
+package halocraft;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+
+public class HaloEventHandler extends Gui{
+
+	@SubscribeEvent
+	public void onRenderTick(RenderTickEvent event) {
+		// now you can do whatever you want during each render tick, such as rotate the player's view
+		ItemStack helmet = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
+		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0 && helmet != null && helmet.getItem() == halocraft.Main.SpartanHelmet){
+    	
+		}
+	}
+}

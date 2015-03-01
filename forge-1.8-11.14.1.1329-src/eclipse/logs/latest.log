@@ -1,0 +1,48 @@
+[17:49:48] [Client thread/INFO]: Setting user: Player562
+[17:49:52] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:49:55] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[17:49:56] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:49:56] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[17:49:56] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:49:56] [Thread-7/INFO]: OpenAL initialized.
+[17:49:57] [Sound Library Loader/INFO]: Sound engine started
+[17:50:00] [Client thread/INFO]: Created: 512x512 textures-atlas
+[17:50:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[17:50:02] [Client thread/INFO]: SoundSystem shutting down...
+[17:50:02] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[17:50:02] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:50:02] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[17:50:02] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:50:02] [Thread-9/INFO]: OpenAL initialized.
+[17:50:02] [Sound Library Loader/INFO]: Sound engine started
+[17:50:05] [Client thread/INFO]: Created: 512x512 textures-atlas
+[17:50:33] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[17:50:33] [Server thread/INFO]: Generating keypair
+[17:50:33] [Server thread/INFO]: Preparing start region for level 0
+[17:50:34] [Server thread/INFO]: Preparing spawn area: 43%
+[17:50:36] [Server thread/INFO]: Changing view distance to 12, from 10
+[17:50:36] [Server thread/INFO]: Player562[local:E:a7a81a92] logged in with entity id 359 at (26.200304228038586, 67.0, 163.2915495596298)
+[17:50:36] [Server thread/INFO]: Player562 joined the game
+[17:50:37] [Server thread/WARN]: Biome ID is out of bounds: -1, defaulting to 0 (Ocean)
+[17:50:38] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2613ms behind, skipping 52 tick(s)
+[17:50:43] [Server thread/INFO]: Saving and pausing game...
+[17:50:43] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[17:50:43] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[17:50:43] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[17:50:52] [Server thread/INFO]: Saving and pausing game...
+[17:50:52] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[17:50:52] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[17:50:52] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[17:52:27] [Server thread/INFO]: Saving and pausing game...
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[17:52:27] [Server thread/INFO]: Stopping server
+[17:52:27] [Server thread/INFO]: Saving players
+[17:52:27] [Server thread/INFO]: Saving worlds
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[17:52:27] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[17:52:29] [Client thread/INFO]: Stopping!
+[17:52:29] [Client thread/INFO]: SoundSystem shutting down...
+[17:52:29] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

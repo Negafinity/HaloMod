@@ -1,0 +1,43 @@
+package halocraft;
+
+import org.lwjgl.opengl.GL11;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+
+public class HaloEventHandler extends Gui{
+	@SubscribeEvent
+	public void onRenderTick(RenderTickEvent event) {
+		// now you can do whatever you want during each render tick, such as rotate the player's view
+		ItemStack helmet = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
+		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0 && helmet != null && helmet.getItem() == halocraft.Main.SpartanHelmet){
+			 GL11.glPushAttrib(GL11.GL_ALL_ATTRIB_BITS);
+             
+             WorldRenderer worldrenderer = Tessellator.getInstance().getWorldRenderer();
+            
+             ScaledResolution scale = new ScaledResolution(Minecraft.getMinecraft().gameSettings, Minecraft.getMinecraft().displayWidth, Minecraft.getMinecraft().displayHeight);
+             int width = scale.getScaledWidth();
+             int height = scale.getScaledHeight();
+            
+             GL11.glDisable(GL11.GL_DEPTH_TEST);
+             GL11.glDepthMask(false);
+             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+             GL11.glDisable(GL11.GL_ALPHA_TEST);
+             GL11.glBindTexture(GL11.GL_TEXTURE_2D, Minecraft.getMinecraft().renderEngine.getTexture("%blur%/armor/MiningHelmetblur.png"));
+            
+             worldrenderer.startDrawingQuads();
+             worldrenderer.addVertexWithUV(0.0D, (double)height, 90.0D, 0.0D, 1.0D);
+             worldrenderer.addVertexWithUV((double)width, (double)height, 90.0D, 1.0D, 1.0D);
+             worldrenderer.addVertexWithUV((double)width, 0.0D, 90.0D, 1.0D, 0.0D);
+             worldrenderer.addVertexWithUV(0.0D, 0.0D, 90.0D, 0.0D, 0.0D);
+             Tessellator.getInstance().draw();
+            
+             GL11.glPopAttrib();
+		}
+	}
+}
