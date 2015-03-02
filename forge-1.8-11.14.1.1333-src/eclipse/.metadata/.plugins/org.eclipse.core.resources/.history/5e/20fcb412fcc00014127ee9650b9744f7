@@ -1,0 +1,67 @@
+package halocraft;
+
+import org.lwjgl.opengl.GL11;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent;
+
+public class KeyInputHandler extends Gui {
+	private Minecraft mc = Minecraft.getMinecraft();
+	ResourceLocation brscope = new ResourceLocation("halocraft:textures/gui/BattleRifleScope.png");
+	 /**
+		 * Draws textured rectangles of sizes other than 256x256
+		 * @param x The x value of the top-left corner point on the screen where drawing to starts 
+		 * @param y The y value of the top-left corner point on the screen where drawing to starts
+		 * @param u The u (x) value of top-left corner point of the texture to start drawing from
+		 * @param v The v (y) value of top-left corner point of the texture to start drawing from
+		 * @param width The width of the rectangle to draw on screen
+		 * @param height The height of the rectangle to draw on screen
+		 * @param textureWidth The width of the whole texture
+		 * @param textureHeight The height of the whole texture
+		 */
+	 	protected void drawNonStandardTexturedRect(int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight)
+	    {
+	        double f = 1F / (double)textureWidth;
+	        double f1 = 1F / (double)textureHeight;
+	        WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
+	        tessellator.startDrawingQuads();
+	        tessellator.addVertexWithUV(x, y + height, 0, u * f, (v + height) * f1);
+	        tessellator.addVertexWithUV(x + width, y + height, 0, (u + width) * f, (v + height) * f1);
+	        tessellator.addVertexWithUV(x + width, y, 0, (u + width) * f, v * f1);
+	        tessellator.addVertexWithUV(x, y, 0, u * f, v * f1);
+	        Tessellator.getInstance().draw();
+	    }
+    @SubscribeEvent
+    public void onKeyInput(InputEvent.KeyInputEvent event) {
+        if(KeyBindings.scope.isPressed()){
+        	if(mc.thePlayer.getHeldItem() != null){
+        		if(mc.thePlayer.getHeldItem().getItem() == halocraft.Main.itemBattleRifle){
+        			//Chat Message telling Player Scope is Initialized
+        			mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] Scope Initialized."));
+        			//Rendering Scope
+        			ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+    	    		int xPos = (scaled.getScaledWidth() - 854) / 2;
+    	    		int yPos = (scaled.getScaledHeight() - 480) / 2;
+    	    		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+    	    		GL11.glDisable(GL11.GL_LIGHTING);
+    	    		this.mc.renderEngine.bindTexture(brscope);
+    	    		this.drawNonStandardTexturedRect(xPos, yPos, 0, 0, 854, 480, 854, 480);
+            	}
+            	else{
+            		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a weapon or does not have a scope."));
+            	}
+        	}
+        	else{
+        		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] You're not holding anything!"));
+        	}
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+package halocraft;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent;
+
+public class KeyInputHandler {
+	private Minecraft mc = Minecraft.getMinecraft();
+    @SubscribeEvent
+    public void onKeyInput(InputEvent.KeyInputEvent event) {
+        if(KeyBindings.scope.isPressed()){
+        	if(mc.thePlayer.getHeldItem() != null){
+        		if(mc.thePlayer.getHeldItem().getItem() == halocraft.Main.itemBattleRifle){
+        			System.out.println("Zoom");
+        			mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] Scope Initialized."));
+            	}
+            	else{
+            		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a weapon or does not have a scope."));
+            	}
+        	}
+        	else{
+        		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] You're not holding anything!"));
+        	}
+        }
+    }
+
+}
