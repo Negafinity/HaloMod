@@ -1,47 +1,40 @@
-[13:33:03] [Client thread/INFO]: Setting user: Player234
-[13:33:08] [Client thread/INFO]: LWJGL Version: 2.9.1
-[13:33:12] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[13:33:13] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:33:13] [Thread-7/INFO]: Initializing LWJGL OpenAL
-[13:33:13] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:33:13] [Thread-7/INFO]: OpenAL initialized.
-[13:33:14] [Sound Library Loader/INFO]: Sound engine started
-[13:33:17] [Client thread/INFO]: Created: 512x512 textures-atlas
-[13:33:19] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[13:33:19] [Client thread/INFO]: SoundSystem shutting down...
-[13:33:19] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[13:33:19] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:33:19] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[13:33:19] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:33:19] [Thread-9/INFO]: OpenAL initialized.
-[13:33:20] [Sound Library Loader/INFO]: Sound engine started
-[13:33:22] [Client thread/INFO]: Created: 512x512 textures-atlas
-[13:33:28] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[13:33:28] [Server thread/INFO]: Generating keypair
-[13:33:28] [Server thread/INFO]: Preparing start region for level 0
-[13:33:29] [Server thread/INFO]: Preparing spawn area: 38%
-[13:33:31] [Server thread/INFO]: Changing view distance to 12, from 10
-[13:33:31] [Server thread/INFO]: Player234[local:E:ba91e86f] logged in with entity id 316 at (-187.78300837326086, 78.0, 183.11763946683192)
-[13:33:31] [Server thread/INFO]: Player234 joined the game
-[13:33:34] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2770ms behind, skipping 55 tick(s)
-[13:33:42] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
-[13:33:43] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:33:53] [Server thread/INFO]: Saving and pausing game...
-[13:33:53] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:33:53] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:33:53] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:34:01] [Server thread/INFO]: Player234 has just earned the achievement [Taking Inventory]
-[13:34:01] [Client thread/INFO]: [CHAT] Player234 has just earned the achievement [Taking Inventory]
-[13:34:50] [Server thread/INFO]: Saving and pausing game...
-[13:34:50] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:34:50] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:34:50] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:34:51] [Server thread/INFO]: Stopping server
-[13:34:51] [Server thread/INFO]: Saving players
-[13:34:51] [Server thread/INFO]: Saving worlds
-[13:34:51] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:34:51] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:34:51] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:34:53] [Client thread/INFO]: Stopping!
-[13:34:53] [Client thread/INFO]: SoundSystem shutting down...
-[13:34:53] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[14:05:20] [Client thread/INFO]: Setting user: Player671
+[14:05:24] [Client thread/INFO]: LWJGL Version: 2.9.1
+[14:05:27] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[14:05:28] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[14:05:28] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[14:05:28] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[14:05:28] [Thread-7/INFO]: OpenAL initialized.
+[14:05:28] [Sound Library Loader/INFO]: Sound engine started
+[14:05:32] [Client thread/INFO]: Created: 512x512 textures-atlas
+[14:05:33] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[14:05:33] [Client thread/INFO]: SoundSystem shutting down...
+[14:05:34] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[14:05:34] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[14:05:34] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[14:05:34] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[14:05:34] [Thread-9/INFO]: OpenAL initialized.
+[14:05:34] [Sound Library Loader/INFO]: Sound engine started
+[14:05:36] [Client thread/INFO]: Created: 512x512 textures-atlas
+[14:05:46] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[14:05:46] [Server thread/INFO]: Generating keypair
+[14:05:47] [Server thread/INFO]: Preparing start region for level 0
+[14:05:48] [Server thread/INFO]: Preparing spawn area: 34%
+[14:05:49] [Server thread/INFO]: Changing view distance to 12, from 10
+[14:05:49] [Server thread/INFO]: Player671[local:E:4ee3801b] logged in with entity id 389 at (-174.25719789707355, 74.0, 174.0407609689941)
+[14:05:49] [Server thread/INFO]: Player671 joined the game
+[14:06:04] [Server thread/INFO]: Player671 has just earned the achievement [Taking Inventory]
+[14:06:04] [Client thread/INFO]: [CHAT] Player671 has just earned the achievement [Taking Inventory]
+[14:06:27] [Server thread/INFO]: Saving and pausing game...
+[14:06:27] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[14:06:28] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[14:06:28] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[14:06:28] [Server thread/INFO]: Stopping server
+[14:06:28] [Server thread/INFO]: Saving players
+[14:06:28] [Server thread/INFO]: Saving worlds
+[14:06:28] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[14:06:28] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[14:06:28] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[14:06:30] [Client thread/INFO]: Stopping!
+[14:06:30] [Client thread/INFO]: SoundSystem shutting down...
+[14:06:30] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
