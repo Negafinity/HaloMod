@@ -44,7 +44,7 @@ public class Main{
 	public static ItemSword swordEnergySword;
 	//Blocks
 	public final static Block HaloOre = new HaloOre(Material.rock);
-	//Grenade
+	//Grenades
 	public static Item fragGrenade;
 	//Armor
 	public static int helmetID = 0;

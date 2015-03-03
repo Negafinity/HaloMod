@@ -1,45 +1,98 @@
-[19:57:17] [Client thread/INFO]: Setting user: Player93
-[19:57:21] [Client thread/INFO]: LWJGL Version: 2.9.1
-[19:57:24] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[19:57:25] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[19:57:25] [Thread-7/INFO]: Initializing LWJGL OpenAL
-[19:57:25] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[19:57:26] [Thread-7/INFO]: OpenAL initialized.
-[19:57:26] [Sound Library Loader/INFO]: Sound engine started
-[19:57:29] [Client thread/INFO]: Created: 512x512 textures-atlas
-[19:57:31] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[19:57:31] [Client thread/INFO]: SoundSystem shutting down...
-[19:57:31] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[19:57:31] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[19:57:31] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[19:57:31] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[19:57:31] [Thread-9/INFO]: OpenAL initialized.
-[19:57:32] [Sound Library Loader/INFO]: Sound engine started
-[19:57:34] [Client thread/INFO]: Created: 512x512 textures-atlas
-[19:57:37] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[19:57:37] [Server thread/INFO]: Generating keypair
-[19:57:38] [Server thread/INFO]: Preparing start region for level 0
-[19:57:39] [Server thread/INFO]: Preparing spawn area: 51%
-[19:57:40] [Server thread/INFO]: Changing view distance to 12, from 10
-[19:57:40] [Server thread/INFO]: Player93[local:E:173e34b6] logged in with entity id 343 at (-21.989528684126753, 59.7661824121298, 237.22100347922043)
-[19:57:40] [Server thread/INFO]: Player93 joined the game
-[19:57:44] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2144ms behind, skipping 42 tick(s)
-[19:57:45] [Server thread/INFO]: Player93 has just earned the achievement [Taking Inventory]
-[19:57:45] [Client thread/INFO]: [CHAT] Player93 has just earned the achievement [Taking Inventory]
-[19:57:51] [Server thread/INFO]: [Player93: Set own game mode to Creative Mode]
-[19:57:51] [Client thread/INFO]: [CHAT] Your game mode has been updated
-[19:57:59] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
-[19:58:08] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[19:58:19] [Server thread/INFO]: Saving and pausing game...
-[19:58:19] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[19:58:19] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[19:58:19] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[19:58:20] [Server thread/INFO]: Stopping server
-[19:58:20] [Server thread/INFO]: Saving players
-[19:58:20] [Server thread/INFO]: Saving worlds
-[19:58:20] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[19:58:20] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[19:58:20] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[19:58:21] [Client thread/INFO]: Stopping!
-[19:58:21] [Client thread/INFO]: SoundSystem shutting down...
-[19:58:21] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[18:01:31] [Client thread/INFO]: Setting user: Player940
+[18:01:43] [Client thread/INFO]: LWJGL Version: 2.9.1
+[18:02:08] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[18:02:13] [Client thread/ERROR]: Couldn't initialize twitch stream
+[18:02:13] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[18:02:13] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[18:02:13] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[18:02:16] [Thread-6/INFO]: OpenAL initialized.
+[18:02:16] [Sound Library Loader/INFO]: Sound engine started
+[18:02:29] [Client thread/INFO]: Created: 512x512 textures-atlas
+[18:02:35] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[18:02:36] [Client thread/INFO]: SoundSystem shutting down...
+[18:02:36] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[18:02:36] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[18:02:36] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[18:02:36] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[18:02:36] [Thread-8/INFO]: OpenAL initialized.
+[18:02:37] [Sound Library Loader/INFO]: Sound engine started
+[18:02:40] [Client thread/INFO]: Created: 512x512 textures-atlas
+[18:03:07] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[18:03:07] [Server thread/INFO]: Generating keypair
+[18:03:09] [Server thread/INFO]: Converting map!
+[18:03:09] [Server thread/INFO]: Scanning folders...
+[18:03:09] [Server thread/INFO]: Total conversion count is 0
+[18:03:23] [Server thread/INFO]: Preparing start region for level 0
+[18:03:24] [Server thread/INFO]: Preparing spawn area: 4%
+[18:03:25] [Server thread/INFO]: Preparing spawn area: 6%
+[18:03:26] [Server thread/INFO]: Preparing spawn area: 9%
+[18:03:28] [Server thread/INFO]: Preparing spawn area: 10%
+[18:03:29] [Server thread/INFO]: Preparing spawn area: 13%
+[18:03:30] [Server thread/INFO]: Preparing spawn area: 17%
+[18:03:31] [Server thread/INFO]: Preparing spawn area: 22%
+[18:03:32] [Server thread/INFO]: Preparing spawn area: 24%
+[18:03:33] [Server thread/INFO]: Preparing spawn area: 28%
+[18:03:34] [Server thread/INFO]: Preparing spawn area: 33%
+[18:03:35] [Server thread/INFO]: Preparing spawn area: 39%
+[18:03:36] [Server thread/INFO]: Preparing spawn area: 43%
+[18:03:37] [Server thread/INFO]: Preparing spawn area: 45%
+[18:03:38] [Server thread/INFO]: Preparing spawn area: 48%
+[18:03:39] [Server thread/INFO]: Preparing spawn area: 53%
+[18:03:40] [Server thread/INFO]: Preparing spawn area: 56%
+[18:03:41] [Server thread/INFO]: Preparing spawn area: 60%
+[18:03:42] [Server thread/INFO]: Preparing spawn area: 65%
+[18:03:43] [Server thread/INFO]: Preparing spawn area: 72%
+[18:03:44] [Server thread/INFO]: Preparing spawn area: 77%
+[18:03:45] [Server thread/INFO]: Preparing spawn area: 80%
+[18:03:46] [Server thread/INFO]: Preparing spawn area: 84%
+[18:03:48] [Server thread/INFO]: Preparing spawn area: 87%
+[18:03:49] [Server thread/INFO]: Preparing spawn area: 90%
+[18:03:50] [Server thread/INFO]: Preparing spawn area: 93%
+[18:03:51] [Server thread/INFO]: Preparing spawn area: 96%
+[18:03:53] [Server thread/INFO]: Changing view distance to 12, from 10
+[18:03:56] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2689ms behind, skipping 53 tick(s)
+[18:03:56] [Server thread/INFO]: Player940[local:E:b3a552f8] logged in with entity id 137 at (10.5, 69.0, 251.5)
+[18:03:56] [Server thread/INFO]: Player940 joined the game
+[18:04:19] [Server thread/INFO]: Saving and pausing game...
+[18:04:20] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Overworld
+[18:04:25] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Nether
+[18:04:25] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/The End
+[18:04:26] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 11075ms behind, skipping 221 tick(s)
+[18:05:11] [Server thread/INFO]: Changing view distance to 2, from 12
+[18:05:18] [Server thread/INFO]: Player940 has just earned the achievement [Taking Inventory]
+[18:05:18] [Client thread/INFO]: [CHAT] Player940 has just earned the achievement [Taking Inventory]
+[18:07:33] [Server thread/INFO]: Saving and pausing game...
+[18:07:34] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Overworld
+[18:07:34] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Nether
+[18:07:34] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/The End
+[18:08:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:09] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
+[18:08:12] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:13] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:14] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:14] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:14] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:15] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:15] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:15] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:15] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:15] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] This is not a weapon or does not have a scope.
+[18:08:16] [Server thread/INFO]: Saving and pausing game...
+[18:08:16] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Overworld
+[18:08:16] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Nether
+[18:08:16] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/The End
+[18:09:44] [Server thread/INFO]: [Player940: Cleared the inventory of Player940, removing 6 items]
+[18:09:44] [Client thread/INFO]: [CHAT] Cleared the inventory of Player940, removing 6 items
+[18:09:55] [Server thread/INFO]: Saving and pausing game...
+[18:09:55] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Overworld
+[18:09:55] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Nether
+[18:09:55] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/The End
+[18:09:56] [Server thread/INFO]: Stopping server
+[18:09:56] [Server thread/INFO]: Saving players
+[18:09:56] [Server thread/INFO]: Saving worlds
+[18:09:56] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Overworld
+[18:09:56] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/Nether
+[18:09:56] [Server thread/INFO]: Saving chunks for level 'HaloCraft 2.0!'/The End
+[18:10:09] [Client thread/INFO]: Stopping!
+[18:10:09] [Client thread/INFO]: SoundSystem shutting down...
+[18:10:11] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
