@@ -44,6 +44,7 @@ public class Main{
 	public static ItemSword swordEnergySword;
 	//Blocks
 	public final static Block HaloOre = new HaloOre(Material.rock);
+	public static Block HaloBlock = new HaloBlock(Material.iron);
 	//Grenades
 	public static Item fragGrenade;
 	//Armor
@@ -100,6 +101,7 @@ public class Main{
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		itemHealthPack = new ItemHealthPack();
 		HaloOreGen = new HaloGenerationClass();
+		HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
 		rocketLauncher = new rocketLauncher();
 		ammoRocket = new itemRocket();
@@ -160,6 +162,8 @@ public class Main{
 		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("Random ID 6" + randomID6);
 		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
+		GameRegistry.registerBlock(HaloOre, "HaloOre");
+		GameRegistry.registerBlock(HaloBlock, "HaloBlock");
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(SpartanHelmet, "SpartanHelmet");
@@ -167,7 +171,6 @@ public class Main{
 		GameRegistry.registerItem(SpartanLeggings, "SpartanLeggings");
 		GameRegistry.registerItem(SpartanBoots, "SpartanBoots");
 		GameRegistry.registerItem(fragGrenade, "fragGrenade");
-		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
 		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
@@ -193,6 +196,8 @@ public class Main{
 		GameRegistry.registerItem(ActiveCamoChestplate, "ActiveCamoChestplate");
 		GameRegistry.registerItem(itemHealthPack, "HealthPack");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
+		//Block Recipes
+		GameRegistry.addRecipe(new ItemStack(HaloBlock, 1), new Object[]{"XXX","XXX","XXX", 'X', HaloIngot});
 		//Gun Recipes
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassStack = new ItemStack(Blocks.glass);
@@ -302,6 +307,8 @@ public class Main{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanLeggings, 0, res23);
 		ModelResourceLocation res24 = new ModelResourceLocation("halocraft:BlueSpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(BlueSpartanBoots, 0, res24);
+		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:covenantPiece", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(covenantPiece, 0, res25);
 		//Rendering Default Covenant Armor
 		ModelResourceLocation res26 = new ModelResourceLocation("halocraft:CovenantChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CovenantChestplate, 0, res26);
@@ -323,10 +330,13 @@ public class Main{
 		//Rendering Grenades
 		ModelResourceLocation res35 = new ModelResourceLocation("halocraft:fragGrenade", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(fragGrenade, 0, res35);
-		//Rendering Halo Ore
-		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloOre");
+		//Rendering Blocks
+		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloBlock");
+		Item itemBlockSimple2 = GameRegistry.findItem("halocraft", "HaloOre");
+		ModelResourceLocation haloBlockResourceLocation = new ModelResourceLocation("halocraft:HaloBlock", "inventory");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
 		final int DEFAULT_ITEM_SUBTYPE = 0;
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple2, 0, haloBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
 		//Rendering Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), fragGrenade, Minecraft.getMinecraft().getRenderItem()));
@@ -336,8 +346,6 @@ public class Main{
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedPlasma.class, new RenderRedPlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:covenantPiece", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(covenantPiece, 0, res25);
 	}
 }
 
