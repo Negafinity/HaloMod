@@ -1,12 +1,12 @@
-[13:53:37] [Client thread/INFO]: Setting user: Player218
-[13:53:41] [Client thread/INFO]: LWJGL Version: 2.9.1
-[13:53:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[13:53:46] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:53:46] [Thread-7/INFO]: Initializing LWJGL OpenAL
-[13:53:46] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:53:46] [Thread-7/INFO]: OpenAL initialized.
-[13:53:46] [Sound Library Loader/INFO]: Sound engine started
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock5.png
+[15:27:44] [Client thread/INFO]: Setting user: Player843
+[15:27:47] [Client thread/INFO]: LWJGL Version: 2.9.1
+[15:27:50] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[15:27:51] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[15:27:51] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[15:27:51] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[15:27:51] [Thread-7/INFO]: OpenAL initialized.
+[15:27:52] [Sound Library Loader/INFO]: Sound engine started
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock5.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock5.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -26,7 +26,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock5.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock4.png
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock4.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock4.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -46,7 +46,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock4.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock3.png
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock3.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock3.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -66,7 +66,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock3.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock2.png
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock2.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock2.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -86,7 +86,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock2.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock1.png
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock1.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock1.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -106,7 +106,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock1.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:49] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock0.png
+[15:27:55] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock0.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock0.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -126,16 +126,16 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock0.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:50] [Client thread/INFO]: Created: 512x512 textures-atlas
-[13:53:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
-[13:53:51] [Client thread/INFO]: SoundSystem shutting down...
-[13:53:51] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[13:53:51] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[13:53:52] [Thread-9/INFO]: Initializing LWJGL OpenAL
-[13:53:52] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[13:53:52] [Thread-9/INFO]: OpenAL initialized.
-[13:53:52] [Sound Library Loader/INFO]: Sound engine started
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock5.png
+[15:27:55] [Client thread/INFO]: Created: 512x512 textures-atlas
+[15:27:56] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:HaloCraft
+[15:27:56] [Client thread/INFO]: SoundSystem shutting down...
+[15:27:57] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[15:27:57] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[15:27:57] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[15:27:57] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[15:27:57] [Thread-9/INFO]: OpenAL initialized.
+[15:27:57] [Sound Library Loader/INFO]: Sound engine started
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock5.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock5.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -158,7 +158,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock5.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock4.png
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock4.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock4.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -181,7 +181,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock4.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock3.png
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock3.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock3.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -204,7 +204,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock3.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock2.png
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock2.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock2.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -227,7 +227,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock2.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock1.png
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock1.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock1.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -250,7 +250,7 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock1.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock0.png
+[15:27:59] [Client thread/ERROR]: Using missing texture, unable to load halocraft:textures/blocks/HaloBlock0.png
 java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock0.png
 	at net.minecraft.client.resources.FallbackResourceManager.getResource(FallbackResourceManager.java:70) ~[FallbackResourceManager.class:?]
 	at net.minecraft.client.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:67) ~[SimpleReloadableResourceManager.class:?]
@@ -273,66 +273,24 @@ java.io.FileNotFoundException: halocraft:textures/blocks/HaloBlock0.png
 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:85) [start/:?]
 	at GradleStart.main(GradleStart.java:45) [start/:?]
-[13:53:54] [Client thread/INFO]: Created: 512x512 textures-atlas
-[13:54:41] [Server thread/INFO]: Starting integrated minecraft server version 1.8
-[13:54:41] [Server thread/INFO]: Generating keypair
-[13:54:41] [Server thread/INFO]: Converting map!
-[13:54:41] [Server thread/INFO]: Scanning folders...
-[13:54:41] [Server thread/INFO]: Total conversion count is 0
-[13:54:42] [Server thread/INFO]: Preparing start region for level 0
-[13:54:43] [Server thread/INFO]: Preparing spawn area: 4%
-[13:54:44] [Server thread/INFO]: Preparing spawn area: 10%
-[13:54:45] [Server thread/INFO]: Preparing spawn area: 17%
-[13:54:46] [Server thread/INFO]: Preparing spawn area: 25%
-[13:54:47] [Server thread/INFO]: Preparing spawn area: 33%
-[13:54:48] [Server thread/INFO]: Preparing spawn area: 42%
-[13:54:49] [Server thread/INFO]: Preparing spawn area: 51%
-[13:54:50] [Server thread/INFO]: Preparing spawn area: 61%
-[13:54:51] [Server thread/INFO]: Preparing spawn area: 71%
-[13:54:52] [Server thread/INFO]: Preparing spawn area: 79%
-[13:54:53] [Server thread/INFO]: Preparing spawn area: 87%
-[13:54:54] [Server thread/INFO]: Preparing spawn area: 97%
-[13:54:55] [Server thread/INFO]: Changing view distance to 12, from 10
-[13:54:56] [Server thread/INFO]: Player218[local:E:545f8640] logged in with entity id 303 at (227.5, 81.0, 248.5)
-[13:54:56] [Server thread/INFO]: Player218 joined the game
-[13:55:07] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 9443ms behind, skipping 188 tick(s)
-[13:55:22] [Server thread/INFO]: Player218 has just earned the achievement [Taking Inventory]
-[13:55:22] [Client thread/INFO]: [CHAT] Player218 has just earned the achievement [Taking Inventory]
-[13:55:28] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 8390ms behind, skipping 167 tick(s)
-[13:55:37] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2382ms behind, skipping 47 tick(s)
-[13:55:58] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:55:59] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:55:59] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:00] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:01] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:02] [Client thread/INFO]: [CHAT] [HaloCraft 2.0] You're not holding anything!
-[13:56:36] [Server thread/INFO]: Saving and pausing game...
-[13:56:36] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:56:37] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:56:37] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:56:47] [Server thread/INFO]: [Player218: Set own game mode to Survival Mode]
-[13:56:47] [Client thread/INFO]: [CHAT] Your game mode has been updated
-[13:57:06] [Server thread/INFO]: [Player218: Set own game mode to Creative Mode]
-[13:57:06] [Client thread/INFO]: [CHAT] Your game mode has been updated
-[13:57:08] [Server thread/INFO]: Saving and pausing game...
-[13:57:08] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:57:09] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:57:09] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:57:09] [Server thread/INFO]: Stopping server
-[13:57:09] [Server thread/INFO]: Saving players
-[13:57:09] [Server thread/INFO]: Saving worlds
-[13:57:09] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[13:57:09] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[13:57:09] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[13:57:11] [Client thread/INFO]: Stopping!
-[13:57:11] [Client thread/INFO]: SoundSystem shutting down...
-[13:57:11] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[15:27:59] [Client thread/INFO]: Created: 512x512 textures-atlas
+[15:29:41] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[15:29:41] [Server thread/INFO]: Generating keypair
+[15:29:42] [Server thread/INFO]: Preparing start region for level 0
+[15:29:43] [Server thread/INFO]: Preparing spawn area: 50%
+[15:29:44] [Server thread/INFO]: Changing view distance to 12, from 10
+[15:29:44] [Server thread/INFO]: Player843[local:E:d3aa2c2c] logged in with entity id 362 at (-145.67777609987894, 80.03130286030783, 299.9008074872003)
+[15:29:44] [Server thread/INFO]: Player843 joined the game
+[15:29:52] [Server thread/INFO]: Saving and pausing game...
+[15:29:52] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[15:29:53] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[15:29:53] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[15:29:53] [Server thread/INFO]: Stopping server
+[15:29:53] [Server thread/INFO]: Saving players
+[15:29:53] [Server thread/INFO]: Saving worlds
+[15:29:53] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[15:29:53] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[15:29:53] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[15:29:55] [Client thread/INFO]: Stopping!
+[15:29:55] [Client thread/INFO]: SoundSystem shutting down...
+[15:29:55] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
