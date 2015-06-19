@@ -178,7 +178,6 @@ public class Main{
 		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("Random ID 6" + randomID6);
 		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
-		GameRegistry.registerBlock(CustomModelBlock.instance, CustomModelBlock.name);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(HaloBlock, "HaloBlock");
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");

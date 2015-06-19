@@ -7,7 +7,6 @@ import halocraft.EntityElite;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.b3d.B3DLoader;
 import net.minecraftforge.client.model.b3d.B3DModel;
-import halocraft.CustomModelBlock;
 import halocraft.EntityFragGrenade;
 import halocraft.EntityGreenPlasma;
 import halocraft.EntityGrunt;
@@ -63,8 +62,6 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.rocketLauncher, 0, res8);
 		ModelResourceLocation res9 = new ModelResourceLocation("halocraft:ammoAssaultRifle", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoAssaultRifle, 0, res9);
-		//ModelResourceLocation res10 = new ModelResourceLocation("halocraft:itemAssaultRifle", "inventory");
-		//ModelLoader.setCustomModelResourceLocation(halocraft.Main.itemAssaultRifle, 0, res10);
 		ModelResourceLocation res11 = new ModelResourceLocation("halocraft:itemBattleRifle", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemBattleRifle, 0, res11);
 		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
@@ -144,10 +141,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 	}
 	public void preInit(){
-		ModelBakery.addVariantName(ItemAssaultRifle.instance, "halocraft:assaultrifle.b3d");
 		B3DLoader.instance.addDomain("halocraft");
-		Item item = Item.getItemFromBlock(CustomModelBlock.instance);
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("halocraft:" + CustomModelBlock.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
 	}
 	public void registerKey(){
