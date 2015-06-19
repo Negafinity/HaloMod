@@ -1,5 +1,6 @@
 package halocraft;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,10 +61,10 @@ public class RenderMongooseEntity extends Render
                 }
             };
 
-    public void doRender(EntityMongoose par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_)
+    public void doRender(EntityMongoose par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	IModel mongoose = ModelLoaderRegistry.getModel(boatModel);
-    	//IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
+    	//IModel mongoose = ModelLoaderRegistry.getModel(boatModel);
+    	IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
     	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	World world = par1EntityMongoose.getWorldObj();
     	BlockPos blockpos = new BlockPos(par1EntityMongoose);
@@ -71,7 +72,7 @@ public class RenderMongooseEntity extends Render
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 1.5F, (float)p_180552_6_);
-        //GlStateManager.rotate(180.0F - p_180552_8_, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(180.0F - p_180552_8_, 0.0F, 1.0F, 0.0F);
         float f2 = (float)par1EntityMongoose.getTimeSinceHit() - p_180552_9_;
         float f3 = par1EntityMongoose.getDamageTaken() - p_180552_9_;
 
@@ -122,6 +123,11 @@ public class RenderMongooseEntity extends Render
 
     public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
     {
-        this.doRender((EntityMongoose)entity, x, y, z, p_76986_8_, partialTicks);
+        try {
+			this.doRender((EntityMongoose)entity, x, y, z, p_76986_8_, partialTicks);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

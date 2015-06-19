@@ -47,6 +47,7 @@ public class EntityMongoose extends Entity
         this.preventEntitySpawning = true;
         this.setSize(1.5F, 0.6F);
     }
+
     protected boolean canTriggerWalking()
     {
         return false;
