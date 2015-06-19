@@ -10,10 +10,14 @@ import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 
 public class RocketLauncher extends Item {
+	//Following is so you can access it in pre-init
+	public static final RocketLauncher instance = new RocketLauncher();
+	public static final String name = "RocketLauncher";
+	
 	public RocketLauncher(){
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
-	     setUnlocalizedName("rocketLauncher");
+	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxStackSize(1);
 	}
     public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)

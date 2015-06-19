@@ -97,13 +97,13 @@ public class RenderMongooseEntity extends Render
 			int[] vd = q.getVertexData();
 			worldrenderer.addVertexData(vd);
 		}
-		 for (EnumFacing face : EnumFacing.values()) {
-             List<BakedQuad> faceQuads = 
-            		 bakedMongoose.getFaceQuads(face);
-             for (BakedQuad q : faceQuads) {
-                     int[] vd = q.getVertexData();
-                    worldrenderer.addVertexData(vd);
-            }
+		for (EnumFacing face : EnumFacing.values()) {
+            List<BakedQuad> faceQuads = 
+           		 bakedMongoose.getFaceQuads(face);
+            for (BakedQuad q : faceQuads) {
+                    int[] vd = q.getVertexData();
+                   worldrenderer.addVertexData(vd);
+           }
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();

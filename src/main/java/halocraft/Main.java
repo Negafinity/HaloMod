@@ -89,7 +89,6 @@ public class Main{
 	public static Item ActiveCamoChestplate;
 	//Items
 	public static Item HaloIngot = new HaloIngot();
-	public static Item rocketLauncher;
 	public static Item ammoRocket;
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
@@ -118,7 +117,6 @@ public class Main{
 		HaloOreGen = new HaloGenerationClass();
 		//HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
-		rocketLauncher = new RocketLauncher();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
 		itemBattleRifle = new ItemBattleRifle();
@@ -184,7 +182,7 @@ public class Main{
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(fragGrenade, "fragGrenade");
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
-		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
+		GameRegistry.registerItem(RocketLauncher.instance, RocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
@@ -258,7 +256,7 @@ public class Main{
 		ItemStack stickStack = new ItemStack(Items.stick);
 		GameRegistry.addRecipe(new ItemStack(swordEnergySword, 1), new Object[]{" X "," X ", " Y ", 'X', HaloIngot, 'Y', stickStack});
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
-		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XZZ", "XYZ", "ZYX", 'X', HaloIngot, 'Y', gunStack, 'Z', HaloBlock});
+		GameRegistry.addRecipe(new ItemStack(RocketLauncher.instance, 1), new Object[]{"XZZ", "XYZ", "ZYX", 'X', HaloIngot, 'Y', gunStack, 'Z', HaloBlock});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);

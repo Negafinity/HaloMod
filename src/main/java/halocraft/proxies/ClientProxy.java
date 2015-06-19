@@ -26,6 +26,7 @@ import halocraft.RenderMongooseEntity;
 import halocraft.RenderRedPlasmaEntity;
 import halocraft.RenderRocketEntity;
 import halocraft.ItemAssaultRifle;
+import halocraft.RocketLauncher;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
@@ -58,8 +59,6 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.SpartanBoots, 0, res6);
 		ModelResourceLocation res7 = new ModelResourceLocation("halocraft:ammoRocket", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoRocket, 0, res7);
-		ModelResourceLocation res8 = new ModelResourceLocation("halocraft:rocketLauncher", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.rocketLauncher, 0, res8);
 		ModelResourceLocation res9 = new ModelResourceLocation("halocraft:ammoAssaultRifle", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoAssaultRifle, 0, res9);
 		ModelResourceLocation res11 = new ModelResourceLocation("halocraft:itemBattleRifle", "inventory");
@@ -143,6 +142,7 @@ public class ClientProxy extends CommonProxy{
 	public void preInit(){
 		B3DLoader.instance.addDomain("halocraft");
         ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(RocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + RocketLauncher.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
