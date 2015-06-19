@@ -18,7 +18,6 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class ItemMongoose extends Item {
-	 private static final String __OBFID = "CL_00001774";
 	    public ItemMongoose()
 	    {
 	        this.maxStackSize = 1;

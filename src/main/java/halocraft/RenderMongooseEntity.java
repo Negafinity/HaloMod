@@ -46,7 +46,6 @@ public class RenderMongooseEntity extends Render
 	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
     private static final ModelResourceLocation boatModel = new ModelResourceLocation("halocraft:Mongoose.b3d");
     private static final ModelResourceLocation mongooseModel = new ModelResourceLocation("halocraft:models/Mongoose.b3d");
-    private static final String __OBFID = "CL_00000981";
     IModel model = null;
     public RenderMongooseEntity(RenderManager p_i46190_1_)
     {
