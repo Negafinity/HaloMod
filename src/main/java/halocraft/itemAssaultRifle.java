@@ -10,12 +10,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class itemAssaultRifle extends Item{
+public class ItemAssaultRifle extends Item{
 	//Following is so you can access it in pre-init
-	public static final itemAssaultRifle instance = new itemAssaultRifle();
+	public static final ItemAssaultRifle instance = new ItemAssaultRifle();
     public static final String name = "itemAssaultRifle";
     
-    public itemAssaultRifle(){
+    public ItemAssaultRifle(){
 		setCreativeTab(CreativeTabs.tabCombat);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);

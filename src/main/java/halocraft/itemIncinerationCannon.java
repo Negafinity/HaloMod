@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class itemIncinerationCannon extends Item {
-	public itemIncinerationCannon(){
+public class ItemIncinerationCannon extends Item {
+	public ItemIncinerationCannon(){
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
 	     setUnlocalizedName("incinerationCannon");

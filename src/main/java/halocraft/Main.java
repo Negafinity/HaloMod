@@ -105,11 +105,11 @@ public class Main{
 		System.out.println("Mod Pre-Init");
 		itemCarbineRifle = new ItemCarbineRifle();
 		//Initalize Plasma
-		ammoPlasma = new ammoPlasma();
+		ammoPlasma = new ItemAmmoPlasma();
 		//Initializing Grenades
 		fragGrenade = new FragGrenade();
 		//Initalizing Cannon
-		itemIncinerationCannon = new itemIncinerationCannon();
+		itemIncinerationCannon = new ItemIncinerationCannon();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
@@ -118,10 +118,10 @@ public class Main{
 		HaloOreGen = new HaloGenerationClass();
 		//HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
-		rocketLauncher = new rocketLauncher();
-		ammoRocket = new itemRocket();
-		ammoAssaultRifle = new ammoAssaultRifle();
-		itemBattleRifle = new itemBattleRifle();
+		rocketLauncher = new RocketLauncher();
+		ammoRocket = new ItemRocket();
+		ammoAssaultRifle = new ItemAmmoAssaultRifle();
+		itemBattleRifle = new ItemBattleRifle();
 		itemMongoose = new ItemMongoose();
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -144,7 +144,7 @@ public class Main{
 		halocraft.Main.CovenantLeggings = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("CovenantLeggings");
 		halocraft.Main.CovenantBoots = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.bootID, 3).setUnlocalizedName("CovenantBoots");
 		halocraft.Main.ActiveCamoChestplate = new ActiveCamoArmor(halocraft.Main.ActiveCamoArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
-		swordEnergySword = new swordEnergySword(HaloMaterial);
+		swordEnergySword = new ItemEnergySword(HaloMaterial);
 		GameRegistry.registerItem(swordEnergySword, "energySword");
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
@@ -188,7 +188,7 @@ public class Main{
 		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
-		GameRegistry.registerItem(itemAssaultRifle.instance, itemAssaultRifle.name);
+		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
 		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
 		GameRegistry.registerItem(itemHealthPack, "HealthPack");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
@@ -221,7 +221,7 @@ public class Main{
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassStack = new ItemStack(Blocks.glass);
 		GameRegistry.addRecipe(new ItemStack(itemBattleRifle, 1), new Object[]{"ZX ","XXY", " XA", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', glassStack, 'A', HaloBlock});
-		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle.instance, 1), new Object[]{"XXY", " ZZ", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', HaloBlock});
+		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"XXY", " ZZ", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', HaloBlock});
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
@@ -261,7 +261,7 @@ public class Main{
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XZZ", "XYZ", "ZYX", 'X', HaloIngot, 'Y', gunStack, 'Z', HaloBlock});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
-		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
+		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
 		GameRegistry.addRecipe(new ItemStack(itemCarbineRifle, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});

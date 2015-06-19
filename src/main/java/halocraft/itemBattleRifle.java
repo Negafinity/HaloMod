@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class itemBattleRifle extends Item {
-	public itemBattleRifle(){
+public class ItemBattleRifle extends Item {
+	public ItemBattleRifle(){
 	setCreativeTab(CreativeTabs.tabCombat);
 	setMaxStackSize(1);
 	setUnlocalizedName("BattleRifle");

@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 
-public class rocketLauncher extends Item {
-	public rocketLauncher(){
+public class RocketLauncher extends Item {
+	public RocketLauncher(){
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
 	     setUnlocalizedName("rocketLauncher");

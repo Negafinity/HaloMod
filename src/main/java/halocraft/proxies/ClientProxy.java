@@ -26,7 +26,7 @@ import halocraft.RenderGruntEntity;
 import halocraft.RenderMongooseEntity;
 import halocraft.RenderRedPlasmaEntity;
 import halocraft.RenderRocketEntity;
-import halocraft.itemAssaultRifle;
+import halocraft.ItemAssaultRifle;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
@@ -144,11 +144,11 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 	}
 	public void preInit(){
-		ModelBakery.addVariantName(itemAssaultRifle.instance, "halocraft:assaultrifle.b3d");
+		ModelBakery.addVariantName(ItemAssaultRifle.instance, "halocraft:assaultrifle.b3d");
 		B3DLoader.instance.addDomain("halocraft");
 		Item item = Item.getItemFromBlock(CustomModelBlock.instance);
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("halocraft:" + CustomModelBlock.name, "inventory"));
-        ModelLoader.setCustomModelResourceLocation(itemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + itemAssaultRifle.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
