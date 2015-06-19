@@ -63,8 +63,8 @@ public class RenderMongooseEntity extends Render
 
     public void doRender(EntityMongoose par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	//IModel mongoose = ModelLoaderRegistry.getModel(boatModel);
-    	IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
+    	IModel mongoose = ModelLoaderRegistry.getModel(boatModel);
+    	//IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
     	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	World world = par1EntityMongoose.getWorldObj();
     	BlockPos blockpos = new BlockPos(par1EntityMongoose);
@@ -100,7 +100,8 @@ public class RenderMongooseEntity extends Render
 			worldrenderer.addVertexData(vd);
 		}
 		 for (EnumFacing face : EnumFacing.values()) {
-             List<BakedQuad> faceQuads = bakedMongoose.getFaceQuads(face);
+             List<BakedQuad> faceQuads = 
+            		 bakedMongoose.getFaceQuads(face);
              for (BakedQuad q : faceQuads) {
                      int[] vd = q.getVertexData();
                     worldrenderer.addVertexData(vd);

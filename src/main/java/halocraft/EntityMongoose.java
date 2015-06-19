@@ -37,7 +37,6 @@ public class EntityMongoose extends Entity
     private double velocityY;
     @SideOnly(Side.CLIENT)
     private double velocityZ;
-    private static final String __OBFID = "CL_00001667";
 
     public EntityMongoose(World worldIn)
     {
