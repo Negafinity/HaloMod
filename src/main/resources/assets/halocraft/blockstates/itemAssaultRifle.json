@@ -2,9 +2,10 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "#texture": "halocraft:items/itemAssaultRifle"
+            "#texture": "halocraft:texture",
+            "#chest": "entity/chest/normal"
         },
-        "model": "halocraft:assaultrifle.b3d"
+        "model": "halocraft:chest.b3d"
      },
     "variants": {
         "normal": {

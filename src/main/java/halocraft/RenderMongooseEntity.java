@@ -45,6 +45,7 @@ public class RenderMongooseEntity extends Render
 {
 	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
     private static final ModelResourceLocation boatModel = new ModelResourceLocation("halocraft:Mongoose.b3d");
+    private static final ModelResourceLocation mongooseModel = new ModelResourceLocation("halocraft:models/Mongoose.b3d");
     private static final String __OBFID = "CL_00000981";
     IModel model = null;
     public RenderMongooseEntity(RenderManager p_i46190_1_)
@@ -63,6 +64,7 @@ public class RenderMongooseEntity extends Render
     public void doRender(EntityMongoose par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_)
     {
     	IModel mongoose = ModelLoaderRegistry.getModel(boatModel);
+    	//IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
     	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	World world = par1EntityMongoose.getWorldObj();
     	BlockPos blockpos = new BlockPos(par1EntityMongoose);
@@ -101,8 +103,8 @@ public class RenderMongooseEntity extends Render
              List<BakedQuad> faceQuads = bakedMongoose.getFaceQuads(face);
              for (BakedQuad q : faceQuads) {
                      int[] vd = q.getVertexData();
-                     worldrenderer.addVertexData(vd);
-             }
+                    worldrenderer.addVertexData(vd);
+            }
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();

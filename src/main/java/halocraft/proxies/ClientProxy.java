@@ -26,6 +26,8 @@ import halocraft.RenderGruntEntity;
 import halocraft.RenderMongooseEntity;
 import halocraft.RenderRedPlasmaEntity;
 import halocraft.RenderRocketEntity;
+import halocraft.itemAssaultRifle;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderSnowball;
@@ -43,9 +45,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ClientProxy extends CommonProxy{
 	@Override
 	public void registerRenders(){
-		B3DLoader.instance.addDomain("halocraft");
-		Item item = Item.getItemFromBlock(CustomModelBlock.instance);
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("halocraft:" + CustomModelBlock.name, "inventory"));
 		ModelResourceLocation res = new ModelResourceLocation("halocraft:energySword", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.swordEnergySword, 0, res);
 		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:HaloIngot", "inventory");
@@ -145,7 +144,12 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 	}
 	public void addStuff(){
-		//ModelBakery.addVariantName(halocraft.Main.itemAssaultRifle, "halocraft:assaultrifle.b3d");
+		ModelBakery.addVariantName(itemAssaultRifle.instance, "halocraft:chest.b3d");
+		B3DLoader.instance.addDomain("halocraft");
+		Item item = Item.getItemFromBlock(CustomModelBlock.instance);
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("halocraft:" + CustomModelBlock.name, "inventory"));
+        B3DLoader.instance.addDomain("halocraft");
+        ModelLoader.setCustomModelResourceLocation(itemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + itemAssaultRifle.name, "inventory"));;
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

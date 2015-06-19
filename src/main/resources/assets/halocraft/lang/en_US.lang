@@ -38,3 +38,4 @@ item.ActiveCamoChestplate.name=Active Camouflage
 item.HealthPack.name=Health Pack
 item.fragGrenade.name=Frag Grenade
 tile.HaloBlock.name=Halo Block
+tile.halocraft:CustomModelBlock.name=Assault Rifle

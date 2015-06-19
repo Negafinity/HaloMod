@@ -270,11 +270,11 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(fragGrenade, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
+		proxy.addStuff();
 	}
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		System.out.println("Mod Init");
-		proxy.addStuff();
 		//MinecraftForge.EVENT_BUS.register(new HaloEventHandler(Minecraft.getMinecraft()));
 		//CProxy.addArmour(null);
 		
