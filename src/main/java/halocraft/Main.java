@@ -42,7 +42,7 @@ public class Main{
 	public static CommonProxy proxy;
 	
 	public static String MODID = "halocraft";
-	public static String VERSION = "1.1";
+	public static String VERSION = "1.3";
 	//World Generation
 	public static HaloGenerationClass HaloOreGen;
 	//Armor Material
@@ -99,7 +99,7 @@ public class Main{
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-		System.out.println("Mod PreInit");
+		System.out.println("Mod Pre-Init");
 		itemCarbineRifle = new ItemCarbineRifle();
 		//Initalize Plasma
 		ammoPlasma = new ammoPlasma();
@@ -176,6 +176,7 @@ public class Main{
 		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
 		System.out.println("Random ID 6" + randomID6);
 		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
+		GameRegistry.registerBlock(CustomModelBlock.instance, CustomModelBlock.name);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(HaloBlock, "HaloBlock");
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
@@ -273,6 +274,7 @@ public class Main{
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		System.out.println("Mod Init");
+		proxy.addStuff();
 		//MinecraftForge.EVENT_BUS.register(new HaloEventHandler(Minecraft.getMinecraft()));
 		//CProxy.addArmour(null);
 		

@@ -151,7 +151,11 @@ public class EntityMongoose extends Entity
     {
         return !this.isDead;
     }
-
+    
+    public World getWorldObj(){
+    	return this.worldObj;
+    }
+    
     @SideOnly(Side.CLIENT)
     public void func_180426_a(double p_180426_1_, double p_180426_3_, double p_180426_5_, float p_180426_7_, float p_180426_8_, int p_180426_9_, boolean p_180426_10_)
     {

@@ -1,5 +1,6 @@
 package halocraft.proxies;
 
+
 public class CommonProxy {
 
 	public void registerRenders(){
@@ -8,4 +9,7 @@ public class CommonProxy {
 	public void registerKey(){
 		//nothing
 	}
+	public void addStuff(){
+	}
+	
 }
