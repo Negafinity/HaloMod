@@ -9,7 +9,7 @@ public class CommonProxy {
 	public void registerKey(){
 		//nothing
 	}
-	public void addStuff(){
+	public void preInit(){
 	}
 	
 }

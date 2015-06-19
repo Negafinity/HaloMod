@@ -143,13 +143,12 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 	}
-	public void addStuff(){
-		ModelBakery.addVariantName(itemAssaultRifle.instance, "halocraft:chest.b3d");
+	public void preInit(){
+		ModelBakery.addVariantName(itemAssaultRifle.instance, "halocraft:assaultrifle.b3d");
 		B3DLoader.instance.addDomain("halocraft");
 		Item item = Item.getItemFromBlock(CustomModelBlock.instance);
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation("halocraft:" + CustomModelBlock.name, "inventory"));
-        B3DLoader.instance.addDomain("halocraft");
-        ModelLoader.setCustomModelResourceLocation(itemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + itemAssaultRifle.name, "inventory"));;
+        ModelLoader.setCustomModelResourceLocation(itemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + itemAssaultRifle.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

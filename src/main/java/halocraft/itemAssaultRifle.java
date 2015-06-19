@@ -17,7 +17,7 @@ public class itemAssaultRifle extends Item{
     
     public itemAssaultRifle(){
 		setCreativeTab(CreativeTabs.tabCombat);
-		setUnlocalizedName("itemAssaultRifle");
+		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){

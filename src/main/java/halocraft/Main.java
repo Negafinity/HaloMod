@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -21,6 +22,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.b3d.B3DLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -33,6 +36,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid="halocraft", version="1.2")
@@ -87,7 +91,6 @@ public class Main{
 	public static Item HaloIngot = new HaloIngot();
 	public static Item rocketLauncher;
 	public static Item ammoRocket;
-	public static Item itemAssaultRifle;
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
 	public static Item itemBattleRifle;
@@ -118,7 +121,6 @@ public class Main{
 		rocketLauncher = new rocketLauncher();
 		ammoRocket = new itemRocket();
 		ammoAssaultRifle = new ammoAssaultRifle();
-		itemAssaultRifle = new itemAssaultRifle();
 		itemBattleRifle = new itemBattleRifle();
 		itemMongoose = new ItemMongoose();
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
@@ -186,7 +188,7 @@ public class Main{
 		GameRegistry.registerItem(rocketLauncher, "rocketLauncher");
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
-		GameRegistry.registerItem(itemAssaultRifle, "itemAssaultRifle");
+		GameRegistry.registerItem(itemAssaultRifle.instance, itemAssaultRifle.name);
 		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
 		GameRegistry.registerItem(itemHealthPack, "HealthPack");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
@@ -219,7 +221,7 @@ public class Main{
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassStack = new ItemStack(Blocks.glass);
 		GameRegistry.addRecipe(new ItemStack(itemBattleRifle, 1), new Object[]{"ZX ","XXY", " XA", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', glassStack, 'A', HaloBlock});
-		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle, 1), new Object[]{"XXY", " ZZ", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', HaloBlock});
+		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle.instance, 1), new Object[]{"XXY", " ZZ", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', HaloBlock});
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
@@ -259,7 +261,7 @@ public class Main{
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(rocketLauncher, 1), new Object[]{"XZZ", "XYZ", "ZYX", 'X', HaloIngot, 'Y', gunStack, 'Z', HaloBlock});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
-		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
+		GameRegistry.addRecipe(new ItemStack(itemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
 		GameRegistry.addRecipe(new ItemStack(itemCarbineRifle, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});
@@ -270,7 +272,9 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(fragGrenade, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
-		proxy.addStuff();
+		//proxy.addStuff();
+		if (event.getSide() == Side.CLIENT)
+			proxy.preInit();
 	}
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
