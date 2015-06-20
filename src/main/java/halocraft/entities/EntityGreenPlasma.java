@@ -30,5 +30,10 @@ public class EntityGreenPlasma extends EntityThrowable{
         	this.setDead();
         }
     }
+	@Override
+	protected float getGravityVelocity()
+    {
+        return 0F;
+    }
 }
 

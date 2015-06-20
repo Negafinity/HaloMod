@@ -30,5 +30,11 @@ public class EntityBullet extends EntityThrowable{
         	this.setDead();
         }
     }
+	@Override
+	protected float getGravityVelocity()
+    {
+        return 0F;
+    }
+	
 }
 

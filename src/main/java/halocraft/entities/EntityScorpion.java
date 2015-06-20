@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityMongoose extends Entity
+public class EntityScorpion extends Entity
 {
     private boolean isBoatEmpty;
     private double speedMultiplier;
@@ -41,7 +41,7 @@ public class EntityMongoose extends Entity
     @SideOnly(Side.CLIENT)
     private double velocityZ;
 
-    public EntityMongoose(World worldIn)
+    public EntityScorpion(World worldIn)
     {
         super(worldIn);
         this.isBoatEmpty = true;
@@ -77,7 +77,7 @@ public class EntityMongoose extends Entity
         return true;
     }
 
-    public EntityMongoose(World worldIn, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
+    public EntityScorpion(World worldIn, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
     {
         this(worldIn);
         this.setPosition(p_i1705_2_, p_i1705_4_, p_i1705_6_);
@@ -114,7 +114,7 @@ public class EntityMongoose extends Entity
                 this.setBeenAttacked();
                 boolean flag = source.getEntity() instanceof EntityPlayer && ((EntityPlayer)source.getEntity()).capabilities.isCreativeMode;
 
-                if (flag || this.getDamageTaken() > 40.0F)
+                if (this.getDamageTaken() > 1000000.0F)
                 {
                     if (this.riddenByEntity != null)
                     {
@@ -123,7 +123,7 @@ public class EntityMongoose extends Entity
 
                     if (!flag)
                     {
-                        this.dropItemWithOffset(halocraft.Main.itemMongoose, 1, 0.0F);
+                        this.dropItemWithOffset(halocraft.Main.itemScorpion, 1, 0.0F);
                     }
 
                     this.setDead();
@@ -420,7 +420,7 @@ public class EntityMongoose extends Entity
                     {
                         Entity entity = (Entity)list.get(k1);
 
-                        if (entity != this.riddenByEntity && entity.canBePushed() && entity instanceof EntityMongoose)
+                        if (entity != this.riddenByEntity && entity.canBePushed() && entity instanceof EntityScorpion)
                         {
                             entity.applyEntityCollision(this);
                         }

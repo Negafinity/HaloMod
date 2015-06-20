@@ -24,4 +24,9 @@ public class EntityRedPlasma extends EntityThrowable{
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius, true);
         this.setDead();
     }
+    @Override
+	protected float getGravityVelocity()
+    {
+        return 0F;
+    }
 }

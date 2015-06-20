@@ -13,6 +13,7 @@ import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRedPlasma;
 import halocraft.entities.EntityRocket;
+import halocraft.entities.EntityScorpion;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.HaloIngot;
@@ -26,7 +27,12 @@ import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemRocket;
+import halocraft.items.ItemScorpion;
 import halocraft.items.RocketLauncher;
+import halocraft.items.TankHarvester;
+import halocraft.packets.FireMessage;
+import halocraft.packets.FireMessageHandler;
+import halocraft.packets.HalocraftPacketHandler;
 import halocraft.proxies.ClientProxy;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.block.Block;
@@ -120,13 +126,18 @@ public class Main{
 	public static Item itemHealthPack;
 	public static Item itemCarbineRifle;
 	public static Item itemIncinerationCannon;
+	public static Item itemScorpion;
+	public static Item tankHarvester;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
 		System.out.println("Mod Pre-Init");
 		itemCarbineRifle = new ItemCarbineRifle();
-		//Initalize Plasma
+		itemScorpion = new ItemScorpion();
+		//Initalize Tank Harvester
+		tankHarvester = new TankHarvester();
+		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		//Initalizing Cannon
 		itemIncinerationCannon = new ItemIncinerationCannon();
@@ -168,6 +179,8 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId() + 1;
 		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 250, 50, true);
+		int randomID9 = EntityRegistry.findGlobalUniqueEntityId() + 5;
+		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", randomID9, this, 250, 50, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
 		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID7 = EntityRegistry.findGlobalUniqueEntityId() + 3;
@@ -208,8 +221,10 @@ public class Main{
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
 		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
 		GameRegistry.registerItem(itemHealthPack, "HealthPack");
+		GameRegistry.registerItem(itemScorpion, "itemScorpion");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
+		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(itemCarbineRifle, "itemCarbineRifle");
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
@@ -309,6 +324,9 @@ public class Main{
 		
 		//Rendering
 		proxy.registerRenders();
+		
+		//Register Packet
+		HalocraftPacketHandler.INSTANCE.registerMessage(FireMessageHandler.class, FireMessage.class, 0, Side.SERVER);
 	}
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
