@@ -53,13 +53,9 @@ public class Main{
 	public static ArmorMaterial HaloArmor;
 	public static ArmorMaterial CovenantArmor;
 	public static ArmorMaterial ActiveCamoArmor;
-	//Weapons
-	public static ItemSword swordEnergySword;
 	//Blocks
 	public final static Block HaloOre = new HaloOre(Material.rock);
 	public static Block HaloBlock = new HaloBlock(Material.iron);
-	//Grenades
-	public static Item fragGrenade;
 	//Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
@@ -105,8 +101,6 @@ public class Main{
 		itemCarbineRifle = new ItemCarbineRifle();
 		//Initalize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
-		//Initializing Grenades
-		fragGrenade = new FragGrenade();
 		//Initalizing Cannon
 		itemIncinerationCannon = new ItemIncinerationCannon();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
@@ -142,8 +136,7 @@ public class Main{
 		halocraft.Main.CovenantLeggings = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("CovenantLeggings");
 		halocraft.Main.CovenantBoots = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.bootID, 3).setUnlocalizedName("CovenantBoots");
 		halocraft.Main.ActiveCamoChestplate = new ActiveCamoArmor(halocraft.Main.ActiveCamoArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
-		swordEnergySword = new ItemEnergySword(HaloMaterial);
-		GameRegistry.registerItem(swordEnergySword, "energySword");
+		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
 		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
 		int randomID4 = EntityRegistry.findGlobalUniqueEntityId() + 1;
@@ -180,7 +173,7 @@ public class Main{
 		GameRegistry.registerBlock(HaloBlock, "HaloBlock");
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
-		GameRegistry.registerItem(fragGrenade, "fragGrenade");
+		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
 		GameRegistry.registerItem(RocketLauncher.instance, RocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
@@ -254,7 +247,7 @@ public class Main{
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), SpartanBoots);
 		ItemStack stickStack = new ItemStack(Items.stick);
-		GameRegistry.addRecipe(new ItemStack(swordEnergySword, 1), new Object[]{" X "," X ", " Y ", 'X', HaloIngot, 'Y', stickStack});
+		GameRegistry.addRecipe(new ItemStack(ItemEnergySword.instance, 1), new Object[]{" X "," X ", " Y ", 'X', HaloIngot, 'Y', stickStack});
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(RocketLauncher.instance, 1), new Object[]{"XZZ", "XYZ", "ZYX", 'X', HaloIngot, 'Y', gunStack, 'Z', HaloBlock});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
@@ -266,7 +259,7 @@ public class Main{
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		//Frag Grenade Crafting
 		ItemStack tntStack = new ItemStack(Blocks.tnt);
-		GameRegistry.addRecipe(new ItemStack(fragGrenade, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
+		GameRegistry.addRecipe(new ItemStack(FragGrenade.instance, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
 		//proxy.addStuff();

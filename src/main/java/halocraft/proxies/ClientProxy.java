@@ -13,9 +13,11 @@ import halocraft.EntityGrunt;
 import halocraft.EntityMongoose;
 import halocraft.EntityRedPlasma;
 import halocraft.EntityRocket;
+import halocraft.FragGrenade;
 import halocraft.HaloArmor;
 import halocraft.HaloEventHandler;
 import halocraft.HaloIngot;
+import halocraft.ItemEnergySword;
 import halocraft.KeyBindings;
 import halocraft.KeyInputHandler;
 import halocraft.RenderBulletEntity;
@@ -45,8 +47,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ClientProxy extends CommonProxy{
 	@Override
 	public void registerRenders(){
-		ModelResourceLocation res = new ModelResourceLocation("halocraft:energySword", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.swordEnergySword, 0, res);
 		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:HaloIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.HaloIngot, 0, res2);
 		ModelResourceLocation res3 = new ModelResourceLocation("halocraft:SpartanChestplate", "inventory");
@@ -118,9 +118,6 @@ public class ClientProxy extends CommonProxy{
 		//Rendering Health Pack
 		ModelResourceLocation res34 = new ModelResourceLocation("halocraft:HealthPack", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemHealthPack, 0, res34);
-		//Rendering Grenades
-		ModelResourceLocation res35 = new ModelResourceLocation("halocraft:fragGrenade", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.fragGrenade, 0, res35);
 		//Rendering Blocks
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", "HaloBlock");
 		Item itemBlockSimple2 = GameRegistry.findItem("halocraft", "HaloOre");
@@ -130,7 +127,7 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple2, 0, itemModelResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, haloBlockResourceLocation);
 		//Rendering Entities
-		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), halocraft.Main.fragGrenade, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FragGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
@@ -143,6 +140,8 @@ public class ClientProxy extends CommonProxy{
 		B3DLoader.instance.addDomain("halocraft");
         ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(RocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + RocketLauncher.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(FragGrenade.instance, 0, new ModelResourceLocation("halocraft:" + FragGrenade.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

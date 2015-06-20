@@ -69,8 +69,8 @@ public class RenderMongooseEntity extends Render
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 1.5F, (float)p_180552_6_);
-        GlStateManager.rotate(180.0F - p_180552_8_, 0.0F, 1.0F, 0.0F);
+        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.52F, (float)p_180552_6_);
+        //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
         float f2 = (float)par1EntityMongoose.getTimeSinceHit() - p_180552_9_;
         float f3 = par1EntityMongoose.getDamageTaken() - p_180552_9_;
 
@@ -91,10 +91,12 @@ public class RenderMongooseEntity extends Render
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
+        GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
         List<BakedQuad> generalQuads = bakedMongoose.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
 			int[] vd = q.getVertexData();
+			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
 			worldrenderer.addVertexData(vd);
 		}
 		for (EnumFacing face : EnumFacing.values()) {
@@ -102,6 +104,7 @@ public class RenderMongooseEntity extends Render
            		 bakedMongoose.getFaceQuads(face);
             for (BakedQuad q : faceQuads) {
                     int[] vd = q.getVertexData();
+                    worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
                    worldrenderer.addVertexData(vd);
            }
 		 }

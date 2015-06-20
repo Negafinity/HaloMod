@@ -88,7 +88,7 @@ public class EntityMongoose extends Entity
 
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.0D - 0.30000001192092896D;
+        return (double)this.height * 0.0D + 0.8D; //- 0.30000001192092896D;
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount)

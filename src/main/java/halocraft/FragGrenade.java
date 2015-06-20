@@ -7,6 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class FragGrenade extends Item{
+	public static final FragGrenade instance = new FragGrenade();
+    public static final String name = "FragGrenade";
+    
 	public FragGrenade(){
 		setUnlocalizedName("fragGrenade");
 		setCreativeTab(CreativeTabs.tabRedstone);

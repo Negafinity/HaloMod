@@ -4,9 +4,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSword;
 
 public class ItemEnergySword extends ItemSword{
-	public ItemEnergySword(ToolMaterial material) {
-		super(material);
+	//Following is so you can access it in pre-init
+	public static final ItemEnergySword instance = new ItemEnergySword();
+    public static final String name = "EnergySword";
+    
+	public ItemEnergySword() {
+		super(Main.HaloMaterial);
 		setCreativeTab(CreativeTabs.tabCombat);
-		setUnlocalizedName("energySword");
+		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }
