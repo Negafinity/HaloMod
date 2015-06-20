@@ -1,5 +1,32 @@
 package halocraft;
 
+import halocraft.armor.ActiveCamoArmor;
+import halocraft.armor.CovenantArmor;
+import halocraft.armor.HaloArmor;
+import halocraft.blocks.HaloBlock;
+import halocraft.blocks.HaloOre;
+import halocraft.entities.EntityBullet;
+import halocraft.entities.EntityElite;
+import halocraft.entities.EntityFragGrenade;
+import halocraft.entities.EntityGreenPlasma;
+import halocraft.entities.EntityGrunt;
+import halocraft.entities.EntityMongoose;
+import halocraft.entities.EntityRedPlasma;
+import halocraft.entities.EntityRocket;
+import halocraft.items.CovenantPiece;
+import halocraft.items.FragGrenade;
+import halocraft.items.HaloIngot;
+import halocraft.items.ItemAmmoAssaultRifle;
+import halocraft.items.ItemAmmoPlasma;
+import halocraft.items.ItemAssaultRifle;
+import halocraft.items.ItemBattleRifle;
+import halocraft.items.ItemCarbineRifle;
+import halocraft.items.ItemEnergySword;
+import halocraft.items.ItemHealthPack;
+import halocraft.items.ItemIncinerationCannon;
+import halocraft.items.ItemMongoose;
+import halocraft.items.ItemRocket;
+import halocraft.items.RocketLauncher;
 import halocraft.proxies.ClientProxy;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.block.Block;
@@ -262,7 +289,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(FragGrenade.instance, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
-		//proxy.addStuff();
+		
 		if (event.getSide() == Side.CLIENT)
 			proxy.preInit();
 	}
