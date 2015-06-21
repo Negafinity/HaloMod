@@ -17,14 +17,18 @@ public class TankHarvester extends Item {
 		setMaxStackSize(1);
 		setUnlocalizedName("TankHarvester");
 	}
+	
 	 public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	 {
-		 if(entity instanceof EntityScorpion){
-			 entity.dropItem(halocraft.Main.itemScorpion, 1);
-			 entity.setDead();
-		 }
-		 else{
-			 player.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a Scorpion!"));
+		 World world = player.worldObj;
+		 if(!world.isRemote){
+			 if(entity instanceof EntityScorpion){
+				entity.dropItem(halocraft.Main.itemScorpion, 1);
+			 	entity.setDead();
+		 	}
+		 	else{
+			 	player.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a Scorpion!"));
+		 	}
 		 }
 	     return false;
 	 }

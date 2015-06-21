@@ -28,6 +28,7 @@ import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
+import halocraft.items.Pistol;
 import halocraft.items.RocketLauncher;
 import halocraft.items.TankHarvester;
 import halocraft.packets.FireMessage;
@@ -224,6 +225,7 @@ public class Main{
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
+		GameRegistry.registerItem(Pistol.instance, Pistol.name);
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(itemCarbineRifle, "itemCarbineRifle");
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
