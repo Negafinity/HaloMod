@@ -48,7 +48,7 @@ public class EntityScorpion extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.renderDistanceWeight = 12.0D;
-        this.setSize(4F, 6F);
+        this.setSize(1.5F, 0.6F);
     }
 
     protected boolean canTriggerWalking()

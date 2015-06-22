@@ -27,16 +27,7 @@ public class FireMessageHandler implements IMessageHandler<FireMessage, IMessage
 			    public void run() {
 		            if (!worldIn.isRemote)
 		            {	
-		            	Vec3 vec = serverPlayerIn.getLookVec();
-		            	BlockPos pos = serverPlayerIn.getPosition();
-		            	double x = pos.getX();
-		            	double y = pos.getY();
-		            	double z = pos.getZ();
-		            	double X = vec.xCoord;
-		            	double Y = vec.yCoord;
-		            	double Z = vec.zCoord;
-		            	EntityRocket rocket = new EntityRocket(worldIn, x+X, y+Y, z+Z);
-		                worldIn.spawnEntityInWorld(rocket);
+		            	worldIn.spawnEntityInWorld(new EntityRocket(worldIn, serverPlayerIn));
 		            }
 			    }
 			  });
