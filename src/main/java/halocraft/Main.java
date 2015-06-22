@@ -76,7 +76,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid="halocraft", version="1.2")
 public class Main{
-	
 	@SidedProxy(clientSide="halocraft.proxies.ClientProxy", serverSide="halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
 	
