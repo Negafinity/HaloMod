@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemAssaultRifle extends Item{
@@ -29,6 +30,9 @@ public class ItemAssaultRifle extends Item{
 	        if (!worldIn.isRemote)
 	         {
 	             worldIn.spawnEntityInWorld(new EntityBullet(worldIn, playerIn));
+	             BlockPos pos = playerIn.getPosition();
+	             worldIn.spawnEntityInWorld(new EntityBullet(worldIn, pos.getX(), pos.getY(), pos.getZ()));
+	             
 	         }
 	         return itemStackIn;
 	   }
