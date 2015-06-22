@@ -23,6 +23,7 @@ import halocraft.items.HaloIngot;
 import halocraft.items.ItemAssaultRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.Pistol;
+import halocraft.items.PlasmaRifle;
 import halocraft.items.RocketLauncher;
 import halocraft.render.RenderBulletEntity;
 import halocraft.render.RenderEliteEntity;
@@ -151,6 +152,7 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomModelResourceLocation(FragGrenade.instance, 0, new ModelResourceLocation("halocraft:" + FragGrenade.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(Pistol.instance, 0, new ModelResourceLocation("halocraft:" + Pistol.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(PlasmaRifle.instance, 0, new ModelResourceLocation("halocraft:" + PlasmaRifle.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

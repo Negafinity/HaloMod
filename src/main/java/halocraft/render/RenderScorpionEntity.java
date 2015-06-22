@@ -48,12 +48,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderScorpionEntity extends Render
 {
 	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
-    private static final ModelResourceLocation mongooseModel = new ModelResourceLocation("halocraft:models/entity/Mongoose.b3d");
+    private static final ModelResourceLocation scorpionModelFile = new ModelResourceLocation("halocraft:models/entity/Scorpion.b3d");
     IModel model = null;
     public RenderScorpionEntity(RenderManager p_i46190_1_)
     {
         super(p_i46190_1_);
-        this.shadowSize = 0.5F;
+        this.shadowSize = 5F;
     }
     Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
             {
@@ -65,8 +65,8 @@ public class RenderScorpionEntity extends Render
 
     public void doRender(EntityScorpion scorpion, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
-    	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+    	IModel scorpionModel = B3DLoader.instance.loadModel(scorpionModelFile);
+    	IBakedModel bakedScorpion = scorpionModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	World world = scorpion.getWorldObj();
     	BlockPos blockpos = new BlockPos(scorpion);
     	Tessellator tessellator = Tessellator.getInstance();
@@ -90,13 +90,13 @@ public class RenderScorpionEntity extends Render
         float f4 = 0.75F;
         GlStateManager.scale(f4, f4, f4);
         GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        this.bindEntityTexture(scorpion);
+        //this.bindEntityTexture(scorpion);
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
         GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
-        List<BakedQuad> generalQuads = bakedMongoose.getGeneralQuads();
+        List<BakedQuad> generalQuads = bakedScorpion.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
 			int[] vd = q.getVertexData();
 			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -104,7 +104,7 @@ public class RenderScorpionEntity extends Render
 		}
 		for (EnumFacing face : EnumFacing.values()) {
             List<BakedQuad> faceQuads = 
-           		 bakedMongoose.getFaceQuads(face);
+           		 bakedScorpion.getFaceQuads(face);
             for (BakedQuad q : faceQuads) {
                     int[] vd = q.getVertexData();
                     worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);

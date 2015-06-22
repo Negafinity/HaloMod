@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {},
+        "model": "halocraft:PlasmaRifle.b3d"
+    },
+    "variants": {
+        "normal": {
+            "dummy": ""
+        },
+        "inventory": {
+            "dummy": ""
+        }
+    }
+}

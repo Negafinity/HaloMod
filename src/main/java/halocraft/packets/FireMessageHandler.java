@@ -2,6 +2,8 @@ package halocraft.packets;
 
 import halocraft.entities.EntityRocket;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
@@ -24,7 +26,7 @@ public class FireMessageHandler implements IMessageHandler<FireMessage, IMessage
 			    @Override
 			    public void run() {
 		            if (!worldIn.isRemote)
-		            {
+		            {	
 		                worldIn.spawnEntityInWorld(new EntityRocket(worldIn, serverPlayerIn));
 		            }
 			    }

@@ -47,7 +47,8 @@ public class EntityScorpion extends Entity
         this.isBoatEmpty = true;
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
-        this.setSize(1.5F, 0.6F);
+        this.renderDistanceWeight = 12.0D;
+        this.setSize(4F, 6F);
     }
 
     protected boolean canTriggerWalking()
@@ -91,7 +92,7 @@ public class EntityScorpion extends Entity
 
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.0D + 0.8D; //- 0.30000001192092896D;
+        return (double)this.height * 0.0D + 2D; //- 0.30000001192092896D;
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount)

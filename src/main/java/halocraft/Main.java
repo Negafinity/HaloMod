@@ -29,6 +29,7 @@ import halocraft.items.ItemMongoose;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
 import halocraft.items.Pistol;
+import halocraft.items.PlasmaRifle;
 import halocraft.items.RocketLauncher;
 import halocraft.items.TankHarvester;
 import halocraft.packets.FireMessage;
@@ -249,6 +250,7 @@ public class Main{
 		GameRegistry.registerItem(halocraft.Main.CovenantLeggings, "CovenantLeggings");
 		GameRegistry.registerItem(halocraft.Main.CovenantBoots, "CovenantBoots");
 		GameRegistry.registerItem(halocraft.Main.ActiveCamoChestplate, "ActiveCamoChestplate");
+		GameRegistry.registerItem(PlasmaRifle.instance, PlasmaRifle.name);
 		//Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock, 1), new Object[]{"XXX","XXX","XXX", 'X', HaloIngot});
 		//Gun Recipes

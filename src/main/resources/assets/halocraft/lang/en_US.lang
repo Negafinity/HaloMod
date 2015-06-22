@@ -40,4 +40,5 @@ item.fragGrenade.name=Frag Grenade
 tile.HaloBlock.name=Halo Block
 item.Scorpion.name=Scorpion
 item.halocraft:pistol.name=UNSC G6 Pistol
+item.halocraft:plasmarifle.name=Plasma Rifle
 item.TankHarvester.name=Tank Harvester

@@ -15,8 +15,8 @@ public class HaloOre extends Block {
     {
             super(material);
             setHardness(4.0F); // 33% harder than diamond
-            setStepSound(Block.soundTypePiston); // sounds got renamed, look in Block class for what blocks have what sounds
-            setUnlocalizedName("HaloOre"); // changed in 1.7
+            setStepSound(Block.soundTypePiston);
+            setUnlocalizedName("HaloOre");
             setCreativeTab(CreativeTabs.tabBlock);
             setHarvestLevel("pickaxe", 3);
     }

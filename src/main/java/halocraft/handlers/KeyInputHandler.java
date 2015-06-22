@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -40,11 +41,11 @@ public class KeyInputHandler{
 
             	}
             	else{
-            		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a weapon or does not have a scope."));
+            		mc.thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "[HaloCraft 2.0]" + EnumChatFormatting.RED + " This is not a weapon or does not have a scope."));
             	}
         	}
         	else{
-        		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] You're not holding anything!"));
+        		mc.thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "[HaloCraft 2.0]" + EnumChatFormatting.RED + " You're not holding anything!"));
         	}
         }
         else if(KeyBindings.fire.isPressed()){
@@ -55,11 +56,11 @@ public class KeyInputHandler{
         			HalocraftPacketHandler.INSTANCE.sendToServer(new FireMessage(fire));
         		}
         		else{
-        			mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] This is not a Scorpion!"));
+        			mc.thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "[HaloCraft 2.0]" + EnumChatFormatting.RED + " This is not a Scorpion!"));
         		}
         	}
         	else{
-        		mc.thePlayer.addChatMessage(new ChatComponentText("[HaloCraft 2.0] You're not riding anything!"));
+        		mc.thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "[HaloCraft 2.0]" + EnumChatFormatting.RED + " You're not riding anything!"));
         	}
         	
         }
