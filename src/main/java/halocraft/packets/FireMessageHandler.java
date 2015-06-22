@@ -29,14 +29,13 @@ public class FireMessageHandler implements IMessageHandler<FireMessage, IMessage
 		            {	
 		            	Vec3 vec = serverPlayerIn.getLookVec();
 		            	BlockPos pos = serverPlayerIn.getPosition();
-		            	double x = pos.getX() + 5;
-		            	double y = pos.getY() + 5;
-		            	double z = pos.getZ() + 5;
+		            	double x = pos.getX();
+		            	double y = pos.getY();
+		            	double z = pos.getZ();
 		            	double X = vec.xCoord;
 		            	double Y = vec.yCoord;
 		            	double Z = vec.zCoord;
-		            	EntityRocket rocket = new EntityRocket(worldIn, x, y, z);
-		            	rocket.setThrowableHeading(X, Y, Z, .8F, 0.0F);
+		            	EntityRocket rocket = new EntityRocket(worldIn, x+X, y+Y, z+Z);
 		                worldIn.spawnEntityInWorld(rocket);
 		            }
 			    }
