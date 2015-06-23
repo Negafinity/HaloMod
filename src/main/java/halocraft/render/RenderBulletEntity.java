@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import halocraft.entities.EntityBullet;
-import halocraft.models.ModelBullet;
 
 import org.lwjgl.opengl.GL11;
 
@@ -26,6 +25,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.Attributes;
 import net.minecraftforge.client.model.IModel;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.TRSRTransformation;
 import net.minecraftforge.client.model.b3d.B3DLoader;
 
@@ -56,17 +56,17 @@ public class RenderBulletEntity extends Render{
 		bindEntityTexture(bullet);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) d, (float) d1, (float) d2);
-		GL11.glRotatef(f, 0.0F, 1.0F, 0.0F);
+		GL11.glRotatef(f, 0.0F, 1.0F, -1.0F);
 		GL11.glRotatef(90F -bullet.prevRotationPitch - (bullet.rotationPitch - bullet.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
 		IModel bulletModel = null;
 		try {
 			bulletModel = B3DLoader.instance.loadModel(bulletModelFile);
 		} catch (IOException e) {
+			bulletModel = ModelLoaderRegistry.getMissingModel();
 			e.printStackTrace();
 		}
     	IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	worldrenderer.startDrawingQuads();
-        GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
         List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
