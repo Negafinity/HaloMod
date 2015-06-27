@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = "1.3"
 group= "io.github.hsyyid.halomod"// http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "halocraft"
+archivesBaseName = "DEV-halocraft"
 
 minecraft {
     version = "1.8-11.14.3.1486"
