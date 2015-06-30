@@ -8,6 +8,7 @@ import halocraft.Main;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
+import halocraft.items.ItemBattleRifle;
 import halocraft.packets.FireMessage;
 import halocraft.packets.HalocraftPacketHandler;
 
@@ -36,7 +37,7 @@ public class KeyInputHandler{
     public void onKeyInput(InputEvent.KeyInputEvent event) {
         if(KeyBindings.scope.isPressed()){
         	if(mc.thePlayer.getHeldItem() != null){
-        		if(mc.thePlayer.getHeldItem().getItem() == halocraft.Main.itemBattleRifle){
+        		if(mc.thePlayer.getHeldItem().getItem() == ItemBattleRifle.instance){
         			keyPressed = true;
 
             	}

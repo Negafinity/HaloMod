@@ -122,7 +122,6 @@ public class Main{
 	public static Item ammoRocket;
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
-	public static Item itemBattleRifle;
 	public static Item itemMongoose;
 	public static Item itemHealthPack;
 	public static Item itemCarbineRifle;
@@ -152,7 +151,6 @@ public class Main{
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
-		itemBattleRifle = new ItemBattleRifle();
 		itemMongoose = new ItemMongoose();
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -220,7 +218,7 @@ public class Main{
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
-		GameRegistry.registerItem(itemBattleRifle, "itemBattleRifle");
+		GameRegistry.registerItem(ItemBattleRifle.instance, ItemBattleRifle.name);
 		GameRegistry.registerItem(itemHealthPack, "HealthPack");
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
@@ -255,7 +253,7 @@ public class Main{
 		//Gun Recipes
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassStack = new ItemStack(Blocks.glass);
-		GameRegistry.addRecipe(new ItemStack(itemBattleRifle, 1), new Object[]{"ZX ","XXY", " XA", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', glassStack, 'A', HaloBlock});
+		GameRegistry.addRecipe(new ItemStack(ItemBattleRifle.instance, 1), new Object[]{"ZX ","XXY", " XA", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', glassStack, 'A', HaloBlock});
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"XXY", " ZZ", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', HaloBlock});
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);

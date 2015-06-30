@@ -21,6 +21,7 @@ import halocraft.handlers.KeyInputHandler;
 import halocraft.items.FragGrenade;
 import halocraft.items.HaloIngot;
 import halocraft.items.ItemAssaultRifle;
+import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
@@ -69,8 +70,6 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoAssaultRifle, 0, res9);
 		ModelResourceLocation res10 = new ModelResourceLocation("halocraft:itemScorpion", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemScorpion, 0, res10);
-		ModelResourceLocation res11 = new ModelResourceLocation("halocraft:itemBattleRifle", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemBattleRifle, 0, res11);
 		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemMongoose, 0, res12);
 		//Registering Red Spartan Armor
@@ -153,6 +152,7 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(Pistol.instance, 0, new ModelResourceLocation("halocraft:" + Pistol.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(PlasmaRifle.instance, 0, new ModelResourceLocation("halocraft:" + PlasmaRifle.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

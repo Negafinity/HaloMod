@@ -9,10 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class ItemBattleRifle extends Item {
+	public static final ItemBattleRifle instance = new ItemBattleRifle();
+    public static final String name = "itemBattleRifle";
+    
 	public ItemBattleRifle(){
-	setCreativeTab(CreativeTabs.tabCombat);
-	setMaxStackSize(1);
-	setUnlocalizedName("BattleRifle");
+		setCreativeTab(CreativeTabs.tabCombat);
+		setUnlocalizedName("halocraft:" + name.toLowerCase());
+		setMaxStackSize(1);
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){
 	     if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(halocraft.Main.ammoAssaultRifle)){

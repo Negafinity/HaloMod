@@ -57,8 +57,9 @@ public class RenderRocketEntity extends Render{
 		bindEntityTexture(rocket);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) d, (float) d1, (float) d2);
-		GL11.glRotatef(f, 1.0F, 0.0F, 0.0F);
-		GL11.glRotatef(90F -rocket.prevRotationPitch - (rocket.rotationPitch - rocket.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(rocket.rotationYaw, 0f, 1f, 0f);
+		//GL11.glRotatef(f, 0.0F, 0.0F, 0.0F);
+		//GL11.glRotatef(90F -rocket.prevRotationPitch - (rocket.rotationPitch - rocket.prevRotationPitch) * f1, 0.0F, 0.0F, 1.0F);
 		IModel rocketModel = null;
 		try {
 			rocketModel = B3DLoader.instance.loadModel(rocketModelFile);
