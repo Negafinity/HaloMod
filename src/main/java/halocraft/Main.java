@@ -28,6 +28,7 @@ import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
+import halocraft.items.ItemSniperRifle;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.RocketLauncher;
@@ -124,7 +125,6 @@ public class Main{
 	public static Item ammoPlasma;
 	public static Item itemMongoose;
 	public static Item itemHealthPack;
-	public static Item itemCarbineRifle;
 	public static Item itemIncinerationCannon;
 	public static Item itemScorpion;
 	public static Item tankHarvester;
@@ -133,7 +133,6 @@ public class Main{
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
 		System.out.println("Mod Pre-Init");
-		itemCarbineRifle = new ItemCarbineRifle();
 		itemScorpion = new ItemScorpion();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
@@ -224,8 +223,9 @@ public class Main{
 		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
 		GameRegistry.registerItem(Pistol.instance, Pistol.name);
+		GameRegistry.registerItem(ItemSniperRifle.instance, ItemSniperRifle.name);
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
-		GameRegistry.registerItem(itemCarbineRifle, "itemCarbineRifle");
+		GameRegistry.registerItem(ItemCarbineRifle.instance, ItemCarbineRifle.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
 		GameRegistry.registerItem(halocraft.Main.SpartanLeggings, "SpartanLeggings");
@@ -297,7 +297,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
-		GameRegistry.addRecipe(new ItemStack(itemCarbineRifle, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});
+		GameRegistry.addRecipe(new ItemStack(ItemCarbineRifle.instance, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		//Frag Grenade Crafting
