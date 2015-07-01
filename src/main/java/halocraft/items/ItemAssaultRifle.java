@@ -30,9 +30,6 @@ public class ItemAssaultRifle extends Item{
 	        if (!worldIn.isRemote)
 	         {
 	             worldIn.spawnEntityInWorld(new EntityBullet(worldIn, playerIn));
-	             BlockPos pos = playerIn.getPosition();
-	             worldIn.spawnEntityInWorld(new EntityBullet(worldIn, pos.getX(), pos.getY(), pos.getZ()));
-	             
 	         }
 	         return itemStackIn;
 	   }
