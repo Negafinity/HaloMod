@@ -23,6 +23,7 @@ public class ItemAssaultRifle extends Item{
 		setCreativeTab(CreativeTabs.tabCombat);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
+		setMaxDamage(1000);
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){
 	    if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(halocraft.Main.ammoAssaultRifle)){
@@ -30,6 +31,7 @@ public class ItemAssaultRifle extends Item{
 	        if (!worldIn.isRemote)
 	         {
 	             worldIn.spawnEntityInWorld(new EntityBullet(worldIn, playerIn));
+	             itemStackIn.damageItem(1, playerIn);
 	         }
 	         return itemStackIn;
 	   }

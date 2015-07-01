@@ -12,6 +12,7 @@ public class ItemIncinerationCannon extends Item {
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
 	     setUnlocalizedName("incinerationCannon");
+	     setMaxDamage(1000);
 	     setMaxStackSize(1);
 	}
    public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
@@ -20,6 +21,7 @@ public class ItemIncinerationCannon extends Item {
            if (!worldIn.isRemote)
            {
                worldIn.spawnEntityInWorld(new EntityRedPlasma(worldIn, playerIn));
+               itemStackIn.damageItem(1, playerIn);
            }
            return itemStackIn;
     }

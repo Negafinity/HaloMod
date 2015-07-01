@@ -21,6 +21,7 @@ public class RocketLauncher extends Item {
 	     setCreativeTab(CreativeTabs.tabCombat);
 	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxStackSize(1);
+	     setMaxDamage(1000);
 	}
     public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
     {
@@ -30,6 +31,7 @@ public class RocketLauncher extends Item {
             if (!worldIn.isRemote)
             {
                 worldIn.spawnEntityInWorld(new EntityRocket(worldIn, playerIn));
+                itemStackIn.damageItem(1, playerIn);
             }
         }
             return itemStackIn;
