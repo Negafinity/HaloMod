@@ -3,11 +3,10 @@ package halocraft.items;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemAmmoAssaultRifle extends Item {
-	public ItemAmmoAssaultRifle(){
+public class ItemRedPlasmaAmmo extends Item {
+	public ItemRedPlasmaAmmo(){
 		setCreativeTab(CreativeTabs.tabCombat);
-		setUnlocalizedName("ammoAssaultRifle");
+		setUnlocalizedName("itemRedPlasmaAmmo");
 		setMaxStackSize(32);
-		setMaxDamage(32);
 	}
 }

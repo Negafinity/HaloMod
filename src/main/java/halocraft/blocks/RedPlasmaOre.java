@@ -1,7 +1,7 @@
 package halocraft.blocks;
 
 import halocraft.Main;
-import halocraft.items.ItemAssaultRifle;
+import halocraft.items.RedPlasmaIngot;
 
 import java.util.Random;
 
@@ -11,19 +11,19 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class HaloOre extends Block {
-    
-    public HaloOre(Material material) 
+public class RedPlasmaOre extends Block {
+	
+    public RedPlasmaOre(Material material) 
     {
             super(material);
             setHardness(4.0F); // 33% harder than diamond
             setStepSound(Block.soundTypePiston);
-            setUnlocalizedName("HaloOre");
+            setUnlocalizedName("RedPlasmaOre");
             setCreativeTab(CreativeTabs.tabBlock);
             setHarvestLevel("pickaxe", 3);
     }
     public Item getItemDropped(int metadata, Random random, int fortune) {
-        return halocraft.Main.HaloIngot;
+        return RedPlasmaIngot.instance;
     }
 
 }

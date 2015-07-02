@@ -5,11 +5,77 @@
         "model": "halocraft:PlasmaRifle.b3d"
     },
     "variants": {
-        "normal": {
-            "dummy": ""
-        },
-        "inventory": {
-            "dummy": ""
-        }
+        "normal": [
+            {
+                "transform": {
+                    "rotation": {
+                        "y": 0
+                    }
+                }
+            }
+        ],
+        "inventory": [
+            {
+                "transform": {
+                    "thirdperson": {
+                        "translation": [
+                            0.5,
+                            0.65,
+                            -0.6
+                        ],
+                        "rotation": [
+                            {
+                                "y": 90
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 2
+                    },
+                    "gui": {
+                        "translation": [
+                            -0.8,
+                            0.37,
+                            0.9
+                        ],
+                        "rotation": [
+                            {
+                                "y": -45
+                            },
+                            {
+                                "x": 45
+                            },
+                            {
+                                "z": 45
+                            }
+                        ],
+                        "scale": 3
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -.65,
+                            .95,
+                            -.65
+                        ],
+                        "rotation": [
+                            {
+                                "y": 225
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 90
+                            }
+                        ],
+                        "scale": 2
+                    }
+                }
+            }
+        ]
     }
 }

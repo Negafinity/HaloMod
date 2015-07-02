@@ -15,21 +15,30 @@ public class HaloGenerationClass implements IWorldGenerator{
 		{
 		    switch(world.provider.getDimensionId())
 		    {
-		    case 0:
-		    generateSurface(world, random, chunkX*16, chunkZ*16);
-		    break;
+		    	case 0:
+		    	generateSurface(world, random, chunkX*16, chunkZ*16);
+		    	break;
 		    }
 		}
 
 		public void generateSurface(World world, Random rand, int chunkX, int chunkZ)
 		{
-		    for (int i = 0; i < 5; i++)
+		    for (int i = 0; i < 8; i++)
 		    {
 		        int randPosX = chunkX + rand.nextInt(16);
 		        int randPosY = rand.nextInt(16);
 		        int randPosZ = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randPosX, randPosY, randPosZ);
 		        (new WorldGenMinable(Main.HaloOre.getDefaultState(), 10)).generate(world, rand, pos);
+		    }
+		    
+		    for (int k = 0; k < 5; k++)
+		    {
+		        int randX = chunkX + rand.nextInt(16);
+		        int randY = rand.nextInt(10);
+		        int randZ = chunkZ + rand.nextInt(16);
+		        BlockPos pos = new BlockPos(randX, randY, randZ);
+		        (new WorldGenMinable(Main.RedPlasmaOre.getDefaultState(), 3)).generate(world, rand, pos);
 		    }
 		}
 }
