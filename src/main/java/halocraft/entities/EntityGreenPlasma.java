@@ -11,6 +11,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -86,6 +87,16 @@ public class EntityGreenPlasma extends EntityThrowable{
 	protected float getGravityVelocity()
     {
         return 0F;
+    }
+	
+	@Override
+	public void onUpdate()
+    {
+		super.onUpdate();
+		if(this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
+		{
+			this.setDead();
+		}
     }
 }
 

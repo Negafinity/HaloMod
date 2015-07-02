@@ -29,4 +29,14 @@ public class EntityRocket extends EntityThrowable{
     {
         return 0F;
     }
+    
+	@Override
+	public void onUpdate()
+    {
+		super.onUpdate();
+		if(this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
+		{
+			this.setDead();
+		}
+    }
 }

@@ -19,60 +19,60 @@
                 "transform": {
                     "thirdperson": {
                         "translation": [
-                            0.3,
-                            0.65,
-                            -0.4
+                            0.7,
+                            -1.25,
+                            -1.75
                         ],
                         "rotation": [
                             {
-                                "y": 90
+                                "y": 200
                             },
                             {
-                                "x": 0
+                                "x": 90
                             },
                             {
-                                "z": 0
+                                "z": 90
                             }
                         ],
-                        "scale": 1
+                        "scale": 5
                     },
                     "gui": {
                         "translation": [
-                            1,
-                            0.75,
-                            2
-                        ],
-                        "rotation": [
-                            {
-                                "y": 35
-                            },
-                            {
-                                "x": 35
-                            },
-                            {
-                                "z": -225
-                            }
-                        ],
-                        "scale": 15
-                    },
-                    "firstperson": {
-                        "translation": [
-                            0,
-                            0,
-                            0
+                            5,
+                            4.75,
+                            0.5
                         ],
                         "rotation": [
                             {
                                 "y": 0
                             },
                             {
-                                "x": 0
+                                "x": 55
                             },
                             {
-                                "z": 125
+                                "z": 55
                             }
                         ],
-                        "scale": 1000
+                        "scale": 15
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -4,
+                            2.85,
+                            .5
+                        ],
+                        "rotation": [
+                            {
+                                "y": 143
+                            },
+                            {
+                                "x": 180
+                            },
+                            {
+                                "z": -90
+                            }
+                        ],
+                        "scale": 10
                     }
                 }
             }

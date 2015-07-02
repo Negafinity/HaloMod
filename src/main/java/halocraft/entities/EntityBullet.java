@@ -25,11 +25,25 @@ public class EntityBullet extends EntityThrowable{
         if (p_70184_1_.entityHit != null)
         {
             p_70184_1_.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+            this.setDead();
         }
         if(!this.worldObj.isRemote){
         	this.setDead();
         }
     }
+	
+	
+	@Override
+	public void onUpdate()
+    {
+		super.onUpdate();
+		if(this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
+		{
+			this.setDead();
+		}
+    }
+	
+	
 	@Override
 	protected float getGravityVelocity()
     {
