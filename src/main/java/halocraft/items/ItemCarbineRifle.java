@@ -21,7 +21,7 @@ public class ItemCarbineRifle extends Item {
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
-	     if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(halocraft.Main.ammoPlasma)){
+	     if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(ItemCarbineAmmo.instance)){
 	         worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	         if (!worldIn.isRemote)
 	         {

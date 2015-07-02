@@ -5,11 +5,77 @@
         "model": "halocraft:EnergySword.b3d"
     },
     "variants": {
-        "normal": {
-            "dummy": ""
-        },
-        "inventory": {
-            "dummy": ""
-        }
+        "normal": [
+            {
+                "transform": {
+                    "rotation": {
+                        "y": 0
+                    }
+                }
+            }
+        ],
+        "inventory": [
+            {
+                "transform": {
+                    "thirdperson": {
+                        "translation": [
+                            0.25,
+                            0.25,
+                            0
+                        ],
+                        "rotation": [
+                            {
+                                "y": 0
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 1.25
+                    },
+                    "gui": {
+                        "translation": [
+                            0.75,
+                            0.1,
+                            0
+                        ],
+                        "rotation": [
+                            {
+                                "y": 45
+                            },
+                            {
+                                "x": 45
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 1.75
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -0.2,
+                            -0.2,
+                            -0.5
+                        ],
+                        "rotation": [
+                            {
+                                "y": 245
+                            },
+                            {
+                                "x": 120
+                            },
+                            {
+                                "z": 100
+                            }
+                        ],
+                        "scale": 2
+                    }
+                }
+            }
+        ]
     }
 }

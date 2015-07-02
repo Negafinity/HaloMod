@@ -40,5 +40,14 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        BlockPos pos = new BlockPos(randX, randY, randZ);
 		        (new WorldGenMinable(Main.RedPlasmaOre.getDefaultState(), 3)).generate(world, rand, pos);
 		    }
+		    
+		    for (int t = 0; t < 15; t++)
+		    {
+		        int randXPos = chunkX + rand.nextInt(16);
+		        int randYPos = rand.nextInt(45);
+		        int randZPos = chunkZ + rand.nextInt(16);
+		        BlockPos pos = new BlockPos(randXPos, randYPos, randZPos);
+		        (new WorldGenMinable(Main.GreenPlasmaOre.getDefaultState(), 15)).generate(world, rand, pos);
+		    }
 		}
 }
