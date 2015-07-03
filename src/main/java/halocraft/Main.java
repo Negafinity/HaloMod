@@ -132,7 +132,6 @@ public class Main{
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
 	public static Item itemMongoose;
-	public static Item itemHealthPack;
 	public static Item itemScorpion;
 	public static Item itemRedPlasmaAmmo;
 	public static Item ammoPlasmaRocket;
@@ -141,7 +140,6 @@ public class Main{
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-		System.out.println("Mod Pre-Init");
 		itemScorpion = new ItemScorpion();
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
@@ -152,7 +150,6 @@ public class Main{
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
-		itemHealthPack = new ItemHealthPack();
 		HaloOreGen = new HaloGenerationClass();
 		//HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
@@ -228,7 +225,7 @@ public class Main{
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
 		GameRegistry.registerItem(ItemBattleRifle.instance, ItemBattleRifle.name);
-		GameRegistry.registerItem(itemHealthPack, "HealthPack");
+		GameRegistry.registerItem(ItemHealthPack.instance, ItemHealthPack.name);
 		GameRegistry.registerItem(itemRedPlasmaAmmo, "itemRedPlasmaAmmo");
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
@@ -274,7 +271,6 @@ public class Main{
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
-		GameRegistry.addRecipe(new ItemStack(itemHealthPack, 1), new Object[]{"YYY","YXY", "YYY", 'X', goldenAppleStack, 'Y', woolStack});
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
@@ -283,13 +279,13 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(CovenantChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[]{"XXX","X X","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantBoots, 1), new Object[]{"X X","X X", 'X', covenantPiece});
-		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " Y ", 'X', HaloIngot, 'Y', gunpowderStack});
-		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " Y ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack});
-		GameRegistry.addRecipe(new ItemStack(itemRedPlasmaAmmo, 1), new Object[]{" X "," X ", " Y ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack});
+		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " YZ", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
+		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
+		GameRegistry.addRecipe(new ItemStack(itemRedPlasmaAmmo, 1), new Object[]{" X "," X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		ItemStack coalStack = new ItemStack(Items.coal);
 		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"XXX","X X", "Y Y", 'X', HaloIngot, 'Y', coalStack});
 		//Health Pack Crafting Recipe
-		GameRegistry.addShapelessRecipe(new ItemStack(itemHealthPack, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
 		//Active Camo Armor	
 		GameRegistry.addShapelessRecipe(new ItemStack(ActiveCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), SpartanChestplate);
 		//Red Spartan Armor
@@ -334,17 +330,8 @@ public class Main{
 	}
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
-		System.out.println("Mod Init");
-		//MinecraftForge.EVENT_BUS.register(new HaloEventHandler(Minecraft.getMinecraft()));
-		//CProxy.addArmour(null);
-		
 		//Register Key
 		proxy.registerKey();
-		//Event Bus
-		//MinecraftForge.EVENT_BUS.register(new HaloEventHandler(Minecraft.getMinecraft()));
-		
-		//GUI Overlay
-		//CProxy.registerEventHandler();
 		
 		//Rendering
 		proxy.registerRenders();

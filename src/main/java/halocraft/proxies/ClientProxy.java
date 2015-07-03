@@ -29,6 +29,7 @@ import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemFuelRodCannon;
+import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.Pistol;
@@ -127,9 +128,6 @@ public class ClientProxy extends CommonProxy{
 		//Rendering Plasma Ammo
 		ModelResourceLocation res32 = new ModelResourceLocation("halocraft:ammoPlasma", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoPlasma, 0, res32);
-		//Rendering Health Pack
-		ModelResourceLocation res34 = new ModelResourceLocation("halocraft:HealthPack", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemHealthPack, 0, res34);
 		
 		ModelResourceLocation res35 = new ModelResourceLocation("halocraft:RedPlasmaIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedPlasmaIngot.instance, 0, res35);
@@ -186,6 +184,7 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomModelResourceLocation(ItemCarbineAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineAmmo.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemFuelRodCannon.instance, 0, new ModelResourceLocation("halocraft:" + ItemFuelRodCannon.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemIncinerationCannon.instance, 0, new ModelResourceLocation("halocraft:" + ItemIncinerationCannon.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemHealthPack.instance, 0, new ModelResourceLocation("halocraft:" + ItemHealthPack.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
