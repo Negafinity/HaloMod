@@ -11,6 +11,7 @@ import halocraft.blocks.HaloBlock;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
+import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
@@ -38,6 +39,7 @@ import halocraft.items.RedPlasmaIngot;
 import halocraft.items.RocketLauncher;
 import halocraft.render.RenderBulletEntity;
 import halocraft.render.RenderEliteEntity;
+import halocraft.render.RenderGhostEntity;
 import halocraft.render.RenderGreenPlasmaEntity;
 import halocraft.render.RenderGruntEntity;
 import halocraft.render.RenderMongooseEntity;
@@ -159,6 +161,7 @@ public class ClientProxy extends CommonProxy{
 		//Rendering Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FragGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
+		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, new RenderGhostEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class, new RenderScorpionEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));

@@ -8,6 +8,7 @@ import halocraft.blocks.HaloOre;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
+import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
@@ -28,6 +29,7 @@ import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemFuelRodCannon;
+import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
@@ -136,6 +138,7 @@ public class Main{
 	public static Item itemRedPlasmaAmmo;
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
+	public static Item itemGhost;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
@@ -144,6 +147,7 @@ public class Main{
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
+		itemGhost = new ItemGhost();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
@@ -187,6 +191,8 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", randomID9, this, 250, 50, true);
 		int randomID10 = EntityRegistry.findGlobalUniqueEntityId() + 6;
 		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", randomID10, this, 250, 50, true);
+		int randomID11 = EntityRegistry.findGlobalUniqueEntityId() + 7;
+		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", randomID11, this, 250, 50, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
 		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID7 = EntityRegistry.findGlobalUniqueEntityId() + 3;
@@ -227,6 +233,7 @@ public class Main{
 		GameRegistry.registerItem(ItemBattleRifle.instance, ItemBattleRifle.name);
 		GameRegistry.registerItem(ItemHealthPack.instance, ItemHealthPack.name);
 		GameRegistry.registerItem(itemRedPlasmaAmmo, "itemRedPlasmaAmmo");
+		GameRegistry.registerItem(itemGhost, "itemGhost");
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
 		GameRegistry.registerItem(ItemIncinerationCannon.instance, ItemIncinerationCannon.name);

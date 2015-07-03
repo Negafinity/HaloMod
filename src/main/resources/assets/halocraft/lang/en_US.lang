@@ -43,6 +43,7 @@ item.CovenantLeggings.name=Covenant Leggings
 item.CovenantBoots.name=Covenant Boots
 item.CovenantPiece.name=Covenant Piece
 item.ActiveCamoChestplate.name=Active Camouflage
+item.ItemGhost.name=Ghost
 item.fragGrenade.name=Frag Grenade
 tile.halocraft:haloblock.name=Spartanium Block
 item.halocraft:itemfuelrodcannon.name=Fuel Rod Cannon
