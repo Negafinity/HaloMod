@@ -29,6 +29,7 @@ import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemFuelRodCannon;
+import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
@@ -122,9 +123,7 @@ public class ClientProxy extends CommonProxy{
 		//Rendering ActiveCamo Armor
 		ModelResourceLocation res30 = new ModelResourceLocation("halocraft:ActiveCamoChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ActiveCamoChestplate, 0, res30);
-		//Rendering Incineration Cannon
-		ModelResourceLocation res31 = new ModelResourceLocation("halocraft:incinerationCannon", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemIncinerationCannon, 0, res31);
+
 		//Rendering Plasma Ammo
 		ModelResourceLocation res32 = new ModelResourceLocation("halocraft:ammoPlasma", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoPlasma, 0, res32);
@@ -140,6 +139,9 @@ public class ClientProxy extends CommonProxy{
 		
 		ModelResourceLocation res37 = new ModelResourceLocation("halocraft:GreenPlasmaIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenPlasmaIngot.instance, 0, res37);
+		
+		ModelResourceLocation res38 = new ModelResourceLocation("halocraft:ammoPlasmaRocket", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoPlasmaRocket, 0, res38);
 		
 		//Rendering Blocks
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", HaloBlock.name);
@@ -183,6 +185,7 @@ public class ClientProxy extends CommonProxy{
         ModelLoader.setCustomModelResourceLocation(ItemSniperRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemSniperRifle.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemCarbineAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineAmmo.name, "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemFuelRodCannon.instance, 0, new ModelResourceLocation("halocraft:" + ItemFuelRodCannon.name, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemIncinerationCannon.instance, 0, new ModelResourceLocation("halocraft:" + ItemIncinerationCannon.name, "inventory"));
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());

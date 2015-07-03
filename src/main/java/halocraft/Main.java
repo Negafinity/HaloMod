@@ -133,7 +133,6 @@ public class Main{
 	public static Item ammoPlasma;
 	public static Item itemMongoose;
 	public static Item itemHealthPack;
-	public static Item itemIncinerationCannon;
 	public static Item itemScorpion;
 	public static Item itemRedPlasmaAmmo;
 	public static Item ammoPlasmaRocket;
@@ -149,8 +148,6 @@ public class Main{
 		tankHarvester = new TankHarvester();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
-		//Initalizing Cannon
-		itemIncinerationCannon = new ItemIncinerationCannon();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
@@ -235,7 +232,7 @@ public class Main{
 		GameRegistry.registerItem(itemRedPlasmaAmmo, "itemRedPlasmaAmmo");
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
-		GameRegistry.registerItem(itemIncinerationCannon, "incinerationCannon");
+		GameRegistry.registerItem(ItemIncinerationCannon.instance, ItemIncinerationCannon.name);
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
 		GameRegistry.registerItem(Pistol.instance, Pistol.name);
 		GameRegistry.registerItem(RedPlasmaIngot.instance, RedPlasmaIngot.name);
@@ -289,7 +286,6 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " Y ", 'X', HaloIngot, 'Y', gunpowderStack});
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " Y ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack});
 		GameRegistry.addRecipe(new ItemStack(itemRedPlasmaAmmo, 1), new Object[]{" X "," X ", " Y ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack});
-		GameRegistry.addRecipe(new ItemStack(ItemCarbineAmmo.instance, 1), new Object[]{" X "," X ", " Y ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack});
 		ItemStack coalStack = new ItemStack(Items.coal);
 		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"XXX","X X", "Y Y", 'X', HaloIngot, 'Y', coalStack});
 		//Health Pack Crafting Recipe
@@ -319,7 +315,9 @@ public class Main{
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
+		ItemStack emeraldStack = new ItemStack(Items.emerald);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
+		GameRegistry.addRecipe(new ItemStack(ItemCarbineAmmo.instance, 15), new Object[]{" X ", " X ", "XYX", 'X', emeraldStack, 'Y', gunStack});
 		GameRegistry.addRecipe(new ItemStack(ItemCarbineRifle.instance, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
 		GameRegistry.addSmelting(RedPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);

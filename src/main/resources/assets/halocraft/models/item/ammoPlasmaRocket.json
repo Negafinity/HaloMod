@@ -1,7 +1,7 @@
 {
 "parent": "builtin/generated",
 "textures": {
-"layer0": "halocraft:items/itemIncinerationCannon"
+"layer0": "halocraft:items/PlasmaRocket"
 },
 "display": {
 "thirdperson": {

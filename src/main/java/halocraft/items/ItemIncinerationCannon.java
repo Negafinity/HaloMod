@@ -8,10 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class ItemIncinerationCannon extends Item {
+	//Following is so you can access it in pre-init
+	public static final ItemIncinerationCannon instance = new ItemIncinerationCannon();
+	public static final String name = "itemIncinerationCannon";
+	
 	public ItemIncinerationCannon(){
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
-	     setUnlocalizedName("incinerationCannon");
+	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxDamage(1000);
 	     setMaxStackSize(1);
 	}
