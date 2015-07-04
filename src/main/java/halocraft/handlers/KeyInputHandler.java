@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 
 import halocraft.KeyBindings;
 import halocraft.Main;
+import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
@@ -55,6 +56,11 @@ public class KeyInputHandler{
         		Entity ridingEntity = mc.thePlayer.ridingEntity;
         		if(ridingEntity instanceof EntityScorpion){
         			fire = 1;
+        			HalocraftPacketHandler.INSTANCE.sendToServer(new FireMessage(fire));
+        		}
+        		else if(ridingEntity instanceof EntityGhost)
+        		{
+        			fire = 2;
         			HalocraftPacketHandler.INSTANCE.sendToServer(new FireMessage(fire));
         		}
         		else{

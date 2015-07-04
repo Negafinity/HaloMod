@@ -1,5 +1,6 @@
 package halocraft.packets;
 
+import halocraft.entities.EntityPurplePlasma;
 import halocraft.entities.EntityRocket;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.BlockPos;
@@ -28,6 +29,18 @@ public class FireMessageHandler implements IMessageHandler<FireMessage, IMessage
 		            if (!worldIn.isRemote)
 		            {	
 		            	worldIn.spawnEntityInWorld(new EntityRocket(worldIn, serverPlayerIn));
+		            }
+			    }
+			  });
+		}
+		else if(value == 2)
+		{
+			mainThread.addScheduledTask(new Runnable() {
+			    @Override
+			    public void run() {
+		            if (!worldIn.isRemote)
+		            {	
+		            	worldIn.spawnEntityInWorld(new EntityPurplePlasma(worldIn, serverPlayerIn));
 		            }
 			    }
 			  });
