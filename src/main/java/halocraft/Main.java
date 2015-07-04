@@ -13,6 +13,7 @@ import halocraft.entities.EntityGreenPlasma;
 import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityPlasmaRocket;
+import halocraft.entities.EntityPurplePlasma;
 import halocraft.entities.EntityRedPlasma;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
@@ -33,12 +34,15 @@ import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
+import halocraft.items.ItemNeedler;
+import halocraft.items.ItemNeedlerAmmo;
 import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
+import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
 import halocraft.items.RocketLauncher;
 import halocraft.items.TankHarvester;
@@ -101,6 +105,7 @@ public class Main{
 	public final static Block HaloOre = new HaloOre(Material.iron);
 	public final static Block RedPlasmaOre = new halocraft.blocks.RedPlasmaOre(Material.iron);
 	public final static Block GreenPlasmaOre = new halocraft.blocks.GreenPlasmaOre(Material.iron);
+	public final static Block PurplePlasmaOre = new halocraft.blocks.PurplePlasmaOre(Material.iron);
 	//Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
@@ -193,6 +198,8 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", randomID10, this, 250, 50, true);
 		int randomID11 = EntityRegistry.findGlobalUniqueEntityId() + 7;
 		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", randomID11, this, 250, 50, true);
+		int randomID12 = EntityRegistry.findGlobalUniqueEntityId() + 8;
+		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", randomID12, this, 250, 50, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
 		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID7 = EntityRegistry.findGlobalUniqueEntityId() + 3;
@@ -221,6 +228,7 @@ public class Main{
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(RedPlasmaOre, "RedPlasmaOre");
 		GameRegistry.registerBlock(GreenPlasmaOre, "GreenPlasmaOre");
+		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
@@ -239,10 +247,12 @@ public class Main{
 		GameRegistry.registerItem(ItemIncinerationCannon.instance, ItemIncinerationCannon.name);
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
 		GameRegistry.registerItem(Pistol.instance, Pistol.name);
+		GameRegistry.registerItem(ItemNeedlerAmmo.instance, ItemNeedlerAmmo.name);
 		GameRegistry.registerItem(RedPlasmaIngot.instance, RedPlasmaIngot.name);
 		GameRegistry.registerItem(ItemSniperRifle.instance, ItemSniperRifle.name);
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(ItemCarbineRifle.instance, ItemCarbineRifle.name);
+		GameRegistry.registerItem(ItemNeedler.instance, ItemNeedler.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(GreenPlasmaIngot.instance, GreenPlasmaIngot.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
@@ -260,6 +270,7 @@ public class Main{
 		GameRegistry.registerItem(halocraft.Main.BlueSpartanChestplate, "BlueSpartanChestplate");
 		GameRegistry.registerItem(halocraft.Main.BlueSpartanLeggings, "BlueSpartanLeggings");
 		GameRegistry.registerItem(halocraft.Main.BlueSpartanBoots, "BlueSpartanBoots");
+		GameRegistry.registerItem(PurplePlasmaIngot.instance, PurplePlasmaIngot.name);
 		GameRegistry.registerItem(halocraft.Main.CovenantHelmet, "CovenantHelmet");
 		GameRegistry.registerItem(halocraft.Main.CovenantChestplate, "CovenantChestplate");
 		GameRegistry.registerItem(halocraft.Main.CovenantLeggings, "CovenantLeggings");
@@ -318,12 +329,14 @@ public class Main{
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"ZXX", " ZX", " YZ", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});
 		ItemStack goldStack = new ItemStack(Items.gold_ingot);
-		ItemStack emeraldStack = new ItemStack(Items.emerald);
+		ItemStack greenIngotStack = new ItemStack(GreenPlasmaIngot.instance);
 		GameRegistry.addRecipe(new ItemStack(ammoAssaultRifle, 15), new Object[]{" X ", " X ", "XYX", 'X', goldStack, 'Y', gunStack});
-		GameRegistry.addRecipe(new ItemStack(ItemCarbineAmmo.instance, 15), new Object[]{" X ", " X ", "XYX", 'X', emeraldStack, 'Y', gunStack});
+		GameRegistry.addRecipe(new ItemStack(ItemCarbineAmmo.instance, 15), new Object[]{" X ", " X ", "XYX", 'X', greenIngotStack, 'Y', gunStack});
+		GameRegistry.addRecipe(new ItemStack(ItemNeedlerAmmo.instance, 15), new Object[]{" X ", " X ", "XYX", 'X', new ItemStack(PurplePlasmaIngot.instance), 'Y', gunStack});
 		GameRegistry.addRecipe(new ItemStack(ItemCarbineRifle.instance, 1), new Object[]{"XXY", " YX", " XX", 'X', covenantPiece, 'Y', gunStack});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
 		GameRegistry.addSmelting(RedPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);
+		GameRegistry.addSmelting(PurplePlasmaOre, new ItemStack(PurplePlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addSmelting(GreenPlasmaOre, new ItemStack(GreenPlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		//Frag Grenade Crafting
