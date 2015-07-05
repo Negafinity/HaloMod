@@ -29,35 +29,30 @@ import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.TRSRTransformation;
 import net.minecraftforge.client.model.b3d.B3DLoader;
 
-public class RenderBulletEntity extends Render{
+public class RenderBulletEntity extends Render {
 	private static final ResourceLocation bulletTextures = new ResourceLocation("halocraft:textures/entities/BulletRender.png");
 	private static final ModelResourceLocation bulletModelFile = new ModelResourceLocation("halocraft:models/entity/Bullet.b3d");
-	 Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
-	            {
-	                public TextureAtlasSprite apply(ResourceLocation location)
-	                {
-	                    return Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(location.toString());
-	                }
-	            };
+	Function < ResourceLocation, TextureAtlasSprite > textureGetter = new Function < ResourceLocation, TextureAtlasSprite > () {
+		public TextureAtlasSprite apply(ResourceLocation location) {
+			return Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(location.toString());
+		}
+	};
 	public RenderBulletEntity(RenderManager rendermanager) {
 		super(rendermanager);
-		shadowSize = 0.5F;
-		// TODO Auto-generated constructor stub
+		shadowSize = 0.25F;
 	}
-	protected ResourceLocation getEntityTexture(Entity entity){
+	protected ResourceLocation getEntityTexture(Entity entity) {
 		return bulletTextures;
 	}
-	public void render(EntityBullet bullet, double d, double d1, double d2, float f, float f1)
-	{
+	public void render(EntityBullet bullet, double d, double d1, double d2, float f, float f1) {
 		Tessellator tessellator = Tessellator.getInstance();
-        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-		if(bullet.ticksExisted < 1)
-			return;
+		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+		if (bullet.ticksExisted < 1) return;
 		bindEntityTexture(bullet);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) d, (float) d1, (float) d2);
 		GL11.glRotatef(f, 0.0F, 1.0F, -1.0F);
-		GL11.glRotatef(90F -bullet.prevRotationPitch - (bullet.rotationPitch - bullet.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(90F - bullet.prevRotationPitch - (bullet.rotationPitch - bullet.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
 		IModel bulletModel = null;
 		try {
 			bulletModel = B3DLoader.instance.loadModel(bulletModelFile);
@@ -65,32 +60,30 @@ public class RenderBulletEntity extends Render{
 			bulletModel = ModelLoaderRegistry.getMissingModel();
 			e.printStackTrace();
 		}
-    	IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-    	worldrenderer.startDrawingQuads();
-        //Get Quads
-        List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
-		for (BakedQuad q : generalQuads) {
+		IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+		worldrenderer.startDrawingQuads();
+		//Get Quads
+		List < BakedQuad > generalQuads = bakedBullet.getGeneralQuads();
+		for (BakedQuad q: generalQuads) {
 			int[] vd = q.getVertexData();
 			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
 			worldrenderer.addVertexData(vd);
 		}
-		for (EnumFacing face : EnumFacing.values()) {
-            List<BakedQuad> faceQuads = 
-           		 bakedBullet.getFaceQuads(face);
-            for (BakedQuad q : faceQuads) {
-                    int[] vd = q.getVertexData();
-                    worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-                   worldrenderer.addVertexData(vd);
-           }
-		 }
+		for (EnumFacing face: EnumFacing.values()) {
+			List < BakedQuad > faceQuads = bakedBullet.getFaceQuads(face);
+			for (BakedQuad q: faceQuads) {
+				int[] vd = q.getVertexData();
+				worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
+				worldrenderer.addVertexData(vd);
+			}
+		}
 		tessellator.draw();
 		GL11.glPopMatrix();
 	}
 
 	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
-	{
+	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {
 		render((EntityBullet) entity, d, d1, d2, f, f1);
 	}
-	
+
 }
