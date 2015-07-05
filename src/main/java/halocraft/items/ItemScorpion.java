@@ -94,7 +94,11 @@ public class ItemScorpion extends Item {
 
 	                    if (!worldIn.getCollidingBoundingBoxes(entityscorpion, entityscorpion.getEntityBoundingBox().expand(-0.1D, -0.1D, -0.1D)).isEmpty())
 	                    {
-	                        return itemStackIn;
+	                    	List<Entity> e = worldIn.getEntitiesWithinAABBExcludingEntity(playerIn, entityscorpion.getEntityBoundingBox());
+                        	for(Entity entityIn : e)
+                        	{
+                        		entityIn.setDead();
+                        	}
 	                    }
 
 	                    if (!worldIn.isRemote)

@@ -26,15 +26,16 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
 
 public class HaloEventHandler extends Gui{
 	private Minecraft mc;
-	ResourceLocation res = new ResourceLocation("halocraft:textures/gui/HaloOverlay.png");
+	ResourceLocation overlayTop = new ResourceLocation("halocraft:textures/gui/HaloOverlayTop.png");
+	ResourceLocation overlayBottom = new ResourceLocation("halocraft:textures/gui/HaloOverlayBottom.png");
 	ResourceLocation texture = new ResourceLocation("halocraft:textures/gui/HealthBar.png");
 	ResourceLocation brscope = new ResourceLocation("halocraft:textures/gui/BattleRifleScope.png");
-	 public HaloEventHandler(Minecraft mc){
+	public HaloEventHandler(Minecraft mc){
 	    super();
 	    // We need this to invoke the render engine.
 	    this.mc = mc;
 	  }
-	 /**
+	 	/**
 		 * Draws textured rectangles of sizes other than 256x256
 		 * @param x The x value of the top-left corner point on the screen where drawing to starts 
 		 * @param y The y value of the top-left corner point on the screen where drawing to starts
@@ -60,6 +61,14 @@ public class HaloEventHandler extends Gui{
 	 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	 	public void onRenderGameOverlay(RenderGameOverlayEvent event)
 	 	{
+	 		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+		  	if(helmet != null){
+		  		if(helmet.getItem() == halocraft.Main.SpartanHelmet || helmet.getItem() == halocraft.Main.GreenSpartanHelmet || helmet.getItem() == halocraft.Main.BlueSpartanHelmet || helmet.getItem() == halocraft.Main.RedSpartanHelmet){
+		  			if(event.isCancelable() && event.type == ElementType.HEALTH){
+		  				event.setCanceled(true);
+		  			}
+		  		}
+		  	}
 		  	if(event.isCancelable() || event.type != ElementType.EXPERIENCE){
 		  		return;
 	    	}
@@ -74,22 +83,21 @@ public class HaloEventHandler extends Gui{
 	    		this.drawNonStandardTexturedRect(xPos, yPos, 0, 0, 420, 250, 420, 250);
 		  	}
 		  	//Checking for Spartan Helmet
-		  	ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+		  	helmet = mc.thePlayer.inventory.armorItemInSlot(3);
 		  	if(helmet != null){
 	    	if(helmet.getItem() == halocraft.Main.SpartanHelmet || helmet.getItem() == halocraft.Main.GreenSpartanHelmet || helmet.getItem() == halocraft.Main.BlueSpartanHelmet || helmet.getItem() == halocraft.Main.RedSpartanHelmet){
-	    		//Rendering Halo HUD
+	    		//Rendering Top of Halo HUD
 	    		ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 	    		int xPos = (scaled.getScaledWidth() - 420) / 2;
-	    		int yPos = (scaled.getScaledHeight() - 250) / 2;
+	    		int yPos = 0;
 	    		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	    		GL11.glDisable(GL11.GL_LIGHTING);
-	    		this.mc.renderEngine.bindTexture(res);
-	    		this.drawNonStandardTexturedRect(xPos, yPos, 0, 0, 420, 250, 420, 250);
+	    		this.mc.renderEngine.bindTexture(overlayTop);
+	    		this.drawNonStandardTexturedRect(xPos, yPos, 0, 0, 420, 57, 420, 57);
 	    		//Drawing Halo-Style Health Bar
 	    		int xPosHealth = xPos + 169;
 	    		int yPosHealth = yPos + 14;
-	    		this.mc.getTextureManager().bindTexture(texture);
-
+	    		this.mc.getTextureManager().bindTexture(texture);	    		
 	    		// Add this block of code before you draw the section of your texture containing transparency
 	    		GL11.glEnable(GL11.GL_BLEND);
 	    		GL11.glDisable(GL11.GL_DEPTH_TEST);
@@ -102,7 +110,10 @@ public class HaloEventHandler extends Gui{
 	    		//Drawing Actual Health
 	    		int manabarwidth = (int)(((float) mc.thePlayer.getHealth() / mc.thePlayer.getMaxHealth()) * 90);
 	    		drawTexturedModalRect(xPosHealth + 1, yPosHealth + 1, 0, 13, manabarwidth, 11);
-
+	    		yPos = scaled.getScaledHeight() - 85;
+	    		//Draw Bottom of Halo HUD
+	    		this.mc.renderEngine.bindTexture(overlayBottom);
+	    		this.drawNonStandardTexturedRect(xPos, yPos, 0, 0, 420, 85, 420, 85);
 	    		GL11.glDisable(GL11.GL_BLEND);
 	    		GL11.glEnable(GL11.GL_DEPTH_TEST);
 	    		GL11.glDepthMask(true);

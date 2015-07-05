@@ -47,7 +47,7 @@ public class EntityGhost extends Entity
         this.isBoatEmpty = true;
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
-        this.setSize(1.5F, 0.6F);
+        this.setSize(4F, 1.5F);
     }
 
     protected boolean canTriggerWalking()
@@ -441,7 +441,7 @@ public class EntityGhost extends Entity
         {
             double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
             double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-            this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 - 2);
+            this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 - 0.75);
         }
     }
 

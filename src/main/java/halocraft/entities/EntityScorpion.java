@@ -48,7 +48,7 @@ public class EntityScorpion extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.renderDistanceWeight = 12.0D;
-        this.setSize(1.5F, 0.6F);
+        this.setSize(9.5F, 6.25F);
     }
 
     protected boolean canTriggerWalking()
@@ -75,7 +75,7 @@ public class EntityScorpion extends Entity
 
     public boolean canBePushed()
     {
-        return true;
+        return false;
     }
 
     public EntityScorpion(World worldIn, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
@@ -92,7 +92,7 @@ public class EntityScorpion extends Entity
 
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.0D + 2D; //- 0.30000001192092896D;
+        return (double)this.height * 0.0D + 2D;
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount)
@@ -149,7 +149,7 @@ public class EntityScorpion extends Entity
 
     public boolean canBeCollidedWith()
     {
-        return !this.isDead;
+        return true;
     }
     
     public World getWorldObj(){
@@ -368,23 +368,23 @@ public class EntityScorpion extends Entity
 
             this.moveEntity(this.motionX, this.motionY, this.motionZ);
 
-            if (this.isCollidedHorizontally && d9 > 0.2D)
-            {
-                if (!this.worldObj.isRemote && !this.isDead)
-                {
-                    this.setDead();
-                    for (l = 0; l < 2; ++l)
-                    {
-                        this.dropItemWithOffset(halocraft.Main.HaloIngot, 2, 0.0F);
-                    }
-                }
-            }
-            else
-            {
+           // if (this.isCollidedHorizontally && d9 > 0.2D)
+           // {
+               // if (!this.worldObj.isRemote && !this.isDead)
+               // {
+                //    this.setDead();
+                //    for (l = 0; l < 2; ++l)
+                //    {
+                //        this.dropItemWithOffset(halocraft.Main.HaloIngot, 2, 0.0F);
+                //    }
+              //  }
+          //  }
+        //    else
+        //    {
                 this.motionX *= 0.9900000095367432D;
                 this.motionY *= 0.949999988079071D;
                 this.motionZ *= 0.9900000095367432D;
-            }
+            //}
 
             this.rotationPitch = 0.0F;
             d4 = (double)this.rotationYaw;

@@ -71,7 +71,7 @@ public class RenderGhostEntity extends Render
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.52F, (float)p_180552_6_);
+        GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
         //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
         float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
         float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
