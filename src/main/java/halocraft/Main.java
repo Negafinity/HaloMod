@@ -17,6 +17,7 @@ import halocraft.entities.EntityPurplePlasma;
 import halocraft.entities.EntityRedPlasma;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
+import halocraft.entities.EntityWarthog;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
@@ -40,6 +41,7 @@ import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
+import halocraft.items.ItemWarthog;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PurplePlasmaIngot;
@@ -144,6 +146,7 @@ public class Main{
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
 	public static Item itemGhost;
+	public static Item itemWarthog;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
@@ -152,6 +155,7 @@ public class Main{
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
+		itemWarthog = new ItemWarthog();
 		itemGhost = new ItemGhost();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
@@ -206,6 +210,8 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityRedPlasma.class, "RedPlasma", randomID7, this, 250, 50, true);
 		int randomID8 = EntityRegistry.findGlobalUniqueEntityId() + 4;
 		EntityRegistry.registerModEntity(EntityGreenPlasma.class, "GreenPlasma", randomID8, this, 250, 50, true);
+		int randomID13 = EntityRegistry.findGlobalUniqueEntityId() + 9;
+		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", randomID13, this, 250, 50, true);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
@@ -253,6 +259,7 @@ public class Main{
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(ItemCarbineRifle.instance, ItemCarbineRifle.name);
 		GameRegistry.registerItem(ItemNeedler.instance, ItemNeedler.name);
+		GameRegistry.registerItem(itemWarthog, "Warthog");
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(GreenPlasmaIngot.instance, GreenPlasmaIngot.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
