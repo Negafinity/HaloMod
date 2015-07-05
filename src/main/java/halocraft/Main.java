@@ -18,6 +18,7 @@ import halocraft.entities.EntityRedPlasma;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
 import halocraft.entities.EntityWarthog;
+import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
@@ -42,6 +43,7 @@ import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.ItemWarthog;
+import halocraft.items.ItemWarthogTurret;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PurplePlasmaIngot;
@@ -147,6 +149,7 @@ public class Main{
 	public static Item tankHarvester;
 	public static Item itemGhost;
 	public static Item itemWarthog;
+	public static Item itemWarthogTurret;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
@@ -156,6 +159,7 @@ public class Main{
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
 		itemWarthog = new ItemWarthog();
+		itemWarthogTurret = new ItemWarthogTurret();
 		itemGhost = new ItemGhost();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
@@ -204,6 +208,8 @@ public class Main{
 		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", randomID11, this, 250, 50, true);
 		int randomID12 = EntityRegistry.findGlobalUniqueEntityId() + 8;
 		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", randomID12, this, 250, 50, true);
+		int randomID14 = EntityRegistry.findGlobalUniqueEntityId() + 10;
+		EntityRegistry.registerModEntity(EntityWarthogTurret.class, "WarthogTurret", randomID14, this, 250, 50, true);
 		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
 		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
 		int randomID7 = EntityRegistry.findGlobalUniqueEntityId() + 3;
@@ -237,6 +243,7 @@ public class Main{
 		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
 		GameRegistry.registerItem(itemMongoose, "itemMongoose");
+		GameRegistry.registerItem(itemWarthogTurret, "itemWarthogTurret");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");

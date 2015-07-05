@@ -2,6 +2,7 @@ package halocraft.handlers;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
+import java.util.List;
 
 import halocraft.KeyBindings;
 import halocraft.Main;
@@ -9,6 +10,7 @@ import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
+import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemSniperRifle;
 import halocraft.packets.FireMessage;
@@ -17,6 +19,8 @@ import halocraft.packets.HalocraftPacketHandler;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;
@@ -52,7 +56,14 @@ public class KeyInputHandler{
         	}
         }
         else if(KeyBindings.fire.isPressed()){
-        	if(mc.thePlayer.isRiding()){
+        	if(isThirdRiderOfWarthog(mc.thePlayer, mc.theWorld))
+    		{
+        		fire = 3;
+    			HalocraftPacketHandler.INSTANCE.sendToServer(new FireMessage(fire));
+    			System.out.println("Tried to fire");
+    		}
+        	if(mc.thePlayer.isRiding())
+        	{
         		Entity ridingEntity = mc.thePlayer.ridingEntity;
         		if(ridingEntity instanceof EntityScorpion){
         			fire = 1;
@@ -76,5 +87,30 @@ public class KeyInputHandler{
         	keyPressed = false;
         }
     }
+
+	private boolean isThirdRiderOfWarthog(EntityPlayerSP thePlayer,
+			WorldClient theWorld) {
+		List<Entity> entities = theWorld.getEntitiesWithinAABBExcludingEntity(thePlayer, thePlayer.getBoundingBox());
+		for(Entity e : entities)
+		{
+			if(e.isRiding() && e.ridingEntity instanceof EntityWarthogTurret)
+			{
+				EntityWarthogTurret warthog = (EntityWarthogTurret) e.ridingEntity;
+				if(warthog.thirdRider == thePlayer)
+				{
+					return true;
+				}
+			}
+			if(e instanceof EntityWarthogTurret)
+			{
+				EntityWarthogTurret warthog = (EntityWarthogTurret) e;
+				if(warthog.thirdRider == thePlayer)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 }
