@@ -30,22 +30,25 @@ public class FireMessageHandler implements IMessageHandler < FireMessage, IMessa
 		if (value == 1) {
 			mainThread.addScheduledTask(new Runnable() {@Override
 				public void run() {
-					worldIn.spawnEntityInWorld(new EntityRocket(worldIn, serverPlayerIn));
-				}
+				EntityRocket er = new EntityRocket(worldIn, serverPlayerIn);
+				er.shootingEntity = serverPlayerIn.ridingEntity;
+				System.out.println(er.shootingEntity);
+				worldIn.spawnEntityInWorld(er);
+			}
 			});
 		} else if (value == 2) {
 			mainThread.addScheduledTask(new Runnable() {@Override
 				public void run() {
-					worldIn.spawnEntityInWorld(new EntityPurplePlasma(worldIn, serverPlayerIn));
-				}
+				worldIn.spawnEntityInWorld(new EntityPurplePlasma(worldIn, serverPlayerIn));
+			}
 			});
 		} else if (value == 3) {
 			mainThread.addScheduledTask(new Runnable() {@Override
 				public void run() {
-					if (isThirdRider(worldIn, serverPlayerIn)) {
-						worldIn.spawnEntityInWorld(new EntityBullet(worldIn, serverPlayerIn));
-					}
+				if (isThirdRider(worldIn, serverPlayerIn)) {
+					worldIn.spawnEntityInWorld(new EntityBullet(worldIn, serverPlayerIn));
 				}
+			}
 			});
 		}
 		return null;
