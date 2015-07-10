@@ -1,3 +1,7 @@
+v1.3.46
+
+Updated Entity Scorpion to not shoot itself
+
 v1.3.2:
 
 Updated minimap! Peaceful Entities will be green on minimap, Mobs/Non-peaceful Entities will be red on minimap.
