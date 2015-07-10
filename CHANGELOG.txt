@@ -1,4 +1,8 @@
-v1.3.47:
+v1.3.49:
+
+Changed item dropped by Warthog w/ Turret to itemWarthogTurret - before it was itemWarthog and updated item names.
+
+v1.3.48:
 
 Both Warthogs now have custom models! Textures coming as soon as .OBJ loader is added to Forge.
 

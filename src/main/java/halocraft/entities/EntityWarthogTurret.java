@@ -104,7 +104,7 @@ public class EntityWarthogTurret extends Entity {
 					}
 
 					if (!flag) {
-						this.dropItemWithOffset(halocraft.Main.itemWarthog, 1, 0.0F);
+						this.dropItemWithOffset(halocraft.Main.itemWarthogTurret, 1, 0.0F);
 					}
 
 					this.setDead();

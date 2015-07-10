@@ -49,6 +49,7 @@ public class EntityWarthog extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.setSize(2.5F, 1.6F);
+        this.ignoreFrustumCheck = true;
     }
 
     protected boolean canTriggerWalking()
