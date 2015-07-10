@@ -1,4 +1,8 @@
-v1.3.46
+v1.3.47:
+
+Both Warthogs now have custom models! Textures coming as soon as .OBJ loader is added to Forge.
+
+v1.3.46:
 
 Updated Entity Scorpion to not shoot itself
 

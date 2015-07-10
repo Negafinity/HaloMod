@@ -44,7 +44,8 @@ public class EntityWarthogTurret extends Entity {
 		this.isBoatEmpty = true;
 		this.speedMultiplier = 0.07D;
 		this.preventEntitySpawning = true;
-		this.setSize(3.5F, 1F);
+		this.setSize(2.5F, 3F);
+		this.ignoreFrustumCheck = true;
 	}
 
 	protected boolean canTriggerWalking() {

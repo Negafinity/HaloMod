@@ -47,12 +47,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogEntity extends Render
 {
-	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
-    private static final ModelResourceLocation mongooseModel = new ModelResourceLocation("halocraft:models/entity/Mongoose.b3d");
-    IModel model = null;
-    public RenderWarthogEntity(RenderManager p_i46190_1_)
+    private static final ModelResourceLocation warthogModel = new ModelResourceLocation("halocraft:models/entity/Warthog.b3d");
+    
+    public RenderWarthogEntity(RenderManager renderManager)
     {
-        super(p_i46190_1_);
+        super(renderManager);
         this.shadowSize = 0.5F;
     }
     Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
@@ -63,19 +62,19 @@ public class RenderWarthogEntity extends Render
                 }
             };
 
-    public void doRender(EntityWarthog par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+    public void doRender(EntityWarthog warthogIn, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
-    	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-    	World world = par1EntityMongoose.getWorldObj();
-    	BlockPos blockpos = new BlockPos(par1EntityMongoose);
+    	IModel warthog = B3DLoader.instance.loadModel(warthogModel);
+    	IBakedModel bakedWarthog = warthog.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+    	World world = warthogIn.getWorldObj();
+    	BlockPos blockpos = new BlockPos(warthogIn);
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.52F, (float)p_180552_6_);
-        //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
-        float f2 = (float)par1EntityMongoose.getTimeSinceHit() - p_180552_9_;
-        float f3 = par1EntityMongoose.getDamageTaken() - p_180552_9_;
+        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.75F, (float)p_180552_6_ + 0.5F);
+
+        float f2 = (float)warthogIn.getTimeSinceHit() - p_180552_9_;
+        float f3 = warthogIn.getDamageTaken() - p_180552_9_;
 
         if (f3 < 0.0F)
         {
@@ -84,19 +83,18 @@ public class RenderWarthogEntity extends Render
 
         if (f2 > 0.0F)
         {
-            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityMongoose.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)warthogIn.getForwardDirection(), 1.0F, 0.0F, 0.0F);
         }
         
         float f4 = 0.75F;
         GlStateManager.scale(f4, f4, f4);
         GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        this.bindEntityTexture(par1EntityMongoose);
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
         GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
-        List<BakedQuad> generalQuads = bakedMongoose.getGeneralQuads();
+        List<BakedQuad> generalQuads = bakedWarthog.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
 			int[] vd = q.getVertexData();
 			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -104,7 +102,7 @@ public class RenderWarthogEntity extends Render
 		}
 		for (EnumFacing face : EnumFacing.values()) {
             List<BakedQuad> faceQuads = 
-           		 bakedMongoose.getFaceQuads(face);
+           		 bakedWarthog.getFaceQuads(face);
             for (BakedQuad q : faceQuads) {
                     int[] vd = q.getVertexData();
                     worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -113,12 +111,12 @@ public class RenderWarthogEntity extends Render
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();
-        super.doRender(par1EntityMongoose, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+        super.doRender(warthogIn, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
     }
 
-    protected ResourceLocation getEntityTexture(EntityWarthog p_180553_1_)
+    protected ResourceLocation getEntityTexture(EntityWarthog entityWarthog)
     {
-        return boatTextures;
+        return null;
     }
 
     protected ResourceLocation getEntityTexture(Entity entity)
