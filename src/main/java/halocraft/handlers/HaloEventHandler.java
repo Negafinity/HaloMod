@@ -15,6 +15,8 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -36,6 +38,7 @@ public class HaloEventHandler extends Gui{
 	ResourceLocation texture = new ResourceLocation("halocraft:textures/gui/HealthBar.png");
 	ResourceLocation brscope = new ResourceLocation("halocraft:textures/gui/BattleRifleScope.png");
 	ResourceLocation redSquare = new ResourceLocation("halocraft:textures/gui/RedSquare.png");
+	ResourceLocation greenSquare = new ResourceLocation("halocraft:textures/gui/GreenSquare.png");
 	ResourceLocation minimap = new ResourceLocation("halocraft:textures/gui/HaloOverlayMinimap.png");
 	public HaloEventHandler(Minecraft mc){
 		super();
@@ -143,7 +146,7 @@ public class HaloEventHandler extends Gui{
 				List<Entity> entities = new ArrayList<Entity>();
 				try
 				{
-					entities = mc.thePlayer.worldObj.getEntitiesWithinAABBExcludingEntity(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().expand(30, 200, 30));
+					entities = mc.thePlayer.worldObj.getEntitiesWithinAABBExcludingEntity(mc.thePlayer, mc.thePlayer.getEntityBoundingBox().expand(30, 5, 30));
 				}
 				catch(NullPointerException e)
 				{
@@ -153,7 +156,6 @@ public class HaloEventHandler extends Gui{
 				if(!noEntitiesFound)
 				{
 					//Draw Map
-					this.mc.renderEngine.bindTexture(redSquare);
 					for(Entity entityIn : entities)
 					{
 						int x = (int) (entityIn.posX - mc.thePlayer.posX);
@@ -163,7 +165,16 @@ public class HaloEventHandler extends Gui{
 						double approxMinimapArea = Math.PI * Math.pow(25, 2);
 						if(Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(25, 2))
 						{
-							this.drawNonStandardTexturedRect(xPos + 41 + 23 + x, yPos + 16 + 25 + y, 0, 0, 3, 3, 5, 5);
+							if(!(entityIn instanceof EntityMob) && entityIn instanceof EntityLivingBase)
+							{
+								this.mc.renderEngine.bindTexture(greenSquare);
+								this.drawNonStandardTexturedRect(xPos + 41 + 23 + x, yPos + 16 + 25 + y, 0, 0, 3, 3, 5, 5);
+							}
+							else if(entityIn instanceof EntityLivingBase)
+							{
+								this.mc.renderEngine.bindTexture(redSquare);
+								this.drawNonStandardTexturedRect(xPos + 41 + 23 + x, yPos + 16 + 25 + y, 0, 0, 3, 3, 5, 5);
+							}
 						}
 					}
 				}

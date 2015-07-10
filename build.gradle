@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'forge'
 apply plugin: 'curseforge'
 
-version = "DEV-v1.3.1"
+version = "DEV-v1.3.2"
 group= "io.github.hsyyid"// http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "HaloCraft 2.0"
 

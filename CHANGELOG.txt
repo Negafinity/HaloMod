@@ -1,3 +1,7 @@
+v1.3.2:
+
+Updated minimap! Peaceful Entities will be green on minimap, Mobs/Non-peaceful Entities will be red on minimap.
+
 v1.3.1:
 
 Added minimap! It will render entities as well as rotate depending on where you're looking.
