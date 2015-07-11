@@ -1,6 +1,10 @@
+v1.3.51:
+
+Fixed crashing with CarbineRifle crafting recipe.
+
 v1.3.50:
 
-Added multiple crafting recipies.
+Added multiple crafting recipes.
 
 v1.3.49:
 
