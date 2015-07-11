@@ -27,6 +27,7 @@ import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
@@ -91,6 +92,12 @@ public class RenderMongooseEntity extends Render
         GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
         this.bindEntityTexture(par1EntityMongoose);
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
+        
+        if(par1EntityMongoose.riddenByEntity != null && par1EntityMongoose.riddenByEntity instanceof EntityPlayer)
+		{
+			EntityPlayer playerIn = (EntityPlayer) par1EntityMongoose.riddenByEntity;
+			GlStateManager.rotate(playerIn.rotationYawHead - 90, 0F, 1F, 0F);
+		}
         
         worldrenderer.startDrawingQuads();
         GlStateManager.rotate(-90f, 0f, 0f, 1f);

@@ -299,7 +299,7 @@ public class Main{
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassPaneStack = new ItemStack(Blocks.glass_pane);
 		GameRegistry.addRecipe(new ItemStack(ItemBattleRifle.instance, 1), new Object[]{"ZA ","XXY", " AX", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', glassPaneStack, 'A', new ItemStack(Items.iron_ingot)});
-		GameRegistry.addRecipe(new ItemStack(ItemBattleRifle.instance, 1), new Object[]{"   "," XY", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.iron_ingot)});
+		GameRegistry.addRecipe(new ItemStack(Pistol.instance, 1), new Object[]{"   "," XY", "  Z", 'X', HaloIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.iron_ingot)});
 		GameRegistry.addRecipe(new ItemStack(ItemSniperRifle.instance, 1), new Object[]{"XYX","ZYY", " IY", 'X', glassPaneStack, 'Y', HaloIngot, 'Z', gunpowderStack, 'I', new ItemStack(Items.iron_ingot)});
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);

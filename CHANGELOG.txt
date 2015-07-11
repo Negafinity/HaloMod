@@ -1,3 +1,7 @@
+v1.3.52:
+
+Fixed Magnum/Pistol Crafting Recipe. Mongoose now rotates depending on where player is looking :D
+
 v1.3.51:
 
 Fixed crashing with CarbineRifle crafting recipe.

@@ -27,6 +27,7 @@ import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
@@ -47,90 +48,90 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderGhostEntity extends Render
 {
 	private static final ResourceLocation ghostTextures = new ResourceLocation("halocraft:textures/entities/GhostRender.png");
-    private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:models/entity/Ghost.b3d");
-    IModel model = null;
-    public RenderGhostEntity(RenderManager p_i46190_1_)
-    {
-        super(p_i46190_1_);
-        this.shadowSize = 0.5F;
-    }
-    Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
-            {
-                public TextureAtlasSprite apply(ResourceLocation location)
-                {
-                    return Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(location.toString());
-                }
-            };
-
-    public void doRender(EntityGhost par1EntityGhost, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
-    {
-    	IModel ghost = B3DLoader.instance.loadModel(ghostModel);
-    	IBakedModel bakedGhost = ghost.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-    	World world = par1EntityGhost.getWorldObj();
-    	BlockPos blockpos = new BlockPos(par1EntityGhost);
-    	Tessellator tessellator = Tessellator.getInstance();
-        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
-        //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
-        float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
-        float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
-
-        if (f3 < 0.0F)
-        {
-            f3 = 0.0F;
-        }
-
-        if (f2 > 0.0F)
-        {
-            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityGhost.getForwardDirection(), 1.0F, 0.0F, 0.0F);
-        }
-        
-        float f4 = 0.75F;
-        GlStateManager.scale(f4, f4, f4);
-        GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        this.bindEntityTexture(par1EntityGhost);
-        GlStateManager.scale(-1.0F, -1.0F, 1.0F);
-        
-        worldrenderer.startDrawingQuads();
-        GlStateManager.rotate(-90f, 0f, 0f, 1f);
-        //Get Quads
-        List<BakedQuad> generalQuads = bakedGhost.getGeneralQuads();
-		for (BakedQuad q : generalQuads) {
-			int[] vd = q.getVertexData();
-			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-			worldrenderer.addVertexData(vd);
+	private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:models/entity/Ghost.b3d");
+	IModel model = null;
+	public RenderGhostEntity(RenderManager p_i46190_1_)
+	{
+		super(p_i46190_1_);
+		this.shadowSize = 0.5F;
+	}
+	Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
+			{
+		public TextureAtlasSprite apply(ResourceLocation location)
+		{
+			return Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(location.toString());
 		}
-		for (EnumFacing face : EnumFacing.values()) {
-            List<BakedQuad> faceQuads = 
-           		 bakedGhost.getFaceQuads(face);
-            for (BakedQuad q : faceQuads) {
-                    int[] vd = q.getVertexData();
-                    worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-                   worldrenderer.addVertexData(vd);
-           }
-		 }
-		tessellator.draw();
-        GlStateManager.popMatrix();
-        super.doRender(par1EntityGhost, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
-    }
+			};
 
-    protected ResourceLocation getEntityTexture(EntityGhost p_180553_1_)
-    {
-        return ghostTextures;
-    }
+			public void doRender(EntityGhost par1EntityGhost, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+			{
+				IModel ghost = B3DLoader.instance.loadModel(ghostModel);
+				IBakedModel bakedGhost = ghost.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+				World world = par1EntityGhost.getWorldObj();
+				BlockPos blockpos = new BlockPos(par1EntityGhost);
+				Tessellator tessellator = Tessellator.getInstance();
+				WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+				GlStateManager.pushMatrix();
+				GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
 
-    protected ResourceLocation getEntityTexture(Entity entity)
-    {
-        return this.getEntityTexture((EntityGhost)entity);
-    }
+				float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
+				float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
 
-    public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
-    {
-        try {
-			this.doRender((EntityGhost)entity, x, y, z, p_76986_8_, partialTicks);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
+				if (f3 < 0.0F)
+				{
+					f3 = 0.0F;
+				}
+
+				if (f2 > 0.0F)
+				{
+					GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityGhost.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+				}
+
+				float f4 = 0.75F;
+				GlStateManager.scale(f4, f4, f4);
+				GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
+				this.bindEntityTexture(par1EntityGhost);
+				GlStateManager.scale(-1.0F, -1.0F, 1.0F);
+
+				worldrenderer.startDrawingQuads();
+				GlStateManager.rotate(-90f, 0f, 0f, 1f);
+				//Get Quads
+				List<BakedQuad> generalQuads = bakedGhost.getGeneralQuads();
+				for (BakedQuad q : generalQuads) {
+					int[] vd = q.getVertexData();
+					worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
+					worldrenderer.addVertexData(vd);
+				}
+				for (EnumFacing face : EnumFacing.values()) {
+					List<BakedQuad> faceQuads = 
+							bakedGhost.getFaceQuads(face);
+					for (BakedQuad q : faceQuads) {
+						int[] vd = q.getVertexData();
+						worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
+						worldrenderer.addVertexData(vd);
+					}
+				}
+				tessellator.draw();
+				GlStateManager.popMatrix();
+				super.doRender(par1EntityGhost, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+			}
+
+			protected ResourceLocation getEntityTexture(EntityGhost p_180553_1_)
+			{
+				return ghostTextures;
+			}
+
+			protected ResourceLocation getEntityTexture(Entity entity)
+			{
+				return this.getEntityTexture((EntityGhost)entity);
+			}
+
+			public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
+			{
+				try {
+					this.doRender((EntityGhost)entity, x, y, z, p_76986_8_, partialTicks);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 }
