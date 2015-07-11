@@ -226,7 +226,7 @@ public class EntityWarthogTurret extends Entity {
 			d4 = Math.sin((double) this.rotationYaw * Math.PI / 180.0D);
 
 			for (j = 0;
-			(double) j < 1.0D + d9 * 60.0D; ++j) {
+					(double) j < 1.0D + d9 * 60.0D; ++j) {
 				double d5 = (double)(this.rand.nextFloat() * 2.0F - 1.0F);
 				double d6 = (double)(this.rand.nextInt(2) * 2 - 1) * 0.7D;
 				double d7;
@@ -321,19 +321,9 @@ public class EntityWarthogTurret extends Entity {
 			}
 
 			this.moveEntity(this.motionX, this.motionY, this.motionZ);
-
-			if (this.isCollidedHorizontally && d9 > 0.2D) {
-				if (!this.worldObj.isRemote && !this.isDead) {
-					this.setDead();
-					for (l = 0; l < 2; ++l) {
-						this.dropItemWithOffset(halocraft.Main.itemWarthog, 2, 0.0F);
-					}
-				}
-			} else {
-				this.motionX *= 0.9900000095367432D;
-				this.motionY *= 0.949999988079071D;
-				this.motionZ *= 0.9900000095367432D;
-			}
+			this.motionX *= 0.9900000095367432D;
+			this.motionY *= 0.949999988079071D;
+			this.motionZ *= 0.9900000095367432D;
 
 			this.rotationPitch = 0.0F;
 			d4 = (double) this.rotationYaw;

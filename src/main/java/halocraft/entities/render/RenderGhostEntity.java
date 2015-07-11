@@ -1,7 +1,6 @@
-package halocraft.render;
+package halocraft.entities.render;
 
-import halocraft.entities.EntityMongoose;
-import halocraft.entities.EntityScorpion;
+import halocraft.entities.EntityGhost;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,15 +44,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderScorpionEntity extends Render
+public class RenderGhostEntity extends Render
 {
-	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
-    private static final ModelResourceLocation scorpionModelFile = new ModelResourceLocation("halocraft:models/entity/Scorpion.b3d");
+	private static final ResourceLocation ghostTextures = new ResourceLocation("halocraft:textures/entities/GhostRender.png");
+    private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:models/entity/Ghost.b3d");
     IModel model = null;
-    public RenderScorpionEntity(RenderManager p_i46190_1_)
+    public RenderGhostEntity(RenderManager p_i46190_1_)
     {
         super(p_i46190_1_);
-        this.shadowSize = 5F;
+        this.shadowSize = 0.5F;
     }
     Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
             {
@@ -63,19 +62,19 @@ public class RenderScorpionEntity extends Render
                 }
             };
 
-    public void doRender(EntityScorpion scorpion, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+    public void doRender(EntityGhost par1EntityGhost, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	IModel scorpionModel = B3DLoader.instance.loadModel(scorpionModelFile);
-    	IBakedModel bakedScorpion = scorpionModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-    	World world = scorpion.getWorldObj();
-    	BlockPos blockpos = new BlockPos(scorpion);
+    	IModel ghost = B3DLoader.instance.loadModel(ghostModel);
+    	IBakedModel bakedGhost = ghost.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+    	World world = par1EntityGhost.getWorldObj();
+    	BlockPos blockpos = new BlockPos(par1EntityGhost);
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_ + 3.5F, (float)p_180552_4_ + 0.45F, (float)p_180552_6_ + 2.5F);
+        GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
         //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
-        float f2 = (float)scorpion.getTimeSinceHit() - p_180552_9_;
-        float f3 = scorpion.getDamageTaken() - p_180552_9_;
+        float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
+        float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
 
         if (f3 < 0.0F)
         {
@@ -84,19 +83,19 @@ public class RenderScorpionEntity extends Render
 
         if (f2 > 0.0F)
         {
-            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)scorpion.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityGhost.getForwardDirection(), 1.0F, 0.0F, 0.0F);
         }
         
         float f4 = 0.75F;
         GlStateManager.scale(f4, f4, f4);
         GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        //this.bindEntityTexture(scorpion);
+        this.bindEntityTexture(par1EntityGhost);
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
         GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
-        List<BakedQuad> generalQuads = bakedScorpion.getGeneralQuads();
+        List<BakedQuad> generalQuads = bakedGhost.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
 			int[] vd = q.getVertexData();
 			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -104,7 +103,7 @@ public class RenderScorpionEntity extends Render
 		}
 		for (EnumFacing face : EnumFacing.values()) {
             List<BakedQuad> faceQuads = 
-           		 bakedScorpion.getFaceQuads(face);
+           		 bakedGhost.getFaceQuads(face);
             for (BakedQuad q : faceQuads) {
                     int[] vd = q.getVertexData();
                     worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -113,25 +112,24 @@ public class RenderScorpionEntity extends Render
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();
-        super.doRender(scorpion, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+        super.doRender(par1EntityGhost, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
     }
 
-    protected ResourceLocation getEntityTexture(EntityScorpion p_180553_1_)
+    protected ResourceLocation getEntityTexture(EntityGhost p_180553_1_)
     {
-        return boatTextures;
+        return ghostTextures;
     }
 
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        return this.getEntityTexture((EntityScorpion)entity);
+        return this.getEntityTexture((EntityGhost)entity);
     }
 
     public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
     {
         try {
-			this.doRender((EntityScorpion)entity, x, y, z, p_76986_8_, partialTicks);
+			this.doRender((EntityGhost)entity, x, y, z, p_76986_8_, partialTicks);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

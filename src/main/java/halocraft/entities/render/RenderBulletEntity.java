@@ -1,4 +1,4 @@
-package halocraft.render;
+package halocraft.entities.render;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,3 +1,7 @@
+v1.3.50:
+
+Added multiple crafting recipies.
+
 v1.3.49:
 
 Changed item dropped by Warthog w/ Turret to itemWarthogTurret - before it was itemWarthog and updated item names.

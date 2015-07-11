@@ -32,7 +32,6 @@ public class FireMessageHandler implements IMessageHandler < FireMessage, IMessa
 				public void run() {
 				EntityRocket er = new EntityRocket(worldIn, serverPlayerIn);
 				er.shootingEntity = serverPlayerIn.ridingEntity;
-				System.out.println(er.shootingEntity);
 				worldIn.spawnEntityInWorld(er);
 			}
 			});

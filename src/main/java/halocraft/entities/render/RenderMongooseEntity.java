@@ -1,6 +1,6 @@
-package halocraft.render;
+package halocraft.entities.render;
 
-import halocraft.entities.EntityGhost;
+import halocraft.entities.EntityMongoose;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,12 +44,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderGhostEntity extends Render
+public class RenderMongooseEntity extends Render
 {
-	private static final ResourceLocation ghostTextures = new ResourceLocation("halocraft:textures/entities/GhostRender.png");
-    private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:models/entity/Ghost.b3d");
+	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
+    private static final ModelResourceLocation mongooseModel = new ModelResourceLocation("halocraft:models/entity/Mongoose.b3d");
     IModel model = null;
-    public RenderGhostEntity(RenderManager p_i46190_1_)
+    public RenderMongooseEntity(RenderManager p_i46190_1_)
     {
         super(p_i46190_1_);
         this.shadowSize = 0.5F;
@@ -62,19 +62,19 @@ public class RenderGhostEntity extends Render
                 }
             };
 
-    public void doRender(EntityGhost par1EntityGhost, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+    public void doRender(EntityMongoose par1EntityMongoose, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
     {
-    	IModel ghost = B3DLoader.instance.loadModel(ghostModel);
-    	IBakedModel bakedGhost = ghost.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-    	World world = par1EntityGhost.getWorldObj();
-    	BlockPos blockpos = new BlockPos(par1EntityGhost);
+    	IModel mongoose = B3DLoader.instance.loadModel(mongooseModel);
+    	IBakedModel bakedMongoose = mongoose.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+    	World world = par1EntityMongoose.getWorldObj();
+    	BlockPos blockpos = new BlockPos(par1EntityMongoose);
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
+        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.52F, (float)p_180552_6_);
         //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
-        float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
-        float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
+        float f2 = (float)par1EntityMongoose.getTimeSinceHit() - p_180552_9_;
+        float f3 = par1EntityMongoose.getDamageTaken() - p_180552_9_;
 
         if (f3 < 0.0F)
         {
@@ -83,19 +83,19 @@ public class RenderGhostEntity extends Render
 
         if (f2 > 0.0F)
         {
-            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityGhost.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+            GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)par1EntityMongoose.getForwardDirection(), 1.0F, 0.0F, 0.0F);
         }
         
         float f4 = 0.75F;
         GlStateManager.scale(f4, f4, f4);
         GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-        this.bindEntityTexture(par1EntityGhost);
+        this.bindEntityTexture(par1EntityMongoose);
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
         GlStateManager.rotate(-90f, 0f, 0f, 1f);
         //Get Quads
-        List<BakedQuad> generalQuads = bakedGhost.getGeneralQuads();
+        List<BakedQuad> generalQuads = bakedMongoose.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
 			int[] vd = q.getVertexData();
 			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -103,7 +103,7 @@ public class RenderGhostEntity extends Render
 		}
 		for (EnumFacing face : EnumFacing.values()) {
             List<BakedQuad> faceQuads = 
-           		 bakedGhost.getFaceQuads(face);
+           		 bakedMongoose.getFaceQuads(face);
             for (BakedQuad q : faceQuads) {
                     int[] vd = q.getVertexData();
                     worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -112,24 +112,25 @@ public class RenderGhostEntity extends Render
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();
-        super.doRender(par1EntityGhost, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+        super.doRender(par1EntityMongoose, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
     }
 
-    protected ResourceLocation getEntityTexture(EntityGhost p_180553_1_)
+    protected ResourceLocation getEntityTexture(EntityMongoose p_180553_1_)
     {
-        return ghostTextures;
+        return boatTextures;
     }
 
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        return this.getEntityTexture((EntityGhost)entity);
+        return this.getEntityTexture((EntityMongoose)entity);
     }
 
     public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
     {
         try {
-			this.doRender((EntityGhost)entity, x, y, z, p_76986_8_, partialTicks);
+			this.doRender((EntityMongoose)entity, x, y, z, p_76986_8_, partialTicks);
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

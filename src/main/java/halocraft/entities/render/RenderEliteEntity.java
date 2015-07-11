@@ -1,4 +1,4 @@
-package halocraft.render;
+package halocraft.entities.render;
 
 import halocraft.entities.EntityElite;
 import net.minecraft.client.model.ModelBase;
