@@ -77,21 +77,21 @@ public class EntityGhost extends Entity
         return true;
     }
 
-    public EntityGhost(World worldIn, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
+    public EntityGhost(World worldIn, double posX, double posY, double posZ)
     {
         this(worldIn);
-        this.setPosition(p_i1705_2_, p_i1705_4_, p_i1705_6_);
+        this.setPosition(posX, posY, posZ);
         this.motionX = 0.0D;
         this.motionY = 0.0D;
         this.motionZ = 0.0D;
-        this.prevPosX = p_i1705_2_;
-        this.prevPosY = p_i1705_4_;
-        this.prevPosZ = p_i1705_6_;
+        this.prevPosX = posX;
+        this.prevPosY = posY;
+        this.prevPosZ = posZ;
     }
 
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.0D + 0.8D; //- 0.30000001192092896D;
+        return (double)this.height * 0.0D + 0.8D;
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount)
@@ -433,6 +433,13 @@ public class EntityGhost extends Entity
                 }
             }
         }
+        
+        if(this.riddenByEntity == null)
+		{
+			this.motionX = 0;
+			this.motionY = 0;
+			this.motionZ = 0;
+		}
     }
 
     public void updateRiderPosition()
@@ -466,7 +473,7 @@ public class EntityGhost extends Entity
         }
     }
 
-    protected void func_180433_a(double p_180433_1_, boolean p_180433_3_, Block p_180433_4_, BlockPos p_180433_5_)
+    protected void func_180433_a(double p_180433_1_, boolean p_180433_3_, Block blockIn, BlockPos blockPos)
     {
         if (p_180433_3_)
         {

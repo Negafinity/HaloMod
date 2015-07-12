@@ -1,3 +1,7 @@
+v1.3.53:
+
+Made it so vehicles stop when player gets off so they don't have to run after them..
+
 v1.3.52:
 
 Fixed Magnum/Pistol Crafting Recipe. Mongoose now rotates depending on where player is looking :D
