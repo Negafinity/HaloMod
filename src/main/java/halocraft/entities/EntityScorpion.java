@@ -6,6 +6,7 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -47,7 +48,6 @@ public class EntityScorpion extends Entity
 		this.isBoatEmpty = true;
 		this.speedMultiplier = 0.07D;
 		this.preventEntitySpawning = true;
-		this.renderDistanceWeight = 12.0D;
 		this.setSize(9.5F, 6.25F);
 		this.ignoreFrustumCheck = true;
 	}
@@ -79,21 +79,21 @@ public class EntityScorpion extends Entity
 		return false;
 	}
 
-	public EntityScorpion(World worldIn, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
+	public EntityScorpion(World worldIn, double posX, double posY, double posZ)
 	{
 		this(worldIn);
-		this.setPosition(p_i1705_2_, p_i1705_4_, p_i1705_6_);
+		this.setPosition(posX, posY, posZ);
 		this.motionX = 0.0D;
 		this.motionY = 0.0D;
 		this.motionZ = 0.0D;
-		this.prevPosX = p_i1705_2_;
-		this.prevPosY = p_i1705_4_;
-		this.prevPosZ = p_i1705_6_;
+		this.prevPosX = posX;
+		this.prevPosY = posY;
+		this.prevPosZ = posZ;
 	}
 
 	public double getMountedYOffset()
 	{
-		return (double)this.height * 0.0D + 2D;
+		return (double)this.height * 0.0D + 4.5D;
 	}
 
 	public boolean attackEntityFrom(DamageSource source, float amount)
@@ -434,7 +434,14 @@ public class EntityScorpion extends Entity
 		{
 			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
+			this.riddenByEntity.setPosition(this.posX + d0 - 2.75F, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
+		}
+		if(this.riddenByEntity instanceof EntityPlayer)
+		{
+			if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
+			{
+				Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
+			}
 		}
 	}
 

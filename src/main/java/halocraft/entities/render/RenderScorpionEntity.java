@@ -48,12 +48,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderScorpionEntity extends Render
 {
-	private static final ResourceLocation boatTextures = new ResourceLocation("halocraft:textures/entities/MongooseRender.png");
 	private static final ModelResourceLocation scorpionModelFile = new ModelResourceLocation("halocraft:models/entity/Scorpion.b3d");
 	IModel model = null;
-	public RenderScorpionEntity(RenderManager p_i46190_1_)
+	public RenderScorpionEntity(RenderManager renderManager)
 	{
-		super(p_i46190_1_);
+		super(renderManager);
 		this.shadowSize = 5F;
 	}
 	Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
@@ -64,62 +63,66 @@ public class RenderScorpionEntity extends Render
 		}
 			};
 
-			public void doRender(EntityScorpion scorpion, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+			public void doRender(EntityScorpion scorpion, double posX, double posY, double posZ, float yaw, float partialTicks) throws IOException
 			{
-				IModel scorpionModel = B3DLoader.instance.loadModel(scorpionModelFile);
-				IBakedModel bakedScorpion = scorpionModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-				World world = scorpion.getWorldObj();
-				BlockPos blockpos = new BlockPos(scorpion);
-				Tessellator tessellator = Tessellator.getInstance();
-				WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 				GlStateManager.pushMatrix();
-				GlStateManager.translate((float)p_180552_2_ + 3.5F, (float)p_180552_4_ + 0.45F, (float)p_180552_6_ + 2.5F);
-
-				float f2 = (float)scorpion.getTimeSinceHit() - p_180552_9_;
-				float f3 = scorpion.getDamageTaken() - p_180552_9_;
-
-				if (f3 < 0.0F)
 				{
-					f3 = 0.0F;
-				}
+					IModel scorpionModel = B3DLoader.instance.loadModel(scorpionModelFile);
+					IBakedModel bakedScorpion = scorpionModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
+					World world = scorpion.getWorldObj();
+					BlockPos blockpos = new BlockPos(scorpion);
+					Tessellator tessellator = Tessellator.getInstance();
+					WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+					GlStateManager.translate((float)posX + 3.5F, (float)posY + 0.45F, (float)posZ + 2.5F);
 
-				if (f2 > 0.0F)
-				{
-					GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)scorpion.getForwardDirection(), 1.0F, 0.0F, 0.0F);
-				}
+					float f2 = (float)scorpion.getTimeSinceHit() - partialTicks;
+					float f3 = scorpion.getDamageTaken() - partialTicks;
 
-				float f4 = 0.75F;
-				GlStateManager.scale(f4, f4, f4);
-				GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
+					if (f3 < 0.0F)
+					{
+						f3 = 0.0F;
+					}
 
-				GlStateManager.scale(-1.0F, -1.0F, 1.0F);
+					if (f2 > 0.0F)
+					{
+						GlStateManager.rotate(MathHelper.sin(f2) * f2 * f3 / 10.0F * (float)scorpion.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+					}
 
-				worldrenderer.startDrawingQuads();
-				GlStateManager.rotate(-90f, 0f, 0f, 1f);
-				//Get Quads
-				List<BakedQuad> generalQuads = bakedScorpion.getGeneralQuads();
-				for (BakedQuad q : generalQuads) {
-					int[] vd = q.getVertexData();
-					worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-					worldrenderer.addVertexData(vd);
-				}
-				for (EnumFacing face : EnumFacing.values()) {
-					List<BakedQuad> faceQuads = 
-							bakedScorpion.getFaceQuads(face);
-					for (BakedQuad q : faceQuads) {
+					float f4 = 0.75F;
+					GlStateManager.scale(f4, f4, f4);
+					GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
+
+					GlStateManager.scale(-1.0F, -1.0F, 1.0F);
+
+					worldrenderer.startDrawingQuads();
+					GlStateManager.rotate(-90f, 0f, 0f, 1f);
+					
+					//Get Quads and Vertex Data
+					
+					List<BakedQuad> generalQuads = bakedScorpion.getGeneralQuads();
+					for (BakedQuad q : generalQuads) {
 						int[] vd = q.getVertexData();
 						worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
 						worldrenderer.addVertexData(vd);
 					}
+					for (EnumFacing face : EnumFacing.values()) {
+						List<BakedQuad> faceQuads = 
+								bakedScorpion.getFaceQuads(face);
+						for (BakedQuad q : faceQuads) {
+							int[] vd = q.getVertexData();
+							worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
+							worldrenderer.addVertexData(vd);
+						}
+					}
+					tessellator.draw();
 				}
-				tessellator.draw();
 				GlStateManager.popMatrix();
-				super.doRender(scorpion, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+				super.doRender(scorpion, posX, posY, posZ, yaw, partialTicks);
 			}
 
 			protected ResourceLocation getEntityTexture(EntityScorpion p_180553_1_)
 			{
-				return boatTextures;
+				return null;
 			}
 
 			protected ResourceLocation getEntityTexture(Entity entity)
@@ -129,10 +132,12 @@ public class RenderScorpionEntity extends Render
 
 			public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
 			{
-				try {
+				try
+				{
 					this.doRender((EntityScorpion)entity, x, y, z, p_76986_8_, partialTicks);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
+				}
+				catch (IOException e)
+				{
 					e.printStackTrace();
 				}
 			}

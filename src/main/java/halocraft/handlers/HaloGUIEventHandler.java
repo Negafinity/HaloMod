@@ -32,7 +32,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
 
-public class HaloEventHandler extends Gui{
+public class HaloGUIEventHandler extends Gui{
 	private Minecraft mc;
 	ResourceLocation overlayTop = new ResourceLocation("halocraft:textures/gui/HaloOverlayTop.png");
 	ResourceLocation overlayBottom = new ResourceLocation("halocraft:textures/gui/HaloOverlayBottom.png");
@@ -41,7 +41,7 @@ public class HaloEventHandler extends Gui{
 	ResourceLocation redSquare = new ResourceLocation("halocraft:textures/gui/RedSquare.png");
 	ResourceLocation greenSquare = new ResourceLocation("halocraft:textures/gui/GreenSquare.png");
 	ResourceLocation minimap = new ResourceLocation("halocraft:textures/gui/HaloOverlayMinimap.png");
-	public HaloEventHandler(Minecraft mc){
+	public HaloGUIEventHandler(Minecraft mc){
 		super();
 		// We need this to invoke the render engine.
 		this.mc = mc;

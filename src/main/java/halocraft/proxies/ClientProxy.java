@@ -35,8 +35,9 @@ import halocraft.entities.render.RenderRocketEntity;
 import halocraft.entities.render.RenderScorpionEntity;
 import halocraft.entities.render.RenderWarthogEntity;
 import halocraft.entities.render.RenderWarthogTurretEntity;
-import halocraft.handlers.HaloEventHandler;
+import halocraft.handlers.HaloGUIEventHandler;
 import halocraft.handlers.KeyInputHandler;
+import halocraft.handlers.VehicleEventHandler;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
 import halocraft.items.HaloIngot;
@@ -216,6 +217,7 @@ public class ClientProxy extends CommonProxy{
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
 		KeyBindings.init();
-		MinecraftForge.EVENT_BUS.register(new HaloEventHandler(Minecraft.getMinecraft()));
+		MinecraftForge.EVENT_BUS.register(new HaloGUIEventHandler(Minecraft.getMinecraft()));
+		MinecraftForge.EVENT_BUS.register(new VehicleEventHandler());
 	}
 }

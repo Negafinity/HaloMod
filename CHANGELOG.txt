@@ -1,3 +1,7 @@
+v1.3.54:
+
+When entering a Scorpion your hotbar stops rendering and you are put in third person
+
 v1.3.53:
 
 Made it so vehicles stop when player gets off so they don't have to run after them..
