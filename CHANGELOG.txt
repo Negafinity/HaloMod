@@ -1,6 +1,6 @@
 v1.3.54:
 
-When entering a Scorpion your hotbar stops rendering and you are put in third person
+When entering a Scorpion your hotbar stops rendering and you are put in third person.
 
 v1.3.53:
 
