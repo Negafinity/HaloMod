@@ -23,7 +23,7 @@ public class TankHarvester extends Item {
 		 World world = player.worldObj;
 		 if(!world.isRemote){
 			 if(entity instanceof EntityScorpion){
-				entity.dropItem(halocraft.Main.itemScorpion, 1);
+				entity.dropItem(ItemScorpion.instance, 1);
 			 	entity.setDead();
 		 	}
 		 	else{
