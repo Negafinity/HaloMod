@@ -128,7 +128,7 @@ public class RenderScorpionEntity extends Render
 
 			protected ResourceLocation getEntityTexture(Entity entity)
 			{
-				return this.getEntityTexture((EntityScorpion)entity);
+				return null;
 			}
 
 			public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)

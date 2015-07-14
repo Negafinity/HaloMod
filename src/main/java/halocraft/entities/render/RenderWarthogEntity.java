@@ -121,7 +121,7 @@ public class RenderWarthogEntity extends Render
 
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        return this.getEntityTexture((EntityWarthog)entity);
+        return null;
     }
 
     public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
