@@ -147,7 +147,6 @@ public class Main{
 	public static Item ammoRocket;
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
-	public static Item itemScorpion;
 	public static Item itemWheel;
 	public static Item itemOil;
 	public static Item itemRedPlasmaAmmo;
@@ -163,7 +162,6 @@ public class Main{
 		itemOil = new ItemOil();
 		itemWheel = new ItemWheel();
 		itemRubber = new ItemRubber();
-		itemScorpion = new ItemScorpion();
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
@@ -268,7 +266,7 @@ public class Main{
 		GameRegistry.registerItem(ItemGhost.instance, ItemGhost.name);
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemRubber, "itemRubber");
-		GameRegistry.registerItem(itemScorpion, "itemScorpion");
+		GameRegistry.registerItem(ItemScorpion.instance, ItemScorpion.name);
 		GameRegistry.registerItem(ItemIncinerationCannon.instance, ItemIncinerationCannon.name);
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
 		GameRegistry.registerItem(Pistol.instance, Pistol.name);
@@ -323,10 +321,10 @@ public class Main{
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
 		GameRegistry.addRecipe(new ItemStack(itemWarthogTurret, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
 		GameRegistry.addRecipe(new ItemStack(itemWarthog, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
-		GameRegistry.addRecipe(new ItemStack(itemScorpion, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
+		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', itemRedPlasmaAmmo, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
-		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', HaloIngot, 'Y', itemScorpion});
+		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', HaloIngot, 'Y', ItemScorpion.instance});
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});

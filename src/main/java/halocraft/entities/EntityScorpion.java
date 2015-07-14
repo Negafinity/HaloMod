@@ -1,6 +1,7 @@
 package halocraft.entities;
 
 import halocraft.Main;
+import halocraft.items.ItemScorpion;
 
 import java.util.List;
 
@@ -125,7 +126,7 @@ public class EntityScorpion extends Entity
 
 					if (!flag)
 					{
-						this.dropItemWithOffset(halocraft.Main.itemScorpion, 1, 0.0F);
+						this.dropItemWithOffset(ItemScorpion.instance, 1, 0.0F);
 					}
 
 					this.setDead();
