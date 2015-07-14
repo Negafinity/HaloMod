@@ -164,6 +164,9 @@ public class ClientProxy extends CommonProxy{
 		ModelResourceLocation res41 = new ModelResourceLocation("halocraft:itemOil", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemOil, 0, res41);
 		
+		ModelResourceLocation res42 = new ModelResourceLocation("halocraft:itemRubber", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemRubber, 0, res42);
+		
 		//Rendering Blocks
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", HaloBlock.name);
 		Item itemBlockSimple2 = GameRegistry.findItem("halocraft", "HaloOre");

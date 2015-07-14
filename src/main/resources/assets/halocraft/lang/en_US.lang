@@ -26,6 +26,7 @@ tile.halocraft:redplasmablock.name=Red Plasma Block
 item.itemOil.name=Oil
 item.itemWheel.name=Wheel
 item.ammoRocket.name=Rocket
+item.itemRubber.name=Rubber
 item.ammoPlasma.name=Plasma
 item.halocraft:rocketlauncher.name=Rocket Launcher
 item.ammoAssaultRifle.name=Ammo
