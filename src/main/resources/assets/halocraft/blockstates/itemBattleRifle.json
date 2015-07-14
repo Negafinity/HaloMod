@@ -1,0 +1,81 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {},
+        "model": "halocraft:BattleRifle.obj"
+    },
+    "variants": {
+        "normal": [
+            {
+                "transform": {
+                    "rotation": {
+                        "y": 0
+                    }
+                }
+            }
+        ],
+        "inventory": [
+            {
+                "transform": {
+                    "thirdperson": {
+                        "translation": [
+                            0.2,
+                            0.45,
+                            -0.33
+                        ],
+                        "rotation": [
+                            {
+                                "y": 90
+                            },
+                            {
+                                "x": 270
+                            },
+                            {
+                                "z": 270
+                            }
+                        ],
+                        "scale": 1
+                    },
+                    "gui": {
+                        "translation": [
+                            -0.25,
+                            -0.5,
+                            0.1
+                        ],
+                        "rotation": [
+                            {
+                                "y": -110
+                            },
+                            {
+                                "x": 140
+                            },
+                            {
+                                "z": 45
+                            }
+                        ],
+                        "scale": 1.25
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -0.75,
+                            0.8,
+                            -0.65
+                        ],
+                        "rotation": [
+                            {
+                                "y": 140
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 2
+                    }
+                }
+            }
+        ]
+    }
+}

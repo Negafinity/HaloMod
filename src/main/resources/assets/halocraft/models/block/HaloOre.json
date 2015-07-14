@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/HaloOre0",
+        "up": "halocraft:blocks/HaloOre1",
+        "north": "halocraft:blocks/HaloOre2",
+        "east": "halocraft:blocks/HaloOre5",
+        "south": "halocraft:blocks/HaloOre3",
+        "west": "halocraft:blocks/HaloOre4",
+        "particle": "blocks/lapis_block"
+    }
+}
