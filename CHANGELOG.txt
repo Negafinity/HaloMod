@@ -1,3 +1,7 @@
+v1.3.63:
+
+Added Warthog's item model.
+
 v1.3.62:
 
 Added Scorpion's Item Model.

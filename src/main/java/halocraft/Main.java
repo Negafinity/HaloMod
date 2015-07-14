@@ -153,7 +153,6 @@ public class Main{
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
 	public static Item itemRubber;
-	public static Item itemWarthog;
 	public static Item itemWarthogTurret;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
@@ -165,7 +164,6 @@ public class Main{
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
-		itemWarthog = new ItemWarthog();
 		itemWarthogTurret = new ItemWarthogTurret();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
@@ -276,7 +274,7 @@ public class Main{
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(ItemCarbineRifle.instance, ItemCarbineRifle.name);
 		GameRegistry.registerItem(ItemNeedler.instance, ItemNeedler.name);
-		GameRegistry.registerItem(itemWarthog, "Warthog");
+		GameRegistry.registerItem(ItemWarthog.instance, ItemWarthog.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(GreenPlasmaIngot.instance, GreenPlasmaIngot.name);
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
@@ -320,7 +318,7 @@ public class Main{
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
 		GameRegistry.addRecipe(new ItemStack(itemWarthogTurret, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
-		GameRegistry.addRecipe(new ItemStack(itemWarthog, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
+		GameRegistry.addRecipe(new ItemStack(ItemWarthog.instance, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
 		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', itemRedPlasmaAmmo, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
