@@ -72,7 +72,7 @@ public class RenderWarthogTurretEntity extends Render
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)posX - 0.5F, (float)posY + 0.75F, (float)posZ + 0.5F);
+        GlStateManager.translate((float)posX + 0.6F, (float)posY + 0.75F, (float)posZ + 0.1F);
 
         float f2 = (float)entityWarthogTurret.getTimeSinceHit() - partialTicks;
         float f3 = entityWarthogTurret.getDamageTaken() - partialTicks;

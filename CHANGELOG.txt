@@ -1,3 +1,11 @@
+v1.3.58:
+
+Updated Crafting Recipes and Plasma Blocks added (Purple & Red).
+
+v1.3.57:
+
+Updated Render Classes + Plasma Rifle JSON.
+
 v1.3.56:
 
 Fixed Bugs.

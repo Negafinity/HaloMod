@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/PurplePlasmaBlock0",
+        "up": "halocraft:blocks/PurplePlasmaBlock1",
+        "north": "halocraft:blocks/PurplePlasmaBlock2",
+        "east": "halocraft:blocks/PurplePlasmaBlock5",
+        "south": "halocraft:blocks/PurplePlasmaBlock3",
+        "west": "halocraft:blocks/PurplePlasmaBlock4",
+        "particle": "blocks/lapis_block"
+    }
+}

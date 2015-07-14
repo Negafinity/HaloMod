@@ -5,6 +5,8 @@ import halocraft.armor.CovenantArmor;
 import halocraft.armor.HaloArmor;
 import halocraft.blocks.HaloBlock;
 import halocraft.blocks.HaloOre;
+import halocraft.blocks.PurplePlasmaBlock;
+import halocraft.blocks.RedPlasmaBlock;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
@@ -38,12 +40,14 @@ import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedler;
 import halocraft.items.ItemNeedlerAmmo;
+import halocraft.items.ItemOil;
 import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.ItemWarthog;
 import halocraft.items.ItemWarthogTurret;
+import halocraft.items.ItemWheel;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PurplePlasmaIngot;
@@ -144,6 +148,8 @@ public class Main{
 	public static Item ammoPlasma;
 	public static Item itemMongoose;
 	public static Item itemScorpion;
+	public static Item itemWheel;
+	public static Item itemOil;
 	public static Item itemRedPlasmaAmmo;
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
@@ -154,6 +160,8 @@ public class Main{
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
+		itemOil = new ItemOil();
+		itemWheel = new ItemWheel();
 		itemScorpion = new ItemScorpion();
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
@@ -238,6 +246,10 @@ public class Main{
 		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
+		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
+		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);
+		GameRegistry.registerItem(itemWheel, "itemWheel");
+		GameRegistry.registerItem(itemOil, "itemOil");
 		GameRegistry.registerBlock(RedPlasmaOre, "RedPlasmaOre");
 		GameRegistry.registerBlock(GreenPlasmaOre, "GreenPlasmaOre");
 		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
@@ -295,6 +307,8 @@ public class Main{
 		GameRegistry.registerItem(ItemCarbineAmmo.instance, ItemCarbineAmmo.name);
 		//Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', HaloIngot});
+		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', PurplePlasmaIngot.instance});
+		GameRegistry.addRecipe(new ItemStack(RedPlasmaBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', RedPlasmaIngot.instance});
 		//Gun Recipes
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassPaneStack = new ItemStack(Blocks.glass_pane);
@@ -304,6 +318,12 @@ public class Main{
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
+		GameRegistry.addRecipe(new ItemStack(itemWarthogTurret, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
+		GameRegistry.addRecipe(new ItemStack(itemWarthog, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
+		GameRegistry.addRecipe(new ItemStack(itemScorpion, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
+		GameRegistry.addRecipe(new ItemStack(itemGhost, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
+		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', itemRedPlasmaAmmo, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
+		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', HaloIngot, 'Y', itemScorpion});
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', HaloIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', HaloIngot});
@@ -316,7 +336,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		GameRegistry.addRecipe(new ItemStack(itemRedPlasmaAmmo, 1), new Object[]{" X "," X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		ItemStack coalStack = new ItemStack(Items.coal);
-		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"XXX","X X", "Y Y", 'X', HaloIngot, 'Y', coalStack});
+		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"X  ","YYY", "ZYZ", 'X', HaloIngot, 'Y', HaloBlock.instance, 'Z', itemWheel});
 		//Health Pack Crafting Recipe
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
 		//Active Camo Armor	
@@ -326,6 +346,7 @@ public class Main{
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), SpartanChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), SpartanBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(itemWheel, 1), new ItemStack(Items.iron_ingot, 1, 1), itemOil);
 		//Green Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanHelmet, 1), new ItemStack(Items.dye, 1, 10), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanChestplate, 1), new ItemStack(Items.dye, 1, 10), SpartanChestplate);
@@ -352,6 +373,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(ItemNeedler.instance, 1), new Object[]{"XXX", "YYY", "  Y", 'X', ItemNeedlerAmmo.instance, 'Y', PurplePlasmaIngot.instance});
 		GameRegistry.addRecipe(new ItemStack(PlasmaRifle.instance, 1), new Object[]{"YY ", " XY", "YY ", 'X', ammoPlasma, 'Y', RedPlasmaIngot.instance});
 		GameRegistry.addSmelting(HaloOre, new ItemStack(HaloIngot, 1), 0.1f);
+		GameRegistry.addSmelting(new ItemStack(Blocks.dirt), new ItemStack(itemOil, 1), 0.1f);
 		GameRegistry.addSmelting(RedPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addSmelting(PurplePlasmaOre, new ItemStack(PurplePlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addSmelting(GreenPlasmaIngot.instance, new ItemStack(ammoPlasma, 1), 0.1f);

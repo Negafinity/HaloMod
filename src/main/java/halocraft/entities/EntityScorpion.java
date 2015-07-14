@@ -116,7 +116,7 @@ public class EntityScorpion extends Entity
 				this.setBeenAttacked();
 				boolean flag = source.getEntity() instanceof EntityPlayer && ((EntityPlayer)source.getEntity()).capabilities.isCreativeMode;
 
-				if (this.getDamageTaken() > 1000000.0F)
+				if (this.getDamageTaken() > 100000.0F || flag)
 				{
 					if (this.riddenByEntity != null)
 					{
@@ -434,7 +434,7 @@ public class EntityScorpion extends Entity
 		{
 			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.riddenByEntity.setPosition(this.posX + d0 - 2.75F, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
+			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 + 5F);
 		}
 		if(this.riddenByEntity instanceof EntityPlayer)
 		{

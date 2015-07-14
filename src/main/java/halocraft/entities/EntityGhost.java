@@ -48,6 +48,7 @@ public class EntityGhost extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.setSize(4F, 1.5F);
+        this.ignoreFrustumCheck = true;
     }
 
     protected boolean canTriggerWalking()

@@ -71,7 +71,7 @@ public class RenderWarthogEntity extends Render
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)posX, (float)posY + 0.75F, (float)posZ + 0.5F);
+        GlStateManager.translate((float)posX + 0.65F, (float)posY + 0.75F, (float)posZ);
 
         float f2 = (float)warthogIn.getTimeSinceHit() - partialTicks;
         float f3 = warthogIn.getDamageTaken() - partialTicks;
