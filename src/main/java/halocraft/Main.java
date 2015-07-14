@@ -53,7 +53,7 @@ import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
-import halocraft.items.RocketLauncher;
+import halocraft.items.ItemRocketLauncher;
 import halocraft.items.TankHarvester;
 import halocraft.packets.FireMessage;
 import halocraft.packets.FireMessageHandler;
@@ -252,7 +252,7 @@ public class Main{
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
-		GameRegistry.registerItem(RocketLauncher.instance, RocketLauncher.name);
+		GameRegistry.registerItem(ItemRocketLauncher.instance, ItemRocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
@@ -317,7 +317,7 @@ public class Main{
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
 		GameRegistry.addRecipe(new ItemStack(ItemWarthogTurret.instance, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemWarthog.instance, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
-		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
+		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', ItemRocketLauncher.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', itemRedPlasmaAmmo, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
 		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', HaloIngot, 'Y', ItemScorpion.instance});
@@ -357,7 +357,7 @@ public class Main{
 		ItemStack stickStack = new ItemStack(Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ItemEnergySword.instance, 1), new Object[]{" X "," X ", " Y ", 'X', PurplePlasmaIngot.instance, 'Y', stickStack});
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
-		GameRegistry.addRecipe(new ItemStack(RocketLauncher.instance, 1), new Object[]{" XX", "YYY", " IZ", 'X', ammoRocket, 'Y', HaloIngot, 'Z', HaloBlock.instance, 'I', new ItemStack(Items.iron_ingot)});
+		GameRegistry.addRecipe(new ItemStack(ItemRocketLauncher.instance, 1), new Object[]{" XX", "YYY", " IZ", 'X', ammoRocket, 'Y', HaloIngot, 'Z', HaloBlock.instance, 'I', new ItemStack(Items.iron_ingot)});
 		GameRegistry.addRecipe(new ItemStack(ItemFuelRodCannon.instance, 1), new Object[]{"XXZ", "XYZ", " XX", 'X', GreenPlasmaIngot.instance, 'Y', covenantPiece, 'Z', ammoPlasmaRocket});
 		ItemStack ironStack = new ItemStack(Items.iron_ingot);
 		GameRegistry.addRecipe(new ItemStack(ItemAssaultRifle.instance, 1), new Object[]{"   ", "XXY", " ZX", 'X', HaloIngot, 'Y', gunStack, 'Z', ironStack});

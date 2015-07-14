@@ -11,12 +11,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 
-public class RocketLauncher extends Item {
+public class ItemRocketLauncher extends Item {
 	//Following is so you can access it in pre-init
-	public static final RocketLauncher instance = new RocketLauncher();
-	public static final String name = "RocketLauncher";
+	public static final ItemRocketLauncher instance = new ItemRocketLauncher();
+	public static final String name = "itemRocketLauncher";
 	
-	public RocketLauncher(){
+	public ItemRocketLauncher(){
 	     super();
 	     setCreativeTab(CreativeTabs.tabCombat);
 	     setUnlocalizedName("halocraft:" + name.toLowerCase());

@@ -63,7 +63,7 @@ import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
-import halocraft.items.RocketLauncher;
+import halocraft.items.ItemRocketLauncher;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
@@ -215,7 +215,7 @@ public class ClientProxy extends CommonProxy{
 	public void preInit(){
 		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
 		OBJLoader.instance.addDomain("halocraft");
-		ModelLoader.setCustomModelResourceLocation(RocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + RocketLauncher.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(Pistol.instance, 0, new ModelResourceLocation("halocraft:" + Pistol.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
