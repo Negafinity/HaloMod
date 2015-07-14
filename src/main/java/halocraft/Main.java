@@ -147,7 +147,6 @@ public class Main{
 	public static Item ammoRocket;
 	public static Item ammoAssaultRifle;
 	public static Item ammoPlasma;
-	public static Item itemMongoose;
 	public static Item itemScorpion;
 	public static Item itemWheel;
 	public static Item itemOil;
@@ -181,7 +180,6 @@ public class Main{
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
-		itemMongoose = new ItemMongoose();
 		itemRedPlasmaAmmo = new ItemRedPlasmaAmmo();
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -255,7 +253,7 @@ public class Main{
 		GameRegistry.registerBlock(GreenPlasmaOre, "GreenPlasmaOre");
 		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
-		GameRegistry.registerItem(itemMongoose, "itemMongoose");
+		GameRegistry.registerItem(ItemMongoose.instance, ItemMongoose.name);
 		GameRegistry.registerItem(itemWarthogTurret, "itemWarthogTurret");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
@@ -341,7 +339,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		GameRegistry.addRecipe(new ItemStack(itemRedPlasmaAmmo, 1), new Object[]{" X "," X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		ItemStack coalStack = new ItemStack(Items.coal);
-		GameRegistry.addRecipe(new ItemStack(itemMongoose, 1), new Object[]{"X  ","YYY", "ZYZ", 'X', HaloIngot, 'Y', HaloBlock.instance, 'Z', itemWheel});
+		GameRegistry.addRecipe(new ItemStack(ItemMongoose.instance, 1), new Object[]{"X  ","YYY", "ZYZ", 'X', HaloIngot, 'Y', HaloBlock.instance, 'Z', itemWheel});
 		//Health Pack Crafting Recipe
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
 		//Active Camo Armor	

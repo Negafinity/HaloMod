@@ -52,6 +52,7 @@ import halocraft.items.ItemFuelRodCannon;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
+import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedler;
 import halocraft.items.ItemNeedlerAmmo;
 import halocraft.items.ItemSniperRifle;
@@ -96,8 +97,6 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoAssaultRifle, 0, res9);
 		ModelResourceLocation res10 = new ModelResourceLocation("halocraft:itemScorpion", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemScorpion, 0, res10);
-		ModelResourceLocation res12 = new ModelResourceLocation("halocraft:itemMongoose", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemMongoose, 0, res12);
 		//Registering Red Spartan Armor
 		ModelResourceLocation res13 = new ModelResourceLocation("halocraft:RedSpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.RedSpartanChestplate, 0, res13);
@@ -230,6 +229,7 @@ public class ClientProxy extends CommonProxy{
 		ModelLoader.setCustomModelResourceLocation(ItemNeedlerAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemNeedlerAmmo.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemNeedler.instance, 0, new ModelResourceLocation("halocraft:" + ItemNeedler.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemGhost.instance, 0, new ModelResourceLocation("halocraft:" + ItemGhost.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemMongoose.instance, 0, new ModelResourceLocation("halocraft:" + ItemMongoose.name, "inventory"));
 
 		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
         
