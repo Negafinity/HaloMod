@@ -73,7 +73,7 @@ public class RenderWarthogTurretEntity extends Render
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)posX - 0.5F, (float)posY + 0.75F, (float)posZ + 0.5F);
-        //GlStateManager.rotate(-360.0F, 0.0F, 1.0F, 0.0F);
+
         float f2 = (float)entityWarthogTurret.getTimeSinceHit() - partialTicks;
         float f3 = entityWarthogTurret.getDamageTaken() - partialTicks;
 
@@ -115,12 +115,12 @@ public class RenderWarthogTurretEntity extends Render
         super.doRender(entityWarthogTurret, posX, posY, posZ, yaw, partialTicks);
     }
 
-    protected ResourceLocation getEntityTexture(EntityWarthogTurret p_180553_1_)
+    protected ResourceLocation getEntityTexture(EntityWarthogTurret entityIn)
     {
         return null;
     }
 
-    protected ResourceLocation getEntityTexture(Entity entity)
+    protected ResourceLocation getEntityTexture(Entity entityIn)
     {
         return null;
     }

@@ -120,14 +120,14 @@ public class RenderMongooseEntity extends Render
         super.doRender(par1EntityMongoose, posX, posY, posZ, yaw, partialTicks);
     }
 
-    protected ResourceLocation getEntityTexture(EntityMongoose p_180553_1_)
+    protected ResourceLocation getEntityTexture(EntityMongoose entity)
     {
         return null;
     }
 
     protected ResourceLocation getEntityTexture(Entity entity)
     {
-        return this.getEntityTexture((EntityMongoose)entity);
+        return null;
     }
 
     public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
