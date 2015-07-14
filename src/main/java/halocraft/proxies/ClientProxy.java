@@ -55,6 +55,7 @@ import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedler;
 import halocraft.items.ItemNeedlerAmmo;
+import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.ItemWarthog;
@@ -144,31 +145,28 @@ public class ClientProxy extends CommonProxy{
 		//Rendering Plasma Ammo
 		ModelResourceLocation res32 = new ModelResourceLocation("halocraft:ammoPlasma", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoPlasma, 0, res32);
-		
+
 		ModelResourceLocation res35 = new ModelResourceLocation("halocraft:RedPlasmaIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(RedPlasmaIngot.instance, 0, res35);
-		
-		ModelResourceLocation res36 = new ModelResourceLocation("halocraft:itemRedPlasmaAmmo", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemRedPlasmaAmmo, 0, res36);
-		
+
 		ModelResourceLocation res37 = new ModelResourceLocation("halocraft:GreenPlasmaIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GreenPlasmaIngot.instance, 0, res37);
-		
+
 		ModelResourceLocation res38 = new ModelResourceLocation("halocraft:ammoPlasmaRocket", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.ammoPlasmaRocket, 0, res38);
-		
+
 		ModelResourceLocation res39 = new ModelResourceLocation("halocraft:PurplePlasmaIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(PurplePlasmaIngot.instance, 0, res39);
-		
+
 		ModelResourceLocation res40 = new ModelResourceLocation("halocraft:itemWheel", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemWheel, 0, res40);
-		
+
 		ModelResourceLocation res41 = new ModelResourceLocation("halocraft:itemOil", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemOil, 0, res41);
-		
+
 		ModelResourceLocation res42 = new ModelResourceLocation("halocraft:itemRubber", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemRubber, 0, res42);
-		
+
 		//Rendering Blocks
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", HaloBlock.name);
 		Item itemBlockSimple2 = GameRegistry.findItem("halocraft", "HaloOre");
@@ -177,7 +175,7 @@ public class ClientProxy extends CommonProxy{
 		Item itemPurplePlasmaOre = GameRegistry.findItem("halocraft", "PurplePlasmaOre");
 		Item itemPurplePlasmaBlock = GameRegistry.findItem("halocraft", "PurplePlasmaBlock");
 		Item itemRedPlasmaBlock = GameRegistry.findItem("halocraft", "RedPlasmaBlock");
-		
+
 		ModelResourceLocation haloBlockResourceLocation = new ModelResourceLocation("halocraft:HaloBlock", "inventory");
 		ModelResourceLocation purplePlasmaBlockResourceLocation = new ModelResourceLocation("halocraft:PurplePlasmaBlock", "inventory");
 		ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("halocraft:HaloOre", "inventory");
@@ -185,7 +183,7 @@ public class ClientProxy extends CommonProxy{
 		ModelResourceLocation greenPlasmaOreModelResourceLocation = new ModelResourceLocation("halocraft:GreenPlasmaOre", "inventory");
 		ModelResourceLocation purplePlasmaOreModelResourceLocation = new ModelResourceLocation("halocraft:PurplePlasmaOre", "inventory");
 		ModelResourceLocation redPlasmaBlockModelResourceLocation = new ModelResourceLocation("halocraft:RedPlasmaBlock", "inventory");
-		
+
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple2, 0, itemModelResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, haloBlockResourceLocation);
@@ -194,7 +192,7 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemPurplePlasmaOre, DEFAULT_ITEM_SUBTYPE, purplePlasmaOreModelResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemPurplePlasmaBlock, DEFAULT_ITEM_SUBTYPE, purplePlasmaBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemRedPlasmaBlock, DEFAULT_ITEM_SUBTYPE, redPlasmaBlockModelResourceLocation);
-		
+
 		//Rendering Entities
 		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FragGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
@@ -210,7 +208,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPurplePlasma.class, new RenderPurplePlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
-		
+
 	}
 	public void preInit(){
 		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
@@ -235,9 +233,10 @@ public class ClientProxy extends CommonProxy{
 		ModelLoader.setCustomModelResourceLocation(ItemScorpion.instance, 0, new ModelResourceLocation("halocraft:" + ItemScorpion.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemWarthog.instance, 0, new ModelResourceLocation("halocraft:" + ItemWarthog.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemWarthogTurret.instance, 0, new ModelResourceLocation("halocraft:" + ItemWarthogTurret.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemRedPlasmaAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemRedPlasmaAmmo.name, "inventory"));
 
 		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
-        
+
 	}
 	public void registerKey(){
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
