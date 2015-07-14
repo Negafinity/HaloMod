@@ -1,3 +1,7 @@
+v1.3.64:
+
+Added Warthog with Turret's item model changed Warthog without Turret's name to Troophog.
+
 v1.3.63:
 
 Added Warthog's item model.

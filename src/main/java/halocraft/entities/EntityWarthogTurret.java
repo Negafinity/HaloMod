@@ -1,6 +1,7 @@
 package halocraft.entities;
 
 import halocraft.Main;
+import halocraft.items.ItemWarthogTurret;
 
 import java.util.List;
 
@@ -104,7 +105,7 @@ public class EntityWarthogTurret extends Entity {
 					}
 
 					if (!flag) {
-						this.dropItemWithOffset(halocraft.Main.itemWarthogTurret, 1, 0.0F);
+						this.dropItemWithOffset(ItemWarthogTurret.instance, 1, 0.0F);
 					}
 
 					this.setDead();

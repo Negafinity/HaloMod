@@ -153,7 +153,6 @@ public class Main{
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
 	public static Item itemRubber;
-	public static Item itemWarthogTurret;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
@@ -164,7 +163,6 @@ public class Main{
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		//Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
-		itemWarthogTurret = new ItemWarthogTurret();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
@@ -250,7 +248,7 @@ public class Main{
 		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
 		GameRegistry.registerItem(ItemMongoose.instance, ItemMongoose.name);
-		GameRegistry.registerItem(itemWarthogTurret, "itemWarthogTurret");
+		GameRegistry.registerItem(ItemWarthogTurret.instance, ItemWarthogTurret.name);
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
 		GameRegistry.registerItem(HaloIngot, "HaloIngot");
@@ -317,7 +315,7 @@ public class Main{
 		//Recipes
 		ItemStack woolStack = new ItemStack(Blocks.wool);
 		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
-		GameRegistry.addRecipe(new ItemStack(itemWarthogTurret, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
+		GameRegistry.addRecipe(new ItemStack(ItemWarthogTurret.instance, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemWarthog.instance, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
 		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
