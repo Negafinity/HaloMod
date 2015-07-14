@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemRubber extends Item {
 	public ItemRubber(){
-		setCreativeTab(CreativeTabs.tabMaterials);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("itemRubber");
 		setMaxStackSize(64);
 	}

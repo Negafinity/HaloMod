@@ -21,7 +21,7 @@ public class HaloArmor extends ItemArmor {
 	//private RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
 	public HaloArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer){

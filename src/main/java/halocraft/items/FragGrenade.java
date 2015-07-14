@@ -13,7 +13,7 @@ public class FragGrenade extends Item{
     
 	public FragGrenade(){
 		setUnlocalizedName("fragGrenade");
-		setCreativeTab(CreativeTabs.tabRedstone);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 	}
 	
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){

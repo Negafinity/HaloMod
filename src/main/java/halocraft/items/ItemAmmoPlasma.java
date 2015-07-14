@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemAmmoPlasma extends Item {
 	public ItemAmmoPlasma(){
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("ammoPlasma");
 	}
 }

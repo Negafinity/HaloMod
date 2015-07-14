@@ -20,7 +20,7 @@ public class ItemNeedler extends Item{
     public static final String name = "Needler";
     
     public ItemNeedler(){
-		setCreativeTab(CreativeTabs.tabCombat);
+    	setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);

@@ -9,7 +9,7 @@ public class PurplePlasmaIngot extends Item {
     
 	public PurplePlasmaIngot() {
         setMaxStackSize(16);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(halocraft.Main.haloCreativeTab);
         setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

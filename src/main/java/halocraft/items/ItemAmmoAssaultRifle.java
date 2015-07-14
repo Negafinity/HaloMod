@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemAmmoAssaultRifle extends Item {
 	public ItemAmmoAssaultRifle(){
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("ammoAssaultRifle");
 		setMaxStackSize(32);
 		setMaxDamage(32);

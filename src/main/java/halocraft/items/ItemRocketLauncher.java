@@ -18,7 +18,7 @@ public class ItemRocketLauncher extends Item {
 	
 	public ItemRocketLauncher(){
 	     super();
-	     setCreativeTab(CreativeTabs.tabCombat);
+	     setCreativeTab(halocraft.Main.haloCreativeTab);
 	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxStackSize(1);
 	     setMaxDamage(1000);

@@ -20,7 +20,7 @@ public class HaloBlock extends Block {
             setHardness(4.0F); // 33% harder than diamond
             setStepSound(Block.soundTypePiston); // sounds got renamed, look in Block class for what blocks have what sounds
             setUnlocalizedName("halocraft:" + name.toLowerCase()); // changed in 1.7
-            setCreativeTab(CreativeTabs.tabBlock);
+            setCreativeTab(halocraft.Main.haloCreativeTab);
             setHarvestLevel("pickaxe", 3);
     }
 

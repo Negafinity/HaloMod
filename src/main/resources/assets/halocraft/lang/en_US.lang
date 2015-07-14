@@ -48,6 +48,7 @@ item.halocraft:redplasmaingot.name=Red Plasma Ingot
 item.halocraft:purpleplasmaingot.name=Purple Plasma Ingot
 item.CovenantHelmet.name=Covenant Helmet
 item.CovenantChestplate.name=Covenant Chestplate
+itemGroup.haloCreativeTab=HaloCraft 2.0
 item.CovenantLeggings.name=Covenant Leggings
 item.CovenantBoots.name=Covenant Boots
 item.CovenantPiece.name=Covenant Piece

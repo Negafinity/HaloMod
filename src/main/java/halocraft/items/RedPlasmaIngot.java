@@ -9,7 +9,7 @@ public class RedPlasmaIngot extends Item {
     
 	public RedPlasmaIngot() {
         setMaxStackSize(16);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(halocraft.Main.haloCreativeTab);
         setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

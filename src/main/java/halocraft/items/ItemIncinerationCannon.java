@@ -14,7 +14,7 @@ public class ItemIncinerationCannon extends Item {
 	
 	public ItemIncinerationCannon(){
 	     super();
-	     setCreativeTab(CreativeTabs.tabCombat);
+	     setCreativeTab(halocraft.Main.haloCreativeTab);
 	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxDamage(1000);
 	     setMaxStackSize(1);

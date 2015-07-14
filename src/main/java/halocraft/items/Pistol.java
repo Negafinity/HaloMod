@@ -19,7 +19,7 @@ public class Pistol extends Item{
     public static final String name = "Pistol";
     
     public Pistol(){
-		setCreativeTab(CreativeTabs.tabCombat);
+    	setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);

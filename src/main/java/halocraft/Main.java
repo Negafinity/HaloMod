@@ -7,6 +7,7 @@ import halocraft.blocks.HaloBlock;
 import halocraft.blocks.HaloOre;
 import halocraft.blocks.PurplePlasmaBlock;
 import halocraft.blocks.RedPlasmaBlock;
+import halocraft.creativetabs.HaloCreativeTab;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
@@ -142,6 +143,8 @@ public class Main{
 	public static Item CovenantBoots;
 	public static Item covenantPiece;
 	public static Item ActiveCamoChestplate;
+	//Creative Tabs
+	public static CreativeTabs haloCreativeTab;
 	//Items
 	public static Item HaloIngot = new HaloIngot();
 	public static Item ammoRocket;
@@ -157,6 +160,7 @@ public class Main{
 	public static ToolMaterial HaloMaterial;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
+		haloCreativeTab = new HaloCreativeTab(CreativeTabs.getNextID(), "haloCreativeTab");
 		itemOil = new ItemOil();
 		itemWheel = new ItemWheel();
 		itemRubber = new ItemRubber();

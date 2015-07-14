@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class CovenantPiece extends Item {
 	public CovenantPiece(){
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("CovenantPiece");
 		setMaxStackSize(16);
 	}

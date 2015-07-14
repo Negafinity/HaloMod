@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemRedPlasmaAmmo extends Item {
 	public ItemRedPlasmaAmmo(){
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("itemRedPlasmaAmmo");
 		setMaxStackSize(32);
 	}

@@ -15,7 +15,7 @@ public class ActiveCamoArmor extends ItemArmor{
 	
 	public ActiveCamoArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 	}
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {

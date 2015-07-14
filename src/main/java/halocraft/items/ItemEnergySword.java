@@ -11,7 +11,7 @@ public class ItemEnergySword extends ItemSword{
     
 	public ItemEnergySword() {
 		super(Main.HaloMaterial);
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

@@ -15,7 +15,7 @@ public class CovenantArmor extends ItemArmor{
 
 	public CovenantArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer){

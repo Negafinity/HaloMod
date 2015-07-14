@@ -9,7 +9,7 @@ public class GreenPlasmaIngot extends Item {
     
 	public GreenPlasmaIngot() {
         setMaxStackSize(16);
-        setCreativeTab(CreativeTabs.tabMaterials);
+        setCreativeTab(halocraft.Main.haloCreativeTab);
         setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

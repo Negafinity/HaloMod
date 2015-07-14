@@ -7,7 +7,7 @@ import net.minecraft.item.Item.ToolMaterial;
 public class ItemRocket extends Item{
 	public ItemRocket() {
         setMaxStackSize(32);
-		setCreativeTab(CreativeTabs.tabMisc);
+        setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("ammoRocket");
 	}
 }

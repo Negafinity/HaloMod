@@ -20,7 +20,7 @@ public class PlasmaRifle extends Item{
     public static final String name = "PlasmaRifle";
     
     public PlasmaRifle(){
-		setCreativeTab(CreativeTabs.tabCombat);
+    	setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);

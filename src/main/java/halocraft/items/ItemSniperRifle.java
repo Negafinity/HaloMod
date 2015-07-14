@@ -18,7 +18,7 @@ public class ItemSniperRifle extends Item {
     public boolean canShoot = true;
     
 	public ItemSniperRifle(){
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);

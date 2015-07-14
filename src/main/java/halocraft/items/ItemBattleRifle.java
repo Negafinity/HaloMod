@@ -14,7 +14,7 @@ public class ItemBattleRifle extends Item {
     public static final String name = "itemBattleRifle";
     
 	public ItemBattleRifle(){
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);

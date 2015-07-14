@@ -15,7 +15,7 @@ public class ItemHealthPack extends Item {
 	public static final String name = "HealthPack";
 	    
 	public ItemHealthPack(){
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 	}

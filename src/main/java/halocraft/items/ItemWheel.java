@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemWheel extends Item {
 	public ItemWheel(){
-		setCreativeTab(CreativeTabs.tabTransport);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("itemWheel");
 		setMaxStackSize(32);
 	}

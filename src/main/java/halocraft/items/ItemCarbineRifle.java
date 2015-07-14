@@ -14,7 +14,7 @@ public class ItemCarbineRifle extends Item {
     
 	public ItemCarbineRifle()
 	{
-		setCreativeTab(CreativeTabs.tabCombat);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setMaxStackSize(1);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxDamage(1000);

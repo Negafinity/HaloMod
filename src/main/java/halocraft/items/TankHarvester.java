@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class TankHarvester extends Item {
 	public TankHarvester(){
-		setCreativeTab(CreativeTabs.tabMisc);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setMaxStackSize(1);
 		setUnlocalizedName("TankHarvester");
 	}

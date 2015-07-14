@@ -1,3 +1,7 @@
+v1.3.67:
+
+Added HaloCraft 2.0 Creative Tab :D
+
 v1.3.66:
 
 Attempting to fix RocketLauncher Model not loading on client-side

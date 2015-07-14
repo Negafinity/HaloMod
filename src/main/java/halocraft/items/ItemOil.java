@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class ItemOil extends Item {
 	public ItemOil(){
-		setCreativeTab(CreativeTabs.tabMaterials);
+		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("itemOil");
 		setMaxStackSize(64);
 	}
