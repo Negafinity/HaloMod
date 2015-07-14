@@ -392,13 +392,13 @@ public class EntityWarthogTurret extends Entity {
 		if (this.secondRider != null) {
 			double d0 = Math.cos((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.secondRider.setPosition(this.posX + d0 + 1, this.posY + this.getMountedYOffset() + this.secondRider.getYOffset(), this.posZ + d1);
+			this.secondRider.setPosition(this.posX + d0 + 0.5F, this.posY + this.getMountedYOffset() + this.secondRider.getYOffset(), this.posZ + d1);
 		}
 
 		if (this.thirdRider != null) {
 			double d0 = Math.cos((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.thirdRider.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.thirdRider.getYOffset(), this.posZ + d1 + 1);
+			this.thirdRider.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.thirdRider.getYOffset(), this.posZ + d1 - 0.5F);
 		}
 	}
 

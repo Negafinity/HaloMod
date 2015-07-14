@@ -1,4 +1,12 @@
-v1.3.68:
+v1.3.71:
+
+Attempted to fix Warthog & Troophog.
+
+v1.3.70:
+
+Added RedPlasmaAmmo model! :D
+
+v1.3.69:
 
 Fixes Item models not loading for Client-Side for vehicles..
 
