@@ -47,12 +47,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderGhostEntity extends Render
 {
-	private static final ResourceLocation ghostTextures = new ResourceLocation("halocraft:textures/entities/GhostRender.png");
-	private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:models/entity/Ghost.b3d");
+	private static final ModelResourceLocation ghostModel = new ModelResourceLocation("halocraft:entity/Ghost.obj");
 	IModel model = null;
-	public RenderGhostEntity(RenderManager p_i46190_1_)
+	public RenderGhostEntity(RenderManager renderManager)
 	{
-		super(p_i46190_1_);
+		super(renderManager);
 		this.shadowSize = 0.5F;
 	}
 	Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
@@ -63,19 +62,19 @@ public class RenderGhostEntity extends Render
 		}
 			};
 
-			public void doRender(EntityGhost par1EntityGhost, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+			public void doRender(EntityGhost par1EntityGhost, double posX, double posY, double posZ, float yaw, float partialTicks) throws IOException
 			{
-				IModel ghost = B3DLoader.instance.loadModel(ghostModel);
+				IModel ghost = ModelLoaderRegistry.getModel(ghostModel);
 				IBakedModel bakedGhost = ghost.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
 				World world = par1EntityGhost.getWorldObj();
 				BlockPos blockpos = new BlockPos(par1EntityGhost);
 				Tessellator tessellator = Tessellator.getInstance();
 				WorldRenderer worldrenderer = tessellator.getWorldRenderer();
 				GlStateManager.pushMatrix();
-				GlStateManager.translate((float)p_180552_2_ - 0.25F, (float)p_180552_4_ + 0.52F, (float)p_180552_6_ + 1F);
+				GlStateManager.translate((float)posX + 1.25F, (float)posY + 0.52F, (float)posZ + 0.25F);
 
-				float f2 = (float)par1EntityGhost.getTimeSinceHit() - p_180552_9_;
-				float f3 = par1EntityGhost.getDamageTaken() - p_180552_9_;
+				float f2 = (float)par1EntityGhost.getTimeSinceHit() - partialTicks;
+				float f3 = par1EntityGhost.getDamageTaken() - partialTicks;
 
 				if (f3 < 0.0F)
 				{
@@ -90,11 +89,11 @@ public class RenderGhostEntity extends Render
 				float f4 = 0.75F;
 				GlStateManager.scale(f4, f4, f4);
 				GlStateManager.scale(1.0F / f4, 1.0F / f4, 1.0F / f4);
-				this.bindEntityTexture(par1EntityGhost);
+
 				GlStateManager.scale(-1.0F, -1.0F, 1.0F);
 
 				worldrenderer.startDrawingQuads();
-				GlStateManager.rotate(-90f, 0f, 0f, 1f);
+				GlStateManager.rotate(180f, 0f, 0f, 1f);
 				//Get Quads
 				List<BakedQuad> generalQuads = bakedGhost.getGeneralQuads();
 				for (BakedQuad q : generalQuads) {
@@ -113,12 +112,12 @@ public class RenderGhostEntity extends Render
 				}
 				tessellator.draw();
 				GlStateManager.popMatrix();
-				super.doRender(par1EntityGhost, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+				super.doRender(par1EntityGhost, posX, posY, posZ, yaw, partialTicks);
 			}
 
 			protected ResourceLocation getEntityTexture(EntityGhost p_180553_1_)
 			{
-				return ghostTextures;
+				return null;
 			}
 
 			protected ResourceLocation getEntityTexture(Entity entity)

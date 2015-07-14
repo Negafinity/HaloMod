@@ -2,8 +2,8 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {},
-        "model": "halocraft:assaultrifle.b3d"
-    },
+        "model": "halocraft:AssaultRifle.obj"
+        },
     "variants": {
         "normal": [
             {
@@ -19,57 +19,57 @@
                 "transform": {
                     "thirdperson": {
                         "translation": [
-                            0.35,
-                            0.5,
-                            -0.4
+                            0.25,
+                            0.4,
+                            -0.33
                         ],
                         "rotation": [
                             {
                                 "y": 90
                             },
                             {
-                                "x": 0
+                                "x": 270
                             },
                             {
-                                "z": 0
+                                "z": 270
                             }
                         ],
-                        "scale": 1.25
+                        "scale": 1
                     },
                     "gui": {
                         "translation": [
-                            0,
-                            0.5,
-                            0
+                            -0.25,
+                            -0.5,
+                            0.1
                         ],
                         "rotation": [
                             {
-                                "y": -45
+                                "y": -110
                             },
                             {
-                                "x": 45
+                                "x": 140
                             },
                             {
                                 "z": 45
                             }
                         ],
-                        "scale": 1.75
+                        "scale": 1.25
                     },
                     "firstperson": {
                         "translation": [
-                            -0.25,
-                            0.75,
-                            -.75
+                            -0.75,
+                            0.95,
+                            -0.65
                         ],
                         "rotation": [
                             {
-                                "y": 225
+                                "y": 140
                             },
                             {
                                 "x": 0
                             },
                             {
-                                "z": 90
+                                "z": 0
                             }
                         ],
                         "scale": 2

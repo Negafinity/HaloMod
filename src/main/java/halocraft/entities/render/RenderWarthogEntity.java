@@ -47,7 +47,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogEntity extends Render
 {
-    private static final ModelResourceLocation warthogModel = new ModelResourceLocation("halocraft:models/entity/Warthog.b3d");
+    private static final ModelResourceLocation warthogModel = new ModelResourceLocation("halocraft:entity/Warthog.obj");
     
     public RenderWarthogEntity(RenderManager renderManager)
     {
@@ -62,19 +62,19 @@ public class RenderWarthogEntity extends Render
                 }
             };
 
-    public void doRender(EntityWarthog warthogIn, double p_180552_2_, double p_180552_4_, double p_180552_6_, float p_180552_8_, float p_180552_9_) throws IOException
+    public void doRender(EntityWarthog warthogIn, double posX, double posY, double posZ, float yaw, float partialTicks) throws IOException
     {
-    	IModel warthog = B3DLoader.instance.loadModel(warthogModel);
+    	IModel warthog = ModelLoaderRegistry.getModel(warthogModel);
     	IBakedModel bakedWarthog = warthog.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
     	World world = warthogIn.getWorldObj();
     	BlockPos blockpos = new BlockPos(warthogIn);
     	Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_180552_2_, (float)p_180552_4_ + 0.75F, (float)p_180552_6_ + 0.5F);
+        GlStateManager.translate((float)posX, (float)posY + 0.75F, (float)posZ + 0.5F);
 
-        float f2 = (float)warthogIn.getTimeSinceHit() - p_180552_9_;
-        float f3 = warthogIn.getDamageTaken() - p_180552_9_;
+        float f2 = (float)warthogIn.getTimeSinceHit() - partialTicks;
+        float f3 = warthogIn.getDamageTaken() - partialTicks;
 
         if (f3 < 0.0F)
         {
@@ -92,7 +92,7 @@ public class RenderWarthogEntity extends Render
         GlStateManager.scale(-1.0F, -1.0F, 1.0F);
         
         worldrenderer.startDrawingQuads();
-        GlStateManager.rotate(-90f, 0f, 0f, 1f);
+        GlStateManager.rotate(180f, 0f, 0f, 1f);
         //Get Quads
         List<BakedQuad> generalQuads = bakedWarthog.getGeneralQuads();
 		for (BakedQuad q : generalQuads) {
@@ -111,7 +111,7 @@ public class RenderWarthogEntity extends Render
 		 }
 		tessellator.draw();
         GlStateManager.popMatrix();
-        super.doRender(warthogIn, p_180552_2_, p_180552_4_, p_180552_6_, p_180552_8_, p_180552_9_);
+        super.doRender(warthogIn, posX, posY, posZ, yaw, partialTicks);
     }
 
     protected ResourceLocation getEntityTexture(EntityWarthog entityWarthog)
@@ -124,10 +124,10 @@ public class RenderWarthogEntity extends Render
         return this.getEntityTexture((EntityWarthog)entity);
     }
 
-    public void doRender(Entity entity, double x, double y, double z, float p_76986_8_, float partialTicks)
+    public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
     {
         try {
-			this.doRender((EntityWarthog)entity, x, y, z, p_76986_8_, partialTicks);
+			this.doRender((EntityWarthog)entity, x, y, z, yaw, partialTicks);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

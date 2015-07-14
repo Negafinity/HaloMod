@@ -1,3 +1,7 @@
+v1.3.55:
+
+All models now have textures. Enjoy! :D
+
 v1.3.54:
 
 When entering a Scorpion your hotbar stops rendering and you are put in third person.

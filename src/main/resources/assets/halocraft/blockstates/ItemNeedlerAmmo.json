@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {},
-        "model": "halocraft:NeedlerAmmo.b3d"
+        "model": "halocraft:NeedlerAmmo.obj"
     },
     "variants": {
         "normal": [
@@ -19,8 +19,8 @@
                 "transform": {
                     "thirdperson": {
                         "translation": [
-                            -0.43,
-                            -0.35,
+                            -0.45,
+                            -0.45,
                             -0.55
                         ],
                         "rotation": [
@@ -38,7 +38,7 @@
                     },
                     "gui": {
                         "translation": [
-                            1.65,
+                            1.5,
                             0.2,
                             0
                         ],

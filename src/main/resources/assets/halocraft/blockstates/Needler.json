@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {},
-        "model": "halocraft:Needler.b3d"
+        "model": "halocraft:Needler.obj"
     },
     "variants": {
         "normal": [
@@ -20,15 +20,15 @@
                     "thirdperson": {
                         "translation": [
                             0.32,
-                            0.5,
-                            -0.33
+                            0.4,
+                            -0.4
                         ],
                         "rotation": [
                             {
-                                "y": 90
+                                "y": 0
                             },
                             {
-                                "x": 0
+                                "x": 260
                             },
                             {
                                 "z": 0
@@ -38,13 +38,13 @@
                     },
                     "gui": {
                         "translation": [
-                            0,
-                            0.5,
+                            0.75,
+                            0.1,
                             0
                         ],
                         "rotation": [
                             {
-                                "y": -45
+                                "y": 90
                             },
                             {
                                 "x": 45
@@ -57,22 +57,22 @@
                     },
                     "firstperson": {
                         "translation": [
-                            -0.25,
-                            0.7,
-                            -.75
+                            -0.5,
+                            0.75,
+                            -0.5
                         ],
                         "rotation": [
                             {
-                                "y": 225
+                                "y": 130
                             },
                             {
-                                "x": 0
+                                "x": 360
                             },
                             {
-                                "z": 90
+                                "z": 0
                             }
                         ],
-                        "scale": 2.5
+                        "scale": 2
                     }
                 }
             }

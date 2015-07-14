@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {},
-        "model": "halocraft:SniperRifle.b3d"
+        "model": "halocraft:SniperRifle.obj"
     },
     "variants": {
         "normal": [
@@ -20,31 +20,31 @@
                     "thirdperson": {
                         "translation": [
                             0.3,
-                            0.65,
+                            0.5,
                             -0.4
                         ],
                         "rotation": [
                             {
-                                "y": 90
+                                "y": 180
                             },
                             {
-                                "x": 0
+                                "x": -90
                             },
                             {
-                                "z": 0
+                                "z": 180
                             }
                         ],
                         "scale": 1
                     },
                     "gui": {
                         "translation": [
-                            0,
+                            0.75,
                             0.37,
                             0
                         ],
                         "rotation": [
                             {
-                                "y": -45
+                                "y": 45
                             },
                             {
                                 "x": 45
@@ -57,19 +57,19 @@
                     },
                     "firstperson": {
                         "translation": [
-                            -.5,
+                            -0.5,
                             1,
                             -1
                         ],
                         "rotation": [
                             {
-                                "y": 225
+                                "y": 500
                             },
                             {
                                 "x": 0
                             },
                             {
-                                "z": 90
+                                "z": 0
                             }
                         ],
                         "scale": 2

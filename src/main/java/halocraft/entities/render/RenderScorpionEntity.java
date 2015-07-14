@@ -1,5 +1,6 @@
 package halocraft.entities.render;
 
+import halocraft.api.OBJLoader;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityScorpion;
 
@@ -48,7 +49,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderScorpionEntity extends Render
 {
-	private static final ModelResourceLocation scorpionModelFile = new ModelResourceLocation("halocraft:models/entity/Scorpion.b3d");
+	private static final ModelResourceLocation scorpionModelFile = new ModelResourceLocation("halocraft:entity/Scorpion.obj");
 	IModel model = null;
 	public RenderScorpionEntity(RenderManager renderManager)
 	{
@@ -67,13 +68,13 @@ public class RenderScorpionEntity extends Render
 			{
 				GlStateManager.pushMatrix();
 				{
-					IModel scorpionModel = B3DLoader.instance.loadModel(scorpionModelFile);
+					IModel scorpionModel = ModelLoaderRegistry.getModel(scorpionModelFile);
 					IBakedModel bakedScorpion = scorpionModel.bake((TRSRTransformation.identity()),  Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
 					World world = scorpion.getWorldObj();
 					BlockPos blockpos = new BlockPos(scorpion);
 					Tessellator tessellator = Tessellator.getInstance();
 					WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-					GlStateManager.translate((float)posX + 3.5F, (float)posY + 0.45F, (float)posZ + 2.5F);
+					GlStateManager.translate((float)posX + 2.25F, (float)posY, (float)posZ - 3F);
 
 					float f2 = (float)scorpion.getTimeSinceHit() - partialTicks;
 					float f3 = scorpion.getDamageTaken() - partialTicks;
@@ -95,7 +96,7 @@ public class RenderScorpionEntity extends Render
 					GlStateManager.scale(-1.0F, -1.0F, 1.0F);
 
 					worldrenderer.startDrawingQuads();
-					GlStateManager.rotate(-90f, 0f, 0f, 1f);
+					GlStateManager.rotate(180f, 0f, 0f, 1f);
 					
 					//Get Quads and Vertex Data
 					
