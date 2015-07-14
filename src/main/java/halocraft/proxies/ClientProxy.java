@@ -49,6 +49,7 @@ import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemFuelRodCannon;
+import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
 import halocraft.items.ItemNeedler;
@@ -228,6 +229,7 @@ public class ClientProxy extends CommonProxy{
 		ModelLoader.setCustomModelResourceLocation(ItemHealthPack.instance, 0, new ModelResourceLocation("halocraft:" + ItemHealthPack.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemNeedlerAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemNeedlerAmmo.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemNeedler.instance, 0, new ModelResourceLocation("halocraft:" + ItemNeedler.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemGhost.instance, 0, new ModelResourceLocation("halocraft:" + ItemGhost.name, "inventory"));
 
 		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
         

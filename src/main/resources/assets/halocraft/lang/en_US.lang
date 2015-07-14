@@ -31,6 +31,7 @@ item.ammoPlasma.name=Plasma
 item.halocraft:rocketlauncher.name=Rocket Launcher
 item.ammoAssaultRifle.name=Ammo
 item.halocraft:greenplasmaingot.name=Green Plasma Ingot
+item.halocraft:itemghost.name=Ghost
 tile.GreenPlasmaOre.name=Green Plasma Ore
 item.halocraft:itemcarbineammo.name=Carbine Ammo
 item.halocraft:itemassaultrifle.name=Assault Rifle

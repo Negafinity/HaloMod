@@ -1,3 +1,7 @@
+v1.3.60:
+
+Added Ghost's Item Model.
+
 v1.3.59:
 
 Added Rubber.

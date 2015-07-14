@@ -97,7 +97,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod(modid="halocraft", version="1.2")
+@Mod(modid="halocraft", version="1.3")
 public class Main{
 	@SidedProxy(clientSide="halocraft.proxies.ClientProxy", serverSide="halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
@@ -155,7 +155,6 @@ public class Main{
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
 	public static Item itemRubber;
-	public static Item itemGhost;
 	public static Item itemWarthog;
 	public static Item itemWarthogTurret;
 	//Tool Materials
@@ -171,7 +170,6 @@ public class Main{
 		tankHarvester = new TankHarvester();
 		itemWarthog = new ItemWarthog();
 		itemWarthogTurret = new ItemWarthogTurret();
-		itemGhost = new ItemGhost();
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
@@ -269,7 +267,7 @@ public class Main{
 		GameRegistry.registerItem(ItemBattleRifle.instance, ItemBattleRifle.name);
 		GameRegistry.registerItem(ItemHealthPack.instance, ItemHealthPack.name);
 		GameRegistry.registerItem(itemRedPlasmaAmmo, "itemRedPlasmaAmmo");
-		GameRegistry.registerItem(itemGhost, "itemGhost");
+		GameRegistry.registerItem(ItemGhost.instance, ItemGhost.name);
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemRubber, "itemRubber");
 		GameRegistry.registerItem(itemScorpion, "itemScorpion");
@@ -328,7 +326,7 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(itemWarthogTurret, 1), new Object[]{"  Z","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance});
 		GameRegistry.addRecipe(new ItemStack(itemWarthog, 1), new Object[]{"   ","XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel});
 		GameRegistry.addRecipe(new ItemStack(itemScorpion, 1), new Object[]{"YXX","XXX", "XXX", 'X', HaloBlock.instance, 'Y', RocketLauncher.instance});
-		GameRegistry.addRecipe(new ItemStack(itemGhost, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
+		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', itemRedPlasmaAmmo, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
 		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', HaloIngot, 'Y', itemScorpion});
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', HaloIngot});
