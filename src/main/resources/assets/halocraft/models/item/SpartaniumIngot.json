@@ -1,7 +1,7 @@
 {
 "parent": "builtin/generated",
 "textures": {
-"layer0": "halocraft:items/HaloIngot"
+"layer0": "halocraft:items/SpartaniumIngot"
 },
 "display": {
 "thirdperson": {

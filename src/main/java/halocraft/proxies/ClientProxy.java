@@ -42,7 +42,7 @@ import halocraft.handlers.KeyInputHandler;
 import halocraft.handlers.VehicleEventHandler;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
-import halocraft.items.HaloIngot;
+import halocraft.items.SpartaniumIngot;
 import halocraft.items.ItemAssaultRifle;
 import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemCarbineAmmo;
@@ -85,8 +85,8 @@ public class ClientProxy extends CommonProxy{
 	public void registerRenders(){
 		ModelResourceLocation res = new ModelResourceLocation("halocraft:TankHarvester", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.tankHarvester, 0, res);
-		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:HaloIngot", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.HaloIngot, 0, res2);
+		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:SpartaniumIngot", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.spartaniumIngot, 0, res2);
 		ModelResourceLocation res3 = new ModelResourceLocation("halocraft:SpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.SpartanChestplate, 0, res3);
 		ModelResourceLocation res4 = new ModelResourceLocation("halocraft:SpartanHelmet", "inventory");

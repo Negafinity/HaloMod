@@ -482,7 +482,7 @@ public class EntityScorpion extends Entity
 
 					for (i = 0; i < 2; ++i)
 					{
-						this.dropItemWithOffset(halocraft.Main.HaloIngot, 2, 0.0F);
+						this.dropItemWithOffset(halocraft.Main.spartaniumIngot, 2, 0.0F);
 					}
 				}
 

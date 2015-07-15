@@ -23,7 +23,7 @@ public class HaloOre extends Block {
             setHarvestLevel("pickaxe", 3);
     }
     public Item getItemDropped(int metadata, Random random, int fortune) {
-        return halocraft.Main.HaloIngot;
+        return halocraft.Main.spartaniumIngot;
     }
 
 }
