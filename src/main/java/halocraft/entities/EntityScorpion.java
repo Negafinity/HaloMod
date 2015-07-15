@@ -441,7 +441,7 @@ public class EntityScorpion extends Entity
 		{
 			if(this.riddenByEntity instanceof EntityPlayer)
 			{
-				if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
+				if(Minecraft.getMinecraft().gameSettings.thirdPersonView != 1)
 				{
 					Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
 				}

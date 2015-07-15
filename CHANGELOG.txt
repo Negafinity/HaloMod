@@ -1,3 +1,7 @@
+v1.3.75:
+
+Made it so Scorpion sets player to the proper third person.
+
 v1.3.74:
 
 Fixed the issue of Scorpion not working properly on Servers.
