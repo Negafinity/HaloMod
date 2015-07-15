@@ -437,11 +437,14 @@ public class EntityScorpion extends Entity
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 + 5F);
 		}
-		if(this.riddenByEntity instanceof EntityPlayer)
+		if(worldObj.isRemote)
 		{
-			if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
+			if(this.riddenByEntity instanceof EntityPlayer)
 			{
-				Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
+				if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
+				{
+					Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
+				}
 			}
 		}
 	}
