@@ -1,14 +1,14 @@
 [
 {
   "modid": "halocraft",
-  "name": "HaloCraft",
-  "description": "A Halo Mod, containing many Halo like blocks, items, mobs and weapons!",
-  "version": "1.1",
+  "name": "HaloCraft 2.0",
+  "description": "HaloCraft 2.0 is a Forge Mod, containing many Halo like blocks, items, mobs, vehicles and weapons!",
+  "version": "1.3",
   "mcversion": "1.8",
-  "url": "",
+  "url": "http://halocraft.us",
   "updateUrl": "",
-  "authorList": ["Infrared_Panda","HassanS6000"],
-  "credits": "None.",
+  "authorList": ["HassanS6000","Benny_Pollok", "Infrared_Panda"],
+  "credits": "shadekiller666 - General Help, Forge IRC",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

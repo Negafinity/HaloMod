@@ -1,3 +1,7 @@
+v1.3:
+
+Release! :D
+
 v1.3.75:
 
 Made it so Scorpion sets player to the proper third person.
