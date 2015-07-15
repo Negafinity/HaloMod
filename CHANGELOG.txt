@@ -1,7 +1,10 @@
+v1.3.73:
+
+Fixed Ores.
+
 v1.3.72:
 
 Fixed Spartanium Ingot not loading in.
-
 
 v1.3.71:
 

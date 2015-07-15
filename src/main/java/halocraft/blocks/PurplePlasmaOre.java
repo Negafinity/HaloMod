@@ -21,7 +21,7 @@ public class PurplePlasmaOre extends Block {
             setHardness(4.0F); // 33% harder than diamond
             setStepSound(Block.soundTypePiston);
             setUnlocalizedName("PurplePlasmaOre");
-            setCreativeTab(halocraft.Main.haloCreativeTab);
+            setCreativeTab(CreativeTabs.tabMaterials);
             setHarvestLevel("pickaxe", 3);
     }
     public Item getItemDropped(int metadata, Random random, int fortune) {
