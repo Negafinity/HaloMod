@@ -46,6 +46,7 @@ public class EntityWarthogTurret extends Entity {
 		this.speedMultiplier = 0.07D;
 		this.preventEntitySpawning = true;
 		this.setSize(2.5F, 3F);
+		this.stepHeight = 1.0F;
 		this.ignoreFrustumCheck = true;
 	}
 
@@ -183,6 +184,8 @@ public class EntityWarthogTurret extends Entity {
 	public void onUpdate() {
 		super.onUpdate();
 
+		this.fallDistance = 0;
+		
 		if (this.getTimeSinceHit() > 0) {
 			this.setTimeSinceHit(this.getTimeSinceHit() - 1);
 		}

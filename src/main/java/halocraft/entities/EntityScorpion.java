@@ -50,6 +50,7 @@ public class EntityScorpion extends Entity
 		this.speedMultiplier = 0.07D;
 		this.preventEntitySpawning = true;
 		this.setSize(9.5F, 6.25F);
+		this.stepHeight = 1.0F;
 		this.ignoreFrustumCheck = true;
 	}
 
@@ -218,6 +219,8 @@ public class EntityScorpion extends Entity
 	{
 		super.onUpdate();
 
+		this.fallDistance = 0;
+		
 		if (this.getTimeSinceHit() > 0)
 		{
 			this.setTimeSinceHit(this.getTimeSinceHit() - 1);

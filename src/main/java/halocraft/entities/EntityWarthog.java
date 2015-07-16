@@ -49,6 +49,7 @@ public class EntityWarthog extends Entity
 		this.isBoatEmpty = true;
 		this.speedMultiplier = 0.07D;
 		this.preventEntitySpawning = true;
+		this.stepHeight = 1.0F;
 		this.setSize(2.5F, 1.6F);
 		this.ignoreFrustumCheck = true;
 	}
@@ -217,7 +218,7 @@ public class EntityWarthog extends Entity
 	public void onUpdate()
 	{
 		super.onUpdate();
-
+		this.fallDistance = 0;
 		if (this.getTimeSinceHit() > 0)
 		{
 			this.setTimeSinceHit(this.getTimeSinceHit() - 1);

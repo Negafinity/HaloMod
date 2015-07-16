@@ -49,6 +49,7 @@ public class EntityMongoose extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.setSize(1.6F, 1.75F);
+        this.stepHeight = 1.0F;
     }
 
     protected boolean canTriggerWalking()
@@ -92,7 +93,7 @@ public class EntityMongoose extends Entity
 
     public double getMountedYOffset()
     {
-        return (double)this.height * 0.0D + 0.8D; //- 0.30000001192092896D;
+        return (double)this.height * 0.0D + 0.8D;
     }
 
     public boolean attackEntityFrom(DamageSource source, float amount)
@@ -215,6 +216,8 @@ public class EntityMongoose extends Entity
     public void onUpdate()
     {
         super.onUpdate();
+        
+        this.fallDistance = 0;
 
         if (this.getTimeSinceHit() > 0)
         {

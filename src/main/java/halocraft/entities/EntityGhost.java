@@ -49,6 +49,7 @@ public class EntityGhost extends Entity
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.setSize(4F, 1.5F);
+        this.stepHeight = 1.0F;
         this.ignoreFrustumCheck = true;
     }
 
@@ -216,7 +217,7 @@ public class EntityGhost extends Entity
     public void onUpdate()
     {
         super.onUpdate();
-
+        this.fallDistance = 0;
         if (this.getTimeSinceHit() > 0)
         {
             this.setTimeSinceHit(this.getTimeSinceHit() - 1);
