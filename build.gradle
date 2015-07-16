@@ -45,7 +45,7 @@ curse {
     artifact = file("${project.buildDir}/libs/${project.archivesBaseName}-${project.version}.jar")
     projectId = '232011'
     apiKey = project.curseForgeApiKey
-    releaseType = 'release'
+    releaseType = 'beta'
 }
 
 dependencies {
