@@ -38,7 +38,7 @@ public class RenderScorpionEntity extends Render
 	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
-		XLibRenderer.translate(posX, posY + 0.52, posZ);
+		XLibRenderer.translate(posX + 2.75, posY + 0.52, posZ - 2.75);
 		for(Part p : model.nameToPartHash.values())
 		{
 			p.draw();

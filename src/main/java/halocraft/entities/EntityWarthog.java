@@ -78,7 +78,7 @@ public class EntityWarthog extends Entity
 
 	public boolean canBePushed()
 	{
-		return true;
+		return false;
 	}
 
 	public EntityWarthog(World worldIn, double x, double y, double z)
@@ -450,14 +450,14 @@ public class EntityWarthog extends Entity
 		{
 			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.riddenByEntity.setPosition(this.posX + d0 + 0.5f, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
+			this.riddenByEntity.setPosition(this.posX + d0 + 1f, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 + 0.2f);
 		}
 
 		if(this.secondRider != null)
 		{
 			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.secondRider.setPosition(this.posX + d0 - 0.5f, this.posY + this.getMountedYOffset() + this.secondRider.getYOffset(), this.posZ + d1);
+			this.secondRider.setPosition(this.posX + d0 + 1f, this.posY + this.getMountedYOffset() + this.secondRider.getYOffset(), this.posZ + d1 + 0.5f);
 		}
 	}
 
