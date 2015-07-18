@@ -249,7 +249,7 @@ public class Main{
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 		int randomID16 = EntityRegistry.findGlobalUniqueEntityId() + 21;
-		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", randomID16, 0x002FFF, 0xFFFFFF);
+		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", randomID16, 0x002FFF, 0xCC00FF);
 		EntityRegistry.addSpawn(EntityBlueElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 

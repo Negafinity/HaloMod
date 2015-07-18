@@ -1,6 +1,10 @@
 package halocraft.handlers;
 
 import halocraft.Main;
+import halocraft.entities.EntityBlueElite;
+import halocraft.entities.EntityElite;
+import halocraft.entities.EntityGrunt;
+import halocraft.entities.EntityRedElite;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -166,7 +170,7 @@ public class HaloGUIEventHandler extends Gui{
 						double approxMinimapArea = Math.PI * Math.pow(25, 2);
 						if(Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(25, 2))
 						{
-							if(!(entityIn instanceof EntityMob) && entityIn instanceof EntityLivingBase && !(entityIn instanceof EntitySlime))
+							if(!(entityIn instanceof EntityMob) && !(entityIn instanceof EntityRedElite) && !(entityIn instanceof EntityBlueElite) && !(entityIn instanceof EntityElite) && !(entityIn instanceof EntityGrunt) && entityIn instanceof EntityLivingBase && !(entityIn instanceof EntitySlime))
 							{
 								this.mc.renderEngine.bindTexture(greenSquare);
 								this.drawNonStandardTexturedRect(xPos + 41 + 23 + x, yPos + 16 + 25 + y, 0, 0, 3, 3, 5, 5);
