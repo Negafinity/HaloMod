@@ -38,7 +38,7 @@ public class RenderGhostEntity extends Render
 	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
-		XLibRenderer.translate(posX, posY + 0.52, posZ);
+		XLibRenderer.translate(posX + 1.5, posY + 0.52, posZ + 0.25);
 		for(Part p : model.nameToPartHash.values())
 		{
 			p.draw();

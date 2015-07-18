@@ -2,9 +2,12 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityWarthog;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -37,11 +40,30 @@ public class RenderScorpionEntity extends Render
 
 	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
+		double curVelocity = Math.sqrt(entity.motionX * entity.motionX + entity.motionZ * entity.motionZ);
+
 		XLibRenderer.pushMatrix();
-		XLibRenderer.translate(posX + 2.75, posY + 0.52, posZ - 2.75);
-		for(Part p : model.nameToPartHash.values())
 		{
-			p.draw();
+			GlStateManager.enableCull();
+			XLibRenderer.translate(posX + 2.5, posY, posZ - 2.75);
+
+			for (Part p : model.nameToPartHash.values())
+			{
+				XLibRenderer.pushMatrix();
+				{
+					if (p == model.getPart("the_node.025_tri_714_geometry") && entity.riddenByEntity != null && entity.riddenByEntity instanceof EntityPlayer)
+					{
+						EntityPlayer rider = (EntityPlayer) entity.riddenByEntity; 
+						GlStateManager.rotate(30102, 1, 0, 0);
+						p.draw();
+					}
+					else
+					{
+						p.draw();
+					}
+				}
+				XLibRenderer.popMatrix();
+			}
 		}
 		XLibRenderer.popMatrix();
 	}

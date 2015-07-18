@@ -2,9 +2,11 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityWarthog;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,10 +30,18 @@ public class RenderMongooseEntity extends Render
 	{
 		XLibRenderer.pushMatrix();
 		XLibRenderer.translate(posX, posY + 0.52, posZ);
+		
+		if(mongooseIn.riddenByEntity != null && mongooseIn.riddenByEntity instanceof EntityPlayer)
+		{
+			EntityPlayer player = (EntityPlayer) mongooseIn.riddenByEntity;
+			GlStateManager.rotate(-(player.rotationYawHead), 0, 1, 0);
+		}
+		
 		for(Part p : model.nameToPartHash.values())
 		{
 			p.draw();
 		}
+		
 		XLibRenderer.popMatrix();
 		super.doRender(mongooseIn, posX, posY, posZ, yaw, partialTicks);
 	}

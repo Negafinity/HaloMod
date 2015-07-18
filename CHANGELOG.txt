@@ -1,3 +1,7 @@
+v1.4.82:
+
+Warthog/Troophog wheels now rotate... Mongoose bug fixes.
+
 v1.4.81:
 
 Fixes Up Vehicle Issues.
