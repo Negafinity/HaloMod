@@ -1,12 +1,16 @@
-v1.4.83:
+v1.4.85:
+
+Fixed weird crashing issue.
+
+v1.4.84:
 
 Red Elite added.
 
-v1.4.82:
+v1.4.83:
 
 Warthog/Troophog wheels now rotate... Mongoose bug fixes.
 
-v1.4.81:
+v1.4.81-v1.4.82:
 
 Fixes Up Vehicle Issues.
 
