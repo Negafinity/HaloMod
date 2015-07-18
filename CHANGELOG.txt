@@ -1,3 +1,7 @@
+v1.4.83:
+
+Red Elite added.
+
 v1.4.82:
 
 Warthog/Troophog wheels now rotate... Mongoose bug fixes.

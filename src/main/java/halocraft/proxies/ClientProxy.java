@@ -12,6 +12,7 @@ import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityPlasmaRocket;
 import halocraft.entities.EntityPurplePlasma;
+import halocraft.entities.EntityRedElite;
 import halocraft.entities.EntityRedPlasma;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
@@ -25,6 +26,7 @@ import halocraft.entities.render.RenderGruntEntity;
 import halocraft.entities.render.RenderMongooseEntity;
 import halocraft.entities.render.RenderPlasmaRocketEntity;
 import halocraft.entities.render.RenderPurplePlasmaEntity;
+import halocraft.entities.render.RenderRedEliteEntity;
 import halocraft.entities.render.RenderRedPlasmaEntity;
 import halocraft.entities.render.RenderRocketEntity;
 import halocraft.entities.render.RenderScorpionEntity;
@@ -196,6 +198,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGreenPlasma.class, new RenderGreenPlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityPurplePlasma.class, new RenderPurplePlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedElite.class, new RenderRedEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 
 	}
