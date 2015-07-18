@@ -1,3 +1,7 @@
+v1.4.88:
+
+Blue Elite added.
+
 v1.4.87:
 
 Spawn egg color fixes.

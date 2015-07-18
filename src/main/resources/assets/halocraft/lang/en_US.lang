@@ -1,6 +1,7 @@
 item.halocraft:energysword.name=Energy Sword
 entity.Elite.name=Elite
 entity.RedElite.name=Red Elite
+entity.BlueElite.name=Blue Elite
 entity.Grunt.name=Grunt
 item.SpartanHelmet.name=Spartan Helmet
 item.SpartanChestplate.name=Spartan Chestplate

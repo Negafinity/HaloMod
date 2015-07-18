@@ -3,6 +3,7 @@ package halocraft.proxies;
 import halocraft.KeyBindings;
 import halocraft.api.OBJLoader;
 import halocraft.blocks.HaloBlock;
+import halocraft.entities.EntityBlueElite;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
@@ -18,6 +19,7 @@ import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
 import halocraft.entities.EntityWarthog;
 import halocraft.entities.EntityWarthogTurret;
+import halocraft.entities.render.RenderBlueEliteEntity;
 import halocraft.entities.render.RenderBulletEntity;
 import halocraft.entities.render.RenderEliteEntity;
 import halocraft.entities.render.RenderGhostEntity;
@@ -199,6 +201,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPurplePlasma.class, new RenderPurplePlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedElite.class, new RenderRedEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlueElite.class, new RenderBlueEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 
 	}
