@@ -233,7 +233,7 @@ public class Main{
 		int randomID13 = EntityRegistry.findGlobalUniqueEntityId() + 9;
 		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", randomID13, this, 250, 50, true);
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityElite.class, "Elite", randomID, 230, 78);
+		EntityRegistry.registerGlobalEntityID(EntityElite.class, "GoldenElite", randomID, 0xFFEE00, 0xFFFFFF);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -258,7 +258,7 @@ public class Main{
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 		
 		int randomID5 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID5, 78, 230);
+		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID5, 0x4F2E00, 0x424242);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 

@@ -1,3 +1,7 @@
+v1.4.90:
+
+Updated Elite name to GoldenElite and spawn egg colors.
+
 v1.4.89:
 
 Updated textures and Grunt's now shoot Needlers and Elites wield Energy Swords! Enjoy!
