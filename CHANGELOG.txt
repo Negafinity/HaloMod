@@ -1,3 +1,7 @@
+v1.4.87:
+
+Spawn egg color fixes.
+
 v1.4.86:
 
 Fixed dumb issue.
