@@ -1,5 +1,8 @@
 package halocraft;
 
+import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
+import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
+
 import halocraft.armor.ActiveCamoArmor;
 import halocraft.armor.CovenantArmor;
 import halocraft.armor.HaloArmor;
@@ -27,6 +30,7 @@ import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
+import halocraft.items.ItemEnergySword;
 import halocraft.items.SpartaniumIngot;
 import halocraft.items.ItemAmmoAssaultRifle;
 import halocraft.items.ItemAmmoPlasma;
@@ -35,7 +39,6 @@ import halocraft.items.ItemAssaultRifle;
 import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
-import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemFuelRodCannon;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
@@ -159,8 +162,13 @@ public class Main{
 	public static Item itemRubber;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
+	
+	public static WavefrontModel warthogTurretModel;
+	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event){
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 		haloCreativeTab = new HaloCreativeTab(CreativeTabs.getNextID(), "haloCreativeTab");
 		spartaniumIngot = new SpartaniumIngot();
 		itemOil = new ItemOil();

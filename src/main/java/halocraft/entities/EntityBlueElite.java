@@ -21,11 +21,13 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.world.World;
 import halocraft.Main;
+import halocraft.items.ItemEnergySword;
 
 public class EntityBlueElite extends EntityMob
 {
 	public EntityBlueElite(World worldIn) {
 		super(worldIn);
+		this.setCurrentItemOrArmor(0, new ItemStack(ItemEnergySword.instance));
 		this.setSize(0.9F, 1.5F);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAILeapAtTarget(this, 0.6F));
@@ -36,11 +38,11 @@ public class EntityBlueElite extends EntityMob
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.tasks.addTask(6, new EntityAIMoveTowardsRestriction(this, 1.0D));
 	}
-	//@Override
-	//public ItemStack getHeldItem()
-	//{
-	//	return new ItemStack(halocraft.Main.swordEnergySword, 1);
-	//}
+	@Override
+	public ItemStack getHeldItem()
+	{
+		return new ItemStack(ItemEnergySword.instance, 1);
+	}
 	protected boolean isAIEnabled()
 	{
 	   return true;

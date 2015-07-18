@@ -17,6 +17,8 @@ import net.minecraft.world.World;
 
 public class EntityPurplePlasma extends EntityThrowable{
 
+	public EntityGrunt shotByGrunt;
+	
     public EntityPurplePlasma(World par1World)
     {
         super(par1World);
@@ -33,7 +35,11 @@ public class EntityPurplePlasma extends EntityThrowable{
     {
         if (movingobjectpos.entityHit != null)
         {
-        	movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+        	if(this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit);
+        	else
+        	{
+        		movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+        	}
         }
         if(!this.worldObj.isRemote){
         	this.setDead();

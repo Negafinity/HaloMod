@@ -20,8 +20,6 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogTurretEntity extends Render
 {
-	public WavefrontModel warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
-
 	public RenderWarthogTurretEntity(RenderManager renderManager)
 	{
 		super(renderManager);
@@ -30,7 +28,7 @@ public class RenderWarthogTurretEntity extends Render
 	public void doRender(EntityWarthogTurret warthogIn, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		double curVelocity = Math.sqrt(warthogIn.motionX * warthogIn.motionX + warthogIn.motionZ * warthogIn.motionZ);
-		float tireRotation = /**curVelocity > 0.1 ? **/(warthogIn.worldObj.getWorldTime() % 360 * 8) - partialTicks; //: 0;
+		float tireRotation = curVelocity > 0.1 ? (warthogIn.worldObj.getWorldTime() % 360 * 8) - partialTicks : 0;
 		float time = (float)warthogIn.getTimeSinceHit() - partialTicks;
 		float damage = warthogIn.getDamageTaken() - partialTicks;
 		damage = damage < 0.0F ? 0.0F : damage;
@@ -49,27 +47,33 @@ public class RenderWarthogTurretEntity extends Render
 				EntityPlayer rider = (EntityPlayer) warthogIn.riddenByEntity; 
 				GlStateManager.rotate(-warthogIn.rotationYaw - 90, 0, 1, 0);
 			}
-			for (Part p : warthogTurretModel.nameToPartHash.values())
+
+			for (Part part : halocraft.Main.warthogTurretModel.nameToPartHash.values())
 			{
 				XLibRenderer.pushMatrix();
 				{
-					if (p == warthogTurretModel.getPart("the_node.000_tri_5178_geometry") || p == warthogTurretModel.getPart("the_node.001_tri_5178_geometry"))
+					if (part == halocraft.Main.warthogTurretModel.getPart("the_node.000_tri_5178_geometry") || part == halocraft.Main.warthogTurretModel.getPart("the_node.001_tri_5178_geometry"))
 					{
 						XLibRenderer.translate(0, -0.345, -1.27);
 						GlStateManager.rotate(tireRotation, 1, 0, 0);
 						XLibRenderer.translate(0, 0.345, 1.27);
-						p.draw();
+						part.draw();
 					}
-					else if(p == warthogTurretModel.getPart("the_node.002_tri_5178_geometry") || p == warthogTurretModel.getPart("the_node.010_tri_5178_geometry"))
+					else if(part == halocraft.Main.warthogTurretModel.getPart("the_node.002_tri_5178_geometry") || part == halocraft.Main.warthogTurretModel.getPart("the_node.010_tri_5178_geometry"))
 					{
 						XLibRenderer.translate(0, -0.33, 1.6);
 						GlStateManager.rotate(tireRotation, 1, 0, 0);
 						XLibRenderer.translate(0, 0.33, -1.6);
-						p.draw();
+						part.draw();
+					}
+					else if(part == halocraft.Main.warthogTurretModel.getPart("the_node.169_tri_4674_geometry") && warthogIn.thirdRider != null)
+					{
+						GlStateManager.rotate(warthogIn.thirdRider.rotationYawHead, 1, 0, 0);
+						part.draw();
 					}
 					else
 					{
-						p.draw();
+						part.draw();
 					}
 				}
 				XLibRenderer.popMatrix();

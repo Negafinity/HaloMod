@@ -29,19 +29,35 @@ public class RenderMongooseEntity extends Render
 	public void doRender(EntityMongoose mongooseIn, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
-		XLibRenderer.translate(posX, posY + 0.52, posZ);
-		
+		XLibRenderer.translate(posX, posY, posZ);
+		double curVelocity = Math.sqrt(mongooseIn.motionX * mongooseIn.motionX + mongooseIn.motionZ * mongooseIn.motionZ);
+		float tireRotation = /**curVelocity > 0.1 ? **/ -(mongooseIn.worldObj.getWorldTime() % 360 * 8) - partialTicks; //: 0;
+
 		if(mongooseIn.riddenByEntity != null && mongooseIn.riddenByEntity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) mongooseIn.riddenByEntity;
 			GlStateManager.rotate(-(player.rotationYawHead), 0, 1, 0);
 		}
-		
+
 		for(Part p : model.nameToPartHash.values())
 		{
-			p.draw();
+			XLibRenderer.pushMatrix();
+			{
+				if(p == model.getPart("the_node.014_tri_564_geometry"))
+				{
+					XLibRenderer.translate(0, 0, -1);
+					GlStateManager.rotate(tireRotation, 0, 0, 1);
+					XLibRenderer.translate(0, 0, 1);
+					p.draw();
+				}
+				else
+				{
+					p.draw();
+				}
+			}
+			XLibRenderer.popMatrix();
 		}
-		
+
 		XLibRenderer.popMatrix();
 		super.doRender(mongooseIn, posX, posY, posZ, yaw, partialTicks);
 	}
