@@ -1,3 +1,7 @@
+v1.4.86:
+
+Fixed dumb issue.
+
 v1.4.85:
 
 Fixed weird crashing issue.
