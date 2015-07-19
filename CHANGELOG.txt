@@ -1,3 +1,7 @@
+v1.4.94:
+
+Updated Golden Elite texture.
+
 v1.4.93:
 
 Updated Golden Elite texture.
