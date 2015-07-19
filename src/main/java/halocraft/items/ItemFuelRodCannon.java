@@ -41,7 +41,7 @@ public class ItemFuelRodCannon extends Item {
 					worldIn.spawnEntityInWorld(new EntityPlasmaRocket(worldIn, playerIn));
 					itemStackIn.damageItem(1, playerIn);
 					canShoot = false;
-					t.schedule(new FuelRodCannonTask(this), 6000);
+					t.schedule(new FuelRodCannonTask(this), 3000);
 				}
 			}
 		}
