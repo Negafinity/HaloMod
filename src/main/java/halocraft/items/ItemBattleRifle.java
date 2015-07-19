@@ -24,7 +24,9 @@ public class ItemBattleRifle extends Item {
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			if (!worldIn.isRemote)
 		    {
-				worldIn.spawnEntityInWorld(new EntityBullet(worldIn, playerIn));
+				EntityBullet bullet = new EntityBullet(worldIn, playerIn);
+				bullet.damage = 8;
+				worldIn.spawnEntityInWorld(bullet);
 				itemStackIn.damageItem(1, playerIn);
 			}
 	         return itemStackIn;

@@ -1,5 +1,7 @@
 package halocraft.entities;
 
+import halocraft.items.ItemNeedler;
+
 import java.util.concurrent.TimeUnit;
 
 import net.minecraft.entity.Entity;
@@ -7,6 +9,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
@@ -15,8 +18,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityPurplePlasma extends EntityThrowable{
-
+public class EntityPurplePlasma extends EntityThrowable
+{
+	public int damage = 6;
 	public EntityGrunt shotByGrunt;
 	
     public EntityPurplePlasma(World par1World)
@@ -38,7 +42,7 @@ public class EntityPurplePlasma extends EntityThrowable{
         	if(this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit);
         	else
         	{
-        		movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+        		movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
         	}
         }
         if(!this.worldObj.isRemote){

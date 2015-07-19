@@ -23,7 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityGrunt extends EntityCreature implements IMob, IRangedAttackMob
+public class EntityGrunt extends EntityMob implements IMob, IRangedAttackMob
 {
 	public EntityGrunt(World worldIn) {
 		super(worldIn);

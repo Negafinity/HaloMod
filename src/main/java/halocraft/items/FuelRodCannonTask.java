@@ -2,10 +2,10 @@ package halocraft.items;
 
 import java.util.TimerTask;
 
-public class IntervalTask extends TimerTask {
-	public ItemSniperRifle item;
+public class FuelRodCannonTask extends TimerTask {
+	public ItemFuelRodCannon item;
 	
-	public IntervalTask(ItemSniperRifle i)
+	public FuelRodCannonTask(ItemFuelRodCannon i)
 	{
 		this.item = i;
 	}

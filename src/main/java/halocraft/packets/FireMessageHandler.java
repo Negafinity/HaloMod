@@ -38,7 +38,9 @@ public class FireMessageHandler implements IMessageHandler < FireMessage, IMessa
 		} else if (value == 2) {
 			mainThread.addScheduledTask(new Runnable() {@Override
 				public void run() {
-				worldIn.spawnEntityInWorld(new EntityPurplePlasma(worldIn, serverPlayerIn));
+				EntityPurplePlasma purplePlasma = new EntityPurplePlasma(worldIn, serverPlayerIn);
+				purplePlasma.damage = 7;
+				worldIn.spawnEntityInWorld(purplePlasma);
 			}
 			});
 		} else if (value == 3) {

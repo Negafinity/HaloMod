@@ -23,7 +23,8 @@ import net.minecraft.world.World;
 import halocraft.Main;
 import halocraft.items.ItemEnergySword;
 
-public class EntityElite extends EntityMob{
+public class EntityElite extends EntityMob
+{
 	public EntityElite(World worldIn) {
 		super(worldIn);
 		this.setSize(0.9F, 1.5F);

@@ -1,13 +1,19 @@
 package halocraft.entities;
 
+import halocraft.items.ItemSniperRifle;
+import halocraft.items.Pistol;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityBullet extends EntityThrowable{
+public class EntityBullet extends EntityThrowable
+{
+	public int damage = 6;
+	
     public EntityBullet(World par1World)
     {
         super(par1World);
@@ -20,11 +26,11 @@ public class EntityBullet extends EntityThrowable{
     {
         super(par1World, par2, par4, par6);
     }
-	protected void onImpact(MovingObjectPosition p_70184_1_)
+	protected void onImpact(MovingObjectPosition movingObjectPos)
     {
-        if (p_70184_1_.entityHit != null)
+        if (movingObjectPos.entityHit != null)
         {
-            p_70184_1_.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 6);
+            movingObjectPos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
             this.setDead();
         }
         if(!this.worldObj.isRemote){

@@ -25,7 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityRedElite extends EntityCreature implements IMob, IRangedAttackMob
+public class EntityRedElite extends EntityMob implements IMob, IRangedAttackMob
 {
 	public EntityRedElite(World worldIn) {
 		super(worldIn);

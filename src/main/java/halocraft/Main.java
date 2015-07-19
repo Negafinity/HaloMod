@@ -104,10 +104,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid="halocraft", version="1.3")
-public class Main{
+public class Main
+{
+	public int counter = 0;
 	@SidedProxy(clientSide="halocraft.proxies.ClientProxy", serverSide="halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
-	
+
 	public static String MODID = "halocraft";
 	public static String VERSION = "1.3";
 	//World Generation
@@ -162,9 +164,9 @@ public class Main{
 	public static Item itemRubber;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
-	
+
 	public static WavefrontModel warthogTurretModel;
-	
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -209,29 +211,22 @@ public class Main{
 		halocraft.Main.CovenantLeggings = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("CovenantLeggings");
 		halocraft.Main.CovenantBoots = new CovenantArmor(halocraft.Main.CovenantArmor, halocraft.Main.bootID, 3).setUnlocalizedName("CovenantBoots");
 		halocraft.Main.ActiveCamoChestplate = new ActiveCamoArmor(halocraft.Main.ActiveCamoArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
-		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
-		int randomID3 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", randomID3, this, 250, 50, true);
-		int randomID4 = EntityRegistry.findGlobalUniqueEntityId() + 1;
-		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", randomID4, this, 250, 50, true);
-		int randomID9 = EntityRegistry.findGlobalUniqueEntityId() + 5;
-		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", randomID9, this, 250, 50, true);
-		int randomID10 = EntityRegistry.findGlobalUniqueEntityId() + 6;
-		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", randomID10, this, 250, 50, true);
-		int randomID11 = EntityRegistry.findGlobalUniqueEntityId() + 7;
-		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", randomID11, this, 250, 50, true);
-		int randomID12 = EntityRegistry.findGlobalUniqueEntityId() + 8;
-		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", randomID12, this, 250, 50, true);
-		int randomID14 = EntityRegistry.findGlobalUniqueEntityId() + 10;
-		EntityRegistry.registerModEntity(EntityWarthogTurret.class, "WarthogTurret", randomID14, this, 250, 50, true);
-		int randomID2 = EntityRegistry.findGlobalUniqueEntityId() + 2;
-		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", randomID2, this, 250, 50, true);
-		int randomID7 = EntityRegistry.findGlobalUniqueEntityId() + 3;
-		EntityRegistry.registerModEntity(EntityRedPlasma.class, "RedPlasma", randomID7, this, 250, 50, true);
-		int randomID8 = EntityRegistry.findGlobalUniqueEntityId() + 4;
-		EntityRegistry.registerModEntity(EntityGreenPlasma.class, "GreenPlasma", randomID8, this, 250, 50, true);
-		int randomID13 = EntityRegistry.findGlobalUniqueEntityId() + 9;
-		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", randomID13, this, 250, 50, true);
+
+		//Register Entities
+		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityWarthogTurret.class, "WarthogTurret", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityRedPlasma.class, "RedPlasma", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityGreenPlasma.class, "GreenPlasma", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", getRandomID(), this, 128, 1, true);
+
+
 		int randomID = EntityRegistry.findGlobalUniqueEntityId();
 		EntityRegistry.registerGlobalEntityID(EntityElite.class, "GoldenElite", randomID, 0xFFEE00, 0xFFFFFF);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
@@ -240,34 +235,35 @@ public class Main{
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
-		int randomID15 = EntityRegistry.findGlobalUniqueEntityId() + 20;
-		EntityRegistry.registerGlobalEntityID(EntityRedElite.class, "RedElite", randomID15, 0xFF0000, 0x000000);
+
+		EntityRegistry.registerGlobalEntityID(EntityRedElite.class, "RedElite", randomID + 1, 0xFF0000, 0x000000);
 		EntityRegistry.addSpawn(EntityRedElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
-		int randomID16 = EntityRegistry.findGlobalUniqueEntityId() + 21;
-		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", randomID16, 0x002FFF, 0xCC00FF);
+
+		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", randomID + 2, 0x002FFF, 0xCC00FF);
 		EntityRegistry.addSpawn(EntityBlueElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
-		
-		int randomID5 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID5, 0x4F2E00, 0x424242);
+
+
+		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID + 3, 0x4F2E00, 0x424242);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
-		//EntityRegistry.registerModEntity(EntityElite.class,"Elite", randomID, this, 250, 50, true);
-		int randomID6 = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", randomID6 + 1, this, 128, 1, true);
+
+
+		//Register Items and Blocks
+		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
 		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);
@@ -333,9 +329,9 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', spartaniumIngot});
 		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', PurplePlasmaIngot.instance});
 		GameRegistry.addRecipe(new ItemStack(RedPlasmaBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', RedPlasmaIngot.instance});
-		
+
 		GameRegistry.addRecipe(new ItemStack(itemRubber, 2), new Object[]{"XXX","XXX","XXX", 'X', itemOil});
-		
+
 		//Gun Recipes
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassPaneStack = new ItemStack(Blocks.glass_pane);
@@ -411,18 +407,23 @@ public class Main{
 		GameRegistry.addRecipe(new ItemStack(FragGrenade.instance, 1), new Object[]{" X ", "XYX", "XXX", 'X', ironStack, 'Y', tntStack});
 		//World Gen
 		GameRegistry.registerWorldGenerator(HaloOreGen, 1);
-		
+
 		if (event.getSide() == Side.CLIENT)
 			proxy.preInit();
+	}
+	public int getRandomID()
+	{
+		counter++;
+		return counter + EntityRegistry.findGlobalUniqueEntityId();
 	}
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		//Register Key
 		proxy.registerKey();
-		
+
 		//Rendering
 		proxy.registerRenders();
-		
+
 		//Register Packet
 		HalocraftPacketHandler.INSTANCE.registerMessage(FireMessageHandler.class, FireMessage.class, 0, Side.SERVER);
 	}

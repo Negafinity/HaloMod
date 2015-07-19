@@ -30,7 +30,9 @@ public class ItemSniperRifle extends Item {
 				worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 				if (!worldIn.isRemote)
 				{	
-					worldIn.spawnEntityInWorld(new EntityBullet(worldIn, playerIn));
+					EntityBullet bullet = new EntityBullet(worldIn, playerIn);
+					bullet.damage = 10;
+					worldIn.spawnEntityInWorld(bullet);
 					itemStackIn.damageItem(1, playerIn);
 					canShoot = false;
 					t.schedule(new IntervalTask(this), 1000);

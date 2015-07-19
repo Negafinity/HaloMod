@@ -25,7 +25,9 @@ public class ItemCarbineRifle extends Item {
 	         worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	         if (!worldIn.isRemote)
 	         {
-	             worldIn.spawnEntityInWorld(new EntityGreenPlasma(worldIn, playerIn));
+	        	 EntityGreenPlasma greenPlasma = new EntityGreenPlasma(worldIn, playerIn);
+	        	 greenPlasma.damage = 8;
+	             worldIn.spawnEntityInWorld(greenPlasma);
 	             itemStackIn.damageItem(1, playerIn);
 	         }
 	         return itemStackIn;
