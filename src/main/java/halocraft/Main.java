@@ -132,6 +132,10 @@ public class Main
 	public static Item SpartanChestplate;
 	public static Item SpartanLeggings;
 	public static Item SpartanBoots;
+	public static Item prometheanHelmet;
+	public static Item PrometheanChestplate;
+	public static Item PrometheanLeggings;
+	public static Item PrometheanBoots;
 	public static Item RedSpartanHelmet;
 	public static Item RedSpartanChestplate;
 	public static Item RedSpartanLeggings;
@@ -165,11 +169,14 @@ public class Main
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
 
+	public static ArmorMaterial PrometheanArmor;
+	
 	public static WavefrontModel warthogTurretModel;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+
 		warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 		haloCreativeTab = new HaloCreativeTab(CreativeTabs.getNextID(), "haloCreativeTab");
 		spartaniumIngot = new SpartaniumIngot();
@@ -182,14 +189,22 @@ public class Main
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
-		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 100, new int[]{6, 6, 10, 8}, 30);
-		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 85, new int[]{4, 4, 10, 8}, 30);
+		PrometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[]{6, 9, 7, 5}, 30);
+		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[]{5, 7, 7, 5}, 30);
+		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[]{5, 6, 6, 5}, 30);
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		HaloOreGen = new HaloGenerationClass();
 		//HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
+		
+		//Promethean Armor
+		prometheanHelmet = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("prometheanHelmet");
+		PrometheanChestplate = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("PrometheanChestplate");
+		PrometheanLeggings = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("PrometheanLeggings");
+		PrometheanBoots = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("PrometheanBoots");
+		
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
 		halocraft.Main.BlueSpartanLeggings = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
@@ -299,8 +314,12 @@ public class Main
 		GameRegistry.registerItem(ItemCarbineRifle.instance, ItemCarbineRifle.name);
 		GameRegistry.registerItem(ItemNeedler.instance, ItemNeedler.name);
 		GameRegistry.registerItem(ItemWarthog.instance, ItemWarthog.name);
-		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(GreenPlasmaIngot.instance, GreenPlasmaIngot.name);
+		GameRegistry.registerItem(prometheanHelmet, "prometheanHelmet");
+		GameRegistry.registerItem(PrometheanChestplate, "PrometheanChestplate");
+		GameRegistry.registerItem(PrometheanLeggings, "PrometheanLeggings");
+		GameRegistry.registerItem(PrometheanBoots, "PrometheanBoots");
+		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
 		GameRegistry.registerItem(halocraft.Main.SpartanLeggings, "SpartanLeggings");
 		GameRegistry.registerItem(halocraft.Main.SpartanBoots, "SpartanBoots");
