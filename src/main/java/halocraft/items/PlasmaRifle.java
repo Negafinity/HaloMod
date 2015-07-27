@@ -26,7 +26,8 @@ public class PlasmaRifle extends Item{
 		setMaxDamage(1000);
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn){
-		if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(halocraft.Main.ammoPlasma)){
+		if(playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
+		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			if (!worldIn.isRemote)
 			{
@@ -38,5 +39,27 @@ public class PlasmaRifle extends Item{
 			return itemStackIn;
 		}
 		return itemStackIn;
+	}
+	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
+	{
+		if(playerIn.inventory.hasItem(halocraft.Main.ammoPlasma))
+		{
+			for(ItemStack itemStack : playerIn.inventory.mainInventory)
+			{
+				if(itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemAmmoPlasma)
+				{
+					if(itemStack.getItemDamage() < 32)
+					{
+						itemStack.attemptDamageItem(1, new Random());
+					}
+					else
+					{
+						playerIn.inventory.consumeInventoryItem(itemStack.getItem());
+					}
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }

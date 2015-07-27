@@ -8,7 +8,7 @@ public class ItemNeedlerAmmo extends Item {
     public static final String name = "ItemNeedlerAmmo";
     
 	public ItemNeedlerAmmo() {
-        setMaxStackSize(32);
+        setMaxStackSize(1);
         setCreativeTab(halocraft.Main.haloCreativeTab);
         setMaxDamage(32);
         setUnlocalizedName("halocraft:" + name.toLowerCase());

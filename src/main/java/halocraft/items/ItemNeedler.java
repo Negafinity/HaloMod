@@ -28,7 +28,7 @@ public class ItemNeedler extends Item
 	}
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
-		if(playerIn.capabilities.isCreativeMode||playerIn.inventory.consumeInventoryItem(ItemNeedlerAmmo.instance))
+		if(playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			if (!worldIn.isRemote)
@@ -41,5 +41,28 @@ public class ItemNeedler extends Item
 			return itemStackIn;
 		}
 		return itemStackIn;
+	}
+
+	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
+	{
+		if(playerIn.inventory.hasItem(ItemNeedlerAmmo.instance))
+		{
+			for(ItemStack itemStack : playerIn.inventory.mainInventory)
+			{
+				if(itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemNeedlerAmmo)
+				{
+					if(itemStack.getItemDamage() < 32)
+					{
+						itemStack.attemptDamageItem(1, new Random());
+					}
+					else
+					{
+						playerIn.inventory.consumeInventoryItem(itemStack.getItem());
+					}
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }

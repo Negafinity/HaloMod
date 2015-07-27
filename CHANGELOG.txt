@@ -1,3 +1,7 @@
+v1.4.98:
+
+Guns now use Magazines not firing each bullet at a time.
+
 v1.4.97:
 
 Mongoose rotates properly and wheels move.

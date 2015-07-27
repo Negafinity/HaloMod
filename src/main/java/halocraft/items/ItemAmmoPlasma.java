@@ -4,8 +4,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemAmmoPlasma extends Item {
-	public ItemAmmoPlasma(){
+	public ItemAmmoPlasma()
+	{
 		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("ammoPlasma");
+		setMaxStackSize(1);
+		setMaxDamage(32);
 	}
 }
