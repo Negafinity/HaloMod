@@ -1,3 +1,7 @@
+v1.4.99:
+
+Updated Carbine Rifle
+
 v1.4.98:
 
 Guns now use Magazines not firing each bullet at a time.
