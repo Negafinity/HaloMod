@@ -31,24 +31,39 @@ public class RenderMongooseEntity extends Render
 		XLibRenderer.pushMatrix();
 		XLibRenderer.translate(posX, posY, posZ);
 		double curVelocity = Math.sqrt(mongooseIn.motionX * mongooseIn.motionX + mongooseIn.motionZ * mongooseIn.motionZ);
-		float tireRotation = /**curVelocity > 0.1 ? **/ -(mongooseIn.worldObj.getWorldTime() % 360 * 8) - partialTicks; //: 0;
+		float tireRotation = curVelocity > 0.1 ? -(mongooseIn.worldObj.getWorldTime() % 360 * 8) - partialTicks : 0;
 
 		if(mongooseIn.riddenByEntity != null && mongooseIn.riddenByEntity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) mongooseIn.riddenByEntity;
-			GlStateManager.rotate(-(player.rotationYawHead), 0, 1, 0);
+			GlStateManager.rotate(-(player.rotationYawHead + 90), 0, 1, 0);
 		}
 
 		for(Part p : model.nameToPartHash.values())
 		{
 			XLibRenderer.pushMatrix();
 			{
-				if(p == model.getPart("the_node.014_tri_564_geometry"))
+				if(p == model.getPart("the_node.014_tri_564_geometry") || p == model.getPart("the_node.013_tri_540_geometry"))
 				{
-					XLibRenderer.translate(0, 0, -1);
-					GlStateManager.rotate(tireRotation, 0, 0, 1);
-					XLibRenderer.translate(0, 0, 1);
-					p.draw();
+					XLibRenderer.pushMatrix();
+					{
+						XLibRenderer.translate(-1.4, 0.48, 0);
+						GlStateManager.rotate(tireRotation, 0, 0, 1);
+						XLibRenderer.translate(1.4, -0.48, 0);
+						p.draw();
+					}
+					XLibRenderer.popMatrix();
+				}
+				else if(p == model.getPart("the_node.015_tri_540_geometry.001") || p == model.getPart("the_node.016_tri_540_geometry.002"))
+				{
+					XLibRenderer.pushMatrix();
+					{
+						XLibRenderer.translate(0.65, 0.45, 0);
+						GlStateManager.rotate(tireRotation, 0, 0, 1);
+						XLibRenderer.translate(-0.65, -0.45, 0);
+						p.draw();
+					}
+					XLibRenderer.popMatrix();
 				}
 				else
 				{
