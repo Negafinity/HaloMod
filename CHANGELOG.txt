@@ -1,3 +1,7 @@
+v1.4.96:
+
+Scorpion's Turret now rotates.
+
 v1.4.95:
 
 Added Promethean Armor and debuffed other armor.

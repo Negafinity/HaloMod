@@ -2,6 +2,7 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityWarthog;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -39,12 +40,9 @@ public class RenderScorpionEntity extends Render
 	}
 
 	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
-	{
-		double curVelocity = Math.sqrt(entity.motionX * entity.motionX + entity.motionZ * entity.motionZ);
-
+	{	
 		XLibRenderer.pushMatrix();
 		{
-			GlStateManager.enableCull();
 			XLibRenderer.translate(posX + 2.5, posY, posZ - 2.75);
 
 			for (Part p : model.nameToPartHash.values())
@@ -53,8 +51,10 @@ public class RenderScorpionEntity extends Render
 				{
 					if (p == model.getPart("the_node.025_tri_714_geometry") && entity.riddenByEntity != null && entity.riddenByEntity instanceof EntityPlayer)
 					{
-						EntityPlayer rider = (EntityPlayer) entity.riddenByEntity; 
-						GlStateManager.rotate(30102, 1, 0, 0);
+						EntityPlayer rider = (EntityPlayer) entity.riddenByEntity;
+						XLibRenderer.translate(-2.75, 0, 6.15);
+						GlStateManager.rotate(-rider.rotationYawHead + 180, 0, 1, 0);
+						XLibRenderer.translate(2.75, 0, -6.15);
 						p.draw();
 					}
 					else
