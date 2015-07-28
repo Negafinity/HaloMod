@@ -1,3 +1,7 @@
+v1.4.102:
+
+Added Promethean Mob.
+
 v1.4.101:
 
 Added Marine Armor.

@@ -12,6 +12,7 @@ import halocraft.blocks.PurplePlasmaBlock;
 import halocraft.blocks.RedPlasmaBlock;
 import halocraft.creativetabs.HaloCreativeTab;
 import halocraft.entities.EntityBlueElite;
+import halocraft.entities.EntityPromethean;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityFragGrenade;
@@ -280,6 +281,14 @@ public class Main
 
 
 		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID + 3, 0x4F2E00, 0x424242);
+		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
+				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
+				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
+				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
+				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
+				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
+		
+		EntityRegistry.registerGlobalEntityID(EntityPromethean.class, "Promethean", randomID + 4, 0x000000, 0xFF7700);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 

@@ -3,6 +3,7 @@ entity.GoldenElite.name=Golden Elite
 entity.RedElite.name=Red Elite
 entity.BlueElite.name=Blue Elite
 entity.Grunt.name=Grunt
+entity.Promethean.name=Promethean
 item.prometheanHelmet.name=Promethean Helmet
 item.PrometheanChestplate.name=Promethean Chestplate
 item.PrometheanLeggings.name=Promethean Leggings
