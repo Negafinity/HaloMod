@@ -1,3 +1,7 @@
+v1.4.101:
+
+Added Marine Armor.
+
 v1.4.100:
 
 Updated Scorpion - it now rotates and Promethean Sword added.

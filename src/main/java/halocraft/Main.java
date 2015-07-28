@@ -137,6 +137,10 @@ public class Main
 	public static Item PrometheanChestplate;
 	public static Item PrometheanLeggings;
 	public static Item PrometheanBoots;
+	public static Item MarineHelmet;
+	public static Item MarineChestplate;
+	public static Item MarineLeggings;
+	public static Item MarineBoots;
 	public static Item RedSpartanHelmet;
 	public static Item RedSpartanChestplate;
 	public static Item RedSpartanLeggings;
@@ -171,13 +175,13 @@ public class Main
 	public static ToolMaterial HaloMaterial;
 
 	public static ArmorMaterial PrometheanArmor;
+	public static ArmorMaterial MarineArmor;
 	
 	public static WavefrontModel warthogTurretModel;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
 		warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 		haloCreativeTab = new HaloCreativeTab(CreativeTabs.getNextID(), "haloCreativeTab");
 		spartaniumIngot = new SpartaniumIngot();
@@ -193,6 +197,7 @@ public class Main
 		PrometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[]{6, 9, 7, 5}, 30);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[]{5, 7, 7, 5}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[]{5, 6, 6, 5}, 30);
+		MarineArmor = EnumHelper.addArmorMaterial("MarineArmor", "halocraft:textures/models/armor/MarineArmor", 50, new int[]{5, 6, 6, 5}, 30);
 		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[]{6, 6, 10, 8}, 30);
 		HaloOreGen = new HaloGenerationClass();
 		//HaloBlock = new HaloBlock(Material.iron);
@@ -205,6 +210,11 @@ public class Main
 		PrometheanChestplate = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("PrometheanChestplate");
 		PrometheanLeggings = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("PrometheanLeggings");
 		PrometheanBoots = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("PrometheanBoots");
+		//Marine Armor
+		MarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("MarineHelmet");
+		MarineChestplate = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("MarineChestplate");
+		MarineLeggings = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("MarineLeggings");
+		MarineBoots = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("MarineBoots");
 		
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -321,6 +331,10 @@ public class Main
 		GameRegistry.registerItem(PrometheanChestplate, "PrometheanChestplate");
 		GameRegistry.registerItem(PrometheanLeggings, "PrometheanLeggings");
 		GameRegistry.registerItem(PrometheanBoots, "PrometheanBoots");
+		GameRegistry.registerItem(MarineHelmet, "MarineHelmet");
+		GameRegistry.registerItem(MarineChestplate, "MarineChestplate");
+		GameRegistry.registerItem(MarineLeggings, "MarineLeggings");
+		GameRegistry.registerItem(MarineBoots, "MarineBoots");
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
 		GameRegistry.registerItem(halocraft.Main.SpartanLeggings, "SpartanLeggings");

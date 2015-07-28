@@ -103,7 +103,17 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.PrometheanLeggings, 0, resource3);
 		ModelResourceLocation resource4 = new ModelResourceLocation("halocraft:PrometheanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.PrometheanBoots, 0, resource4);
-		
+
+		//Rendering Marine Armor
+		ModelResourceLocation reso1 = new ModelResourceLocation("halocraft:MarineHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.MarineHelmet, 0, reso1);
+		ModelResourceLocation reso2 = new ModelResourceLocation("halocraft:MarineChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.MarineChestplate, 0, reso2);
+		ModelResourceLocation reso3 = new ModelResourceLocation("halocraft:MarineLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.MarineLeggings, 0, reso3);
+		ModelResourceLocation reso4 = new ModelResourceLocation("halocraft:MarineBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.MarineBoots, 0, reso4);
+
 		//Registering Red Spartan Armor
 		ModelResourceLocation res13 = new ModelResourceLocation("halocraft:RedSpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.RedSpartanChestplate, 0, res13);
