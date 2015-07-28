@@ -31,6 +31,7 @@ import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
 import halocraft.items.ItemEnergySword;
+import halocraft.items.PrometheanSword;
 import halocraft.items.SpartaniumIngot;
 import halocraft.items.ItemAmmoAssaultRifle;
 import halocraft.items.ItemAmmoPlasma;
@@ -279,6 +280,7 @@ public class Main
 
 		//Register Items and Blocks
 		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
+		GameRegistry.registerItem(PrometheanSword.instance, PrometheanSword.name);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
 		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);

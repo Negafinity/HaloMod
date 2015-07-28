@@ -8,9 +8,10 @@ public class ItemEnergySword extends ItemSword
 {
 	//Following is so you can access it in pre-init
 	public static final ItemEnergySword instance = new ItemEnergySword();
-    public static final String name = "EnergySword";
-    
-	public ItemEnergySword() {
+	public static final String name = "EnergySword";
+
+	public ItemEnergySword()
+	{
 		super(Main.HaloMaterial);
 		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());

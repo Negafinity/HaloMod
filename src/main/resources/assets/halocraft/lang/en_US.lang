@@ -26,6 +26,7 @@ item.BlueSpartanChestplate.name=Blue Spartan Chestplate
 item.BlueSpartanLeggings.name=Blue Spartan Leggings
 item.BlueSpartanBoots.name=Blue Spartan Boots
 item.SpartaniumIngot.name=Spartanium Ingot
+item.halocraft:prometheansword.name=Promethean Sword
 tile.HaloOre.name=Spartanium Ore
 tile.halocraft:purpleplasmablock.name=Purple Plasma Block
 tile.halocraft:redplasmablock.name=Red Plasma Block

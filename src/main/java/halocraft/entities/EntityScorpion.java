@@ -40,7 +40,6 @@ public class EntityScorpion extends Entity
 	private double velocityX;
 	@SideOnly(Side.CLIENT)
 	private double velocityY;
-	@SideOnly(Side.CLIENT)
 	private double velocityZ;
 
 	public EntityScorpion(World worldIn)
@@ -438,13 +437,13 @@ public class EntityScorpion extends Entity
 		{
 			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1 + 5F);
+			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
 		}
 		if(worldObj.isRemote)
 		{
 			if(this.riddenByEntity instanceof EntityPlayer)
 			{
-				if(Minecraft.getMinecraft().gameSettings.thirdPersonView != 1)
+				if(Minecraft.getMinecraft().thePlayer == this.riddenByEntity && Minecraft.getMinecraft().gameSettings.thirdPersonView != 1)
 				{
 					Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
 				}

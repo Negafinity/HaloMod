@@ -59,6 +59,7 @@ import halocraft.items.ItemWarthog;
 import halocraft.items.ItemWarthogTurret;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
+import halocraft.items.PrometheanSword;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
 import net.minecraft.client.Minecraft;
@@ -220,6 +221,7 @@ public class ClientProxy extends CommonProxy{
 		OBJLoader.instance.addDomain("halocraft");
 		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(PrometheanSword.instance, 0, new ModelResourceLocation("halocraft:" + PrometheanSword.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(Pistol.instance, 0, new ModelResourceLocation("halocraft:" + Pistol.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(FragGrenade.instance, 0, new ModelResourceLocation("halocraft:" + FragGrenade.name, "inventory")); 

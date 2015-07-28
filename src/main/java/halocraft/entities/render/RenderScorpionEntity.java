@@ -44,7 +44,11 @@ public class RenderScorpionEntity extends Render
 		XLibRenderer.pushMatrix();
 		{
 			XLibRenderer.translate(posX + 2.5, posY, posZ - 2.75);
-
+			
+			XLibRenderer.translate(-2.5, 0, 2);
+			GlStateManager.rotate(-(entity.rotationYaw - 90), 0, 1, 0);
+			XLibRenderer.translate(2.5, 0, -5);
+			
 			for (Part p : model.nameToPartHash.values())
 			{
 				XLibRenderer.pushMatrix();
@@ -53,7 +57,9 @@ public class RenderScorpionEntity extends Render
 					{
 						EntityPlayer rider = (EntityPlayer) entity.riddenByEntity;
 						XLibRenderer.translate(-2.75, 0, 6.15);
-						GlStateManager.rotate(-rider.rotationYawHead + 180, 0, 1, 0);
+						GlStateManager.rotate(-90, 0F, 1F, 0F);
+						GlStateManager.rotate(entity.rotationYaw - 108, 0, 1, 0);
+						GlStateManager.rotate(-rider.rotationYawHead - 72, 0F, 1F, 0F);
 						XLibRenderer.translate(2.75, 0, -6.15);
 						p.draw();
 					}

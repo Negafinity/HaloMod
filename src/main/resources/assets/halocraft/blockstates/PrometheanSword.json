@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {},
-        "model": "halocraft:CarbineRifle.obj"
+        "model": "halocraft:PromethianSword.obj"
        },
     "variants": {
         "normal": [
@@ -19,57 +19,57 @@
                 "transform": {
                     "thirdperson": {
                         "translation": [
-                            0.23,
-                            0.45,
-                            -0.3
+                            .4,
+                            0.15,
+                            -.4
                         ],
                         "rotation": [
                             {
                                 "y": 90
                             },
                             {
-                                "x": 270
+                                "x": -20
                             },
                             {
-                                "z": 270
+                                "z": -90
                             }
                         ],
                         "scale": 1
                     },
                     "gui": {
                         "translation": [
-                            -0.25,
-                            -0.5,
+                            0.25,
+                            .25,
                             0.1
                         ],
                         "rotation": [
                             {
-                                "y": -110
+                                "y": 0
                             },
                             {
-                                "x": 140
+                                "x": 55
                             },
                             {
                                 "z": 45
                             }
                         ],
-                        "scale": 1.25
+                        "scale": 1
                     },
                     "firstperson": {
                         "translation": [
                             -0.75,
-                            0.85,
-                            -0.65
+                            0.75,
+                            0
                         ],
                         "rotation": [
                             {
-                                "y": 135
+                                "y": 45
                             },
                             {
-                                "x": 0
+                                "x": 180
                             },
                             {
-                                "z": 0
+                                "z": 180
                             }
                         ],
                         "scale": 2
