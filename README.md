@@ -55,7 +55,7 @@ Simply drop/add the downloaded JAR into your mods folder! If you don't know how 
 * Needler Ammo
 
 ## Weapons:
-*Energy Sword
+* Energy Sword
 * Rocket Launcher
 * Plasma Rifle
 * Pistol/Magnum
