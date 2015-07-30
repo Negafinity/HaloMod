@@ -1,3 +1,7 @@
+v1.4.105:
+
+Halo HUD now resizes correctly.. credit to Ri5ux.
+
 v1.4.102:
 
 Added Promethean Mob.
