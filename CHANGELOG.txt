@@ -1,3 +1,7 @@
+v1.4.106:
+
+Promethean now blows up when it dies similar to in Halo. Fixed bugs with Incineration Cannon & Rocket Launcher explosions.
+
 v1.4.105:
 
 Halo HUD now resizes correctly.. credit to Ri5ux.
