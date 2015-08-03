@@ -1,3 +1,7 @@
+v1.4.108:
+
+Added Pulse Grenade (no model yet).
+
 v1.4.107:
 
 Scorpion Improvements.
