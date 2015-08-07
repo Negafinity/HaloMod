@@ -4,6 +4,7 @@ import halocraft.armor.ActiveCamoArmor;
 import halocraft.armor.CovenantArmor;
 import halocraft.armor.HaloArmor;
 import halocraft.blocks.ForerunnerFloorBlock;
+import halocraft.blocks.ForerunnerOre;
 import halocraft.blocks.ForerunnerWallBlock;
 import halocraft.blocks.HaloBlock;
 import halocraft.blocks.HaloOre;
@@ -40,6 +41,7 @@ import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
+import halocraft.items.ItemForerunnerShard;
 import halocraft.items.ItemFuelRodCannon;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
@@ -112,6 +114,7 @@ public class Main
 	public static ArmorMaterial ActiveCamoArmor;
 	//Blocks
 	public final static Block HaloOre = new HaloOre(Material.iron);
+	public final static Block ForerunnerOre = new ForerunnerOre(Material.iron);
 	public final static Block RedPlasmaOre = new halocraft.blocks.RedPlasmaOre(Material.iron);
 	public final static Block GreenPlasmaOre = new halocraft.blocks.GreenPlasmaOre(Material.iron);
 	public final static Block PurplePlasmaOre = new halocraft.blocks.PurplePlasmaOre(Material.iron);
@@ -312,6 +315,7 @@ public class Main
 		GameRegistry.registerBlock(HaloOre, "HaloOre");
 		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
 		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);
+		GameRegistry.registerBlock(ForerunnerOre, "ForerunnerOre");
 		GameRegistry.registerItem(itemWheel, "itemWheel");
 		GameRegistry.registerItem(itemOil, "itemOil");
 		GameRegistry.registerBlock(RedPlasmaOre, "RedPlasmaOre");
@@ -326,6 +330,7 @@ public class Main
 		GameRegistry.registerItem(ItemRocketLauncher.instance, ItemRocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
+		GameRegistry.registerItem(ItemForerunnerShard.instance, ItemForerunnerShard.name);
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
 		GameRegistry.registerItem(ItemBattleRifle.instance, ItemBattleRifle.name);
 		GameRegistry.registerItem(ItemHealthPack.instance, ItemHealthPack.name);
@@ -465,6 +470,7 @@ public class Main
 		GameRegistry.addSmelting(new ItemStack(Blocks.dirt), new ItemStack(itemOil, 1), 0.1f);
 		GameRegistry.addSmelting(RedPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addSmelting(PurplePlasmaOre, new ItemStack(PurplePlasmaIngot.instance, 1), 0.1f);
+		GameRegistry.addSmelting(ForerunnerOre, new ItemStack(ItemForerunnerShard.instance, 1), 0.1f);
 		GameRegistry.addSmelting(GreenPlasmaIngot.instance, new ItemStack(ammoPlasma, 1), 0.1f);
 		GameRegistry.addSmelting(GreenPlasmaOre, new ItemStack(GreenPlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));

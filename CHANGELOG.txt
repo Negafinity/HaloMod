@@ -1,3 +1,7 @@
+v1.4.110:
+
+Added Forerunner Ore + Forerunner Shard. Added Pulse Grenade model.
+
 v1.4.109:
 
 Added Light Rifle, Marine Armors in color, and Forerunner decoration blocks.

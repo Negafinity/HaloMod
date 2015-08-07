@@ -16,6 +16,7 @@ import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityPlasmaRocket;
 import halocraft.entities.EntityPromethean;
+import halocraft.entities.EntityPulseGrenade;
 import halocraft.entities.EntityPurplePlasma;
 import halocraft.entities.EntityRedElite;
 import halocraft.entities.EntityRedPlasma;
@@ -49,6 +50,7 @@ import halocraft.items.ItemBattleRifle;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
+import halocraft.items.ItemForerunnerShard;
 import halocraft.items.ItemFuelRodCannon;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
@@ -66,6 +68,7 @@ import halocraft.items.ItemWarthogTurret;
 import halocraft.items.Pistol;
 import halocraft.items.PlasmaRifle;
 import halocraft.items.PrometheanSword;
+import halocraft.items.PulseGrenade;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
 import net.minecraft.client.Minecraft;
@@ -204,10 +207,14 @@ public class ClientProxy extends CommonProxy{
 
 		ModelResourceLocation res42 = new ModelResourceLocation("halocraft:itemRubber", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.itemRubber, 0, res42);
+		
+		ModelResourceLocation res43 = new ModelResourceLocation("halocraft:" + ItemForerunnerShard.name, "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemForerunnerShard.instance, 0, res43);
 
 		//Rendering Blocks
 		Item itemBlockSimple = GameRegistry.findItem("halocraft", HaloBlock.name);
 		Item itemBlockSimple2 = GameRegistry.findItem("halocraft", "HaloOre");
+		Item itemForerunnerOre = GameRegistry.findItem("halocraft", "ForerunnerOre");
 		Item itemRedPlasmaOre = GameRegistry.findItem("halocraft", "RedPlasmaOre");
 		Item itemGreenPlasmaOre = GameRegistry.findItem("halocraft", "GreenPlasmaOre");
 		Item itemPurplePlasmaOre = GameRegistry.findItem("halocraft", "PurplePlasmaOre");
@@ -217,6 +224,7 @@ public class ClientProxy extends CommonProxy{
 		Item itemWallBlock = GameRegistry.findItem("halocraft", ForerunnerWallBlock.name);
 		Item itemFloorBlock = GameRegistry.findItem("halocraft", ForerunnerFloorBlock.name);
 		
+		ModelResourceLocation forerunnerOreBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerOre", "inventory");
 		ModelResourceLocation roofBlockResourceLocation = new ModelResourceLocation("halocraft:RoofBlock", "inventory");
 		ModelResourceLocation wallBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerWallBlock", "inventory");
 		ModelResourceLocation floorBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerFloorBlock", "inventory");
@@ -239,8 +247,10 @@ public class ClientProxy extends CommonProxy{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemRoofBlock, DEFAULT_ITEM_SUBTYPE, roofBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemWallBlock, DEFAULT_ITEM_SUBTYPE, wallBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemFloorBlock, DEFAULT_ITEM_SUBTYPE, floorBlockResourceLocation);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemForerunnerOre, DEFAULT_ITEM_SUBTYPE, forerunnerOreBlockResourceLocation);
 
 		//Rendering Entities
+		RenderingRegistry.registerEntityRenderingHandler(EntityPulseGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), PulseGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FragGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, new RenderGhostEntity(Minecraft.getMinecraft().getRenderManager()));
@@ -263,6 +273,7 @@ public class ClientProxy extends CommonProxy{
 	public void preInit(){
 		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
 		OBJLoader.instance.addDomain("halocraft");
+		ModelLoader.setCustomModelResourceLocation(PulseGrenade.instance, 0, new ModelResourceLocation("halocraft:" + PulseGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PrometheanSword.instance, 0, new ModelResourceLocation("halocraft:" + PrometheanSword.name, "inventory"));

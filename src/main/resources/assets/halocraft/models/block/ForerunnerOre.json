@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/ForerunnerOre",
+        "up": "halocraft:blocks/ForerunnerOre",
+        "north": "halocraft:blocks/ForerunnerOre",
+        "east": "halocraft:blocks/ForerunnerOre",
+        "south": "halocraft:blocks/ForerunnerOre",
+        "west": "halocraft:blocks/ForerunnerOre",
+        "particle": "blocks/lapis_block"
+    }
+}
