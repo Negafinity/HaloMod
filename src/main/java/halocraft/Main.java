@@ -3,10 +3,13 @@ package halocraft;
 import halocraft.armor.ActiveCamoArmor;
 import halocraft.armor.CovenantArmor;
 import halocraft.armor.HaloArmor;
+import halocraft.blocks.ForerunnerFloorBlock;
+import halocraft.blocks.ForerunnerWallBlock;
 import halocraft.blocks.HaloBlock;
 import halocraft.blocks.HaloOre;
 import halocraft.blocks.PurplePlasmaBlock;
 import halocraft.blocks.RedPlasmaBlock;
+import halocraft.blocks.RoofBlock;
 import halocraft.creativetabs.HaloCreativeTab;
 import halocraft.entities.EntityBlueElite;
 import halocraft.entities.EntityBullet;
@@ -41,6 +44,7 @@ import halocraft.items.ItemFuelRodCannon;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemIncinerationCannon;
+import halocraft.items.ItemLightRifle;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedler;
 import halocraft.items.ItemNeedlerAmmo;
@@ -128,6 +132,14 @@ public class Main
 	public static Item MarineChestplate;
 	public static Item MarineLeggings;
 	public static Item MarineBoots;
+	public static Item BlueMarineHelmet;
+	public static Item BlueMarineChestplate;
+	public static Item BlueMarineLeggings;
+	public static Item BlueMarineBoots;
+	public static Item RedMarineHelmet;
+	public static Item RedMarineChestplate;
+	public static Item RedMarineLeggings;
+	public static Item RedMarineBoots;
 	public static Item RedSpartanHelmet;
 	public static Item RedSpartanChestplate;
 	public static Item RedSpartanLeggings;
@@ -199,9 +211,19 @@ public class Main
 		PrometheanBoots = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("PrometheanBoots");
 		//Marine Armor
 		MarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("MarineHelmet");
-		MarineChestplate = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("MarineChestplate");
-		MarineLeggings = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("MarineLeggings");
-		MarineBoots = new halocraft.armor.MarineArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("MarineBoots");
+		MarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("MarineChestplate");
+		MarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("MarineLeggings");
+		MarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.bootID, 3).setUnlocalizedName("MarineBoots");
+		
+		RedMarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("RedMarineHelmet");
+		RedMarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("RedMarineChestplate");
+		RedMarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("RedMarineLeggings");
+		RedMarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.bootID, 3).setUnlocalizedName("RedMarineBoots");
+		
+		BlueMarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueMarineHelmet");
+		BlueMarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueMarineChestplate");
+		BlueMarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("BlueMarineLeggings");
+		BlueMarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.bootID, 3).setUnlocalizedName("BlueMarineBoots");
 		
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -311,6 +333,7 @@ public class Main
 		GameRegistry.registerItem(ItemGhost.instance, ItemGhost.name);
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemRubber, "itemRubber");
+		GameRegistry.registerItem(ItemLightRifle.instance, ItemLightRifle.name);
 		GameRegistry.registerItem(ItemScorpion.instance, ItemScorpion.name);
 		GameRegistry.registerItem(ItemIncinerationCannon.instance, ItemIncinerationCannon.name);
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
@@ -332,6 +355,14 @@ public class Main
 		GameRegistry.registerItem(MarineChestplate, "MarineChestplate");
 		GameRegistry.registerItem(MarineLeggings, "MarineLeggings");
 		GameRegistry.registerItem(MarineBoots, "MarineBoots");
+		GameRegistry.registerItem(RedMarineHelmet, "RedMarineHelmet");
+		GameRegistry.registerItem(RedMarineChestplate, "RedMarineChestplate");
+		GameRegistry.registerItem(RedMarineLeggings, "RedMarineLeggings");
+		GameRegistry.registerItem(RedMarineBoots, "RedMarineBoots");
+		GameRegistry.registerItem(BlueMarineHelmet, "BlueMarineHelmet");
+		GameRegistry.registerItem(BlueMarineChestplate, "BlueMarineChestplate");
+		GameRegistry.registerItem(BlueMarineLeggings, "BlueMarineLeggings");
+		GameRegistry.registerItem(BlueMarineBoots, "BlueMarineBoots");
 		GameRegistry.registerItem(halocraft.Main.SpartanHelmet, "SpartanHelmet");
 		GameRegistry.registerItem(halocraft.Main.SpartanChestplate, "SpartanChestplate");
 		GameRegistry.registerItem(halocraft.Main.SpartanLeggings, "SpartanLeggings");
@@ -357,6 +388,9 @@ public class Main
 		GameRegistry.registerItem(ItemFuelRodCannon.instance, ItemFuelRodCannon.name);
 		GameRegistry.registerItem(PlasmaRifle.instance, PlasmaRifle.name);
 		GameRegistry.registerItem(ItemCarbineAmmo.instance, ItemCarbineAmmo.name);
+		GameRegistry.registerBlock(RoofBlock.instance, RoofBlock.name);
+		GameRegistry.registerBlock(ForerunnerWallBlock.instance, ForerunnerWallBlock.name);
+		GameRegistry.registerBlock(ForerunnerFloorBlock.instance, ForerunnerFloorBlock.name);
 		//Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', spartaniumIngot});
 		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[]{"XXX","XXX","XXX", 'X', PurplePlasmaIngot.instance});
@@ -443,11 +477,13 @@ public class Main
 		if (event.getSide() == Side.CLIENT)
 			proxy.preInit();
 	}
+	
 	public int getRandomID()
 	{
 		counter++;
 		return counter + EntityRegistry.findGlobalUniqueEntityId();
 	}
+	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
 		//Register Key

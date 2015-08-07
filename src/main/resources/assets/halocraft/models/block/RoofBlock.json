@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/RoofBlock",
+        "up": "halocraft:blocks/RoofBlock",
+        "north": "halocraft:blocks/RoofBlock",
+        "east": "halocraft:blocks/RoofBlock",
+        "south": "halocraft:blocks/RoofBlock",
+        "west": "halocraft:blocks/RoofBlock",
+        "particle": "blocks/lapis_block"
+    }
+}

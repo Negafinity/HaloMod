@@ -25,6 +25,17 @@ public class MarineArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		return "halocraft:textures/armor/MarineArmor" + "_1.png";
+		if(stack.getDisplayName().toLowerCase().contains("blue"))
+		{
+			return "halocraft:textures/armor/BlueMarineArmor" + "_1.png";
+		}
+		else if(stack.getDisplayName().toLowerCase().contains("red"))
+		{
+			return "halocraft:textures/armor/RedMarineArmor" + "_1.png";
+		}
+		else
+		{
+			return "halocraft:textures/armor/MarineArmor" + "_1.png";
+		}
 	}
 }
