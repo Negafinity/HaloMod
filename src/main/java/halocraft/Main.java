@@ -97,10 +97,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
 import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
 
-@Mod(modid="halocraft", version="1.3")
+@Mod(modid="halocraft", version="1.4")
 public class Main
 {
 	public int counter = 0;
+	
 	@SidedProxy(clientSide="halocraft.proxies.ClientProxy", serverSide="halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
 
