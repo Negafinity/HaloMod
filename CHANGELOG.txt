@@ -1,3 +1,11 @@
+v1.4.112:
+
+Fixed bug with Scorpion Rocket's not blowing up when hitting a block.
+
+v1.4.111:
+
+Added Crafting Recipes, fixed formatting, made it so ArmorStand's don't appear on Radar.
+
 v1.4.110:
 
 Added Forerunner Ore + Forerunner Shard. Added Pulse Grenade model.

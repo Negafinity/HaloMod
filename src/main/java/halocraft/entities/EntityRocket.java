@@ -38,6 +38,14 @@ public class EntityRocket extends EntityThrowable
 			}
 			this.setDead();
 		}
+		else if(shootingEntity != null && par1MovingObjectPosition.entityHit == null)
+		{
+			if (!(this.worldObj.isRemote))
+			{
+				this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float) this.explosionRadius, true);
+			}
+			this.setDead();
+		}
 		else if (shootingEntity == null)
 		{
 			if (!(this.worldObj.isRemote))
