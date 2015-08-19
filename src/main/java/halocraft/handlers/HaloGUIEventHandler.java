@@ -21,6 +21,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.player.EntityPlayer;
@@ -188,12 +189,12 @@ public class HaloGUIEventHandler extends Gui
 
 						if (Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(23, 2))
 						{
-							if (!(entityIn instanceof EntityMob) && !(entityIn instanceof EntityRedElite) && !(entityIn instanceof EntityPromethean) && !(entityIn instanceof EntityElite) && !(entityIn instanceof EntityGrunt) && entityIn instanceof EntityLivingBase && !(entityIn instanceof EntitySlime))
+							if (!(entityIn instanceof EntityMob) && !(entityIn instanceof EntityRedElite) && !(entityIn instanceof EntityPromethean) && !(entityIn instanceof EntityElite) && !(entityIn instanceof EntityGrunt) && entityIn instanceof EntityLivingBase && !(entityIn instanceof EntityArmorStand) && !(entityIn instanceof EntitySlime))
 							{
 								this.mc.renderEngine.bindTexture(greenSquare);
 								this.drawQuad(minimapX + x, minimapY + y, 3, 3, 0F, 0F, 1F, 1F);
 							}
-							else if (entityIn instanceof EntityLivingBase)
+							else if (entityIn instanceof EntityLivingBase && !(entityIn instanceof EntityArmorStand))
 							{
 								this.mc.renderEngine.bindTexture(redSquare);
 								this.drawQuad(minimapX + x, minimapY + y, 3, 3, 0F, 0F, 1F, 1F);

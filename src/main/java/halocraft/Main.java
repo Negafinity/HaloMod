@@ -406,7 +406,9 @@ public class Main
 		//Gun Recipes
 		ItemStack gunpowderStack = new ItemStack(Items.gunpowder);
 		ItemStack glassPaneStack = new ItemStack(Blocks.glass_pane);
+		ItemStack redGlassPaneStack = new ItemStack(Blocks.stained_glass_pane, 1, 14);
 		GameRegistry.addRecipe(new ItemStack(ItemBattleRifle.instance, 1), new Object[]{"ZA ","XXY", " AX", 'X', spartaniumIngot, 'Y', gunpowderStack, 'Z', glassPaneStack, 'A', new ItemStack(Items.iron_ingot)});
+		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[]{"ZX ","YXX", " XX", 'X', RedPlasmaIngot.instance, 'Y', ItemRedPlasmaAmmo.instance, 'Z', redGlassPaneStack});
 		GameRegistry.addRecipe(new ItemStack(Pistol.instance, 1), new Object[]{"   "," XY", "  Z", 'X', spartaniumIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.iron_ingot)});
 		GameRegistry.addRecipe(new ItemStack(ItemSniperRifle.instance, 1), new Object[]{"XYX","ZYY", " IY", 'X', glassPaneStack, 'Y', spartaniumIngot, 'Z', gunpowderStack, 'I', new ItemStack(Items.iron_ingot)});
 		//Recipes
@@ -418,10 +420,28 @@ public class Main
 		GameRegistry.addRecipe(new ItemStack(ItemGhost.instance, 1), new Object[]{"   ","XY ", "YYY", 'X', PlasmaRifle.instance, 'Y', PurplePlasmaBlock.instance});
 		GameRegistry.addRecipe(new ItemStack(ItemIncinerationCannon.instance, 1), new Object[]{"  X","YYX", " ZY", 'X', ItemRedPlasmaAmmo.instance, 'Y', RedPlasmaBlock.instance, 'Z', RedPlasmaIngot.instance});
 		GameRegistry.addRecipe(new ItemStack(tankHarvester, 1), new Object[]{"XXX","XYX", "XXX", 'X', spartaniumIngot, 'Y', ItemScorpion.instance});
+		
+		//Pulse Grenade
+		GameRegistry.addRecipe(new ItemStack(PulseGrenade.instance, 1), new Object[]{" X ","XYX", " X ", 'X', RedPlasmaIngot.instance, 'Y', Blocks.tnt});
+		
+		//Spartan Armor
 		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[]{"XXX","X X", 'X', spartaniumIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', spartaniumIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', spartaniumIngot});
 		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[]{"X X","X X", 'X', spartaniumIngot});
+		
+		//Promethean Armor
+		GameRegistry.addRecipe(new ItemStack(prometheanHelmet, 1), new Object[]{"XXX","X X", 'X', RedPlasmaIngot.instance});
+		GameRegistry.addRecipe(new ItemStack(PrometheanChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', RedPlasmaIngot.instance});
+		GameRegistry.addRecipe(new ItemStack(PrometheanLeggings, 1), new Object[]{"XXX","X X","X X", 'X', RedPlasmaIngot.instance});
+		GameRegistry.addRecipe(new ItemStack(PrometheanBoots, 1), new Object[]{"X X","X X", 'X', RedPlasmaIngot.instance});
+		
+		//Marine Armor
+		GameRegistry.addRecipe(new ItemStack(MarineHelmet, 1), new Object[]{"XXX","Y Y", 'X', spartaniumIngot, 'Y', Items.leather});
+		GameRegistry.addRecipe(new ItemStack(MarineChestplate, 1), new Object[]{"Y Y","XXX", "XXX", 'X', spartaniumIngot, 'Y', Items.leather});
+		GameRegistry.addRecipe(new ItemStack(MarineLeggings, 1), new Object[]{"YYY","X X","X X", 'X', spartaniumIngot, 'Y', Items.leather});
+		GameRegistry.addRecipe(new ItemStack(MarineBoots, 1), new Object[]{"Y Y","X X", 'X', spartaniumIngot, 'Y', Items.leather});
+		
 		GameRegistry.addRecipe(new ItemStack(CovenantHelmet, 1), new Object[]{"XXX","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[]{"XXX","X X","X X", 'X', covenantPiece});
@@ -431,25 +451,48 @@ public class Main
 		GameRegistry.addRecipe(new ItemStack(ItemRedPlasmaAmmo.instance, 1), new Object[]{" X "," X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		ItemStack coalStack = new ItemStack(Items.coal);
 		GameRegistry.addRecipe(new ItemStack(ItemMongoose.instance, 1), new Object[]{"X  ","YYY", "ZYZ", 'X', spartaniumIngot, 'Y', HaloBlock.instance, 'Z', itemWheel});
+		
 		//Health Pack Crafting Recipe
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
+		
 		//Active Camo Armor	
 		GameRegistry.addShapelessRecipe(new ItemStack(ActiveCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), SpartanChestplate);
+		
+		//Forerunner Blocks
+		GameRegistry.addRecipe(new ItemStack(ForerunnerFloorBlock.instance, 1),  new Object[]{"XX ","XX ", 'X', new ItemStack(ItemForerunnerShard.instance)});
+		GameRegistry.addRecipe(new ItemStack(ForerunnerWallBlock.instance, 1), new Object[]{"XX ","XX ", 'X', new ItemStack(ForerunnerFloorBlock.instance)});
+		GameRegistry.addRecipe(new ItemStack(RoofBlock.instance, 1), new Object[]{"XX ","XX ", 'X', new ItemStack(ForerunnerWallBlock.instance)});
+		
 		//Red Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), SpartanChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), SpartanBoots);
+		
+		//Red Marine Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineHelmet, 1), new ItemStack(Items.dye, 1, 1), MarineHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineChestplate, 1), new ItemStack(Items.dye, 1, 1), MarineChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineLeggings, 1), new ItemStack(Items.dye, 1, 1), MarineLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineBoots, 1), new ItemStack(Items.dye, 1, 1), MarineBoots);
+		
+		//Blue Marine Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineHelmet, 1), new ItemStack(Items.dye, 1, 6), MarineHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineChestplate, 1), new ItemStack(Items.dye, 1, 6), MarineChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineLeggings, 1), new ItemStack(Items.dye, 1, 6), MarineLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineBoots, 1), new ItemStack(Items.dye, 1, 6), MarineBoots);
+		
 		//Green Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanHelmet, 1), new ItemStack(Items.dye, 1, 10), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanChestplate, 1), new ItemStack(Items.dye, 1, 10), SpartanChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanLeggings, 1), new ItemStack(Items.dye, 1, 10), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanBoots, 1), new ItemStack(Items.dye, 1, 10), SpartanBoots);
+		
 		//Blue Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanHelmet, 1), new ItemStack(Items.dye, 1, 6), SpartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanChestplate, 1), new ItemStack(Items.dye, 1, 6), SpartanChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), SpartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), SpartanBoots);
+		
 		GameRegistry.addRecipe(new ItemStack(itemWheel, 1), new Object[]{"XXX", "XYX", "XXX", 'X', itemRubber, 'Y', Items.iron_ingot});
 		ItemStack stickStack = new ItemStack(Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ItemEnergySword.instance, 1), new Object[]{" X "," X ", " Y ", 'X', PurplePlasmaIngot.instance, 'Y', stickStack});

@@ -83,9 +83,11 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ClientProxy extends CommonProxy{
+public class ClientProxy extends CommonProxy
+{
 	@Override
-	public void registerRenders(){
+	public void registerRenders()
+	{
 		ModelResourceLocation res = new ModelResourceLocation("halocraft:TankHarvester", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.Main.tankHarvester, 0, res);
 		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:SpartaniumIngot", "inventory");
@@ -270,9 +272,12 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));	
 
 	}
-	public void preInit(){
+	
+	public void preInit()
+	{
 		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
 		OBJLoader.instance.addDomain("halocraft");
+		
 		ModelLoader.setCustomModelResourceLocation(PulseGrenade.instance, 0, new ModelResourceLocation("halocraft:" + PulseGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
@@ -301,7 +306,9 @@ public class ClientProxy extends CommonProxy{
 		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
 
 	}
-	public void registerKey(){
+	
+	public void registerKey()
+	{
 		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
 		KeyBindings.init();
 		MinecraftForge.EVENT_BUS.register(new HaloGUIEventHandler(Minecraft.getMinecraft()));
