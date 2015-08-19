@@ -2,9 +2,11 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityWarthog;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -38,10 +40,19 @@ public class RenderGhostEntity extends Render
 	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
-		XLibRenderer.translate(posX + 1.5, posY + 0.52, posZ + 0.25);
-		for(Part p : model.nameToPartHash.values())
 		{
-			p.draw();
+			XLibRenderer.translate(posX, posY, posZ);
+			
+			GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
+
+			for (Part p : model.nameToPartHash.values())
+			{
+				XLibRenderer.pushMatrix();
+				{
+					p.draw();
+				}
+				XLibRenderer.popMatrix();
+			}
 		}
 		XLibRenderer.popMatrix();
 	}

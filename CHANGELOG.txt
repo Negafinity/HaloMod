@@ -1,3 +1,7 @@
+v1.4.113:
+
+Ghost vehicle fixes.
+
 v1.4.112:
 
 Fixed bug with Scorpion Rocket's not blowing up when hitting a block.
