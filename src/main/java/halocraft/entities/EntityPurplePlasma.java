@@ -22,47 +22,53 @@ public class EntityPurplePlasma extends EntityThrowable
 {
 	public int damage = 6;
 	public EntityGrunt shotByGrunt;
-	
-    public EntityPurplePlasma(World par1World)
-    {
-        super(par1World);
-    }
-    public EntityPurplePlasma(World par1World, EntityLivingBase par2EntityLivingBase)
-    {
-        super(par1World, par2EntityLivingBase);
-    }
-    public EntityPurplePlasma(World par1World, double par2, double par4, double par6)
-    {
-        super(par1World, par2, par4, par6);
-    }
+	public Entity shootingEntity;
+
+	public EntityPurplePlasma(World par1World)
+	{
+		super(par1World);
+	}
+
+	public EntityPurplePlasma(World par1World, EntityLivingBase par2EntityLivingBase)
+	{
+		super(par1World, par2EntityLivingBase);
+	}
+
+	public EntityPurplePlasma(World par1World, double par2, double par4, double par6)
+	{
+		super(par1World, par2, par4, par6);
+	}
+
 	protected void onImpact(MovingObjectPosition movingobjectpos)
-    {
-        if (movingobjectpos.entityHit != null)
-        {
-        	if(this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit);
-        	else
-        	{
-        		movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
-        	}
-        }
-        if(!this.worldObj.isRemote){
-        	this.setDead();
-        }
-    }
+	{
+		if (movingobjectpos.entityHit != null)
+		{
+			if (this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit);
+			else if (this.shootingEntity != null && this.shootingEntity == movingobjectpos.entityHit);
+			else
+			{
+				if (!(this.worldObj.isRemote))
+				{
+					movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
+					this.setDead();
+				}
+			}
+		}
+	}
+
 	@Override
 	protected float getGravityVelocity()
-    {
-        return 0F;
-    }
-	
+	{
+		return 0F;
+	}
+
 	@Override
 	public void onUpdate()
-    {
+	{
 		super.onUpdate();
-		if(this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
+		if (this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
 		{
 			this.setDead();
 		}
-    }
+	}
 }
-

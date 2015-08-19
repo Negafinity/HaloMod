@@ -39,6 +39,7 @@ public class FireMessageHandler implements IMessageHandler < FireMessage, IMessa
 			mainThread.addScheduledTask(new Runnable() {@Override
 				public void run() {
 				EntityPurplePlasma purplePlasma = new EntityPurplePlasma(worldIn, serverPlayerIn);
+				purplePlasma.shootingEntity = serverPlayerIn.ridingEntity;
 				purplePlasma.damage = 7;
 				worldIn.spawnEntityInWorld(purplePlasma);
 			}

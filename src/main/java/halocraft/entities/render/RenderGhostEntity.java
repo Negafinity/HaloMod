@@ -41,18 +41,25 @@ public class RenderGhostEntity extends Render
 	{
 		XLibRenderer.pushMatrix();
 		{
-			XLibRenderer.translate(posX, posY, posZ);
+			XLibRenderer.translate(posX + 1.75f, posY, posZ + 0.25f);
 			
-			GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
-
-			for (Part p : model.nameToPartHash.values())
+			XLibRenderer.pushMatrix();
 			{
-				XLibRenderer.pushMatrix();
+				XLibRenderer.translate(-1.8, 0, -0.25);
+//				GlStateManager.rotate((entity.worldObj.getWorldTime() % 360 * 8), 0, 1, 0);
+				GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
+				XLibRenderer.translate(1.8, 0, 0.25);
+
+				for (Part p : model.nameToPartHash.values())
 				{
-					p.draw();
+					XLibRenderer.pushMatrix();
+					{
+						p.draw();
+					}
+					XLibRenderer.popMatrix();
 				}
-				XLibRenderer.popMatrix();
 			}
+			XLibRenderer.popMatrix();
 		}
 		XLibRenderer.popMatrix();
 	}
