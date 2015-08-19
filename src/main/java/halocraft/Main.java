@@ -446,7 +446,7 @@ public class Main
 		GameRegistry.addRecipe(new ItemStack(CovenantChestplate, 1), new Object[]{"X X","XXX", "XXX", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[]{"XXX","X X","X X", 'X', covenantPiece});
 		GameRegistry.addRecipe(new ItemStack(CovenantBoots, 1), new Object[]{"X X","X X", 'X', covenantPiece});
-		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " YZ", 'X', new ItemStack(HaloBlock.instance), 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
+		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[]{" X "," X ", " YZ", 'X', spartaniumIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[]{" X "," X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		GameRegistry.addRecipe(new ItemStack(ItemRedPlasmaAmmo.instance, 1), new Object[]{" X "," X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string)});
 		ItemStack coalStack = new ItemStack(Items.coal);
@@ -496,6 +496,7 @@ public class Main
 		GameRegistry.addRecipe(new ItemStack(itemWheel, 1), new Object[]{"XXX", "XYX", "XXX", 'X', itemRubber, 'Y', Items.iron_ingot});
 		ItemStack stickStack = new ItemStack(Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ItemEnergySword.instance, 1), new Object[]{" X "," X ", " Y ", 'X', PurplePlasmaIngot.instance, 'Y', stickStack});
+		GameRegistry.addRecipe(new ItemStack(PrometheanSword.instance, 1), new Object[]{" X "," X ", " Y ", 'X', RedPlasmaIngot.instance, 'Y', stickStack});
 		ItemStack gunStack = new ItemStack(Items.gunpowder);
 		GameRegistry.addRecipe(new ItemStack(ItemRocketLauncher.instance, 1), new Object[]{" XX", "YYY", " IZ", 'X', ammoRocket, 'Y', spartaniumIngot, 'Z', HaloBlock.instance, 'I', new ItemStack(Items.iron_ingot)});
 		GameRegistry.addRecipe(new ItemStack(ItemFuelRodCannon.instance, 1), new Object[]{"XXZ", "XYZ", " XX", 'X', GreenPlasmaIngot.instance, 'Y', covenantPiece, 'Z', ammoPlasmaRocket});
