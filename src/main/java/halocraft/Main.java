@@ -176,16 +176,14 @@ public class Main
 	public static Item itemRubber;
 	//Tool Materials
 	public static ToolMaterial HaloMaterial;
+	public static ToolMaterial PrometheanMaterial;
 
 	public static ArmorMaterial PrometheanArmor;
 	public static ArmorMaterial MarineArmor;
-	
-	public static WavefrontModel warthogTurretModel;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 		haloCreativeTab = new HaloCreativeTab(CreativeTabs.getNextID(), "haloCreativeTab");
 		spartaniumIngot = new SpartaniumIngot();
 		itemOil = new ItemOil();
@@ -197,6 +195,7 @@ public class Main
 		//Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
+		PrometheanMaterial = EnumHelper.addToolMaterial("PrometheanMaterial", 3, 1750, 9.0F, 8.0F, 10);
 		PrometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[]{6, 9, 7, 5}, 30);
 		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[]{5, 7, 7, 5}, 30);
 		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[]{5, 6, 6, 5}, 30);

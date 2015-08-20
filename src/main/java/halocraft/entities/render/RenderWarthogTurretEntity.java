@@ -20,6 +20,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogTurretEntity extends Render
 {
+	WavefrontModel warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 	public RenderWarthogTurretEntity(RenderManager renderManager)
 	{
 		super(renderManager);
@@ -48,25 +49,25 @@ public class RenderWarthogTurretEntity extends Render
 				GlStateManager.rotate(-warthogIn.rotationYaw - 90, 0, 1, 0);
 			}
 
-			for (Part part : halocraft.Main.warthogTurretModel.nameToPartHash.values())
+			for (Part part : warthogTurretModel.nameToPartHash.values())
 			{
 				XLibRenderer.pushMatrix();
 				{
-					if (part == halocraft.Main.warthogTurretModel.getPart("the_node.000_tri_5178_geometry") || part == halocraft.Main.warthogTurretModel.getPart("the_node.001_tri_5178_geometry"))
+					if (part == warthogTurretModel.getPart("the_node.000_tri_5178_geometry") || part == warthogTurretModel.getPart("the_node.001_tri_5178_geometry"))
 					{
 						XLibRenderer.translate(0, -0.345, -1.27);
 						GlStateManager.rotate(tireRotation, 1, 0, 0);
 						XLibRenderer.translate(0, 0.345, 1.27);
 						part.draw();
 					}
-					else if(part == halocraft.Main.warthogTurretModel.getPart("the_node.002_tri_5178_geometry") || part == halocraft.Main.warthogTurretModel.getPart("the_node.010_tri_5178_geometry"))
+					else if(part == warthogTurretModel.getPart("the_node.002_tri_5178_geometry") || part == warthogTurretModel.getPart("the_node.010_tri_5178_geometry"))
 					{
 						XLibRenderer.translate(0, -0.33, 1.6);
 						GlStateManager.rotate(tireRotation, 1, 0, 0);
 						XLibRenderer.translate(0, 0.33, -1.6);
 						part.draw();
 					}
-					else if(part == halocraft.Main.warthogTurretModel.getPart("the_node.169_tri_4674_geometry") && warthogIn.thirdRider != null)
+					else if(part == warthogTurretModel.getPart("the_node.169_tri_4674_geometry") && warthogIn.thirdRider != null)
 					{
 						GlStateManager.rotate(warthogIn.thirdRider.rotationYawHead, 1, 0, 0);
 						part.draw();

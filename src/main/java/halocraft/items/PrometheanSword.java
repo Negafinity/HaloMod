@@ -10,7 +10,7 @@ public class PrometheanSword extends ItemSword
     
 	public PrometheanSword()
 	{
-		super(Main.HaloMaterial);
+		super(Main.PrometheanMaterial);
 		setCreativeTab(halocraft.Main.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

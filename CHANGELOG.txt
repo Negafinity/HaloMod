@@ -1,3 +1,7 @@
+v1.4:
+
+Mod is server-compatible
+
 v1.4.115:
 
 Ghost vehicle fixes.
