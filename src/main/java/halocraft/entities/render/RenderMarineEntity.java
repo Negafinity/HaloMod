@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderMarineEntity extends RenderLiving
 {
-	private static final ResourceLocation marineTextures = new ResourceLocation("halocraft:textures/armor/MarineArmor_1.png");
+	private static final ResourceLocation marineTextures = new ResourceLocation("halocraft:textures/entities/MarineRender.png");
 
 	public RenderMarineEntity(RenderManager renderManager, ModelBase par1Model, float par2)
 	{
