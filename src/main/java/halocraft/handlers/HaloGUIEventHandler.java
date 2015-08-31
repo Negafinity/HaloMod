@@ -164,7 +164,7 @@ public class HaloGUIEventHandler extends Gui
 				// Drawing Minimap
 				int minimapX = (int) (scaled.getScaledWidth() / 6.2F);
 				int minimapY = yPos + 16 + 25;
-				
+
 				// Drawing Beautiful Red Dots
 				boolean noEntitiesFound = false;
 
@@ -202,7 +202,7 @@ public class HaloGUIEventHandler extends Gui
 						}
 					}
 				}
-				
+
 				this.mc.renderEngine.bindTexture(minimap);
 				GL11.glPushMatrix();
 				GL11.glTranslatef(minimapX, minimapY, 0);

@@ -18,9 +18,9 @@ buildscript {
 apply plugin: 'forge'
 apply plugin: 'curseforge'
 
-version = "v1.4"
+version = "v1.5.${System.env.BUILD_NUMBER}"
 group= "io.github.hsyyid"// http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "halocraft-2.0"
+archivesBaseName = "halocraft-2.0-DEV"
 
 tasks.withType(JavaCompile) {
 	sourceCompatibility = "1.6"
@@ -41,10 +41,6 @@ curse {
     projectId = '232011'
     apiKey = project.curseForgeApiKey
     releaseType = 'release'
-}
-
-dependencies {
-
 }
 
 processResources

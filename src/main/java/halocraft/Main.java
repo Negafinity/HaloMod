@@ -19,6 +19,7 @@ import halocraft.entities.EntityFragGrenade;
 import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.entities.EntityGrunt;
+import halocraft.entities.EntityMarine;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityPlasmaRocket;
 import halocraft.entities.EntityPromethean;
@@ -94,9 +95,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
-import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
-
 @Mod(modid="halocraft", version="1.4")
 public class Main
 {
@@ -106,7 +104,7 @@ public class Main
 	public static CommonProxy proxy;
 
 	public static String MODID = "halocraft";
-	public static String VERSION = "1.3";
+	public static String VERSION = "1.4";
 	//World Generation
 	public static HaloGenerationClass HaloOreGen;
 	//Armor Material
@@ -162,6 +160,7 @@ public class Main
 	public static Item CovenantBoots;
 	public static Item covenantPiece;
 	public static Item ActiveCamoChestplate;
+	public static Item Jetpack;
 	//Creative Tabs
 	public static CreativeTabs haloCreativeTab;
 	//Items
@@ -212,6 +211,7 @@ public class Main
 		PrometheanChestplate = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("PrometheanChestplate");
 		PrometheanLeggings = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("PrometheanLeggings");
 		PrometheanBoots = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.Main.bootID, 3).setUnlocalizedName("PrometheanBoots");
+		
 		//Marine Armor
 		MarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("MarineHelmet");
 		MarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("MarineChestplate");
@@ -227,6 +227,8 @@ public class Main
 		BlueMarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueMarineChestplate");
 		BlueMarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.leggingID, 2).setUnlocalizedName("BlueMarineLeggings");
 		BlueMarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.Main.bootID, 3).setUnlocalizedName("BlueMarineBoots");
+		
+		Jetpack = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("Jetpack");
 		
 		halocraft.Main.BlueSpartanHelmet = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
 		halocraft.Main.BlueSpartanChestplate = new HaloArmor(halocraft.Main.HaloArmor, halocraft.Main.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
@@ -265,9 +267,7 @@ public class Main
 		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", getRandomID(), this, 128, 1, true);
 		EntityRegistry.registerModEntity(EntityPulseGrenade.class, "pulseGrenade", getRandomID(), this, 250, 50, true);
 
-
-		int randomID = EntityRegistry.findGlobalUniqueEntityId();
-		EntityRegistry.registerGlobalEntityID(EntityElite.class, "GoldenElite", randomID, 0xFFEE00, 0xFFFFFF);
+		EntityRegistry.registerGlobalEntityID(EntityElite.class, "GoldenElite", EntityRegistry.findGlobalUniqueEntityId(), 0xFFEE00, 0xFFFFFF);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -275,7 +275,7 @@ public class Main
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityRedElite.class, "RedElite", randomID + 1, 0xFF0000, 0x000000);
+		EntityRegistry.registerGlobalEntityID(EntityRedElite.class, "RedElite", EntityRegistry.findGlobalUniqueEntityId(), 0xFF0000, 0x000000);
 		EntityRegistry.addSpawn(EntityRedElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -283,7 +283,7 @@ public class Main
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", randomID + 2, 0x002FFF, 0xCC00FF);
+		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", EntityRegistry.findGlobalUniqueEntityId(), 0x002FFF, 0xCC00FF);
 		EntityRegistry.addSpawn(EntityBlueElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -292,7 +292,7 @@ public class Main
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
 
-		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", randomID + 3, 0x4F2E00, 0x424242);
+		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", EntityRegistry.findGlobalUniqueEntityId(), 0x4F2E00, 0x424242);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
@@ -300,8 +300,16 @@ public class Main
 				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
 				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 		
-		EntityRegistry.registerGlobalEntityID(EntityPromethean.class, "Promethean", randomID + 4, 0x000000, 0xFF7700);
-		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
+		EntityRegistry.registerGlobalEntityID(EntityPromethean.class, "Promethean", EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0xFF7700);
+		EntityRegistry.addSpawn(EntityPromethean.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
+				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
+				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
+				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
+				BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, 
+				BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
+		
+		EntityRegistry.registerGlobalEntityID(EntityMarine.class, "Marine", EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0x47BEE6);
+		EntityRegistry.addSpawn(EntityMarine.class, 15, 4, 10, EnumCreatureType.CREATURE, BiomeGenBase.taigaHills, BiomeGenBase.jungle, 
 				BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, 
 				BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, 
 				BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, 
@@ -329,6 +337,7 @@ public class Main
 		GameRegistry.registerItem(spartaniumIngot, "SpartaniumIngot");
 		GameRegistry.registerItem(ItemRocketLauncher.instance, ItemRocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
+		GameRegistry.registerItem(Jetpack, "Jetpack");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemForerunnerShard.instance, ItemForerunnerShard.name);
 		GameRegistry.registerItem(ItemAssaultRifle.instance, ItemAssaultRifle.name);
