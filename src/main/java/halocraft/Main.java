@@ -95,7 +95,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-@Mod(modid="halocraft", version="1.4")
+@Mod(modid="halocraft", version="1.5")
 public class Main
 {
 	public int counter = 0;
@@ -104,7 +104,7 @@ public class Main
 	public static CommonProxy proxy;
 
 	public static String MODID = "halocraft";
-	public static String VERSION = "1.4";
+	public static String VERSION = "1.5";
 	//World Generation
 	public static HaloGenerationClass HaloOreGen;
 	//Armor Material
