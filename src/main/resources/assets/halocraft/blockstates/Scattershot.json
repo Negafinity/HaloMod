@@ -1,0 +1,81 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {},
+        "model": "halocraft:Scattershot.obj"
+    },
+    "variants": {
+        "normal": [
+            {
+                "transform": {
+                    "rotation": {
+                        "y": 0
+                    }
+                }
+            }
+        ],
+        "inventory": [
+            {
+                "transform": {
+                    "thirdperson": {
+                        "translation": [
+                            0.38,
+                            -0.4,
+                            -0.59
+                        ],
+                        "rotation": [
+                            {
+                                "y": -270
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": -90
+                            }
+                        ],
+                        "scale": 1.7
+                    },
+                    "gui": {
+                        "translation": [
+                            1.5,
+                            1.3,
+                            0
+                        ],
+                        "rotation": [
+                            {
+                                "y": 0
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 3
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -1.15,
+                            0.9,
+                            0.1
+                        ],
+                        "rotation": [
+                            {
+                                "y": 220
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 1.75
+                    }
+                }
+            }
+        ]
+    }
+}

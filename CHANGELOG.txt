@@ -1,3 +1,11 @@
+v1.5.123:
+
+Added Scattershot
+
+v1.5.122:
+
+Updated Marine Texture
+
 v1.5.119-121:
 
 Added Marine, Roof Blocks glows, Promethean Bug fixes.

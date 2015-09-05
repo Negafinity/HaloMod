@@ -64,6 +64,7 @@ import halocraft.items.ItemNeedler;
 import halocraft.items.ItemNeedlerAmmo;
 import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemRocketLauncher;
+import halocraft.items.ItemScattershot;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.ItemWarthog;
@@ -306,6 +307,7 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(ItemWarthog.instance, 0, new ModelResourceLocation("halocraft:" + ItemWarthog.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemWarthogTurret.instance, 0, new ModelResourceLocation("halocraft:" + ItemWarthogTurret.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRedPlasmaAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemRedPlasmaAmmo.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemScattershot.instance, 0, new ModelResourceLocation("halocraft:" + ItemScattershot.name, "inventory"));
 
 		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
 

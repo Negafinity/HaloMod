@@ -56,6 +56,7 @@ import halocraft.items.ItemRedPlasmaAmmo;
 import halocraft.items.ItemRocket;
 import halocraft.items.ItemRocketLauncher;
 import halocraft.items.ItemRubber;
+import halocraft.items.ItemScattershot;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemSniperRifle;
 import halocraft.items.ItemWarthog;
@@ -289,6 +290,7 @@ public class Main
 		EntityRegistry.addSpawn(EntityMarine.class, 15, 4, 10, EnumCreatureType.CREATURE, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
 		// Register Items and Blocks
+		GameRegistry.registerItem(ItemScattershot.instance, ItemScattershot.name);
 		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
 		GameRegistry.registerItem(PrometheanSword.instance, PrometheanSword.name);
 		GameRegistry.registerBlock(HaloOre, "HaloOre");

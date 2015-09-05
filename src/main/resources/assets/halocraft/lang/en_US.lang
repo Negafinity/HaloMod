@@ -29,6 +29,7 @@ item.BlueSpartanChestplate.name=Blue Spartan Chestplate
 item.BlueSpartanLeggings.name=Blue Spartan Leggings
 entity.Marine.name=Marine
 item.BlueSpartanBoots.name=Blue Spartan Boots
+item.halocraft:scattershot.name=Scattershot
 item.SpartaniumIngot.name=Spartanium Ingot
 tile.halocraft:roofblock.name=Forerunner Roof Block
 tile.halocraft:forerunnerwallblock.name=Forerunner Wall Block
