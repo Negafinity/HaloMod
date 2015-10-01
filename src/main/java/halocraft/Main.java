@@ -39,6 +39,7 @@ import halocraft.items.ItemAmmoPlasma;
 import halocraft.items.ItemAmmoPlasmaRocket;
 import halocraft.items.ItemAssaultRifle;
 import halocraft.items.ItemBattleRifle;
+import halocraft.items.ItemBoltshot;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
@@ -378,6 +379,7 @@ public class Main
 		GameRegistry.registerBlock(RoofBlock.instance, RoofBlock.name);
 		GameRegistry.registerBlock(ForerunnerWallBlock.instance, ForerunnerWallBlock.name);
 		GameRegistry.registerBlock(ForerunnerFloorBlock.instance, ForerunnerFloorBlock.name);
+		GameRegistry.registerItem(ItemBoltshot.instance, ItemBoltshot.name);
 		// Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', spartaniumIngot });
 		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', PurplePlasmaIngot.instance });

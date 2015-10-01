@@ -50,6 +50,7 @@ import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
 import halocraft.items.ItemAssaultRifle;
 import halocraft.items.ItemBattleRifle;
+import halocraft.items.ItemBoltshot;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
@@ -283,6 +284,7 @@ public class ClientProxy extends CommonProxy
 		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
 		OBJLoader.instance.addDomain("halocraft");
 
+		ModelLoader.setCustomModelResourceLocation(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PulseGrenade.instance, 0, new ModelResourceLocation("halocraft:" + PulseGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));
