@@ -11,8 +11,8 @@ import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
 import halocraft.entities.EntityWarthogTurret;
-import halocraft.items.ItemBattleRifle;
-import halocraft.items.ItemSniperRifle;
+import halocraft.items.firearms.ItemBattleRifle;
+import halocraft.items.firearms.ItemSniperRifle;
 import halocraft.packets.FireMessage;
 import halocraft.packets.HalocraftPacketHandler;
 

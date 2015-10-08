@@ -1,5 +1,7 @@
 package halocraft.items;
 
+import halocraft.items.firearms.ItemSniperRifle;
+
 import java.util.TimerTask;
 
 public class IntervalTask extends TimerTask {

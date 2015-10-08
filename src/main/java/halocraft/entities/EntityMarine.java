@@ -1,6 +1,6 @@
 package halocraft.entities;
 
-import halocraft.items.ItemAssaultRifle;
+import halocraft.items.firearms.ItemAssaultRifle;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;

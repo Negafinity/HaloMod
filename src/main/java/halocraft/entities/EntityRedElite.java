@@ -1,9 +1,9 @@
 package halocraft.entities;
 
-import halocraft.items.ItemCarbineRifle;
 import halocraft.items.ItemEnergySword;
-import halocraft.items.ItemNeedler;
-import halocraft.items.ItemSniperRifle;
+import halocraft.items.firearms.ItemCarbineRifle;
+import halocraft.items.firearms.ItemNeedler;
+import halocraft.items.firearms.ItemSniperRifle;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;

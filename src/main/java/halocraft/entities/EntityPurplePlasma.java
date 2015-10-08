@@ -1,6 +1,6 @@
 package halocraft.entities;
 
-import halocraft.items.ItemNeedler;
+import halocraft.items.firearms.ItemNeedler;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,8 +1,10 @@
-package halocraft.items;
+package halocraft.items.firearms;
 
 import halocraft.Main;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityPurplePlasma;
+import halocraft.items.ItemCarbineAmmo;
+import halocraft.items.ItemNeedlerAmmo;
 
 import java.util.Random;
 
@@ -14,44 +16,51 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemNeedler extends Item
+public class ItemNeedler extends ItemFirearm
 {
-	//Following is so you can access it in pre-init
-	public static final ItemNeedler instance = new ItemNeedler();
-	public static final String name = "Needler";
+	public static String name = "Needler";
+	public static ItemFirearm instance = new ItemNeedler();
+	
+	public ItemNeedler()
+	{
+		super();
 
-	public ItemNeedler(){
-		setCreativeTab(halocraft.Main.haloCreativeTab);
-		setUnlocalizedName("halocraft:" + name.toLowerCase());
-		setMaxStackSize(1);
-		setMaxDamage(1000);
+		this.damage = 6;
+		this.ammo = ItemNeedlerAmmo.instance;
+		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
+
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
-		if(playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
+		if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+
 			if (!worldIn.isRemote)
 			{
 				EntityPurplePlasma purplePlasma = new EntityPurplePlasma(worldIn, playerIn);
-				purplePlasma.damage = 6;
+				purplePlasma.damage = this.damage;
 				worldIn.spawnEntityInWorld(purplePlasma);
 				itemStackIn.damageItem(1, playerIn);
 			}
+			
 			return itemStackIn;
 		}
+		
 		return itemStackIn;
 	}
 
+	@Override
 	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
 	{
-		if(playerIn.inventory.hasItem(ItemNeedlerAmmo.instance))
+		if (playerIn.inventory.hasItem(this.ammo))
 		{
-			for(ItemStack itemStack : playerIn.inventory.mainInventory)
+			for (ItemStack itemStack : playerIn.inventory.mainInventory)
 			{
-				if(itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemNeedlerAmmo)
+				if (itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemNeedlerAmmo)
 				{
-					if(itemStack.getItemDamage() < 32)
+					if (itemStack.getItemDamage() < 32)
 					{
 						itemStack.attemptDamageItem(1, new Random());
 					}

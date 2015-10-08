@@ -1,8 +1,8 @@
 package halocraft.entities;
 
 import halocraft.items.ItemEnergySword;
-import halocraft.items.ItemNeedler;
 import halocraft.items.PlasmaRifle;
+import halocraft.items.firearms.ItemNeedler;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;

@@ -1,28 +1,27 @@
-package halocraft.items;
+package halocraft.items.firearms;
+
+import halocraft.entities.EntityBullet;
+import halocraft.items.ItemAmmoAssaultRifle;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import halocraft.Main;
-import halocraft.entities.EntityBullet;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemLightRifle extends Item
-{
-	public static final ItemLightRifle instance = new ItemLightRifle();
-	public static final String name = "itemLightRifle";
+public class ItemFirearm extends Item
+{	
+	public Item ammo;
+	public int damage;
+	public int clipRounds;
 
-	public ItemLightRifle()
+	public ItemFirearm()
 	{
-		setCreativeTab(halocraft.Main.haloCreativeTab);
-		setUnlocalizedName("halocraft:" + name.toLowerCase());
-		setMaxStackSize(1);
-		setMaxDamage(1000);
+		this.clipRounds = 32;
+		this.setCreativeTab(halocraft.Main.haloCreativeTab);
+		this.setMaxStackSize(1);
+		this.setMaxDamage(1000);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
@@ -33,25 +32,25 @@ public class ItemLightRifle extends Item
 			if (!worldIn.isRemote)
 			{
 				EntityBullet bullet = new EntityBullet(worldIn, playerIn);
-				bullet.damage = 15;
+				bullet.damage = this.damage;
 				worldIn.spawnEntityInWorld(bullet);
 				itemStackIn.damageItem(1, playerIn);
 			}
 			return itemStackIn;
 		}
-
+		
 		return itemStackIn;
 	}
 
 	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
 	{
-		if (playerIn.inventory.hasItem(halocraft.Main.ammoAssaultRifle))
+		if (playerIn.inventory.hasItem(this.ammo))
 		{
 			for (ItemStack itemStack : playerIn.inventory.mainInventory)
 			{
 				if (itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemAmmoAssaultRifle)
 				{
-					if (itemStack.getItemDamage() < 32)
+					if (itemStack.getItemDamage() < this.clipRounds)
 					{
 						itemStack.attemptDamageItem(1, new Random());
 					}
@@ -59,6 +58,7 @@ public class ItemLightRifle extends Item
 					{
 						playerIn.inventory.consumeInventoryItem(itemStack.getItem());
 					}
+
 					return true;
 				}
 			}

@@ -1,7 +1,7 @@
 package halocraft.blocks;
 
 import halocraft.Main;
-import halocraft.items.ItemAssaultRifle;
+import halocraft.items.firearms.ItemAssaultRifle;
 
 import java.util.Random;
 

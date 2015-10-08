@@ -1,7 +1,7 @@
 package halocraft.entities.render;
 
 import halocraft.entities.EntityPurplePlasma;
-import halocraft.items.ItemNeedler;
+import halocraft.items.firearms.ItemNeedler;
 import halocraft.models.ModelRocket;
 
 import org.lwjgl.opengl.GL11;

@@ -1,52 +1,59 @@
-package halocraft.items;
-
-import halocraft.entities.EntityBullet;
+package halocraft.items.firearms;
 
 import java.util.Random;
 
+import halocraft.Main;
+import halocraft.entities.EntityGreenPlasma;
+import halocraft.items.ItemCarbineAmmo;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemScattershot extends Item
+public class ItemCarbineRifle extends ItemFirearm
 {
-	// Following is so you can access it in PreInit
-	public static final ItemScattershot instance = new ItemScattershot();
-	public static final String name = "Scattershot";
-
-	public ItemScattershot()
+	public static String name = "itemCarbineRifle";
+	public static ItemFirearm instance = new ItemCarbineRifle();
+	
+	public ItemCarbineRifle()
 	{
-		setCreativeTab(halocraft.Main.haloCreativeTab);
-		setUnlocalizedName("halocraft:" + name.toLowerCase());
-		setMaxStackSize(1);
-		setMaxDamage(1000);
+		super();
+
+		this.damage = 8;
+		this.ammo = ItemCarbineAmmo.instance;
+		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
 		if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+
 			if (!worldIn.isRemote)
 			{
-				EntityBullet bullet = new EntityBullet(worldIn, playerIn);
-				bullet.damage = 10;
-				worldIn.spawnEntityInWorld(bullet);
+				EntityGreenPlasma greenPlasma = new EntityGreenPlasma(worldIn, playerIn);
+				greenPlasma.damage = this.damage;
+				worldIn.spawnEntityInWorld(greenPlasma);
 				itemStackIn.damageItem(1, playerIn);
 			}
+
 			return itemStackIn;
 		}
+
 		return itemStackIn;
 	}
 
+	@Override
 	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
 	{
-		if (playerIn.inventory.hasItem(halocraft.Main.ammoAssaultRifle))
+		if (playerIn.inventory.hasItem(this.ammo))
 		{
 			for (ItemStack itemStack : playerIn.inventory.mainInventory)
 			{
-				if (itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemAmmoAssaultRifle)
+				if (itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemCarbineAmmo)
 				{
 					if (itemStack.getItemDamage() < 32)
 					{

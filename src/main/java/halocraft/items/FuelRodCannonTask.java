@@ -1,5 +1,7 @@
 package halocraft.items;
 
+import halocraft.items.firearms.ItemFuelRodCannon;
+
 import java.util.TimerTask;
 
 public class FuelRodCannonTask extends TimerTask {

@@ -1,7 +1,7 @@
 package halocraft.entities;
 
-import halocraft.items.ItemSniperRifle;
-import halocraft.items.Pistol;
+import halocraft.items.firearms.ItemSniperRifle;
+import halocraft.items.firearms.Pistol;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
