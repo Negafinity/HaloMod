@@ -1,8 +1,9 @@
-package halocraft.items;
+package halocraft.items.firearms;
 
 import halocraft.Main;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityGreenPlasma;
+import halocraft.items.ItemAmmoPlasma;
 
 import java.util.Random;
 

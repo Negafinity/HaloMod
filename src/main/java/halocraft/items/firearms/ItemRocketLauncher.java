@@ -1,4 +1,4 @@
-package halocraft.items;
+package halocraft.items.firearms;
 
 import halocraft.Main;
 import halocraft.entities.EntityRocket;

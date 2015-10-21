@@ -1,3 +1,7 @@
+v1.5.126:
+
+Added Suppressor.
+
 v1.5.125:
 
 Code optimization - nothing should change for the user.

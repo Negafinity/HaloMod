@@ -1,0 +1,81 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {},
+        "model": "halocraft:Suppressor.obj"
+    },
+    "variants": {
+        "normal": [
+            {
+                "transform": {
+                    "rotation": {
+                        "y": 0
+                    }
+                }
+            }
+        ],
+        "inventory": [
+            {
+                "transform": {
+                    "thirdperson": {
+                        "translation": [
+                            0.25,
+                            0.45,
+                            -0.25
+                        ],
+                        "rotation": [
+                            {
+                                "y": 90
+                            },
+                            {
+                                "x": 270
+                            },
+                            {
+                                "z": -90
+                            }
+                        ],
+                        "scale": 1
+                    },
+                    "gui": {
+                        "translation": [
+                            0,
+                            -0.1,
+                            0.8
+                        ],
+                        "rotation": [
+                            {
+                                "y": 45
+                            },
+                            {
+                                "x": 45
+                            },
+                            {
+                                "z": 45
+                            }
+                        ],
+                        "scale": 1.5
+                    },
+                    "firstperson": {
+                        "translation": [
+                            -0.85,
+                            0.75,
+                            -0.35
+                        ],
+                        "rotation": [
+                            {
+                                "y": 140
+                            },
+                            {
+                                "x": 0
+                            },
+                            {
+                                "z": 0
+                            }
+                        ],
+                        "scale": 1
+                    }
+                }
+            }
+        ]
+    }
+}

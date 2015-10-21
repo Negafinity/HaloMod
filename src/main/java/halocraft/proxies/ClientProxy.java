@@ -56,11 +56,9 @@ import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedlerAmmo;
 import halocraft.items.ItemRedPlasmaAmmo;
-import halocraft.items.ItemRocketLauncher;
 import halocraft.items.ItemScorpion;
 import halocraft.items.ItemWarthog;
 import halocraft.items.ItemWarthogTurret;
-import halocraft.items.PlasmaRifle;
 import halocraft.items.PrometheanSword;
 import halocraft.items.PulseGrenade;
 import halocraft.items.PurplePlasmaIngot;
@@ -73,9 +71,12 @@ import halocraft.items.firearms.ItemFuelRodCannon;
 import halocraft.items.firearms.ItemIncinerationCannon;
 import halocraft.items.firearms.ItemLightRifle;
 import halocraft.items.firearms.ItemNeedler;
+import halocraft.items.firearms.ItemRocketLauncher;
 import halocraft.items.firearms.ItemScattershot;
 import halocraft.items.firearms.ItemSniperRifle;
+import halocraft.items.firearms.ItemSuppressor;
 import halocraft.items.firearms.Pistol;
+import halocraft.items.firearms.PlasmaRifle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderSnowball;
@@ -310,9 +311,7 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(ItemWarthogTurret.instance, 0, new ModelResourceLocation("halocraft:" + ItemWarthogTurret.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRedPlasmaAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemRedPlasmaAmmo.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemScattershot.instance, 0, new ModelResourceLocation("halocraft:" + ItemScattershot.name, "inventory"));
-
-		Item haloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
-
+		ModelLoader.setCustomModelResourceLocation(ItemSuppressor.instance, 0, new ModelResourceLocation("halocraft:" + ItemSuppressor.name, "inventory"));
 	}
 
 	public void registerKey()

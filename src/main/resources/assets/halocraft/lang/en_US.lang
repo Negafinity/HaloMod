@@ -32,6 +32,7 @@ item.halocraft:itemboltshot.name=Boltshot
 item.BlueSpartanBoots.name=Blue Spartan Boots
 item.halocraft:scattershot.name=Scattershot
 item.SpartaniumIngot.name=Spartanium Ingot
+item.halocraft:itemsuppressor.name=Suppressor
 tile.halocraft:roofblock.name=Forerunner Roof Block
 tile.halocraft:forerunnerwallblock.name=Forerunner Wall Block
 tile.halocraft:forerunnerfloorblock.name=Forerunner Floor Block
