@@ -19,7 +19,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderGhostEntity extends Render
 {
-	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "Ghost", "/assets/halocraft/models/entity/Ghost");
+	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Ghost", "/assets/halocraft/models/entity/Ghost");
 
 	public RenderGhostEntity(RenderManager renderManager)
 	{

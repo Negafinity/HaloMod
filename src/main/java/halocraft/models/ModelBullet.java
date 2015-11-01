@@ -6,11 +6,11 @@ import net.minecraft.entity.Entity;
 
 import org.lwjgl.opengl.GL11;
 
-public class ModelRocket extends ModelBase
+public class ModelBullet extends ModelBase
 {
 	public ModelRenderer rocketModel;
 
-	public ModelRocket()
+	public ModelBullet()
 	{
 		rocketModel = new ModelRenderer(this, 0, 0);
 		rocketModel.addBox(-0.5F, -1.5F, -0.5F, 1, 3, 1);

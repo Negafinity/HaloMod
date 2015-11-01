@@ -1,6 +1,6 @@
 package halocraft.entities;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.items.ItemMongoose;
 
 import java.util.List;
@@ -478,7 +478,7 @@ public class EntityMongoose extends Entity
 
 					for (i = 0; i < 2; ++i)
 					{
-						this.dropItemWithOffset(halocraft.Main.spartaniumIngot, 2, 0.0F);
+						this.dropItemWithOffset(halocraft.HaloCraft.spartaniumIngot, 2, 0.0F);
 					}
 				}
 

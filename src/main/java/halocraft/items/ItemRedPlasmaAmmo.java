@@ -9,7 +9,7 @@ public class ItemRedPlasmaAmmo extends Item {
 	public static final String name = "itemRedPlasmaAmmo";
 
 	public ItemRedPlasmaAmmo(){
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(32);
 	}

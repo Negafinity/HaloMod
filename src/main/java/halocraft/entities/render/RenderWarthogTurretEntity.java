@@ -20,7 +20,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogTurretEntity extends Render
 {
-	WavefrontModel warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
+	WavefrontModel warthogTurretModel = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "WarthogTurret", "/assets/halocraft/models/entity/WarthogTurret");
 	public RenderWarthogTurretEntity(RenderManager renderManager)
 	{
 		super(renderManager);

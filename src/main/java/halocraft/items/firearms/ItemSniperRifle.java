@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.items.IntervalTask;
 import halocraft.items.ItemAmmoAssaultRifle;
@@ -27,7 +27,7 @@ public class ItemSniperRifle extends ItemFirearm
 		super();
 
 		this.damage = 10;
-		this.ammo = Main.ammoAssaultRifle;
+		this.ammo = HaloCraft.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

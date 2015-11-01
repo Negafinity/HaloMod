@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityPurplePlasma;
 import halocraft.items.ItemCarbineAmmo;

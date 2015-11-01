@@ -1,6 +1,6 @@
 package halocraft.handlers;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -11,7 +11,7 @@ public class HaloEventHandler
 	@SubscribeEvent
 	public void onClientTick(TickEvent.PlayerTickEvent event)
 	{
-		if (event.player.inventory.armorInventory[2] != null && event.player.inventory.armorInventory[2].getItem().equals(halocraft.Main.Jetpack))
+		if (event.player.inventory.armorInventory[2] != null && event.player.inventory.armorInventory[2].getItem().equals(halocraft.HaloCraft.Jetpack))
 		{
 			event.player.capabilities.allowFlying = true;
 			if (event.player.capabilities.isFlying)

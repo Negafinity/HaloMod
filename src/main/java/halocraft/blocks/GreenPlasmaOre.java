@@ -1,6 +1,6 @@
 package halocraft.blocks;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.items.GreenPlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
 

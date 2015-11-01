@@ -29,7 +29,7 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        int randPosY = rand.nextInt(16);
 		        int randPosZ = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randPosX, randPosY, randPosZ);
-		        (new WorldGenMinable(Main.HaloOre.getDefaultState(), 10)).generate(world, rand, pos);
+		        (new WorldGenMinable(HaloCraft.HaloOre.getDefaultState(), 10)).generate(world, rand, pos);
 		    }
 		    
 		    for (int k = 0; k < 5; k++)
@@ -38,7 +38,7 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        int randY = rand.nextInt(10);
 		        int randZ = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randX, randY, randZ);
-		        (new WorldGenMinable(Main.RedPlasmaOre.getDefaultState(), 3)).generate(world, rand, pos);
+		        (new WorldGenMinable(HaloCraft.RedPlasmaOre.getDefaultState(), 3)).generate(world, rand, pos);
 		    }
 		    
 		    for (int t = 0; t < 15; t++)
@@ -47,7 +47,7 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        int randYPos = rand.nextInt(45);
 		        int randZPos = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randXPos, randYPos, randZPos);
-		        (new WorldGenMinable(Main.GreenPlasmaOre.getDefaultState(), 8)).generate(world, rand, pos);
+		        (new WorldGenMinable(HaloCraft.GreenPlasmaOre.getDefaultState(), 8)).generate(world, rand, pos);
 		    }
 		    
 		    for (int t = 0; t < 10; t++)
@@ -56,7 +56,7 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        int randYP = rand.nextInt(25);
 		        int randZP = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randXP, randYP, randZP);
-		        (new WorldGenMinable(Main.PurplePlasmaOre.getDefaultState(), 4)).generate(world, rand, pos);
+		        (new WorldGenMinable(HaloCraft.PurplePlasmaOre.getDefaultState(), 4)).generate(world, rand, pos);
 		    }
 		    
 		    for (int t = 0; t < 10; t++)
@@ -65,7 +65,7 @@ public class HaloGenerationClass implements IWorldGenerator{
 		        int randYP = rand.nextInt(20);
 		        int randZP = chunkZ + rand.nextInt(16);
 		        BlockPos pos = new BlockPos(randXP, randYP, randZP);
-		        (new WorldGenMinable(Main.ForerunnerOre.getDefaultState(), 5)).generate(world, rand, pos);
+		        (new WorldGenMinable(HaloCraft.ForerunnerOre.getDefaultState(), 5)).generate(world, rand, pos);
 		    }
 		}
 }

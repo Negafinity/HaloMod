@@ -1,6 +1,6 @@
 package halocraft.items;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import net.minecraft.item.ItemSword;
 
 public class PrometheanSword extends ItemSword
@@ -10,8 +10,8 @@ public class PrometheanSword extends ItemSword
     
 	public PrometheanSword()
 	{
-		super(Main.PrometheanMaterial);
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		super(HaloCraft.PrometheanMaterial);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

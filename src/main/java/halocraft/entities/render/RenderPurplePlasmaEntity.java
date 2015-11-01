@@ -2,7 +2,7 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityPurplePlasma;
 import halocraft.items.firearms.ItemNeedler;
-import halocraft.models.ModelRocket;
+import halocraft.models.ModelBullet;
 
 import org.lwjgl.opengl.GL11;
 
@@ -19,7 +19,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderPurplePlasmaEntity extends Render		
 {
-	public WavefrontModel needleModel = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "Needle", "/assets/halocraft/models/entity/Needle");
+	public WavefrontModel needleModel = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Needle", "/assets/halocraft/models/entity/Needle");
 	private static final ResourceLocation plasmaTextures = new ResourceLocation("halocraft:textures/entities/PurplePlasmaRender.png");
 	public RenderPurplePlasmaEntity(RenderManager rendermanager)
 	{
@@ -50,7 +50,7 @@ public class RenderPurplePlasmaEntity extends Render
 		GL11.glTranslatef((float) posX, (float) posY, (float) posZ);
 		GL11.glRotatef(f, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(90F -plasma.prevRotationPitch - (plasma.rotationPitch - plasma.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
-		ModelBase model = new ModelRocket();
+		ModelBase model = new ModelBullet();
 		if(model != null)
 			model.render(plasma, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
 		GL11.glPopMatrix();

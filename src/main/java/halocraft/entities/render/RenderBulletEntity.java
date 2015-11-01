@@ -29,12 +29,15 @@ import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.TRSRTransformation;
 import net.minecraftforge.client.model.b3d.B3DLoader;
 
-public class RenderBulletEntity extends Render {
+public class RenderBulletEntity extends Render
+{
 	private static final ResourceLocation bulletTextures = new ResourceLocation("halocraft:textures/entities/BulletRender.png");
 	private static final ModelResourceLocation bulletModelFile = new ModelResourceLocation("halocraft:models/entity/Bullet.b3d");
 
-	Function < ResourceLocation, TextureAtlasSprite > textureGetter = new Function < ResourceLocation, TextureAtlasSprite > () {
-		public TextureAtlasSprite apply(ResourceLocation location) {
+	Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
+	{
+		public TextureAtlasSprite apply(ResourceLocation location)
+		{
 			return Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(location.toString());
 		}
 	};
@@ -54,9 +57,10 @@ public class RenderBulletEntity extends Render {
 	{
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-		if (bullet.ticksExisted < 1) return;
+		if (bullet.ticksExisted < 1)
+			return;
 		bindEntityTexture(bullet);
-		
+
 		GL11.glPushMatrix();
 		{
 			GL11.glTranslatef((float) posX, (float) posY, (float) posZ);
@@ -74,18 +78,18 @@ public class RenderBulletEntity extends Render {
 			}
 			IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
 			worldrenderer.startDrawingQuads();
-			//Get Quads
-			List < BakedQuad > generalQuads = bakedBullet.getGeneralQuads();
-			for (BakedQuad q: generalQuads)
+			// Get Quads
+			List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
+			for (BakedQuad q : generalQuads)
 			{
 				int[] vd = q.getVertexData();
 				worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
 				worldrenderer.addVertexData(vd);
 			}
-			for (EnumFacing face: EnumFacing.values())
+			for (EnumFacing face : EnumFacing.values())
 			{
-				List < BakedQuad > faceQuads = bakedBullet.getFaceQuads(face);
-				for (BakedQuad q: faceQuads)
+				List<BakedQuad> faceQuads = bakedBullet.getFaceQuads(face);
+				for (BakedQuad q : faceQuads)
 				{
 					int[] vd = q.getVertexData();
 					worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
@@ -98,7 +102,8 @@ public class RenderBulletEntity extends Render {
 	}
 
 	@Override
-	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks) {
+	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
+	{
 		render((EntityBullet) entity, posX, posY, posZ, yaw, partialTicks);
 	}
 

@@ -1,6 +1,6 @@
 package halocraft.armor;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 
 import org.lwjgl.opengl.GL11;
 
@@ -20,7 +20,7 @@ public class PrometheanArmor extends ItemArmor
 	public PrometheanArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)

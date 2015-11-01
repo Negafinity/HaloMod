@@ -19,7 +19,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderMongooseEntity extends Render
 {
-	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "Mongoose", "/assets/halocraft/models/entity/Mongoose");
+	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Mongoose", "/assets/halocraft/models/entity/Mongoose");
 
 	public RenderMongooseEntity(RenderManager renderManager)
 	{

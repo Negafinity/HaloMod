@@ -21,7 +21,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderScorpionEntity extends Render
 {
-	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "Scorpion", "/assets/halocraft/models/entity/Scorpion");
+	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Scorpion", "/assets/halocraft/models/entity/Scorpion");
 
 	public RenderScorpionEntity(RenderManager renderManager)
 	{

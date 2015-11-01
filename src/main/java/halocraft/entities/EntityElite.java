@@ -20,7 +20,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.world.World;
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.items.ItemEnergySword;
 
 public class EntityElite extends EntityMob

@@ -1,32 +1,42 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
-import halocraft.items.ItemAmmoAssaultRifle;
-
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import halocraft.entities.EntityOrangePlasma;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemBoltshot extends ItemFirearm
 {
 	public static String name = "itemBoltshot";
 	public static ItemFirearm instance = new ItemBoltshot();
-	
+
 	public ItemBoltshot()
 	{
 		super();
 
 		this.damage = 7;
-		this.ammo = Main.ammoAssaultRifle;
+		this.ammo = HaloCraft.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
+	}
+
+	@Override
+	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
+	{
+		if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
+		{
+			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			
+			if (!worldIn.isRemote)
+			{
+				EntityOrangePlasma bullet = new EntityOrangePlasma(worldIn, playerIn);
+				bullet.damage = this.damage;
+				worldIn.spawnEntityInWorld(bullet);
+				itemStackIn.damageItem(1, playerIn);
+			}
+		}
+		
+		return itemStackIn;
 	}
 }

@@ -5,7 +5,7 @@ import java.io.DataOutputStream;
 import java.util.List;
 
 import halocraft.KeyBindings;
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityGhost;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityRocket;

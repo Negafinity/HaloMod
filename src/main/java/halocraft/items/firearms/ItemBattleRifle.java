@@ -2,7 +2,7 @@ package halocraft.items.firearms;
 
 import java.util.Random;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.items.ItemAmmoAssaultRifle;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,7 +22,7 @@ public class ItemBattleRifle extends ItemFirearm
 		super();
 
 		this.damage = 8;
-		this.ammo = Main.ammoAssaultRifle;
+		this.ammo = HaloCraft.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

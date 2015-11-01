@@ -27,7 +27,7 @@ public class ItemGhost extends Item {
 	public ItemGhost()
 	{
 		this.maxStackSize = 1;
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

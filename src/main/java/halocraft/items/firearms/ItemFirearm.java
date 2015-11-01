@@ -19,7 +19,7 @@ public class ItemFirearm extends Item
 	public ItemFirearm()
 	{
 		this.clipRounds = 32;
-		this.setCreativeTab(halocraft.Main.haloCreativeTab);
+		this.setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		this.setMaxStackSize(1);
 		this.setMaxDamage(1000);
 	}

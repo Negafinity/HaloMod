@@ -2,7 +2,7 @@ package halocraft.items.firearms;
 
 import java.util.Timer;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityPlasmaRocket;
 import halocraft.entities.EntityRocket;
 import halocraft.items.FuelRodCannonTask;
@@ -28,7 +28,7 @@ public class ItemFuelRodCannon extends ItemFirearm
 	{
 		super();
 
-		this.ammo = Main.ammoPlasmaRocket;
+		this.ammo = HaloCraft.ammoPlasmaRocket;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

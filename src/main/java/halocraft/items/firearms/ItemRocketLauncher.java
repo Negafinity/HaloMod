@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityRocket;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,14 +18,14 @@ public class ItemRocketLauncher extends Item {
 	
 	public ItemRocketLauncher(){
 	     super();
-	     setCreativeTab(halocraft.Main.haloCreativeTab);
+	     setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 	     setUnlocalizedName("halocraft:" + name.toLowerCase());
 	     setMaxStackSize(1);
 	     setMaxDamage(1000);
 	}
     public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
     {
-        if(playerIn.capabilities.isCreativeMode || playerIn.inventory.consumeInventoryItem(halocraft.Main.ammoRocket))
+        if(playerIn.capabilities.isCreativeMode || playerIn.inventory.consumeInventoryItem(halocraft.HaloCraft.ammoRocket))
         {
             worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
             if (!worldIn.isRemote)

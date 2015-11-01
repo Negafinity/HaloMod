@@ -1,3 +1,7 @@
+v1.5.127:
+
+Added Spartan Locke Armor
+
 v1.5.126:
 
 Added Suppressor.

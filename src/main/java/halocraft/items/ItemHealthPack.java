@@ -1,6 +1,6 @@
 package halocraft.items;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -15,7 +15,7 @@ public class ItemHealthPack extends Item {
 	public static final String name = "HealthPack";
 	    
 	public ItemHealthPack(){
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 	}

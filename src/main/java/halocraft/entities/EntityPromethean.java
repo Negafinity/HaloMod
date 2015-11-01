@@ -21,7 +21,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.PrometheanSword;
 

@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityRedPlasma;
 import halocraft.items.ItemRedPlasmaAmmo;
 import net.minecraft.creativetab.CreativeTabs;

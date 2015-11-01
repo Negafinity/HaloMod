@@ -1,6 +1,6 @@
 package halocraft.blocks;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.items.firearms.ItemAssaultRifle;
 
 import java.util.Random;
@@ -23,7 +23,7 @@ public class HaloOre extends Block {
             setHarvestLevel("pickaxe", 3);
     }
     public Item getItemDropped(int metadata, Random random, int fortune) {
-        return halocraft.Main.spartaniumIngot;
+        return halocraft.HaloCraft.spartaniumIngot;
     }
 
 }

@@ -9,7 +9,7 @@ public class ItemCarbineAmmo extends Item {
     
 	public ItemCarbineAmmo() {
         setMaxStackSize(1);
-        setCreativeTab(halocraft.Main.haloCreativeTab);
+        setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
         setMaxDamage(32);
         setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

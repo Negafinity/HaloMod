@@ -1,6 +1,6 @@
 package halocraft.items;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.entities.EntityScorpion;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class TankHarvester extends Item {
 	public TankHarvester(){
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setMaxStackSize(1);
 		setUnlocalizedName("TankHarvester");
 	}

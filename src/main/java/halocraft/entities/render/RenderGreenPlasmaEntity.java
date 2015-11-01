@@ -1,7 +1,7 @@
 package halocraft.entities.render;
 
 import halocraft.entities.EntityGreenPlasma;
-import halocraft.models.ModelRocket;
+import halocraft.models.ModelBullet;
 
 import org.lwjgl.opengl.GL11;
 
@@ -30,7 +30,7 @@ public class RenderGreenPlasmaEntity extends Render {
 		GL11.glTranslatef((float) d, (float) d1, (float) d2);
 		GL11.glRotatef(f, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(90F -plasma.prevRotationPitch - (plasma.rotationPitch - plasma.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
-		ModelBase model = new ModelRocket();
+		ModelBase model = new ModelBullet();
 		if(model != null)
 			model.render(plasma, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
 		GL11.glPopMatrix();

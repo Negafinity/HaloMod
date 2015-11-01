@@ -27,7 +27,7 @@ public class ItemMongoose extends Item {
 	public ItemMongoose()
 	{
 		this.maxStackSize = 1;
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

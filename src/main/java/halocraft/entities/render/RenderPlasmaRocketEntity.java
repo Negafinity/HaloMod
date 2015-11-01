@@ -19,7 +19,7 @@ import com.arisux.xlib.client.render.XLibRenderer;
 @SideOnly(Side.CLIENT)
 public class RenderPlasmaRocketEntity extends Render
 {
-	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.Main.class, "halocraft", "Rod-Plasma", "/assets/halocraft/models/entity/Rod-Plasma");
+	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Rod-Plasma", "/assets/halocraft/models/entity/Rod-Plasma");
 
 	public RenderPlasmaRocketEntity(RenderManager renderManager)
 	{

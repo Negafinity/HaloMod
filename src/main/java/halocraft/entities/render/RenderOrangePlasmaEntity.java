@@ -11,11 +11,11 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderRedPlasmaEntity extends Render
+public class RenderOrangePlasmaEntity extends Render
 {
-	private static final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/RedPlasmaRender.png");
+	private static final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/OrangePlasmaRender.png");
 
-	public RenderRedPlasmaEntity(RenderManager rendermanager)
+	public RenderOrangePlasmaEntity(RenderManager rendermanager)
 	{
 		super(rendermanager);
 		shadowSize = 0.5F;

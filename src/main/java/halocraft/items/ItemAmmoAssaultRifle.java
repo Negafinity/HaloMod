@@ -7,7 +7,7 @@ public class ItemAmmoAssaultRifle extends Item
 {
 	public ItemAmmoAssaultRifle()
 	{
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("ammoAssaultRifle");
 		setMaxStackSize(1);
 		setMaxDamage(32);

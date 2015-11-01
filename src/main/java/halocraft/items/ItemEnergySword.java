@@ -1,6 +1,6 @@
 package halocraft.items;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSword;
 
@@ -12,8 +12,8 @@ public class ItemEnergySword extends ItemSword
 
 	public ItemEnergySword()
 	{
-		super(Main.HaloMaterial);
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		super(HaloCraft.HaloMaterial);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

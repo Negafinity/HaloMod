@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.items.ItemAmmoAssaultRifle;
 
@@ -26,7 +26,7 @@ public class ItemAssaultRifle extends ItemFirearm
 		super();
 
 		this.damage = 6;
-		this.ammo = Main.ammoAssaultRifle;
+		this.ammo = HaloCraft.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

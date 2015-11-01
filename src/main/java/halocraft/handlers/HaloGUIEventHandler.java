@@ -1,6 +1,6 @@
 package halocraft.handlers;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityPromethean;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityGrunt;
@@ -97,7 +97,7 @@ public class HaloGUIEventHandler extends Gui
 		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.Main.SpartanHelmet || helmet.getItem() == halocraft.Main.GreenSpartanHelmet || helmet.getItem() == halocraft.Main.BlueSpartanHelmet || helmet.getItem() == halocraft.Main.RedSpartanHelmet)
+			if (helmet.getItem() == halocraft.HaloCraft.SpartanHelmet || helmet.getItem() == halocraft.HaloCraft.GreenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.BlueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.RedSpartanHelmet)
 			{
 				if (event.isCancelable() && event.type == ElementType.HEALTH)
 				{
@@ -124,7 +124,7 @@ public class HaloGUIEventHandler extends Gui
 		helmet = mc.thePlayer.inventory.armorItemInSlot(3);
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.Main.SpartanHelmet || helmet.getItem() == halocraft.Main.GreenSpartanHelmet || helmet.getItem() == halocraft.Main.BlueSpartanHelmet || helmet.getItem() == halocraft.Main.RedSpartanHelmet)
+			if (helmet.getItem() == halocraft.HaloCraft.SpartanHelmet || helmet.getItem() == halocraft.HaloCraft.GreenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.BlueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.RedSpartanHelmet)
 			{
 				// Rendering Top of Halo HUD
 				ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);

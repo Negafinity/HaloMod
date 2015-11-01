@@ -28,7 +28,7 @@ public class ItemWarthog extends Item {
 	public ItemWarthog()
 	{
 		this.maxStackSize = 1;
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 
 import java.util.Random;
@@ -23,7 +23,7 @@ public class Pistol extends ItemFirearm
 		super();
 
 		this.damage = 4;
-		this.ammo = Main.ammoAssaultRifle;
+		this.ammo = HaloCraft.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

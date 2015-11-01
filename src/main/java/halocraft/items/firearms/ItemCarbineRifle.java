@@ -2,7 +2,7 @@ package halocraft.items.firearms;
 
 import java.util.Random;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.items.ItemCarbineAmmo;
 import net.minecraft.creativetab.CreativeTabs;

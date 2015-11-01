@@ -1,15 +1,19 @@
 package halocraft.proxies;
 
+public class CommonProxy
+{
+	public void registerRenders()
+	{
+		;
+	}
 
-public class CommonProxy {
+	public void registerKey()
+	{
+		;
+	}
 
-	public void registerRenders(){
-		//nothing	
+	public void preInit()
+	{
+		;
 	}
-	public void registerKey(){
-		//nothing
-	}
-	public void preInit(){
-	}
-	
 }

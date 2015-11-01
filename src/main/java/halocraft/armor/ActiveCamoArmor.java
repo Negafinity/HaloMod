@@ -1,6 +1,6 @@
 package halocraft.armor;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,7 +15,7 @@ public class ActiveCamoArmor extends ItemArmor{
 	
 	public ActiveCamoArmor(ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 	}
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
@@ -23,7 +23,7 @@ public class ActiveCamoArmor extends ItemArmor{
 	}
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer){
-		if(stack.getItem().equals(halocraft.Main.ActiveCamoChestplate)){
+		if(stack.getItem().equals(halocraft.HaloCraft.ActiveCamoChestplate)){
 			return "halocraft:textures/armor/ActiveCamoArmor_layer_1.png";
 		}
 		else return null;

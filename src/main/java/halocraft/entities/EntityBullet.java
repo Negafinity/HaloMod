@@ -18,6 +18,7 @@ public class EntityBullet extends EntityThrowable
     {
         super(par1World);
     }
+    
     public EntityBullet(World par1World, EntityLivingBase par2EntityLivingBase)
     {
         super(par1World, par2EntityLivingBase);
@@ -26,6 +27,7 @@ public class EntityBullet extends EntityThrowable
     {
         super(par1World, par2, par4, par6);
     }
+    
 	protected void onImpact(MovingObjectPosition movingObjectPos)
     {
         if (movingObjectPos.entityHit != null)

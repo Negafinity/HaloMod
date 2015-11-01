@@ -14,7 +14,7 @@ public class PulseGrenade extends Item
 	public PulseGrenade()
 	{
 		setUnlocalizedName("pulseGrenade");
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)

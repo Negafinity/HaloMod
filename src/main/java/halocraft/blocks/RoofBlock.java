@@ -1,6 +1,6 @@
 package halocraft.blocks;
 
-import halocraft.Main;
+import halocraft.HaloCraft;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class RoofBlock extends Block
 		setHardness(4.0F); // 33% harder than diamond
 		setStepSound(Block.soundTypePiston); // sounds got renamed, look in Block class for what blocks have what sounds
 		setUnlocalizedName("halocraft:" + name.toLowerCase()); // changed in 1.7
-		setCreativeTab(halocraft.Main.haloCreativeTab);
+		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
 		setHarvestLevel("pickaxe", 3);
 	}
 
