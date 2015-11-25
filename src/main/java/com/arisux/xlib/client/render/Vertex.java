@@ -54,12 +54,13 @@ public class Vertex
 	{
 		if (uv == null)
 		{
-			XLibRenderer.tessellator().getWorldRenderer().addVertex(x, y, z);
+			XLibRenderer.tessellator().getWorldRenderer().func_181662_b(x, y, z).func_181675_d();
 		}
 		else
 		{
-			XLibRenderer.tessellator().getWorldRenderer().addVertexWithUV(x, y, z, uv.getU(), uv.getV());
+		    XLibRenderer.tessellator().getWorldRenderer().func_181662_b(x, y, (double) z).func_181673_a(uv.getU(), uv.getV()).func_181675_d();
 		}
+		
 		return this;
 	}
 

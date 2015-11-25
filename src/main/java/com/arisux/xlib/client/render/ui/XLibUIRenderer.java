@@ -81,7 +81,7 @@ public class XLibUIRenderer
 
     public static ScaledResolution getScaledResolution()
     {
-        return new ScaledResolution(XLib.game(), XLib.game().displayWidth, XLib.game().displayHeight);
+        return new ScaledResolution(XLib.game());
     }
 
     public static Vec3 getScaledMousePosition()

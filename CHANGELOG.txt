@@ -1,3 +1,7 @@
+v1.5.129:
+
+Update to 1.8.8
+
 v1.5.128:
 
 Added Forerunner Entity Bullets and Spartan Locke Armor handhelds.

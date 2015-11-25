@@ -1,42 +1,30 @@
 package halocraft.handlers;
 
-import halocraft.HaloCraft;
-import halocraft.entities.EntityPromethean;
 import halocraft.entities.EntityElite;
 import halocraft.entities.EntityGrunt;
+import halocraft.entities.EntityPromethean;
 import halocraft.entities.EntityRedElite;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
+import org.lwjgl.opengl.GL11;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HaloGUIEventHandler extends Gui
 {
@@ -83,11 +71,11 @@ public class HaloGUIEventHandler extends Gui
 	protected void drawQuad(int x, int y, int w, int h, float minU, float minV, float maxU, float maxV)
 	{
 		WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
-		tessellator.startDrawingQuads();
-		tessellator.addVertexWithUV(x + 0, y + h, 0, minU, maxV);
-		tessellator.addVertexWithUV(x + w, y + h, 0, maxU, maxV);
-		tessellator.addVertexWithUV(x + w, y + 0, 0, maxU, minV);
-		tessellator.addVertexWithUV(x + 0, y + 0, 0, minU, minV);
+		tessellator.func_181668_a(7, DefaultVertexFormats.field_181707_g); //StartDrawingQuads
+		tessellator.func_181662_b(x + 0, y + h, (double) zLevel).func_181673_a(minU, maxV).func_181675_d();
+		tessellator.func_181662_b(x + w, y + h, (double) zLevel).func_181673_a(maxU, maxV).func_181675_d();
+		tessellator.func_181662_b(x + w, y + 0, (double) zLevel).func_181673_a(maxU, minV).func_181675_d();
+		tessellator.func_181662_b(x + 0, y + 0, (double) zLevel).func_181673_a(minU, minV).func_181675_d();
 		Tessellator.getInstance().draw();
 	}
 
@@ -112,7 +100,7 @@ public class HaloGUIEventHandler extends Gui
 		// Render Scope (If Z is pressed)
 		if (halocraft.handlers.KeyInputHandler.keyPressed == true)
 		{
-			ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+			ScaledResolution scaled = new ScaledResolution(mc);
 			int xPos = (scaled.getScaledWidth() - 420) / 2;
 			int yPos = (scaled.getScaledHeight() - 250) / 2;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -127,7 +115,7 @@ public class HaloGUIEventHandler extends Gui
 			if (helmet.getItem() == halocraft.HaloCraft.SpartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.GreenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.BlueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.RedSpartanHelmet)
 			{
 				// Rendering Top of Halo HUD
-				ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
+				ScaledResolution scaled = new ScaledResolution(mc);
 				int xPos = (scaled.getScaledWidth() - 420) / 2;
 				int yPos = 0;
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

@@ -1,23 +1,15 @@
 package halocraft.entities.render;
 
-import java.io.IOException;
-import java.util.List;
-
-import halocraft.entities.EntityBullet;
-
-import org.lwjgl.opengl.GL11;
-
 import com.google.common.base.Function;
-
+import halocraft.entities.EntityBullet;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -28,6 +20,10 @@ import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.TRSRTransformation;
 import net.minecraftforge.client.model.b3d.B3DLoader;
+import org.lwjgl.opengl.GL11;
+
+import java.io.IOException;
+import java.util.List;
 
 public class RenderBulletEntity extends Render
 {
@@ -56,7 +52,7 @@ public class RenderBulletEntity extends Render
 	public void render(EntityBullet bullet, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		Tessellator tessellator = Tessellator.getInstance();
-		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+		WorldRenderer worldRenderer = tessellator.getWorldRenderer();
 		if (bullet.ticksExisted < 1)
 			return;
 		bindEntityTexture(bullet);
@@ -77,14 +73,13 @@ public class RenderBulletEntity extends Render
 				bulletModel = ModelLoaderRegistry.getMissingModel();
 			}
 			IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-			worldrenderer.startDrawingQuads();
+			worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);
 			// Get Quads
 			List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
 			for (BakedQuad q : generalQuads)
 			{
 				int[] vd = q.getVertexData();
-				worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-				worldrenderer.addVertexData(vd);
+				worldRenderer.addVertexData(vd);
 			}
 			for (EnumFacing face : EnumFacing.values())
 			{
@@ -92,8 +87,7 @@ public class RenderBulletEntity extends Render
 				for (BakedQuad q : faceQuads)
 				{
 					int[] vd = q.getVertexData();
-					worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-					worldrenderer.addVertexData(vd);
+					worldRenderer.addVertexData(vd);
 				}
 			}
 			tessellator.draw();

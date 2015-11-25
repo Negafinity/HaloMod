@@ -25,11 +25,7 @@ import static org.lwjgl.opengl.GL11.glEnable;
 import static org.lwjgl.opengl.GL11.glGetBoolean;
 import static org.lwjgl.opengl.GL11.glTexParameteri;
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-
 import com.arisux.xlib.XLib;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
@@ -37,8 +33,12 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.texture.ITextureObject;
 import net.minecraft.client.renderer.texture.SimpleTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.ResourceLocation;
+
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
 public class XLibRenderer
 {
@@ -281,11 +281,11 @@ public class XLibRenderer
 
     public static void drawQuad(int x1, int y1, int x2, int y2, int z, float minU, float maxU, float minV, float maxV)
     {
-        worldRenderer().startDrawingQuads();
-        worldRenderer().addVertexWithUV(x1, y2, z, minU, maxV);
-        worldRenderer().addVertexWithUV(x2, y2, z, maxU, maxV);
-        worldRenderer().addVertexWithUV(x2, y1, z, maxU, minV);
-        worldRenderer().addVertexWithUV(x1, y1, z, minU, minV);
+        worldRenderer().func_181668_a(7, DefaultVertexFormats.field_181707_g);
+        worldRenderer().func_181662_b(x1, y2, (double) z).func_181673_a(minU, maxV).func_181675_d();
+        worldRenderer().func_181662_b(x2, y2, (double) z).func_181673_a(maxU, maxV).func_181675_d();
+        worldRenderer().func_181662_b(x2, y1, (double) z).func_181673_a(maxU, minV).func_181675_d();
+        worldRenderer().func_181662_b(x1, y1, (double) z).func_181673_a(minU, minV).func_181675_d();
         tessellator().draw();
     }
 

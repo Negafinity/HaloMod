@@ -46,7 +46,6 @@ public class RenderRocketEntity extends Render
 	{
 		super(rendermanager);
 		shadowSize = 0.5F;
-		// TODO Auto-generated constructor stub
 	}
 
 	protected ResourceLocation getEntityTexture(Entity entity)
@@ -57,7 +56,7 @@ public class RenderRocketEntity extends Render
 	public void render(EntityRocket rocket, double d, double d1, double d2, float f, float f1)
 	{
 		Tessellator tessellator = Tessellator.getInstance();
-		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+		WorldRenderer worldRenderer = tessellator.getWorldRenderer();
 		if (rocket.ticksExisted < 1)
 			return;
 		bindEntityTexture(rocket);
@@ -77,14 +76,13 @@ public class RenderRocketEntity extends Render
 			e.printStackTrace();
 		}
 		IBakedModel bakedRocket = rocketModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-		worldrenderer.startDrawingQuads();
+		worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);//StartDrawingQuads
 		// Get Quads
 		List<BakedQuad> generalQuads = bakedRocket.getGeneralQuads();
 		for (BakedQuad q : generalQuads)
 		{
 			int[] vd = q.getVertexData();
-			worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-			worldrenderer.addVertexData(vd);
+			worldRenderer.addVertexData(vd);
 		}
 		for (EnumFacing face : EnumFacing.values())
 		{
@@ -92,8 +90,7 @@ public class RenderRocketEntity extends Render
 			for (BakedQuad q : faceQuads)
 			{
 				int[] vd = q.getVertexData();
-				worldrenderer.setVertexFormat(Attributes.DEFAULT_BAKED_FORMAT);
-				worldrenderer.addVertexData(vd);
+				worldRenderer.addVertexData(vd);
 			}
 		}
 		tessellator.draw();

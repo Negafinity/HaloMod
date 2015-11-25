@@ -56,7 +56,7 @@ public class EntityGreenPlasma extends EntityThrowable
 						if (this.getThrower() instanceof EntityPlayer)
 						{
 							EntityPlayer player = (EntityPlayer) this.getThrower();
-							entity.addChatMessage(new ChatComponentText(modName + EnumChatFormatting.WHITE + " Your Scorpion has been disabled for 5 seconds by a Plasma Rifle shot by " + EnumChatFormatting.RED + player.getName() + EnumChatFormatting.WHITE + "!"));
+							entity.addChatMessage(new ChatComponentText(modName + EnumChatFormatting.WHITE + " Your Scorpion has been disabled for 5 seconds by a Plasma Rifle shot by " + EnumChatFormatting.RED + player.getDisplayName() + EnumChatFormatting.WHITE + "!"));
 						}
 						else
 						{
@@ -88,7 +88,7 @@ public class EntityGreenPlasma extends EntityThrowable
 						if (this.getThrower() instanceof EntityPlayer)
 						{
 							EntityPlayer player = (EntityPlayer) this.getThrower();
-							entity.addChatMessage(new ChatComponentText(modName + EnumChatFormatting.WHITE + " Your Mongoose has been disabled for 5 seconds by a Plasma Rifle shot by " + EnumChatFormatting.RED + player.getName() + EnumChatFormatting.WHITE + "!"));
+							entity.addChatMessage(new ChatComponentText(modName + EnumChatFormatting.WHITE + " Your Mongoose has been disabled for 5 seconds by a Plasma Rifle shot by " + EnumChatFormatting.RED + player.getDisplayName() + EnumChatFormatting.WHITE + "!"));
 						}
 						else
 						{
