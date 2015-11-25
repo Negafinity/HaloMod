@@ -123,6 +123,16 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation resource4 = new ModelResourceLocation("halocraft:PrometheanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.PrometheanBoots, 0, resource4);
 
+		// Rendering Spartan Locke Armor
+		ModelResourceLocation lockeResource1 = new ModelResourceLocation("halocraft:SpartanLockeHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeHelmet, 0, lockeResource1);
+		ModelResourceLocation lockeResource2 = new ModelResourceLocation("halocraft:SpartanLockeChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeChestplate, 0, lockeResource2);
+		ModelResourceLocation lockeResource3 = new ModelResourceLocation("halocraft:SpartanLockeLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeLeggings, 0, lockeResource3);
+		ModelResourceLocation lockeResource4 = new ModelResourceLocation("halocraft:SpartanLockeBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeBoots, 0, lockeResource4);
+
 		// Rendering Marine Armor
 		ModelResourceLocation reso1 = new ModelResourceLocation("halocraft:MarineHelmet", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.MarineHelmet, 0, reso1);
