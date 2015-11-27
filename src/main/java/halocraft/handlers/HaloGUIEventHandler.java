@@ -106,7 +106,7 @@ public class HaloGUIEventHandler extends Gui
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glDisable(GL11.GL_LIGHTING);
 			this.mc.renderEngine.bindTexture(brscope);
-			this.drawQuad(xPos, yPos, 420, 250, 0F, 0F, 1F, 1F);
+			this.drawQuad(0, 0, scaled.getScaledWidth(), scaled.getScaledHeight(), 0F, 0F, 1F, 1F);
 		}
 		// Checking for Spartan Helmet
 		helmet = mc.thePlayer.inventory.armorItemInSlot(3);
