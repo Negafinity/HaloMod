@@ -1,22 +1,11 @@
 package halocraft.armor;
 
-import halocraft.HaloCraft;
-
-import org.lwjgl.opengl.GL11;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 
 public class HaloArmor extends ItemArmor
-{	
+{
 	public HaloArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
@@ -62,7 +51,7 @@ public class HaloArmor extends ItemArmor
 		{
 			return "halocraft:textures/armor/BlueHaloArmor_layer_2.png";
 		}
-		else
-			return null;
+
+		return null;
 	}
 }
