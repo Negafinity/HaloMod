@@ -1,26 +1,18 @@
 package halocraft.items.firearms;
 
-import halocraft.HaloCraft;
-import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityPurplePlasma;
-import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemNeedlerAmmo;
-
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class ItemNeedler extends ItemFirearm
 {
 	public static String name = "Needler";
 	public static ItemFirearm instance = new ItemNeedler();
-	
+
 	public ItemNeedler()
 	{
 		super();
@@ -44,10 +36,10 @@ public class ItemNeedler extends ItemFirearm
 				worldIn.spawnEntityInWorld(purplePlasma);
 				itemStackIn.damageItem(1, playerIn);
 			}
-			
+
 			return itemStackIn;
 		}
-		
+
 		return itemStackIn;
 	}
 

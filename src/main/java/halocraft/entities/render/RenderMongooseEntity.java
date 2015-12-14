@@ -1,5 +1,9 @@
 package halocraft.entities.render;
 
+import com.arisux.xlib.api.wavefrontapi.Part;
+import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
+import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
+import com.arisux.xlib.client.render.XLibRenderer;
 import halocraft.entities.EntityMongoose;
 import halocraft.entities.EntityWarthog;
 import net.minecraft.client.renderer.GlStateManager;
@@ -11,11 +15,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.arisux.xlib.api.wavefrontapi.Part;
-import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
-import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
-import com.arisux.xlib.client.render.XLibRenderer;
-
 @SideOnly(Side.CLIENT)
 public class RenderMongooseEntity extends Render
 {
@@ -26,6 +25,7 @@ public class RenderMongooseEntity extends Render
 		super(renderManager);
 		this.shadowSize = 0.5F;
 	}
+
 	public void doRender(EntityMongoose mongooseIn, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
@@ -33,17 +33,17 @@ public class RenderMongooseEntity extends Render
 		double curVelocity = Math.sqrt(mongooseIn.motionX * mongooseIn.motionX + mongooseIn.motionZ * mongooseIn.motionZ);
 		float tireRotation = curVelocity > 0.1 ? -(mongooseIn.worldObj.getWorldTime() % 360 * 8) - partialTicks : 0;
 
-		if(mongooseIn.riddenByEntity != null && mongooseIn.riddenByEntity instanceof EntityPlayer)
+		if (mongooseIn.riddenByEntity != null && mongooseIn.riddenByEntity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) mongooseIn.riddenByEntity;
 			GlStateManager.rotate(-(player.rotationYawHead + 90), 0, 1, 0);
 		}
 
-		for(Part p : model.nameToPartHash.values())
+		for (Part p : model.nameToPartHash.values())
 		{
 			XLibRenderer.pushMatrix();
 			{
-				if(p == model.getPart("the_node.014_tri_564_geometry") || p == model.getPart("the_node.013_tri_540_geometry"))
+				if (p == model.getPart("the_node.014_tri_564_geometry") || p == model.getPart("the_node.013_tri_540_geometry"))
 				{
 					XLibRenderer.pushMatrix();
 					{
@@ -54,7 +54,7 @@ public class RenderMongooseEntity extends Render
 					}
 					XLibRenderer.popMatrix();
 				}
-				else if(p == model.getPart("the_node.015_tri_540_geometry.001") || p == model.getPart("the_node.016_tri_540_geometry.002"))
+				else if (p == model.getPart("the_node.015_tri_540_geometry.001") || p == model.getPart("the_node.016_tri_540_geometry.002"))
 				{
 					XLibRenderer.pushMatrix();
 					{
@@ -89,6 +89,6 @@ public class RenderMongooseEntity extends Render
 
 	public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
 	{
-		this.doRender((EntityMongoose)entity, x, y, z, yaw, partialTicks);
+		this.doRender((EntityMongoose) entity, x, y, z, yaw, partialTicks);
 	}
 }

@@ -1,20 +1,9 @@
 package halocraft.entities;
 
-import halocraft.items.firearms.ItemNeedler;
-
-import java.util.concurrent.TimeUnit;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.item.Item;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -43,8 +32,10 @@ public class EntityPurplePlasma extends EntityThrowable
 	{
 		if (movingobjectpos.entityHit != null)
 		{
-			if (this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit);
-			else if (this.shootingEntity != null && this.shootingEntity == movingobjectpos.entityHit);
+			if (this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit)
+				;
+			else if (this.shootingEntity != null && this.shootingEntity == movingobjectpos.entityHit)
+				;
 			else
 			{
 				if (!(this.worldObj.isRemote))

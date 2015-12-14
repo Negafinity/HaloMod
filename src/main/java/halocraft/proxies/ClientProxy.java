@@ -101,13 +101,13 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation res2 = new ModelResourceLocation("halocraft:SpartaniumIngot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartaniumIngot, 0, res2);
 		ModelResourceLocation res3 = new ModelResourceLocation("halocraft:SpartanChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.SpartanChestplate, 0, res3);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanChestplate, 0, res3);
 		ModelResourceLocation res4 = new ModelResourceLocation("halocraft:SpartanHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.SpartanHelmet, 0, res4);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanHelmet, 0, res4);
 		ModelResourceLocation res5 = new ModelResourceLocation("halocraft:SpartanLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.SpartanLeggings, 0, res5);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLeggings, 0, res5);
 		ModelResourceLocation res6 = new ModelResourceLocation("halocraft:SpartanBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.SpartanBoots, 0, res6);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanBoots, 0, res6);
 		ModelResourceLocation res7 = new ModelResourceLocation("halocraft:ammoRocket", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.ammoRocket, 0, res7);
 		ModelResourceLocation res9 = new ModelResourceLocation("halocraft:ammoAssaultRifle", "inventory");
@@ -117,11 +117,11 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation resource1 = new ModelResourceLocation("halocraft:prometheanHelmet", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.prometheanHelmet, 0, resource1);
 		ModelResourceLocation resource2 = new ModelResourceLocation("halocraft:PrometheanChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.PrometheanChestplate, 0, resource2);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.prometheanChestplate, 0, resource2);
 		ModelResourceLocation resource3 = new ModelResourceLocation("halocraft:PrometheanLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.PrometheanLeggings, 0, resource3);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.prometheanLeggings, 0, resource3);
 		ModelResourceLocation resource4 = new ModelResourceLocation("halocraft:PrometheanBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.PrometheanBoots, 0, resource4);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.prometheanBoots, 0, resource4);
 
 		// Rendering Spartan Locke Armor
 		ModelResourceLocation lockeResource1 = new ModelResourceLocation("halocraft:SpartanLockeHelmet", "inventory");
@@ -133,75 +133,103 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation lockeResource4 = new ModelResourceLocation("halocraft:SpartanLockeBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeBoots, 0, lockeResource4);
 
+		// Rendering Recon Armor
+		ModelResourceLocation reconReso1 = new ModelResourceLocation("halocraft:ReconHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.reconHelmet, 0, reconReso1);
+		ModelResourceLocation reconReso2 = new ModelResourceLocation("halocraft:ReconChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.reconChestplate, 0, reconReso2);
+		ModelResourceLocation reconReso3 = new ModelResourceLocation("halocraft:ReconLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.reconLeggings, 0, reconReso3);
+		ModelResourceLocation reconReso4 = new ModelResourceLocation("halocraft:ReconBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.reconBoots, 0, reconReso4);
+		
+		ModelResourceLocation redReconReso1 = new ModelResourceLocation("halocraft:RedReconHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redReconHelmet, 0, redReconReso1);
+		ModelResourceLocation redReconReso2 = new ModelResourceLocation("halocraft:RedReconChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redReconChestplate, 0, redReconReso2);
+		ModelResourceLocation redReconReso3 = new ModelResourceLocation("halocraft:RedReconLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redReconLeggings, 0, redReconReso3);
+		ModelResourceLocation redReconReso4 = new ModelResourceLocation("halocraft:RedReconBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redReconBoots, 0, redReconReso4);
+		
+		ModelResourceLocation blueReconReso1 = new ModelResourceLocation("halocraft:BlueReconHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueReconHelmet, 0, blueReconReso1);
+		ModelResourceLocation blueReconReso2 = new ModelResourceLocation("halocraft:BlueReconChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueReconChestplate, 0, blueReconReso2);
+		ModelResourceLocation blueReconReso3 = new ModelResourceLocation("halocraft:BlueReconLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueReconLeggings, 0, blueReconReso3);
+		ModelResourceLocation blueReconReso4 = new ModelResourceLocation("halocraft:BlueReconBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueReconBoots, 0, blueReconReso4);
+
 		// Rendering Marine Armor
 		ModelResourceLocation reso1 = new ModelResourceLocation("halocraft:MarineHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.MarineHelmet, 0, reso1);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.marineHelmet, 0, reso1);
 		ModelResourceLocation reso2 = new ModelResourceLocation("halocraft:MarineChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.MarineChestplate, 0, reso2);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.marineChestplate, 0, reso2);
 		ModelResourceLocation reso3 = new ModelResourceLocation("halocraft:MarineLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.MarineLeggings, 0, reso3);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.marineLeggings, 0, reso3);
 		ModelResourceLocation reso4 = new ModelResourceLocation("halocraft:MarineBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.MarineBoots, 0, reso4);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.marineBoots, 0, reso4);
 
 		ModelResourceLocation reso5 = new ModelResourceLocation("halocraft:RedMarineHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedMarineHelmet, 0, reso5);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redMarineHelmet, 0, reso5);
 		ModelResourceLocation reso6 = new ModelResourceLocation("halocraft:RedMarineChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedMarineChestplate, 0, reso6);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redMarineChestplate, 0, reso6);
 		ModelResourceLocation reso7 = new ModelResourceLocation("halocraft:RedMarineLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedMarineLeggings, 0, reso7);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redMarineLeggings, 0, reso7);
 		ModelResourceLocation reso8 = new ModelResourceLocation("halocraft:RedMarineBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedMarineBoots, 0, reso8);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redMarineBoots, 0, reso8);
 
 		ModelResourceLocation reso9 = new ModelResourceLocation("halocraft:BlueMarineHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueMarineHelmet, 0, reso9);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueMarineHelmet, 0, reso9);
 		ModelResourceLocation reso10 = new ModelResourceLocation("halocraft:BlueMarineChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueMarineChestplate, 0, reso10);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueMarineChestplate, 0, reso10);
 		ModelResourceLocation reso11 = new ModelResourceLocation("halocraft:BlueMarineLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueMarineLeggings, 0, reso11);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueMarineLeggings, 0, reso11);
 		ModelResourceLocation reso12 = new ModelResourceLocation("halocraft:BlueMarineBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueMarineBoots, 0, reso12);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueMarineBoots, 0, reso12);
 
 		// Registering Red Spartan Armor
 		ModelResourceLocation res13 = new ModelResourceLocation("halocraft:RedSpartanChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedSpartanChestplate, 0, res13);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redSpartanChestplate, 0, res13);
 		ModelResourceLocation res14 = new ModelResourceLocation("halocraft:RedSpartanHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedSpartanHelmet, 0, res14);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redSpartanHelmet, 0, res14);
 		ModelResourceLocation res15 = new ModelResourceLocation("halocraft:RedSpartanLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedSpartanLeggings, 0, res15);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redSpartanLeggings, 0, res15);
 		ModelResourceLocation res16 = new ModelResourceLocation("halocraft:RedSpartanBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.RedSpartanBoots, 0, res16);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.redSpartanBoots, 0, res16);
 		// Rendering Green Spartan Armor
 		ModelResourceLocation res17 = new ModelResourceLocation("halocraft:GreenSpartanChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.GreenSpartanChestplate, 0, res17);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenSpartanChestplate, 0, res17);
 		ModelResourceLocation res18 = new ModelResourceLocation("halocraft:GreenSpartanHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.GreenSpartanHelmet, 0, res18);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenSpartanHelmet, 0, res18);
 		ModelResourceLocation res19 = new ModelResourceLocation("halocraft:GreenSpartanLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.GreenSpartanLeggings, 0, res19);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenSpartanLeggings, 0, res19);
 		ModelResourceLocation res20 = new ModelResourceLocation("halocraft:GreenSpartanBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.GreenSpartanBoots, 0, res20);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenSpartanBoots, 0, res20);
 		// Rendering Blue Spartan Armor
 		ModelResourceLocation res21 = new ModelResourceLocation("halocraft:BlueSpartanChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueSpartanChestplate, 0, res21);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueSpartanChestplate, 0, res21);
 		ModelResourceLocation res22 = new ModelResourceLocation("halocraft:BlueSpartanHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueSpartanHelmet, 0, res22);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueSpartanHelmet, 0, res22);
 		ModelResourceLocation res23 = new ModelResourceLocation("halocraft:BlueSpartanLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueSpartanLeggings, 0, res23);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueSpartanLeggings, 0, res23);
 		ModelResourceLocation res24 = new ModelResourceLocation("halocraft:BlueSpartanBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.BlueSpartanBoots, 0, res24);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.blueSpartanBoots, 0, res24);
 		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:covenantPiece", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.covenantPiece, 0, res25);
 		// Rendering Default Covenant Armor
 		ModelResourceLocation res26 = new ModelResourceLocation("halocraft:CovenantChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.CovenantChestplate, 0, res26);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.covenantChestplate, 0, res26);
 		ModelResourceLocation res27 = new ModelResourceLocation("halocraft:CovenantHelmet", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.CovenantHelmet, 0, res27);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.covenantHelmet, 0, res27);
 		ModelResourceLocation res28 = new ModelResourceLocation("halocraft:CovenantLeggings", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.CovenantLeggings, 0, res28);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.covenantLeggings, 0, res28);
 		ModelResourceLocation res29 = new ModelResourceLocation("halocraft:CovenantBoots", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.CovenantBoots, 0, res29);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.covenantBoots, 0, res29);
 		// Rendering ActiveCamo Armor
 		ModelResourceLocation res30 = new ModelResourceLocation("halocraft:ActiveCamoChestplate", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.ActiveCamoChestplate, 0, res30);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.activeCamoChestplate, 0, res30);
 
 		// Rendering Plasma Ammo
 		ModelResourceLocation res32 = new ModelResourceLocation("halocraft:ammoPlasma", "inventory");

@@ -1,7 +1,6 @@
 package halocraft.items.firearms;
 
 import halocraft.HaloCraft;
-import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityOrangePlasma;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -27,7 +26,7 @@ public class ItemBoltshot extends ItemFirearm
 		if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-			
+
 			if (!worldIn.isRemote)
 			{
 				EntityOrangePlasma bullet = new EntityOrangePlasma(worldIn, playerIn);
@@ -36,7 +35,7 @@ public class ItemBoltshot extends ItemFirearm
 				itemStackIn.damageItem(1, playerIn);
 			}
 		}
-		
+
 		return itemStackIn;
 	}
 }

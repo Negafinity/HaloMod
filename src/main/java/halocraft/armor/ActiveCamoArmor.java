@@ -25,7 +25,7 @@ public class ActiveCamoArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		if (stack.getItem().equals(halocraft.HaloCraft.ActiveCamoChestplate))
+		if (stack.getItem().equals(halocraft.HaloCraft.activeCamoChestplate))
 		{
 			return "halocraft:textures/armor/ActiveCamoArmor_layer_1.png";
 		}

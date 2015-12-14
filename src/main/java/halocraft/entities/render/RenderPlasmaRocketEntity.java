@@ -26,19 +26,19 @@ public class RenderPlasmaRocketEntity extends Render
 		super(renderManager);
 		this.shadowSize = 0.5F;
 	}
+
 	public void doRender(EntityPlasmaRocket plasmaRocket, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
 		{
 			XLibRenderer.translate(posX, posY, posZ);
-			for(Part p: model.nameToPartHash.values())
+			for (Part p : model.nameToPartHash.values())
 			{
 				p.draw();
 			}
 		}
 		XLibRenderer.popMatrix();
 	}
-
 
 	protected ResourceLocation getEntityTexture(EntityPlasmaRocket plasmaRocket)
 	{
@@ -52,6 +52,6 @@ public class RenderPlasmaRocketEntity extends Render
 
 	public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
 	{
-		this.doRender((EntityPlasmaRocket)entity, x, y, z, yaw, partialTicks);
+		this.doRender((EntityPlasmaRocket) entity, x, y, z, yaw, partialTicks);
 	}
 }

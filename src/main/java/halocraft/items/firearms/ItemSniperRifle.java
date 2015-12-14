@@ -1,18 +1,13 @@
 package halocraft.items.firearms;
 
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.items.IntervalTask;
-import halocraft.items.ItemAmmoAssaultRifle;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import java.util.Timer;
 
 public class ItemSniperRifle extends ItemFirearm
 {
@@ -21,7 +16,7 @@ public class ItemSniperRifle extends ItemFirearm
 
 	public static String name = "itemSniperRifle";
 	public static ItemFirearm instance = new ItemSniperRifle();
-	
+
 	public ItemSniperRifle()
 	{
 		super();

@@ -1,30 +1,24 @@
 package halocraft.entities;
 
-import halocraft.HaloCraft;
 import halocraft.items.ItemScorpion;
-
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSourceIndirect;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class EntityScorpion extends Entity
 {
@@ -94,7 +88,7 @@ public class EntityScorpion extends Entity
 
 	public double getMountedYOffset()
 	{
-		return (double)this.height * 0.0D + 4.5D;
+		return (double) this.height * 0.0D + 4.5D;
 	}
 
 	public boolean attackEntityFrom(DamageSource source, float amount)
@@ -115,7 +109,7 @@ public class EntityScorpion extends Entity
 				this.setTimeSinceHit(10);
 				this.setDamageTaken(this.getDamageTaken() + amount * 10.0F);
 				this.setBeenAttacked();
-				boolean flag = source.getEntity() instanceof EntityPlayer && ((EntityPlayer)source.getEntity()).capabilities.isCreativeMode;
+				boolean flag = source.getEntity() instanceof EntityPlayer && ((EntityPlayer) source.getEntity()).capabilities.isCreativeMode;
 
 				if (this.getDamageTaken() > 100000.0F || flag)
 				{
@@ -154,7 +148,8 @@ public class EntityScorpion extends Entity
 		return true;
 	}
 
-	public World getWorldObj(){
+	public World getWorldObj()
+	{
 		return this.worldObj;
 	}
 
@@ -198,8 +193,8 @@ public class EntityScorpion extends Entity
 			this.boatX = p_180426_1_;
 			this.boatY = p_180426_3_;
 			this.boatZ = p_180426_5_;
-			this.boatYaw = (double)p_180426_7_;
-			this.boatPitch = (double)p_180426_8_;
+			this.boatYaw = (double) p_180426_7_;
+			this.boatPitch = (double) p_180426_8_;
 			this.motionX = this.velocityX;
 			this.motionY = this.velocityY;
 			this.motionZ = this.velocityZ;
@@ -219,7 +214,7 @@ public class EntityScorpion extends Entity
 		super.onUpdate();
 
 		this.fallDistance = 0;
-		
+
 		if (this.getTimeSinceHit() > 0)
 		{
 			this.setTimeSinceHit(this.getTimeSinceHit() - 1);
@@ -238,8 +233,8 @@ public class EntityScorpion extends Entity
 
 		for (int i = 0; i < b0; ++i)
 		{
-			double d1 = this.getEntityBoundingBox().minY + (this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY) * (double)(i + 0) / (double)b0 - 0.125D;
-			double d3 = this.getEntityBoundingBox().minY + (this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY) * (double)(i + 1) / (double)b0 - 0.125D;
+			double d1 = this.getEntityBoundingBox().minY + (this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY) * (double) (i + 0) / (double) b0 - 0.125D;
+			double d3 = this.getEntityBoundingBox().minY + (this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY) * (double) (i + 1) / (double) b0 - 0.125D;
 			AxisAlignedBB axisalignedbb = new AxisAlignedBB(this.getEntityBoundingBox().minX, d1, this.getEntityBoundingBox().minZ, this.getEntityBoundingBox().maxX, d3, this.getEntityBoundingBox().maxZ);
 		}
 
@@ -250,13 +245,13 @@ public class EntityScorpion extends Entity
 
 		if (d9 > 0.2975D)
 		{
-			d2 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D);
-			d4 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D);
+			d2 = Math.cos((double) this.rotationYaw * Math.PI / 180.0D);
+			d4 = Math.sin((double) this.rotationYaw * Math.PI / 180.0D);
 
-			for (j = 0; (double)j < 1.0D + d9 * 60.0D; ++j)
+			for (j = 0; (double) j < 1.0D + d9 * 60.0D; ++j)
 			{
-				double d5 = (double)(this.rand.nextFloat() * 2.0F - 1.0F);
-				double d6 = (double)(this.rand.nextInt(2) * 2 - 1) * 0.7D;
+				double d5 = (double) (this.rand.nextFloat() * 2.0F - 1.0F);
+				double d6 = (double) (this.rand.nextInt(2) * 2 - 1) * 0.7D;
 				double d7;
 				double d8;
 			}
@@ -269,12 +264,12 @@ public class EntityScorpion extends Entity
 		{
 			if (this.boatPosRotationIncrements > 0)
 			{
-				d2 = this.posX + (this.boatX - this.posX) / (double)this.boatPosRotationIncrements;
-				d4 = this.posY + (this.boatY - this.posY) / (double)this.boatPosRotationIncrements;
-				d10 = this.posZ + (this.boatZ - this.posZ) / (double)this.boatPosRotationIncrements;
-				d11 = MathHelper.wrapAngleTo180_double(this.boatYaw - (double)this.rotationYaw);
-				this.rotationYaw = (float)((double)this.rotationYaw + d11 / (double)this.boatPosRotationIncrements);
-				this.rotationPitch = (float)((double)this.rotationPitch + (this.boatPitch - (double)this.rotationPitch) / (double)this.boatPosRotationIncrements);
+				d2 = this.posX + (this.boatX - this.posX) / (double) this.boatPosRotationIncrements;
+				d4 = this.posY + (this.boatY - this.posY) / (double) this.boatPosRotationIncrements;
+				d10 = this.posZ + (this.boatZ - this.posZ) / (double) this.boatPosRotationIncrements;
+				d11 = MathHelper.wrapAngleTo180_double(this.boatYaw - (double) this.rotationYaw);
+				this.rotationYaw = (float) ((double) this.rotationYaw + d11 / (double) this.boatPosRotationIncrements);
+				this.rotationPitch = (float) ((double) this.rotationPitch + (this.boatPitch - (double) this.rotationPitch) / (double) this.boatPosRotationIncrements);
 				--this.boatPosRotationIncrements;
 				this.setPosition(d2, d4, d10);
 				this.setRotation(this.rotationYaw, this.rotationPitch);
@@ -309,10 +304,10 @@ public class EntityScorpion extends Entity
 
 			if (this.riddenByEntity instanceof EntityLivingBase)
 			{
-				EntityLivingBase entitylivingbase = (EntityLivingBase)this.riddenByEntity;
+				EntityLivingBase entitylivingbase = (EntityLivingBase) this.riddenByEntity;
 				float f = this.riddenByEntity.rotationYaw + -entitylivingbase.moveStrafing * 90.0F;
-				this.motionX += -Math.sin((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
-				this.motionZ += Math.cos((double)(f * (float)Math.PI / 180.0F)) * this.speedMultiplier * (double)entitylivingbase.moveForward * 0.05000000074505806D;
+				this.motionX += -Math.sin((double) (f * (float) Math.PI / 180.0F)) * this.speedMultiplier * (double) entitylivingbase.moveForward * 0.05000000074505806D;
+				this.motionZ += Math.cos((double) (f * (float) Math.PI / 180.0F)) * this.speedMultiplier * (double) entitylivingbase.moveForward * 0.05000000074505806D;
 			}
 
 			d2 = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
@@ -348,8 +343,8 @@ public class EntityScorpion extends Entity
 
 			for (l = 0; l < 4; ++l)
 			{
-				int i1 = MathHelper.floor_double(this.posX + ((double)(l % 2) - 0.5D) * 0.8D);
-				j = MathHelper.floor_double(this.posZ + ((double)(l / 2) - 0.5D) * 0.8D);
+				int i1 = MathHelper.floor_double(this.posX + ((double) (l % 2) - 0.5D) * 0.8D);
+				j = MathHelper.floor_double(this.posZ + ((double) (l / 2) - 0.5D) * 0.8D);
 
 				for (int j1 = 0; j1 < 2; ++j1)
 				{
@@ -376,16 +371,16 @@ public class EntityScorpion extends Entity
 			this.motionZ *= 0.9900000095367432D;
 
 			this.rotationPitch = 0.0F;
-			d4 = (double)this.rotationYaw;
+			d4 = (double) this.rotationYaw;
 			d10 = this.prevPosX - this.posX;
 			d11 = this.prevPosZ - this.posZ;
 
 			if (d10 * d10 + d11 * d11 > 0.001D)
 			{
-				d4 = (double)((float)(Math.atan2(d11, d10) * 180.0D / Math.PI));
+				d4 = (double) ((float) (Math.atan2(d11, d10) * 180.0D / Math.PI));
 			}
 
-			double d12 = MathHelper.wrapAngleTo180_double(d4 - (double)this.rotationYaw);
+			double d12 = MathHelper.wrapAngleTo180_double(d4 - (double) this.rotationYaw);
 
 			if (d12 > 20.0D)
 			{
@@ -397,7 +392,7 @@ public class EntityScorpion extends Entity
 				d12 = -20.0D;
 			}
 
-			this.rotationYaw = (float)((double)this.rotationYaw + d12);
+			this.rotationYaw = (float) ((double) this.rotationYaw + d12);
 			this.setRotation(this.rotationYaw, this.rotationPitch);
 
 			if (!this.worldObj.isRemote)
@@ -408,7 +403,7 @@ public class EntityScorpion extends Entity
 				{
 					for (int k1 = 0; k1 < list.size(); ++k1)
 					{
-						Entity entity = (Entity)list.get(k1);
+						Entity entity = (Entity) list.get(k1);
 
 						if (entity != this.riddenByEntity && entity.canBePushed() && entity instanceof EntityScorpion)
 						{
@@ -423,7 +418,7 @@ public class EntityScorpion extends Entity
 				}
 			}
 		}
-		if(this.riddenByEntity == null)
+		if (this.riddenByEntity == null)
 		{
 			this.motionX = 0;
 			this.motionY = 0;
@@ -435,15 +430,15 @@ public class EntityScorpion extends Entity
 	{
 		if (this.riddenByEntity != null)
 		{
-			double d0 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-			double d1 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
+			double d0 = Math.cos((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
+			double d1 = Math.sin((double) this.rotationYaw * Math.PI / 180.0D) * 0.4D;
 			this.riddenByEntity.setPosition(this.posX + d0, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + d1);
 		}
-		if(worldObj.isRemote)
+		if (worldObj.isRemote)
 		{
-			if(this.riddenByEntity instanceof EntityPlayer)
+			if (this.riddenByEntity instanceof EntityPlayer)
 			{
-				if(Minecraft.getMinecraft().thePlayer == this.riddenByEntity && Minecraft.getMinecraft().gameSettings.thirdPersonView != 1)
+				if (Minecraft.getMinecraft().thePlayer == this.riddenByEntity && Minecraft.getMinecraft().gameSettings.thirdPersonView != 1)
 				{
 					Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
 				}
@@ -451,9 +446,13 @@ public class EntityScorpion extends Entity
 		}
 	}
 
-	protected void writeEntityToNBT(NBTTagCompound tagCompound) {}
+	protected void writeEntityToNBT(NBTTagCompound tagCompound)
+	{
+	}
 
-	protected void readEntityFromNBT(NBTTagCompound tagCompund) {}
+	protected void readEntityFromNBT(NBTTagCompound tagCompund)
+	{
+	}
 
 	public boolean interactFirst(EntityPlayer playerIn)
 	{
@@ -496,7 +495,7 @@ public class EntityScorpion extends Entity
 		}
 		else if (this.worldObj.getBlockState((new BlockPos(this)).down()).getBlock().getMaterial() != Material.water && p_180433_1_ < 0.0D)
 		{
-			this.fallDistance = (float)((double)this.fallDistance - p_180433_1_);
+			this.fallDistance = (float) ((double) this.fallDistance - p_180433_1_);
 		}
 	}
 

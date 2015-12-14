@@ -15,6 +15,6 @@ public class HaloCreativeTab extends CreativeTabs
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem()
     {
-        return halocraft.HaloCraft.SpartanHelmet;
+        return halocraft.HaloCraft.spartanHelmet;
     }
 }

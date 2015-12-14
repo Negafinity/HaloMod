@@ -1,14 +1,8 @@
 package halocraft.items.firearms;
 
 import halocraft.HaloCraft;
-import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityOrangePlasma;
-import halocraft.items.ItemAmmoAssaultRifle;
-
-import java.util.Random;
-
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 

@@ -15,39 +15,39 @@ public class HaloArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		if (stack.getItem().equals(halocraft.HaloCraft.SpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.Jetpack) || stack.getItem().equals(halocraft.HaloCraft.SpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.SpartanBoots))
+		if (stack.getItem().equals(halocraft.HaloCraft.spartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.jetpack) || stack.getItem().equals(halocraft.HaloCraft.spartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.spartanBoots))
 		{
 			return "halocraft:textures/armor/HaloArmor_layer_1.png";
 		}
 
-		if (stack.getItem().equals(halocraft.HaloCraft.SpartanLeggings))
+		if (stack.getItem().equals(halocraft.HaloCraft.spartanLeggings))
 		{
 			return "halocraft:textures/armor/HaloArmor_layer_2.png";
 		}
-		if (stack.getItem().equals(halocraft.HaloCraft.RedSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.RedSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.RedSpartanBoots))
+		if (stack.getItem().equals(halocraft.HaloCraft.redSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.redSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.redSpartanBoots))
 		{
 			return "halocraft:textures/armor/RedHaloArmor_layer_1.png";
 		}
 
-		if (stack.getItem().equals(halocraft.HaloCraft.RedSpartanLeggings))
+		if (stack.getItem().equals(halocraft.HaloCraft.redSpartanLeggings))
 		{
 			return "halocraft:textures/armor/RedHaloArmor_layer_2.png";
 		}
-		if (stack.getItem().equals(halocraft.HaloCraft.GreenSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.GreenSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.GreenSpartanBoots))
+		if (stack.getItem().equals(halocraft.HaloCraft.greenSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.greenSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.greenSpartanBoots))
 		{
 			return "halocraft:textures/armor/GreenHaloArmor_layer_1.png";
 		}
 
-		if (stack.getItem().equals(halocraft.HaloCraft.GreenSpartanLeggings))
+		if (stack.getItem().equals(halocraft.HaloCraft.greenSpartanLeggings))
 		{
 			return "halocraft:textures/armor/GreenHaloArmor_layer_2.png";
 		}
-		if (stack.getItem().equals(halocraft.HaloCraft.BlueSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.BlueSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.BlueSpartanBoots))
+		if (stack.getItem().equals(halocraft.HaloCraft.blueSpartanHelmet) || stack.getItem().equals(halocraft.HaloCraft.blueSpartanChestplate) || stack.getItem().equals(halocraft.HaloCraft.blueSpartanBoots))
 		{
 			return "halocraft:textures/armor/BlueHaloArmor_layer_1.png";
 		}
 
-		if (stack.getItem().equals(halocraft.HaloCraft.BlueSpartanLeggings))
+		if (stack.getItem().equals(halocraft.HaloCraft.blueSpartanLeggings))
 		{
 			return "halocraft:textures/armor/BlueHaloArmor_layer_2.png";
 		}

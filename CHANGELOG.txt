@@ -1,3 +1,7 @@
+v1.5.135:
+
+Code Conventions + Added Recon Armor.
+
 v1.5.134:
 
 Bumped Forge Version + CurseForge.

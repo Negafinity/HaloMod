@@ -1,7 +1,5 @@
 package halocraft.handlers;
 
-import halocraft.HaloCraft;
-import net.minecraft.item.Item;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -11,9 +9,10 @@ public class HaloEventHandler
 	@SubscribeEvent
 	public void onClientTick(TickEvent.PlayerTickEvent event)
 	{
-		if (event.player.inventory.armorInventory[2] != null && event.player.inventory.armorInventory[2].getItem().equals(halocraft.HaloCraft.Jetpack))
+		if (event.player.inventory.armorInventory[2] != null && event.player.inventory.armorInventory[2].getItem().equals(halocraft.HaloCraft.jetpack))
 		{
 			event.player.capabilities.allowFlying = true;
+			
 			if (event.player.capabilities.isFlying)
 			{
 				event.player.worldObj.spawnParticle(EnumParticleTypes.CLOUD, event.player.posX, event.player.posY, event.player.posZ, 0, -0.05, 0, 0);

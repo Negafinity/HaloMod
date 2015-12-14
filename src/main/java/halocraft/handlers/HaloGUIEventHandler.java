@@ -71,7 +71,7 @@ public class HaloGUIEventHandler extends Gui
 	protected void drawQuad(int x, int y, int w, int h, float minU, float minV, float maxU, float maxV)
 	{
 		WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
-		tessellator.func_181668_a(7, DefaultVertexFormats.field_181707_g); //StartDrawingQuads
+		tessellator.func_181668_a(7, DefaultVertexFormats.field_181707_g); // StartDrawingQuads
 		tessellator.func_181662_b(x + 0, y + h, (double) zLevel).func_181673_a(minU, maxV).func_181675_d();
 		tessellator.func_181662_b(x + w, y + h, (double) zLevel).func_181673_a(maxU, maxV).func_181675_d();
 		tessellator.func_181662_b(x + w, y + 0, (double) zLevel).func_181673_a(maxU, minV).func_181675_d();
@@ -85,7 +85,7 @@ public class HaloGUIEventHandler extends Gui
 		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.HaloCraft.SpartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.GreenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.BlueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.RedSpartanHelmet)
+			if (helmet.getItem() == halocraft.HaloCraft.spartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.greenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.blueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.redSpartanHelmet)
 			{
 				if (event.isCancelable() && event.type == ElementType.HEALTH)
 				{
@@ -112,7 +112,7 @@ public class HaloGUIEventHandler extends Gui
 		helmet = mc.thePlayer.inventory.armorItemInSlot(3);
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.HaloCraft.SpartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.GreenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.BlueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.RedSpartanHelmet)
+			if (helmet.getItem() == halocraft.HaloCraft.spartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.greenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.blueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.redSpartanHelmet)
 			{
 				// Rendering Top of Halo HUD
 				ScaledResolution scaled = new ScaledResolution(mc);

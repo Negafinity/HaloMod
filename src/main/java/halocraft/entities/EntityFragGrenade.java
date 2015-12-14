@@ -1,6 +1,5 @@
 package halocraft.entities;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
@@ -8,7 +7,6 @@ import net.minecraft.world.World;
 
 public class EntityFragGrenade extends EntityThrowable
 {
-
 	public EntityFragGrenade(World worldIn)
 	{
 		super(worldIn);
@@ -31,6 +29,5 @@ public class EntityFragGrenade extends EntityThrowable
 				this.setDead();
 			}
 		}
-
 	}
 }

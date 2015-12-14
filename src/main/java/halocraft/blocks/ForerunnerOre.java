@@ -1,15 +1,11 @@
 package halocraft.blocks;
 
-import halocraft.HaloCraft;
-import halocraft.items.firearms.ItemAssaultRifle;
-
-import java.util.Random;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+
+import java.util.Random;
 
 public class ForerunnerOre extends Block
 {
@@ -27,5 +23,4 @@ public class ForerunnerOre extends Block
 	{
 		return null;
 	}
-
 }

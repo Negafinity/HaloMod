@@ -1,20 +1,17 @@
 package halocraft.entities.render;
 
-import halocraft.entities.EntityMongoose;
+import com.arisux.xlib.api.wavefrontapi.Part;
+import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
+import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
+import com.arisux.xlib.client.render.XLibRenderer;
 import halocraft.entities.EntityWarthog;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.arisux.xlib.api.wavefrontapi.Part;
-import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
-import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
-import com.arisux.xlib.client.render.XLibRenderer;
 
 @SideOnly(Side.CLIENT)
 public class RenderGhostEntity extends Render
@@ -42,11 +39,11 @@ public class RenderGhostEntity extends Render
 		XLibRenderer.pushMatrix();
 		{
 			XLibRenderer.translate(posX + 1.75f, posY, posZ + 0.25f);
-			
+
 			XLibRenderer.pushMatrix();
 			{
 				XLibRenderer.translate(-1.8, 0, -0.25);
-//				GlStateManager.rotate((entity.worldObj.getWorldTime() % 360 * 8), 0, 1, 0);
+				// GlStateManager.rotate((entity.worldObj.getWorldTime() % 360 * 8), 0, 1, 0);
 				GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
 				XLibRenderer.translate(1.8, 0, 0.25);
 

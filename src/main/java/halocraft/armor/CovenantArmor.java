@@ -15,12 +15,12 @@ public class CovenantArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		if (stack.getItem().equals(halocraft.HaloCraft.CovenantHelmet) || stack.getItem().equals(halocraft.HaloCraft.CovenantChestplate) || stack.getItem().equals(halocraft.HaloCraft.CovenantBoots))
+		if (stack.getItem().equals(halocraft.HaloCraft.covenantHelmet) || stack.getItem().equals(halocraft.HaloCraft.covenantChestplate) || stack.getItem().equals(halocraft.HaloCraft.covenantBoots))
 		{
 			return "halocraft:textures/armor/CovenantArmor_layer_1.png";
 		}
 
-		if (stack.getItem().equals(halocraft.HaloCraft.CovenantLeggings))
+		if (stack.getItem().equals(halocraft.HaloCraft.covenantLeggings))
 		{
 			return "halocraft:textures/armor/CovenantArmor_layer_2.png";
 		}

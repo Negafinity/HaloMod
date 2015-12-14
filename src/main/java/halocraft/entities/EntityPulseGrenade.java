@@ -1,7 +1,5 @@
 package halocraft.entities;
 
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
@@ -11,7 +9,6 @@ import net.minecraft.world.World;
 
 public class EntityPulseGrenade extends EntityThrowable
 {
-
 	public EntityPulseGrenade(World worldIn)
 	{
 		super(worldIn);
@@ -28,7 +25,7 @@ public class EntityPulseGrenade extends EntityThrowable
 		if (!this.worldObj.isRemote && movingobjpos != null)
 		{
 			this.setDead();
-			if(movingobjpos.entityHit != null)
+			if (movingobjpos.entityHit != null)
 			{
 				movingobjpos.entityHit.setFire(10);
 			}

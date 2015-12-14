@@ -9,7 +9,6 @@ import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -41,7 +40,7 @@ public class RenderBulletEntity extends Render
 	public RenderBulletEntity(RenderManager rendermanager)
 	{
 		super(rendermanager);
-		shadowSize = 0.25F;
+		this.shadowSize = 0.25F;
 	}
 
 	protected ResourceLocation getEntityTexture(Entity entity)

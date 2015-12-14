@@ -1,18 +1,8 @@
 package halocraft.entities.render;
 
-import java.io.IOException;
-import java.util.List;
-
-import halocraft.entities.EntityBullet;
-import halocraft.entities.EntityRocket;
-
-import org.lwjgl.opengl.GL11;
-
 import com.google.common.base.Function;
-
+import halocraft.entities.EntityRocket;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -29,6 +19,10 @@ import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.TRSRTransformation;
 import net.minecraftforge.client.model.b3d.B3DLoader;
+import org.lwjgl.opengl.GL11;
+
+import java.io.IOException;
+import java.util.List;
 
 public class RenderRocketEntity extends Render
 {
@@ -76,7 +70,7 @@ public class RenderRocketEntity extends Render
 			e.printStackTrace();
 		}
 		IBakedModel bakedRocket = rocketModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-		worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);//StartDrawingQuads
+		worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);// StartDrawingQuads
 		// Get Quads
 		List<BakedQuad> generalQuads = bakedRocket.getGeneralQuads();
 		for (BakedQuad q : generalQuads)

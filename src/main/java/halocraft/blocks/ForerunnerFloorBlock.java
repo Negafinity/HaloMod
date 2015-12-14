@@ -1,14 +1,9 @@
 package halocraft.blocks;
 
-import halocraft.HaloCraft;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
 import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 public class ForerunnerFloorBlock extends Block
 {
@@ -29,5 +24,4 @@ public class ForerunnerFloorBlock extends Block
 	{
 		return HaloBlock.instance;
 	}
-
 }

@@ -2,14 +2,12 @@ package halocraft.entities.render;
 
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.models.ModelBullet;
-
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderGreenPlasmaEntity extends Render
 {
@@ -18,7 +16,7 @@ public class RenderGreenPlasmaEntity extends Render
 	public RenderGreenPlasmaEntity(RenderManager rendermanager)
 	{
 		super(rendermanager);
-		shadowSize = 0.5F;
+		this.shadowSize = 0.5F;
 	}
 
 	protected ResourceLocation getEntityTexture(Entity entity)
@@ -30,7 +28,7 @@ public class RenderGreenPlasmaEntity extends Render
 	{
 		if (plasma.ticksExisted < 1)
 			return;
-		bindEntityTexture(plasma);
+		this.bindEntityTexture(plasma);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) d, (float) d1, (float) d2);
 		GL11.glRotatef(f, 0.0F, 1.0F, 0.0F);

@@ -23,7 +23,7 @@ public class PulseGrenade extends Item
 		{
 			--itemStackIn.stackSize;
 		}
-		
+
 		worldIn.playSoundAtEntity(playerIn, "random.fizz", 0.7F, 0.8F);
 
 		if (!worldIn.isRemote)

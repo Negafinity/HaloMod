@@ -1,33 +1,17 @@
 package halocraft.handlers;
 
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.util.List;
-
 import halocraft.KeyBindings;
-import halocraft.HaloCraft;
 import halocraft.entities.EntityGhost;
-import halocraft.entities.EntityMongoose;
-import halocraft.entities.EntityRocket;
 import halocraft.entities.EntityScorpion;
-import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.firearms.ItemBattleRifle;
 import halocraft.items.firearms.ItemSniperRifle;
 import halocraft.packets.FireMessage;
 import halocraft.packets.HalocraftPacketHandler;
-
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;

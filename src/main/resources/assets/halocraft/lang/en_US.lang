@@ -4,17 +4,36 @@ entity.RedElite.name=Red Elite
 entity.BlueElite.name=Blue Elite
 entity.Grunt.name=Grunt
 entity.Promethean.name=Promethean
+
+item.ReconHelmet.name=Recon Helmet
+item.ReconChestplate.name=Recon Chestplate
+item.ReconLeggings.name=Recon Leggings
+item.ReconBoots.name=Recon Boots
+
+item.BlueReconHelmet.name=Blue Recon Helmet
+item.BlueReconChestplate.name=Blue Recon Chestplate
+item.BlueReconLeggings.name=Blue Recon Leggings
+item.BlueReconBoots.name=Blue Recon Boots
+
+item.RedReconHelmet.name=Red Recon Helmet
+item.RedReconChestplate.name=Red Recon Chestplate
+item.RedReconLeggings.name=Red Recon Leggings
+item.RedReconBoots.name=Red Recon Boots
+
 item.prometheanHelmet.name=Promethean Helmet
 item.PrometheanChestplate.name=Promethean Chestplate
 item.PrometheanLeggings.name=Promethean Leggings
 item.PrometheanBoots.name=Promethean Boots
+
 item.SpartanHelmet.name=Spartan Helmet
 item.SpartanChestplate.name=Spartan Chestplate
 item.SpartanLeggings.name=Spartan Leggings
 item.SpartanBoots.name=Spartan Boots
+
 item.RedSpartanHelmet.name=Red Spartan Helmet
 item.RedSpartanChestplate.name=Red Spartan Chestplate
 item.pulseGrenade.name=Pulse Grenade
+
 item.Jetpack.name=Jetpack
 item.RedSpartanLeggings.name=Red Spartan Leggings
 item.RedSpartanBoots.name=Red Spartan Boots

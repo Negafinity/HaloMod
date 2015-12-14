@@ -115,67 +115,82 @@ public class HaloCraft
 	public static HaloGenerationClass HaloOreGen;
 
 	// Blocks
-	public final static Block HaloOre = new HaloOre(Material.iron);
-	public final static Block ForerunnerOre = new ForerunnerOre(Material.iron);
-	public final static Block RedPlasmaOre = new halocraft.blocks.RedPlasmaOre(Material.iron);
-	public final static Block GreenPlasmaOre = new halocraft.blocks.GreenPlasmaOre(Material.iron);
-	public final static Block PurplePlasmaOre = new halocraft.blocks.PurplePlasmaOre(Material.iron);
+	public final static Block haloOre = new HaloOre(Material.iron);
+	public final static Block forerunnerOre = new ForerunnerOre(Material.iron);
+	public final static Block redPlasmaOre = new halocraft.blocks.RedPlasmaOre(Material.iron);
+	public final static Block greenPlasmaOre = new halocraft.blocks.GreenPlasmaOre(Material.iron);
+	public final static Block purplePlasmaOre = new halocraft.blocks.PurplePlasmaOre(Material.iron);
 	// Armor
 	public static int helmetID = 0;
 	public static int chestplateID = 0;
 	public static int leggingID = 0;
 	public static int bootID = 0;
 
-	public static Item SpartanHelmet;
-	public static Item SpartanChestplate;
-	public static Item SpartanLeggings;
-	public static Item SpartanBoots;
+	public static Item spartanHelmet;
+	public static Item spartanChestplate;
+	public static Item spartanLeggings;
+	public static Item spartanBoots;
 
 	public static Item prometheanHelmet;
-	public static Item PrometheanChestplate;
-	public static Item PrometheanLeggings;
-	public static Item PrometheanBoots;
+	public static Item prometheanChestplate;
+	public static Item prometheanLeggings;
+	public static Item prometheanBoots;
 
 	public static Item spartanLockeHelmet;
 	public static Item spartanLockeChestplate;
 	public static Item spartanLockeLeggings;
 	public static Item spartanLockeBoots;
 
-	public static Item MarineHelmet;
-	public static Item MarineChestplate;
-	public static Item MarineLeggings;
-	public static Item MarineBoots;
-	public static Item BlueMarineHelmet;
-	public static Item BlueMarineChestplate;
-	public static Item BlueMarineLeggings;
-	public static Item BlueMarineBoots;
-	public static Item RedMarineHelmet;
-	public static Item RedMarineChestplate;
-	public static Item RedMarineLeggings;
-	public static Item RedMarineBoots;
+	public static Item reconHelmet;
+	public static Item reconChestplate;
+	public static Item reconLeggings;
+	public static Item reconBoots;
+	
+	public static Item blueReconHelmet;
+	public static Item blueReconChestplate;
+	public static Item blueReconLeggings;
+	public static Item blueReconBoots;
+	
+	public static Item redReconHelmet;
+	public static Item redReconChestplate;
+	public static Item redReconLeggings;
+	public static Item redReconBoots;
 
-	public static Item RedSpartanHelmet;
-	public static Item RedSpartanChestplate;
-	public static Item RedSpartanLeggings;
-	public static Item RedSpartanBoots;
-	public static Item GreenSpartanHelmet;
-	public static Item GreenSpartanChestplate;
-	public static Item GreenSpartanLeggings;
-	public static Item GreenSpartanBoots;
-	public static Item BlueSpartanHelmet;
-	public static Item BlueSpartanChestplate;
-	public static Item BlueSpartanLeggings;
-	public static Item BlueSpartanBoots;
+	public static Item marineHelmet;
+	public static Item marineChestplate;
+	public static Item marineLeggings;
+	public static Item marineBoots;
+	public static Item blueMarineHelmet;
+	public static Item blueMarineChestplate;
+	public static Item blueMarineLeggings;
+	public static Item blueMarineBoots;
+	public static Item redMarineHelmet;
+	public static Item redMarineChestplate;
+	public static Item redMarineLeggings;
+	public static Item redMarineBoots;
 
-	public static Item CovenantHelmet;
-	public static Item CovenantChestplate;
-	public static Item CovenantLeggings;
-	public static Item CovenantBoots;
+	public static Item redSpartanHelmet;
+	public static Item redSpartanChestplate;
+	public static Item redSpartanLeggings;
+	public static Item redSpartanBoots;
+	public static Item greenSpartanHelmet;
+	public static Item greenSpartanChestplate;
+	public static Item greenSpartanLeggings;
+	public static Item greenSpartanBoots;
+	public static Item blueSpartanHelmet;
+	public static Item blueSpartanChestplate;
+	public static Item blueSpartanLeggings;
+	public static Item blueSpartanBoots;
+
+	public static Item covenantHelmet;
+	public static Item covenantChestplate;
+	public static Item covenantLeggings;
+	public static Item covenantBoots;
 	public static Item covenantPiece;
 
-	public static Item ActiveCamoChestplate;
+	public static Item activeCamoChestplate;
 
-	public static Item Jetpack;
+	public static Item jetpack;
 
 	// Creative Tabs
 	public static CreativeTabs haloCreativeTab;
@@ -192,15 +207,15 @@ public class HaloCraft
 	public static Item itemRubber;
 
 	// Tool Materials
-	public static ToolMaterial HaloMaterial;
-	public static ToolMaterial PrometheanMaterial;
+	public static ToolMaterial haloMaterial;
+	public static ToolMaterial prometheanMaterial;
 
 	// Armor Material
-	public static ArmorMaterial HaloArmor;
-	public static ArmorMaterial CovenantArmor;
-	public static ArmorMaterial ActiveCamoArmor;
-	public static ArmorMaterial PrometheanArmor;
-	public static ArmorMaterial MarineArmor;
+	public static ArmorMaterial haloArmor;
+	public static ArmorMaterial covenantArmor;
+	public static ArmorMaterial activeCamoArmor;
+	public static ArmorMaterial prometheanArmor;
+	public static ArmorMaterial marineArmor;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -217,13 +232,13 @@ public class HaloCraft
 		tankHarvester = new TankHarvester();
 		// Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
-		HaloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
-		PrometheanMaterial = EnumHelper.addToolMaterial("PrometheanMaterial", 3, 1750, 9.0F, 8.0F, 10);
-		PrometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[] { 6, 9, 7, 5 }, 30);
-		HaloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[] { 5, 7, 7, 5 }, 30);
-		CovenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
-		MarineArmor = EnumHelper.addArmorMaterial("MarineArmor", "halocraft:textures/models/armor/MarineArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
-		ActiveCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[] { 6, 6, 10, 8 }, 30);
+		haloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
+		prometheanMaterial = EnumHelper.addToolMaterial("PrometheanMaterial", 3, 1750, 9.0F, 8.0F, 10);
+		prometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[] { 6, 9, 7, 5 }, 30);
+		haloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[] { 5, 7, 7, 5 }, 30);
+		covenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
+		marineArmor = EnumHelper.addArmorMaterial("MarineArmor", "halocraft:textures/models/armor/MarineArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
+		activeCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[] { 6, 6, 10, 8 }, 30);
 		HaloOreGen = new HaloGenerationClass();
 		// HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
@@ -231,104 +246,126 @@ public class HaloCraft
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
 
 		// Promethean Armor
-		prometheanHelmet = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("prometheanHelmet");
-		PrometheanChestplate = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("PrometheanChestplate");
-		PrometheanLeggings = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("PrometheanLeggings");
-		PrometheanBoots = new halocraft.armor.PrometheanArmor(PrometheanArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("PrometheanBoots");
+		prometheanHelmet = new halocraft.armor.PrometheanArmor(prometheanArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("prometheanHelmet");
+		prometheanChestplate = new halocraft.armor.PrometheanArmor(prometheanArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("PrometheanChestplate");
+		prometheanLeggings = new halocraft.armor.PrometheanArmor(prometheanArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("PrometheanLeggings");
+		prometheanBoots = new halocraft.armor.PrometheanArmor(prometheanArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("PrometheanBoots");
 
 		// Spartan Locke Armor
-		spartanLockeHelmet = new halocraft.armor.SpartanLockeArmor(HaloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("SpartanLockeHelmet");
-		spartanLockeChestplate = new halocraft.armor.SpartanLockeArmor(HaloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("SpartanLockeChestplate");
-		spartanLockeLeggings = new halocraft.armor.SpartanLockeArmor(HaloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("SpartanLockeLeggings");
-		spartanLockeBoots = new halocraft.armor.SpartanLockeArmor(HaloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("SpartanLockeBoots");
+		spartanLockeHelmet = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("SpartanLockeHelmet");
+		spartanLockeChestplate = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("SpartanLockeChestplate");
+		spartanLockeLeggings = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("SpartanLockeLeggings");
+		spartanLockeBoots = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("SpartanLockeBoots");
+
+		// Recon Armor
+		reconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("ReconHelmet");
+		reconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("ReconChestplate");
+		reconLeggings = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("ReconLeggings");
+		reconBoots = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("ReconBoots");
+		
+		blueReconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueReconHelmet");
+		blueReconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueReconChestplate");
+		blueReconLeggings = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("BlueReconLeggings");
+		blueReconBoots = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("BlueReconBoots");
+		
+		redReconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("RedReconHelmet");
+		redReconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("RedReconChestplate");
+		redReconLeggings = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("RedReconLeggings");
+		redReconBoots = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("RedReconBoots");
 
 		// Marine Armor
-		MarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("MarineHelmet");
-		MarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("MarineChestplate");
-		MarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("MarineLeggings");
-		MarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("MarineBoots");
+		marineHelmet = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("MarineHelmet");
+		marineChestplate = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("MarineChestplate");
+		marineLeggings = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("MarineLeggings");
+		marineBoots = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("MarineBoots");
 
-		RedMarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("RedMarineHelmet");
-		RedMarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("RedMarineChestplate");
-		RedMarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("RedMarineLeggings");
-		RedMarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("RedMarineBoots");
+		redMarineHelmet = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("RedMarineHelmet");
+		redMarineChestplate = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("RedMarineChestplate");
+		redMarineLeggings = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("RedMarineLeggings");
+		redMarineBoots = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("RedMarineBoots");
 
-		BlueMarineHelmet = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueMarineHelmet");
-		BlueMarineChestplate = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueMarineChestplate");
-		BlueMarineLeggings = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("BlueMarineLeggings");
-		BlueMarineBoots = new halocraft.armor.MarineArmor(MarineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("BlueMarineBoots");
+		blueMarineHelmet = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueMarineHelmet");
+		blueMarineChestplate = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueMarineChestplate");
+		blueMarineLeggings = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("BlueMarineLeggings");
+		blueMarineBoots = new halocraft.armor.MarineArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("BlueMarineBoots");
 
-		Jetpack = new HaloArmor(HaloArmor, chestplateID, 1).setUnlocalizedName("Jetpack");
+		jetpack = new HaloArmor(haloArmor, chestplateID, 1).setUnlocalizedName("Jetpack");
 
-		halocraft.HaloCraft.BlueSpartanHelmet = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
-		halocraft.HaloCraft.BlueSpartanChestplate = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
-		halocraft.HaloCraft.BlueSpartanLeggings = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
-		halocraft.HaloCraft.BlueSpartanBoots = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("BlueSpartanBoots");
-		halocraft.HaloCraft.GreenSpartanHelmet = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("GreenSpartanHelmet");
-		halocraft.HaloCraft.GreenSpartanChestplate = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("GreenSpartanChestplate");
-		halocraft.HaloCraft.GreenSpartanLeggings = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("GreenSpartanLeggings");
-		halocraft.HaloCraft.GreenSpartanBoots = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("GreenSpartanBoots");
-		halocraft.HaloCraft.RedSpartanHelmet = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("RedSpartanHelmet");
-		halocraft.HaloCraft.RedSpartanChestplate = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("RedSpartanChestplate");
-		halocraft.HaloCraft.RedSpartanLeggings = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("RedSpartanLeggings");
-		halocraft.HaloCraft.RedSpartanBoots = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("RedSpartanBoots");
-		halocraft.HaloCraft.SpartanHelmet = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("SpartanHelmet");
-		halocraft.HaloCraft.SpartanChestplate = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("SpartanChestplate");
-		halocraft.HaloCraft.SpartanLeggings = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("SpartanLeggings");
-		halocraft.HaloCraft.SpartanBoots = new HaloArmor(halocraft.HaloCraft.HaloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("SpartanBoots");
-		halocraft.HaloCraft.CovenantHelmet = new CovenantArmor(halocraft.HaloCraft.CovenantArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("CovenantHelmet");
-		halocraft.HaloCraft.CovenantChestplate = new CovenantArmor(halocraft.HaloCraft.CovenantArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("CovenantChestplate");
-		halocraft.HaloCraft.CovenantLeggings = new CovenantArmor(halocraft.HaloCraft.CovenantArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("CovenantLeggings");
-		halocraft.HaloCraft.CovenantBoots = new CovenantArmor(halocraft.HaloCraft.CovenantArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("CovenantBoots");
-		halocraft.HaloCraft.ActiveCamoChestplate = new ActiveCamoArmor(halocraft.HaloCraft.ActiveCamoArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
+		halocraft.HaloCraft.blueSpartanHelmet = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueSpartanHelmet");
+		halocraft.HaloCraft.blueSpartanChestplate = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueSpartanChestplate");
+		halocraft.HaloCraft.blueSpartanLeggings = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("BlueSpartanLeggings");
+		halocraft.HaloCraft.blueSpartanBoots = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("BlueSpartanBoots");
+		halocraft.HaloCraft.greenSpartanHelmet = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("GreenSpartanHelmet");
+		halocraft.HaloCraft.greenSpartanChestplate = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("GreenSpartanChestplate");
+		halocraft.HaloCraft.greenSpartanLeggings = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("GreenSpartanLeggings");
+		halocraft.HaloCraft.greenSpartanBoots = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("GreenSpartanBoots");
+		halocraft.HaloCraft.redSpartanHelmet = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("RedSpartanHelmet");
+		halocraft.HaloCraft.redSpartanChestplate = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("RedSpartanChestplate");
+		halocraft.HaloCraft.redSpartanLeggings = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("RedSpartanLeggings");
+		halocraft.HaloCraft.redSpartanBoots = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("RedSpartanBoots");
+		halocraft.HaloCraft.spartanHelmet = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("SpartanHelmet");
+		halocraft.HaloCraft.spartanChestplate = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("SpartanChestplate");
+		halocraft.HaloCraft.spartanLeggings = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("SpartanLeggings");
+		halocraft.HaloCraft.spartanBoots = new HaloArmor(halocraft.HaloCraft.haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("SpartanBoots");
+		halocraft.HaloCraft.covenantHelmet = new CovenantArmor(halocraft.HaloCraft.covenantArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("CovenantHelmet");
+		halocraft.HaloCraft.covenantChestplate = new CovenantArmor(halocraft.HaloCraft.covenantArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("CovenantChestplate");
+		halocraft.HaloCraft.covenantLeggings = new CovenantArmor(halocraft.HaloCraft.covenantArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("CovenantLeggings");
+		halocraft.HaloCraft.covenantBoots = new CovenantArmor(halocraft.HaloCraft.covenantArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("CovenantBoots");
+		halocraft.HaloCraft.activeCamoChestplate = new ActiveCamoArmor(halocraft.HaloCraft.activeCamoArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("ActiveCamoChestplate");
 
 		// Register Entities
-		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityWarthogTurret.class, "WarthogTurret", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityRedPlasma.class, "RedPlasma", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityGreenPlasma.class, "GreenPlasma", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", getRandomID(), this, 128, 1, true);
-		EntityRegistry.registerModEntity(EntityPulseGrenade.class, "pulseGrenade", getRandomID(), this, 250, 50, true);
-		EntityRegistry.registerModEntity(EntityOrangePlasma.class, "OrangePlasma", getRandomID(), this, 250, 50, true);
+		EntityRegistry.registerModEntity(EntityBullet.class, "Bullet", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityMongoose.class, "Mongoose", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityScorpion.class, "Socrpion", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityPlasmaRocket.class, "PlasmaRocket", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityGhost.class, "Ghost", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityPurplePlasma.class, "PurplePlasma", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityWarthogTurret.class, "WarthogTurret", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityRocket.class, "Rocket", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityRedPlasma.class, "RedPlasma", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityGreenPlasma.class, "GreenPlasma", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityWarthog.class, "Warthog", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityFragGrenade.class, "fragGrenade", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityPulseGrenade.class, "pulseGrenade", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerModEntity(EntityOrangePlasma.class, "OrangePlasma", getRandomID(), this, 250, 15, true);
 
-		EntityRegistry.registerGlobalEntityID(EntityElite.class, "GoldenElite", EntityRegistry.findGlobalUniqueEntityId(), 0xFFEE00, 0xFFFFFF);
+		EntityRegistry.registerModEntity(EntityElite.class, "GoldenElite", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityElite.class, 0xFFEE00, 0xFFFFFF);
 		EntityRegistry.addSpawn(EntityElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityRedElite.class, "RedElite", EntityRegistry.findGlobalUniqueEntityId(), 0xFF0000, 0x000000);
+		EntityRegistry.registerModEntity(EntityRedElite.class, "RedElite", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityRedElite.class, 0xFF0000, 0x000000);
 		EntityRegistry.addSpawn(EntityRedElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityBlueElite.class, "BlueElite", EntityRegistry.findGlobalUniqueEntityId(), 0x002FFF, 0xCC00FF);
+		EntityRegistry.registerModEntity(EntityBlueElite.class, "BlueElite", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityBlueElite.class, 0x002FFF, 0xCC00FF);
 		EntityRegistry.addSpawn(EntityBlueElite.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityGrunt.class, "Grunt", EntityRegistry.findGlobalUniqueEntityId(), 0x4F2E00, 0x424242);
+		EntityRegistry.registerModEntity(EntityGrunt.class, "Grunt", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityGrunt.class, 0x4F2E00, 0x424242);
 		EntityRegistry.addSpawn(EntityGrunt.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityPromethean.class, "Promethean", EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0xFF7700);
+		EntityRegistry.registerModEntity(EntityPromethean.class, "Promethean", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityPromethean.class, 0x000000, 0xFF7700);
 		EntityRegistry.addSpawn(EntityPromethean.class, 15, 4, 10, EnumCreatureType.MONSTER, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
-		EntityRegistry.registerGlobalEntityID(EntityMarine.class, "Marine", EntityRegistry.findGlobalUniqueEntityId(), 0x000000, 0x47BEE6);
+		EntityRegistry.registerModEntity(EntityMarine.class, "Marine", getRandomID(), this, 250, 15, true);
+		EntityRegistry.registerEgg(EntityMarine.class, 0x000000, 0x47BEE6);
 		EntityRegistry.addSpawn(EntityMarine.class, 15, 4, 10, EnumCreatureType.CREATURE, BiomeGenBase.taigaHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.taiga, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.beach, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.desertHills, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.coldBeach, BiomeGenBase.coldTaiga, BiomeGenBase.megaTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.stoneBeach, BiomeGenBase.extremeHillsPlus, BiomeGenBase.birchForest, BiomeGenBase.savanna, BiomeGenBase.mesa, BiomeGenBase.roofedForest, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.mesaPlateau);
 
 		// Register Items and Blocks
 		GameRegistry.registerItem(ItemScattershot.instance, ItemScattershot.name);
 		GameRegistry.registerItem(ItemEnergySword.instance, ItemEnergySword.name);
 		GameRegistry.registerItem(PrometheanSword.instance, PrometheanSword.name);
-		GameRegistry.registerBlock(HaloOre, "HaloOre");
+		GameRegistry.registerBlock(haloOre, "HaloOre");
 		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
 		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);
-		GameRegistry.registerBlock(ForerunnerOre, "ForerunnerOre");
+		GameRegistry.registerBlock(forerunnerOre, "ForerunnerOre");
 		GameRegistry.registerItem(itemWheel, "itemWheel");
 		GameRegistry.registerItem(itemOil, "itemOil");
-		GameRegistry.registerBlock(RedPlasmaOre, "RedPlasmaOre");
-		GameRegistry.registerBlock(GreenPlasmaOre, "GreenPlasmaOre");
-		GameRegistry.registerBlock(PurplePlasmaOre, "PurplePlasmaOre");
+		GameRegistry.registerBlock(redPlasmaOre, "RedPlasmaOre");
+		GameRegistry.registerBlock(greenPlasmaOre, "GreenPlasmaOre");
+		GameRegistry.registerBlock(purplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
 		GameRegistry.registerItem(ItemMongoose.instance, ItemMongoose.name);
 		GameRegistry.registerItem(ItemWarthogTurret.instance, ItemWarthogTurret.name);
@@ -337,7 +374,7 @@ public class HaloCraft
 		GameRegistry.registerItem(spartaniumIngot, "SpartaniumIngot");
 		GameRegistry.registerItem(ItemRocketLauncher.instance, ItemRocketLauncher.name);
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
-		GameRegistry.registerItem(Jetpack, "Jetpack");
+		GameRegistry.registerItem(jetpack, "Jetpack");
 		GameRegistry.registerItem(ammoAssaultRifle, "ammoAssaultRifle");
 		GameRegistry.registerItem(ItemSuppressor.instance, ItemSuppressor.name);
 		GameRegistry.registerItem(ItemForerunnerShard.instance, ItemForerunnerShard.name);
@@ -363,47 +400,59 @@ public class HaloCraft
 		GameRegistry.registerItem(ItemWarthog.instance, ItemWarthog.name);
 		GameRegistry.registerItem(GreenPlasmaIngot.instance, GreenPlasmaIngot.name);
 		GameRegistry.registerItem(prometheanHelmet, "prometheanHelmet");
-		GameRegistry.registerItem(PrometheanChestplate, "PrometheanChestplate");
-		GameRegistry.registerItem(PrometheanLeggings, "PrometheanLeggings");
-		GameRegistry.registerItem(PrometheanBoots, "PrometheanBoots");
+		GameRegistry.registerItem(prometheanChestplate, "PrometheanChestplate");
+		GameRegistry.registerItem(prometheanLeggings, "PrometheanLeggings");
+		GameRegistry.registerItem(prometheanBoots, "PrometheanBoots");
 		GameRegistry.registerItem(spartanLockeHelmet, "SpartanLockeHelmet");
 		GameRegistry.registerItem(spartanLockeChestplate, "SpartanLockeChestplate");
 		GameRegistry.registerItem(spartanLockeLeggings, "SpartanLockeLeggings");
 		GameRegistry.registerItem(spartanLockeBoots, "SpartanLockeBoots");
-		GameRegistry.registerItem(MarineHelmet, "MarineHelmet");
-		GameRegistry.registerItem(MarineChestplate, "MarineChestplate");
-		GameRegistry.registerItem(MarineLeggings, "MarineLeggings");
-		GameRegistry.registerItem(MarineBoots, "MarineBoots");
-		GameRegistry.registerItem(RedMarineHelmet, "RedMarineHelmet");
-		GameRegistry.registerItem(RedMarineChestplate, "RedMarineChestplate");
-		GameRegistry.registerItem(RedMarineLeggings, "RedMarineLeggings");
-		GameRegistry.registerItem(RedMarineBoots, "RedMarineBoots");
-		GameRegistry.registerItem(BlueMarineHelmet, "BlueMarineHelmet");
-		GameRegistry.registerItem(BlueMarineChestplate, "BlueMarineChestplate");
-		GameRegistry.registerItem(BlueMarineLeggings, "BlueMarineLeggings");
-		GameRegistry.registerItem(BlueMarineBoots, "BlueMarineBoots");
-		GameRegistry.registerItem(halocraft.HaloCraft.SpartanHelmet, "SpartanHelmet");
-		GameRegistry.registerItem(halocraft.HaloCraft.SpartanChestplate, "SpartanChestplate");
-		GameRegistry.registerItem(halocraft.HaloCraft.SpartanLeggings, "SpartanLeggings");
-		GameRegistry.registerItem(halocraft.HaloCraft.SpartanBoots, "SpartanBoots");
-		GameRegistry.registerItem(halocraft.HaloCraft.RedSpartanHelmet, "RedSpartanHelmet");
-		GameRegistry.registerItem(halocraft.HaloCraft.RedSpartanChestplate, "RedSpartanChestplate");
-		GameRegistry.registerItem(halocraft.HaloCraft.RedSpartanLeggings, "RedSpartanLeggings");
-		GameRegistry.registerItem(halocraft.HaloCraft.RedSpartanBoots, "RedSpartanBoots");
-		GameRegistry.registerItem(halocraft.HaloCraft.GreenSpartanHelmet, "GreenSpartanHelmet");
-		GameRegistry.registerItem(halocraft.HaloCraft.GreenSpartanChestplate, "GreenSpartanChestplate");
-		GameRegistry.registerItem(halocraft.HaloCraft.GreenSpartanLeggings, "GreenSpartanLeggings");
-		GameRegistry.registerItem(halocraft.HaloCraft.GreenSpartanBoots, "GreenSpartanBoots");
-		GameRegistry.registerItem(halocraft.HaloCraft.BlueSpartanHelmet, "BlueSpartanHelmet");
-		GameRegistry.registerItem(halocraft.HaloCraft.BlueSpartanChestplate, "BlueSpartanChestplate");
-		GameRegistry.registerItem(halocraft.HaloCraft.BlueSpartanLeggings, "BlueSpartanLeggings");
-		GameRegistry.registerItem(halocraft.HaloCraft.BlueSpartanBoots, "BlueSpartanBoots");
+		GameRegistry.registerItem(reconHelmet, "ReconHelmet");
+		GameRegistry.registerItem(reconChestplate, "ReconChestplate");
+		GameRegistry.registerItem(reconLeggings, "ReconLeggings");
+		GameRegistry.registerItem(reconBoots, "ReconBoots");
+		GameRegistry.registerItem(blueReconHelmet, "BlueReconHelmet");
+		GameRegistry.registerItem(blueReconChestplate, "BlueReconChestplate");
+		GameRegistry.registerItem(blueReconLeggings, "BlueReconLeggings");
+		GameRegistry.registerItem(blueReconBoots, "BlueReconBoots");
+		GameRegistry.registerItem(redReconHelmet, "RedReconHelmet");
+		GameRegistry.registerItem(redReconChestplate, "RedReconChestplate");
+		GameRegistry.registerItem(redReconLeggings, "RedReconLeggings");
+		GameRegistry.registerItem(redReconBoots, "RedReconBoots");
+		GameRegistry.registerItem(marineHelmet, "MarineHelmet");
+		GameRegistry.registerItem(marineChestplate, "MarineChestplate");
+		GameRegistry.registerItem(marineLeggings, "MarineLeggings");
+		GameRegistry.registerItem(marineBoots, "MarineBoots");
+		GameRegistry.registerItem(redMarineHelmet, "RedMarineHelmet");
+		GameRegistry.registerItem(redMarineChestplate, "RedMarineChestplate");
+		GameRegistry.registerItem(redMarineLeggings, "RedMarineLeggings");
+		GameRegistry.registerItem(redMarineBoots, "RedMarineBoots");
+		GameRegistry.registerItem(blueMarineHelmet, "BlueMarineHelmet");
+		GameRegistry.registerItem(blueMarineChestplate, "BlueMarineChestplate");
+		GameRegistry.registerItem(blueMarineLeggings, "BlueMarineLeggings");
+		GameRegistry.registerItem(blueMarineBoots, "BlueMarineBoots");
+		GameRegistry.registerItem(halocraft.HaloCraft.spartanHelmet, "SpartanHelmet");
+		GameRegistry.registerItem(halocraft.HaloCraft.spartanChestplate, "SpartanChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.spartanLeggings, "SpartanLeggings");
+		GameRegistry.registerItem(halocraft.HaloCraft.spartanBoots, "SpartanBoots");
+		GameRegistry.registerItem(halocraft.HaloCraft.redSpartanHelmet, "RedSpartanHelmet");
+		GameRegistry.registerItem(halocraft.HaloCraft.redSpartanChestplate, "RedSpartanChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.redSpartanLeggings, "RedSpartanLeggings");
+		GameRegistry.registerItem(halocraft.HaloCraft.redSpartanBoots, "RedSpartanBoots");
+		GameRegistry.registerItem(halocraft.HaloCraft.greenSpartanHelmet, "GreenSpartanHelmet");
+		GameRegistry.registerItem(halocraft.HaloCraft.greenSpartanChestplate, "GreenSpartanChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.greenSpartanLeggings, "GreenSpartanLeggings");
+		GameRegistry.registerItem(halocraft.HaloCraft.greenSpartanBoots, "GreenSpartanBoots");
+		GameRegistry.registerItem(halocraft.HaloCraft.blueSpartanHelmet, "BlueSpartanHelmet");
+		GameRegistry.registerItem(halocraft.HaloCraft.blueSpartanChestplate, "BlueSpartanChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.blueSpartanLeggings, "BlueSpartanLeggings");
+		GameRegistry.registerItem(halocraft.HaloCraft.blueSpartanBoots, "BlueSpartanBoots");
 		GameRegistry.registerItem(PurplePlasmaIngot.instance, PurplePlasmaIngot.name);
-		GameRegistry.registerItem(halocraft.HaloCraft.CovenantHelmet, "CovenantHelmet");
-		GameRegistry.registerItem(halocraft.HaloCraft.CovenantChestplate, "CovenantChestplate");
-		GameRegistry.registerItem(halocraft.HaloCraft.CovenantLeggings, "CovenantLeggings");
-		GameRegistry.registerItem(halocraft.HaloCraft.CovenantBoots, "CovenantBoots");
-		GameRegistry.registerItem(halocraft.HaloCraft.ActiveCamoChestplate, "ActiveCamoChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.covenantHelmet, "CovenantHelmet");
+		GameRegistry.registerItem(halocraft.HaloCraft.covenantChestplate, "CovenantChestplate");
+		GameRegistry.registerItem(halocraft.HaloCraft.covenantLeggings, "CovenantLeggings");
+		GameRegistry.registerItem(halocraft.HaloCraft.covenantBoots, "CovenantBoots");
+		GameRegistry.registerItem(halocraft.HaloCraft.activeCamoChestplate, "ActiveCamoChestplate");
 		GameRegistry.registerItem(ItemFuelRodCannon.instance, ItemFuelRodCannon.name);
 		GameRegistry.registerItem(PlasmaRifle.instance, PlasmaRifle.name);
 		GameRegistry.registerItem(ItemCarbineAmmo.instance, ItemCarbineAmmo.name);
@@ -427,8 +476,6 @@ public class HaloCraft
 		GameRegistry.addRecipe(new ItemStack(Pistol.instance, 1), new Object[] { "   ", " XY", "  Z", 'X', spartaniumIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.iron_ingot) });
 		GameRegistry.addRecipe(new ItemStack(ItemSniperRifle.instance, 1), new Object[] { "XYX", "ZYY", " IY", 'X', glassPaneStack, 'Y', spartaniumIngot, 'Z', gunpowderStack, 'I', new ItemStack(Items.iron_ingot) });
 		// Recipes
-		ItemStack woolStack = new ItemStack(Blocks.wool);
-		ItemStack goldenAppleStack = new ItemStack(Items.golden_apple);
 		GameRegistry.addRecipe(new ItemStack(ItemWarthogTurret.instance, 1), new Object[] { "  Z", "XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel, 'Z', ItemAssaultRifle.instance });
 		GameRegistry.addRecipe(new ItemStack(ItemWarthog.instance, 1), new Object[] { "   ", "XXX", "YXY", 'X', HaloBlock.instance, 'Y', itemWheel });
 		GameRegistry.addRecipe(new ItemStack(ItemScorpion.instance, 1), new Object[] { "YXX", "XXX", "XXX", 'X', HaloBlock.instance, 'Y', ItemRocketLauncher.instance });
@@ -440,38 +487,37 @@ public class HaloCraft
 		GameRegistry.addRecipe(new ItemStack(PulseGrenade.instance, 1), new Object[] { " X ", "XYX", " X ", 'X', RedPlasmaIngot.instance, 'Y', Blocks.tnt });
 
 		// Spartan Armor
-		GameRegistry.addRecipe(new ItemStack(SpartanHelmet, 1), new Object[] { "XXX", "X X", 'X', spartaniumIngot });
-		GameRegistry.addRecipe(new ItemStack(SpartanChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', spartaniumIngot });
-		GameRegistry.addRecipe(new ItemStack(SpartanLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', spartaniumIngot });
-		GameRegistry.addRecipe(new ItemStack(SpartanBoots, 1), new Object[] { "X X", "X X", 'X', spartaniumIngot });
+		GameRegistry.addRecipe(new ItemStack(spartanHelmet, 1), new Object[] { "XXX", "X X", 'X', spartaniumIngot });
+		GameRegistry.addRecipe(new ItemStack(spartanChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', spartaniumIngot });
+		GameRegistry.addRecipe(new ItemStack(spartanLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', spartaniumIngot });
+		GameRegistry.addRecipe(new ItemStack(spartanBoots, 1), new Object[] { "X X", "X X", 'X', spartaniumIngot });
 
 		// Promethean Armor
 		GameRegistry.addRecipe(new ItemStack(prometheanHelmet, 1), new Object[] { "XXX", "X X", 'X', RedPlasmaIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(PrometheanChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', RedPlasmaIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(PrometheanLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', RedPlasmaIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(PrometheanBoots, 1), new Object[] { "X X", "X X", 'X', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(prometheanChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(prometheanLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(prometheanBoots, 1), new Object[] { "X X", "X X", 'X', RedPlasmaIngot.instance });
 
 		// Marine Armor
-		GameRegistry.addRecipe(new ItemStack(MarineHelmet, 1), new Object[] { "XXX", "Y Y", 'X', spartaniumIngot, 'Y', Items.leather });
-		GameRegistry.addRecipe(new ItemStack(MarineChestplate, 1), new Object[] { "Y Y", "XXX", "XXX", 'X', spartaniumIngot, 'Y', Items.leather });
-		GameRegistry.addRecipe(new ItemStack(MarineLeggings, 1), new Object[] { "YYY", "X X", "X X", 'X', spartaniumIngot, 'Y', Items.leather });
-		GameRegistry.addRecipe(new ItemStack(MarineBoots, 1), new Object[] { "Y Y", "X X", 'X', spartaniumIngot, 'Y', Items.leather });
+		GameRegistry.addRecipe(new ItemStack(marineHelmet, 1), new Object[] { "XXX", "Y Y", 'X', spartaniumIngot, 'Y', Items.leather });
+		GameRegistry.addRecipe(new ItemStack(marineChestplate, 1), new Object[] { "Y Y", "XXX", "XXX", 'X', spartaniumIngot, 'Y', Items.leather });
+		GameRegistry.addRecipe(new ItemStack(marineLeggings, 1), new Object[] { "YYY", "X X", "X X", 'X', spartaniumIngot, 'Y', Items.leather });
+		GameRegistry.addRecipe(new ItemStack(marineBoots, 1), new Object[] { "Y Y", "X X", 'X', spartaniumIngot, 'Y', Items.leather });
 
-		GameRegistry.addRecipe(new ItemStack(CovenantHelmet, 1), new Object[] { "XXX", "X X", 'X', covenantPiece });
-		GameRegistry.addRecipe(new ItemStack(CovenantChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', covenantPiece });
-		GameRegistry.addRecipe(new ItemStack(CovenantLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', covenantPiece });
-		GameRegistry.addRecipe(new ItemStack(CovenantBoots, 1), new Object[] { "X X", "X X", 'X', covenantPiece });
+		GameRegistry.addRecipe(new ItemStack(covenantHelmet, 1), new Object[] { "XXX", "X X", 'X', covenantPiece });
+		GameRegistry.addRecipe(new ItemStack(covenantChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', covenantPiece });
+		GameRegistry.addRecipe(new ItemStack(covenantLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', covenantPiece });
+		GameRegistry.addRecipe(new ItemStack(covenantBoots, 1), new Object[] { "X X", "X X", 'X', covenantPiece });
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[] { " X ", " X ", " YZ", 'X', spartaniumIngot, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string) });
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[] { " X ", " X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string) });
 		GameRegistry.addRecipe(new ItemStack(ItemRedPlasmaAmmo.instance, 1), new Object[] { " X ", " X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', gunpowderStack, 'Z', new ItemStack(Items.string) });
-		ItemStack coalStack = new ItemStack(Items.coal);
 		GameRegistry.addRecipe(new ItemStack(ItemMongoose.instance, 1), new Object[] { "X  ", "YYY", "ZYZ", 'X', spartaniumIngot, 'Y', HaloBlock.instance, 'Z', itemWheel });
 
 		// Health Pack Crafting Recipe
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
 
 		// Active Camo Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(ActiveCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), SpartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(activeCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), spartanChestplate);
 
 		// Forerunner Blocks
 		GameRegistry.addRecipe(new ItemStack(ForerunnerFloorBlock.instance, 1), new Object[] { "XX ", "XX ", 'X', new ItemStack(ItemForerunnerShard.instance) });
@@ -479,34 +525,34 @@ public class HaloCraft
 		GameRegistry.addRecipe(new ItemStack(RoofBlock.instance, 1), new Object[] { "XX ", "XX ", 'X', new ItemStack(ForerunnerWallBlock.instance) });
 
 		// Red Spartan Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), SpartanHelmet);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), SpartanChestplate);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), SpartanLeggings);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), SpartanBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), spartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), spartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanLeggings, 1), new ItemStack(Items.dye, 1, 1), spartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanBoots, 1), new ItemStack(Items.dye, 1, 1), spartanBoots);
 
 		// Red Marine Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineHelmet, 1), new ItemStack(Items.dye, 1, 1), MarineHelmet);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineChestplate, 1), new ItemStack(Items.dye, 1, 1), MarineChestplate);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineLeggings, 1), new ItemStack(Items.dye, 1, 1), MarineLeggings);
-		GameRegistry.addShapelessRecipe(new ItemStack(RedMarineBoots, 1), new ItemStack(Items.dye, 1, 1), MarineBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(redMarineHelmet, 1), new ItemStack(Items.dye, 1, 1), marineHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(redMarineChestplate, 1), new ItemStack(Items.dye, 1, 1), marineChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(redMarineLeggings, 1), new ItemStack(Items.dye, 1, 1), marineLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(redMarineBoots, 1), new ItemStack(Items.dye, 1, 1), marineBoots);
 
 		// Blue Marine Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineHelmet, 1), new ItemStack(Items.dye, 1, 6), MarineHelmet);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineChestplate, 1), new ItemStack(Items.dye, 1, 6), MarineChestplate);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineLeggings, 1), new ItemStack(Items.dye, 1, 6), MarineLeggings);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueMarineBoots, 1), new ItemStack(Items.dye, 1, 6), MarineBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueMarineHelmet, 1), new ItemStack(Items.dye, 1, 6), marineHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueMarineChestplate, 1), new ItemStack(Items.dye, 1, 6), marineChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueMarineLeggings, 1), new ItemStack(Items.dye, 1, 6), marineLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueMarineBoots, 1), new ItemStack(Items.dye, 1, 6), marineBoots);
 
 		// Green Spartan Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanHelmet, 1), new ItemStack(Items.dye, 1, 10), SpartanHelmet);
-		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanChestplate, 1), new ItemStack(Items.dye, 1, 10), SpartanChestplate);
-		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanLeggings, 1), new ItemStack(Items.dye, 1, 10), SpartanLeggings);
-		GameRegistry.addShapelessRecipe(new ItemStack(GreenSpartanBoots, 1), new ItemStack(Items.dye, 1, 10), SpartanBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(greenSpartanHelmet, 1), new ItemStack(Items.dye, 1, 10), spartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(greenSpartanChestplate, 1), new ItemStack(Items.dye, 1, 10), spartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(greenSpartanLeggings, 1), new ItemStack(Items.dye, 1, 10), spartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(greenSpartanBoots, 1), new ItemStack(Items.dye, 1, 10), spartanBoots);
 
 		// Blue Spartan Armor
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanHelmet, 1), new ItemStack(Items.dye, 1, 6), SpartanHelmet);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanChestplate, 1), new ItemStack(Items.dye, 1, 6), SpartanChestplate);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), SpartanLeggings);
-		GameRegistry.addShapelessRecipe(new ItemStack(BlueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), SpartanBoots);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanHelmet, 1), new ItemStack(Items.dye, 1, 6), spartanHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanChestplate, 1), new ItemStack(Items.dye, 1, 6), spartanChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), spartanLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), spartanBoots);
 
 		GameRegistry.addRecipe(new ItemStack(itemWheel, 1), new Object[] { "XXX", "XYX", "XXX", 'X', itemRubber, 'Y', Items.iron_ingot });
 		ItemStack stickStack = new ItemStack(Items.stick);
@@ -525,13 +571,13 @@ public class HaloCraft
 		GameRegistry.addRecipe(new ItemStack(ItemCarbineRifle.instance, 1), new Object[] { "XZ ", "PGG", " CG", 'X', covenantPiece, 'C', new ItemStack(ItemCarbineAmmo.instance), 'Z', new ItemStack(RedPlasmaIngot.instance), 'P', new ItemStack(PurplePlasmaIngot.instance), 'G', new ItemStack(GreenPlasmaIngot.instance) });
 		GameRegistry.addRecipe(new ItemStack(ItemNeedler.instance, 1), new Object[] { "XXX", "YYY", "  Y", 'X', ItemNeedlerAmmo.instance, 'Y', PurplePlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(PlasmaRifle.instance, 1), new Object[] { "YY ", " XY", "YY ", 'X', ammoPlasma, 'Y', RedPlasmaIngot.instance });
-		GameRegistry.addSmelting(HaloOre, new ItemStack(spartaniumIngot, 1), 0.1f);
+		GameRegistry.addSmelting(haloOre, new ItemStack(spartaniumIngot, 1), 0.1f);
 		GameRegistry.addSmelting(new ItemStack(Blocks.dirt), new ItemStack(itemOil, 1), 0.1f);
-		GameRegistry.addSmelting(RedPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);
-		GameRegistry.addSmelting(PurplePlasmaOre, new ItemStack(PurplePlasmaIngot.instance, 1), 0.1f);
-		GameRegistry.addSmelting(ForerunnerOre, new ItemStack(ItemForerunnerShard.instance, 1), 0.1f);
+		GameRegistry.addSmelting(redPlasmaOre, new ItemStack(RedPlasmaIngot.instance, 1), 0.1f);
+		GameRegistry.addSmelting(purplePlasmaOre, new ItemStack(PurplePlasmaIngot.instance, 1), 0.1f);
+		GameRegistry.addSmelting(forerunnerOre, new ItemStack(ItemForerunnerShard.instance, 1), 0.1f);
 		GameRegistry.addSmelting(GreenPlasmaIngot.instance, new ItemStack(ammoPlasma, 1), 0.1f);
-		GameRegistry.addSmelting(GreenPlasmaOre, new ItemStack(GreenPlasmaIngot.instance, 1), 0.1f);
+		GameRegistry.addSmelting(greenPlasmaOre, new ItemStack(GreenPlasmaIngot.instance, 1), 0.1f);
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		// Frag Grenade Crafting
 		ItemStack tntStack = new ItemStack(Blocks.tnt);

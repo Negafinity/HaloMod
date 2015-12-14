@@ -1,9 +1,9 @@
 package halocraft.items;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class ItemAmmoPlasma extends Item {
+public class ItemAmmoPlasma extends Item
+{
 	public ItemAmmoPlasma()
 	{
 		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);

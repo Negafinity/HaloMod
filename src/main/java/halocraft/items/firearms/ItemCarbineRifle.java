@@ -1,21 +1,18 @@
 package halocraft.items.firearms;
 
-import java.util.Random;
-
-import halocraft.HaloCraft;
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.items.ItemCarbineAmmo;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class ItemCarbineRifle extends ItemFirearm
 {
 	public static String name = "itemCarbineRifle";
 	public static ItemFirearm instance = new ItemCarbineRifle();
-	
+
 	public ItemCarbineRifle()
 	{
 		super();
