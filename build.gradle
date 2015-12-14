@@ -10,7 +10,7 @@ buildscript {
 		}
     }
     dependencies {
-		classpath 'com.matthewprenger:CurseGradle:1.0.3-SNAPSHOT'
+		classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
@@ -28,7 +28,7 @@ tasks.withType(JavaCompile) {
 }
 
 minecraft {
-    version = "1.8.8-11.15.0.1608-1.8.8"
+    version = "1.8.8-11.15.0.1628-1.8.8"
     runDir = "run"
     mappings = "snapshot_20151122"
 }
