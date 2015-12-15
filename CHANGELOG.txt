@@ -1,3 +1,7 @@
+v1.5.136:
+
+Added Grenadier Armor(Green and Orange) - handhelds not textured yet.
+
 v1.5.135:
 
 Code Conventions + Added Recon Armor.

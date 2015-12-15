@@ -5,6 +5,16 @@ entity.BlueElite.name=Blue Elite
 entity.Grunt.name=Grunt
 entity.Promethean.name=Promethean
 
+item.GreenGrenadierHelmet.name=Green Grenadier Helmet
+item.GreenGrenadierChestplate.name=Green Grenadier Chestplate
+item.GreenGrenadierLeggings.name=Green Grenadier Leggings
+item.GreenGrenadierBoots.name=Green Grenadier Boots
+
+item.OrangeGrenadierHelmet.name=Orange Grenadier Helmet
+item.OrangeGrenadierChestplate.name=Orange Grenadier Chestplate
+item.OrangeGrenadierLeggings.name=Orange Grenadier Leggings
+item.OrangeGrenadierBoots.name=Orange Grenadier Boots
+
 item.ReconHelmet.name=Recon Helmet
 item.ReconChestplate.name=Recon Chestplate
 item.ReconLeggings.name=Recon Leggings

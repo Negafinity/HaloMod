@@ -141,6 +141,16 @@ public class HaloCraft
 	public static Item spartanLockeLeggings;
 	public static Item spartanLockeBoots;
 
+	public static Item greenGrenadierHelmet;
+	public static Item greenGrenadierChestplate;
+	public static Item greenGrenadierLeggings;
+	public static Item greenGrenadierBoots;
+	
+	public static Item orangeGrenadierHelmet;
+	public static Item orangeGrenadierChestplate;
+	public static Item orangeGrenadierLeggings;
+	public static Item orangeGrenadierBoots;
+	
 	public static Item reconHelmet;
 	public static Item reconChestplate;
 	public static Item reconLeggings;
@@ -228,9 +238,7 @@ public class HaloCraft
 		itemWheel = new ItemWheel();
 		itemRubber = new ItemRubber();
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
-		// Initalize Tank Harvester
 		tankHarvester = new TankHarvester();
-		// Initialize Plasma
 		ammoPlasma = new ItemAmmoPlasma();
 		haloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		prometheanMaterial = EnumHelper.addToolMaterial("PrometheanMaterial", 3, 1750, 9.0F, 8.0F, 10);
@@ -240,7 +248,6 @@ public class HaloCraft
 		marineArmor = EnumHelper.addArmorMaterial("MarineArmor", "halocraft:textures/models/armor/MarineArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
 		activeCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[] { 6, 6, 10, 8 }, 30);
 		HaloOreGen = new HaloGenerationClass();
-		// HaloBlock = new HaloBlock(Material.iron);
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
@@ -257,11 +264,22 @@ public class HaloCraft
 		spartanLockeLeggings = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("SpartanLockeLeggings");
 		spartanLockeBoots = new halocraft.armor.SpartanLockeArmor(haloArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("SpartanLockeBoots");
 
+		//Grenadier Armor
+		greenGrenadierHelmet = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("GreenGrenadierHelmet");
+		greenGrenadierChestplate = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("GreenGrenadierChestplate");
+		greenGrenadierLeggings = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("GreenGrenadierLeggings");
+		greenGrenadierBoots = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("GreenGrenadierBoots");
+		
+		orangeGrenadierHelmet = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("OrangeGrenadierHelmet");
+		orangeGrenadierChestplate = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("OrangeGrenadierChestplate");
+		orangeGrenadierLeggings = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("OrangeGrenadierLeggings");
+		orangeGrenadierBoots = new halocraft.armor.GrenadierArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("OrangeGrenadierBoots");
+		
 		// Recon Armor
-		reconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("ReconHelmet");
-		reconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("ReconChestplate");
-		reconLeggings = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("ReconLeggings");
-		reconBoots = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("ReconBoots");
+		reconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("GreenGrenadierHelmet");
+		reconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("GreenGrenadierChestplate");
+		reconLeggings = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.leggingID, 2).setUnlocalizedName("GreenGrenadierLeggings");
+		reconBoots = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.bootID, 3).setUnlocalizedName("GreenGrenadierBoots");
 		
 		blueReconHelmet = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.helmetID, 0).setUnlocalizedName("BlueReconHelmet");
 		blueReconChestplate = new halocraft.armor.ReconArmor(marineArmor, halocraft.HaloCraft.chestplateID, 1).setUnlocalizedName("BlueReconChestplate");
@@ -407,6 +425,14 @@ public class HaloCraft
 		GameRegistry.registerItem(spartanLockeChestplate, "SpartanLockeChestplate");
 		GameRegistry.registerItem(spartanLockeLeggings, "SpartanLockeLeggings");
 		GameRegistry.registerItem(spartanLockeBoots, "SpartanLockeBoots");
+		GameRegistry.registerItem(greenGrenadierHelmet, "GreenGrenadierHelmet");
+		GameRegistry.registerItem(greenGrenadierChestplate, "GreenGrenadierChestplate");
+		GameRegistry.registerItem(greenGrenadierLeggings, "GreenGrenadierLeggings");
+		GameRegistry.registerItem(greenGrenadierBoots, "GreenGrenadierBoots");
+		GameRegistry.registerItem(orangeGrenadierHelmet, "OrangeGrenadierHelmet");
+		GameRegistry.registerItem(orangeGrenadierChestplate, "OrangeGrenadierChestplate");
+		GameRegistry.registerItem(orangeGrenadierLeggings, "OrangeGrenadierLeggings");
+		GameRegistry.registerItem(orangeGrenadierBoots, "OrangeGrenadierHelmetBoots");
 		GameRegistry.registerItem(reconHelmet, "ReconHelmet");
 		GameRegistry.registerItem(reconChestplate, "ReconChestplate");
 		GameRegistry.registerItem(reconLeggings, "ReconLeggings");
@@ -597,7 +623,7 @@ public class HaloCraft
 	}
 
 	@EventHandler
-	public void Init(FMLInitializationEvent event)
+	public void init(FMLInitializationEvent event)
 	{
 		// Register Key Handler(s)
 		proxy.registerKey();
