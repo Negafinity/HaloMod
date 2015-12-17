@@ -432,7 +432,7 @@ public class HaloCraft
 		GameRegistry.registerItem(orangeGrenadierHelmet, "OrangeGrenadierHelmet");
 		GameRegistry.registerItem(orangeGrenadierChestplate, "OrangeGrenadierChestplate");
 		GameRegistry.registerItem(orangeGrenadierLeggings, "OrangeGrenadierLeggings");
-		GameRegistry.registerItem(orangeGrenadierBoots, "OrangeGrenadierHelmetBoots");
+		GameRegistry.registerItem(orangeGrenadierBoots, "OrangeGrenadierBoots");
 		GameRegistry.registerItem(reconHelmet, "ReconHelmet");
 		GameRegistry.registerItem(reconChestplate, "ReconChestplate");
 		GameRegistry.registerItem(reconLeggings, "ReconLeggings");

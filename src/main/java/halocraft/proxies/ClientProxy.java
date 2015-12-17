@@ -133,6 +133,25 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation lockeResource4 = new ModelResourceLocation("halocraft:SpartanLockeBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.spartanLockeBoots, 0, lockeResource4);
 
+		//Rendering Grenadier Armor
+		ModelResourceLocation greenGrenadierReso1 = new ModelResourceLocation("halocraft:GreenGrenadierHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenGrenadierHelmet, 0, greenGrenadierReso1);
+		ModelResourceLocation greenGrenadierReso2 = new ModelResourceLocation("halocraft:GreenGrenadierChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenGrenadierChestplate, 0, greenGrenadierReso2);
+		ModelResourceLocation greenGrenadierReso3 = new ModelResourceLocation("halocraft:GreenGrenadierLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenGrenadierLeggings, 0, greenGrenadierReso3);
+		ModelResourceLocation greenGrenadierReso4 = new ModelResourceLocation("halocraft:GreenGrenadierBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.greenGrenadierBoots, 0, greenGrenadierReso4);
+		
+		ModelResourceLocation orangeGrenadierReso1 = new ModelResourceLocation("halocraft:OrangeGrenadierHelmet", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.orangeGrenadierHelmet, 0, orangeGrenadierReso1);
+		ModelResourceLocation orangeGrenadierReso2 = new ModelResourceLocation("halocraft:OrangeGrenadierChestplate", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.orangeGrenadierChestplate, 0, orangeGrenadierReso2);
+		ModelResourceLocation orangeGrenadierReso3 = new ModelResourceLocation("halocraft:OrangeGrenadierLeggings", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.orangeGrenadierLeggings, 0, orangeGrenadierReso3);
+		ModelResourceLocation orangeGrenadierReso4 = new ModelResourceLocation("halocraft:OrangeGrenadierBoots", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.orangeGrenadierBoots, 0, orangeGrenadierReso4);
+		
 		// Rendering Recon Armor
 		ModelResourceLocation reconReso1 = new ModelResourceLocation("halocraft:ReconHelmet", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(halocraft.HaloCraft.reconHelmet, 0, reconReso1);
