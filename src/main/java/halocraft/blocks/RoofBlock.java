@@ -1,5 +1,6 @@
 package halocraft.blocks;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -17,7 +18,7 @@ public class RoofBlock extends Block
 		setHardness(4.0F); // 33% harder than diamond
 		setStepSound(Block.soundTypePiston); // sounds got renamed, look in Block class for what blocks have what sounds
 		setUnlocalizedName("halocraft:" + name.toLowerCase()); // changed in 1.7
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setHarvestLevel("pickaxe", 3);
 	}
 

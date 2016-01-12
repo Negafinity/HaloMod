@@ -1,6 +1,6 @@
 package halocraft.armor;
 
-import halocraft.HaloCraft;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -11,7 +11,7 @@ public class ReconArmor extends ItemArmor
 	public ReconArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
-		this.setCreativeTab(HaloCraft.haloCreativeTab);
+		this.setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	@Override
@@ -19,18 +19,15 @@ public class ReconArmor extends ItemArmor
 	{
 		Item item = stack.getItem();
 
-		if (item == HaloCraft.reconHelmet || item == HaloCraft.reconChestplate
-			|| item == HaloCraft.reconLeggings || item == HaloCraft.reconBoots)
+		if (item == CommonProxy.reconHelmet || item == CommonProxy.reconChestplate || item == CommonProxy.reconLeggings || item == CommonProxy.reconBoots)
 		{
 			return "halocraft:textures/armor/ReconArmor_1.png";
 		}
-		else if(item == HaloCraft.redReconHelmet || item == HaloCraft.redReconChestplate
-			|| item == HaloCraft.redReconLeggings || item == HaloCraft.redReconBoots)
+		else if (item == CommonProxy.redReconHelmet || item == CommonProxy.redReconChestplate || item == CommonProxy.redReconLeggings || item == CommonProxy.redReconBoots)
 		{
 			return "halocraft:textures/armor/RedReconArmor_1.png";
 		}
-		else if(item == HaloCraft.blueReconHelmet || item == HaloCraft.blueReconChestplate
-			|| item == HaloCraft.blueReconLeggings || item == HaloCraft.blueReconBoots)
+		else if (item == CommonProxy.blueReconHelmet || item == CommonProxy.blueReconChestplate || item == CommonProxy.blueReconLeggings || item == CommonProxy.blueReconBoots)
 		{
 			return "halocraft:textures/armor/BlueReconArmor_1.png";
 		}

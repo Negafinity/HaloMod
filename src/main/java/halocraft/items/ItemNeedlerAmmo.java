@@ -1,5 +1,6 @@
 package halocraft.items;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.item.Item;
 
 public class ItemNeedlerAmmo extends Item
@@ -10,7 +11,7 @@ public class ItemNeedlerAmmo extends Item
 	public ItemNeedlerAmmo()
 	{
 		setMaxStackSize(1);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setMaxDamage(32);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

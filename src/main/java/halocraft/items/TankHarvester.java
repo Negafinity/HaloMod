@@ -1,6 +1,7 @@
 package halocraft.items;
 
 import halocraft.entities.EntityScorpion;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -12,7 +13,7 @@ public class TankHarvester extends Item
 {
 	public TankHarvester()
 	{
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setMaxStackSize(1);
 		setUnlocalizedName("TankHarvester");
 	}

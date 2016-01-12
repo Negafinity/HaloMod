@@ -1,6 +1,7 @@
 package halocraft.items;
 
 import halocraft.entities.EntityFragGrenade;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ public class FragGrenade extends Item
 	public FragGrenade()
 	{
 		setUnlocalizedName("fragGrenade");
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)

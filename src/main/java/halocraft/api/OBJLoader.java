@@ -49,7 +49,6 @@ public class OBJLoader implements ICustomModelLoader
 		return enabledDomains.contains(modelLocation.getResourceDomain()) && modelLocation.getResourcePath().endsWith(".obj");
 	}
 
-	@SuppressWarnings("unchecked")
 	public IModel loadModel(ResourceLocation modelLocation)
 	{
 		ResourceLocation file = new ResourceLocation(modelLocation.getResourceDomain(), modelLocation.getResourcePath());
@@ -58,7 +57,7 @@ public class OBJLoader implements ICustomModelLoader
 			try
 			{
 				IResource resource = null;
-				
+
 				try
 				{
 					resource = manager.getResource(file);
@@ -72,7 +71,7 @@ public class OBJLoader implements ICustomModelLoader
 					else
 						throw e;
 				}
-				
+
 				OBJModel.Parser parser = new OBJModel.Parser(resource, manager);
 				OBJModel model = parser.parse();
 				cache.put(modelLocation, model);

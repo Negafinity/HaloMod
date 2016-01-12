@@ -1,5 +1,6 @@
 package halocraft.blocks;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,6 +23,6 @@ public class HaloOre extends Block
 
 	public Item getItemDropped(int metadata, Random random, int fortune)
 	{
-		return halocraft.HaloCraft.spartaniumIngot;
+		return CommonProxy.spartaniumIngot;
 	}
 }

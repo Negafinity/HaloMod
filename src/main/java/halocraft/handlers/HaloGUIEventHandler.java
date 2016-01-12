@@ -4,6 +4,7 @@ import halocraft.entities.EntityElite;
 import halocraft.entities.EntityGrunt;
 import halocraft.entities.EntityPromethean;
 import halocraft.entities.EntityRedElite;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -83,9 +84,10 @@ public class HaloGUIEventHandler extends Gui
 	public void onRenderGameOverlay(RenderGameOverlayEvent event)
 	{
 		ItemStack helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+		
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.HaloCraft.spartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.greenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.blueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.redSpartanHelmet)
+			if (helmet.getItem() == CommonProxy.spartanHelmet || helmet.getItem() == CommonProxy.spartanLockeHelmet || helmet.getItem() == CommonProxy.greenSpartanHelmet || helmet.getItem() == CommonProxy.blueSpartanHelmet || helmet.getItem() == CommonProxy.redSpartanHelmet)
 			{
 				if (event.isCancelable() && event.type == ElementType.HEALTH)
 				{
@@ -93,10 +95,12 @@ public class HaloGUIEventHandler extends Gui
 				}
 			}
 		}
+		
 		if (event.isCancelable() || event.type != ElementType.EXPERIENCE)
 		{
 			return;
 		}
+		
 		// Render Scope (If Z is pressed)
 		if (halocraft.handlers.KeyInputHandler.keyPressed == true)
 		{
@@ -108,11 +112,13 @@ public class HaloGUIEventHandler extends Gui
 			this.mc.renderEngine.bindTexture(brscope);
 			this.drawQuad(0, 0, scaled.getScaledWidth(), scaled.getScaledHeight(), 0F, 0F, 1F, 1F);
 		}
+		
 		// Checking for Spartan Helmet
 		helmet = mc.thePlayer.inventory.armorItemInSlot(3);
+		
 		if (helmet != null)
 		{
-			if (helmet.getItem() == halocraft.HaloCraft.spartanHelmet || helmet.getItem() == halocraft.HaloCraft.spartanLockeHelmet || helmet.getItem() == halocraft.HaloCraft.greenSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.blueSpartanHelmet || helmet.getItem() == halocraft.HaloCraft.redSpartanHelmet)
+			if (helmet.getItem() == CommonProxy.spartanHelmet || helmet.getItem() == CommonProxy.spartanLockeHelmet || helmet.getItem() == CommonProxy.greenSpartanHelmet || helmet.getItem() == CommonProxy.blueSpartanHelmet || helmet.getItem() == CommonProxy.redSpartanHelmet)
 			{
 				// Rendering Top of Halo HUD
 				ScaledResolution scaled = new ScaledResolution(mc);

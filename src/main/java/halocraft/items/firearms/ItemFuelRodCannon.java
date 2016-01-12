@@ -1,8 +1,8 @@
 package halocraft.items.firearms;
 
-import halocraft.HaloCraft;
 import halocraft.entities.EntityPlasmaRocket;
 import halocraft.items.FuelRodCannonTask;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -21,7 +21,7 @@ public class ItemFuelRodCannon extends ItemFirearm
 	{
 		super();
 
-		this.ammo = HaloCraft.ammoPlasmaRocket;
+		this.ammo = CommonProxy.ammoPlasmaRocket;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

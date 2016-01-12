@@ -2,13 +2,13 @@ package halocraft.items.firearms;
 
 import halocraft.entities.EntityBullet;
 import halocraft.items.ItemAmmoAssaultRifle;
-
-import java.util.Random;
-
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class ItemFirearm extends Item
 {	
@@ -19,7 +19,7 @@ public class ItemFirearm extends Item
 	public ItemFirearm()
 	{
 		this.clipRounds = 32;
-		this.setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setMaxStackSize(1);
 		this.setMaxDamage(1000);
 	}

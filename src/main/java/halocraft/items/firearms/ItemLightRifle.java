@@ -1,7 +1,7 @@
 package halocraft.items.firearms;
 
-import halocraft.HaloCraft;
 import halocraft.entities.EntityOrangePlasma;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -16,7 +16,7 @@ public class ItemLightRifle extends ItemFirearm
 		super();
 
 		this.damage = 15;
-		this.ammo = HaloCraft.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoAssaultRifle;
 		this.clipRounds = 32;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

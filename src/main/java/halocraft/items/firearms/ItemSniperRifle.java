@@ -1,8 +1,8 @@
 package halocraft.items.firearms;
 
-import halocraft.HaloCraft;
 import halocraft.entities.EntityBullet;
 import halocraft.items.IntervalTask;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -22,7 +22,7 @@ public class ItemSniperRifle extends ItemFirearm
 		super();
 
 		this.damage = 10;
-		this.ammo = HaloCraft.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

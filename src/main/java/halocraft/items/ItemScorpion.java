@@ -1,6 +1,7 @@
 package halocraft.items;
 
 import halocraft.entities.EntityScorpion;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -25,7 +26,7 @@ public class ItemScorpion extends Item
 	public ItemScorpion()
 	{
 		this.maxStackSize = 1;
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

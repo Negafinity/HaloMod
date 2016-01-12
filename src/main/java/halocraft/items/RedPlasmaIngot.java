@@ -1,5 +1,6 @@
 package halocraft.items;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.item.Item;
 
 public class RedPlasmaIngot extends Item
@@ -10,7 +11,7 @@ public class RedPlasmaIngot extends Item
 	public RedPlasmaIngot()
 	{
 		setMaxStackSize(16);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

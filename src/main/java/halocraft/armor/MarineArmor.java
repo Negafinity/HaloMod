@@ -1,5 +1,6 @@
 package halocraft.armor;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -9,7 +10,7 @@ public class MarineArmor extends ItemArmor
 	public MarineArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	@Override

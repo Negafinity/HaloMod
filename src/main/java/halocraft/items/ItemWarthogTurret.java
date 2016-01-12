@@ -1,6 +1,7 @@
 package halocraft.items;
 
 import halocraft.entities.EntityWarthogTurret;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -25,7 +26,7 @@ public class ItemWarthogTurret extends Item
 	public ItemWarthogTurret()
 	{
 		this.maxStackSize = 1;
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 

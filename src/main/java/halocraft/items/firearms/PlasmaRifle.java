@@ -2,6 +2,7 @@ package halocraft.items.firearms;
 
 import halocraft.entities.EntityGreenPlasma;
 import halocraft.items.ItemAmmoPlasma;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,7 @@ public class PlasmaRifle extends Item
 
 	public PlasmaRifle()
 	{
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 		setMaxStackSize(1);
 		setMaxDamage(1000);
@@ -42,7 +43,7 @@ public class PlasmaRifle extends Item
 
 	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
 	{
-		if (playerIn.inventory.hasItem(halocraft.HaloCraft.ammoPlasma))
+		if (playerIn.inventory.hasItem(CommonProxy.ammoPlasma))
 		{
 			for (ItemStack itemStack : playerIn.inventory.mainInventory)
 			{

@@ -1,6 +1,7 @@
 package halocraft.entities;
 
 import halocraft.items.ItemGhost;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -476,7 +477,7 @@ public class EntityGhost extends Entity
 
 					for (i = 0; i < 2; ++i)
 					{
-						this.dropItemWithOffset(halocraft.HaloCraft.spartaniumIngot, 2, 0.0F);
+						this.dropItemWithOffset(CommonProxy.spartaniumIngot, 2, 0.0F);
 					}
 				}
 

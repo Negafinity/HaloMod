@@ -1,6 +1,6 @@
 package halocraft.armor;
 
-import halocraft.HaloCraft;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -11,7 +11,7 @@ public class GrenadierArmor extends ItemArmor
 	public GrenadierArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
-		this.setCreativeTab(HaloCraft.haloCreativeTab);
+		this.setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	@Override
@@ -19,13 +19,13 @@ public class GrenadierArmor extends ItemArmor
 	{
 		Item item = stack.getItem();
 
-		if (item == HaloCraft.greenGrenadierHelmet || item == HaloCraft.greenGrenadierChestplate
-			|| item == HaloCraft.greenGrenadierLeggings || item == HaloCraft.greenGrenadierBoots)
+		if (item == CommonProxy.greenGrenadierHelmet || item == CommonProxy.greenGrenadierChestplate
+			|| item == CommonProxy.greenGrenadierLeggings || item == CommonProxy.greenGrenadierBoots)
 		{
 			return "halocraft:textures/armor/GreenGrenadierArmor_1.png";
 		}
-		else if(item == HaloCraft.orangeGrenadierHelmet || item == HaloCraft.orangeGrenadierChestplate
-			|| item == HaloCraft.orangeGrenadierLeggings || item == HaloCraft.orangeGrenadierBoots)
+		else if(item == CommonProxy.orangeGrenadierHelmet || item == CommonProxy.orangeGrenadierChestplate
+			|| item == CommonProxy.orangeGrenadierLeggings || item == CommonProxy.orangeGrenadierBoots)
 		{
 			return "halocraft:textures/armor/OrangeGrenadierArmor_1.png";
 		}

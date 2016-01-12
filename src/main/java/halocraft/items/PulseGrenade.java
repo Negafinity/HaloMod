@@ -1,6 +1,7 @@
 package halocraft.items;
 
 import halocraft.entities.EntityPulseGrenade;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ public class PulseGrenade extends Item
 	public PulseGrenade()
 	{
 		setUnlocalizedName("pulseGrenade");
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)

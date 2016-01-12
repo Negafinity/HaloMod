@@ -1,6 +1,6 @@
 package halocraft.items.firearms;
 
-import halocraft.HaloCraft;
+import halocraft.proxies.CommonProxy;
 
 public class ItemBattleRifle extends ItemFirearm
 {
@@ -12,7 +12,7 @@ public class ItemBattleRifle extends ItemFirearm
 		super();
 
 		this.damage = 8;
-		this.ammo = HaloCraft.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

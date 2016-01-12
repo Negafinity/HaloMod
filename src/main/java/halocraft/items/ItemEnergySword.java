@@ -1,6 +1,6 @@
 package halocraft.items;
 
-import halocraft.HaloCraft;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.item.ItemSword;
 
 public class ItemEnergySword extends ItemSword
@@ -11,8 +11,8 @@ public class ItemEnergySword extends ItemSword
 
 	public ItemEnergySword()
 	{
-		super(HaloCraft.haloMaterial);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		super(CommonProxy.haloMaterial);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

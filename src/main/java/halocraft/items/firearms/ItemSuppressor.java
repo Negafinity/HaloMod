@@ -1,10 +1,10 @@
 package halocraft.items.firearms;
 
+import halocraft.entities.EntityOrangePlasma;
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import halocraft.HaloCraft;
-import halocraft.entities.EntityOrangePlasma;
 
 public class ItemSuppressor extends ItemFirearm
 {
@@ -16,7 +16,7 @@ public class ItemSuppressor extends ItemFirearm
 		super();
 
 		this.damage = 7;
-		this.ammo = HaloCraft.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 	

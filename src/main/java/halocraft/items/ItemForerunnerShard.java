@@ -1,5 +1,6 @@
 package halocraft.items;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.item.Item;
 
 public class ItemForerunnerShard extends Item
@@ -10,7 +11,7 @@ public class ItemForerunnerShard extends Item
 	public ItemForerunnerShard()
 	{
 		setMaxStackSize(16);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

@@ -1,5 +1,6 @@
 package halocraft.armor;
 
+import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
@@ -13,7 +14,7 @@ public class ActiveCamoArmor extends ItemArmor
 	public ActiveCamoArmor(ArmorMaterial material, int renderIndex, int armorType)
 	{
 		super(material, renderIndex, armorType);
-		setCreativeTab(halocraft.HaloCraft.haloCreativeTab);
+		setCreativeTab(CommonProxy.haloCreativeTab);
 	}
 
 	@Override
@@ -25,7 +26,7 @@ public class ActiveCamoArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		if (stack.getItem().equals(halocraft.HaloCraft.activeCamoChestplate))
+		if (stack.getItem().equals(CommonProxy.activeCamoChestplate))
 		{
 			return "halocraft:textures/armor/ActiveCamoArmor_layer_1.png";
 		}
