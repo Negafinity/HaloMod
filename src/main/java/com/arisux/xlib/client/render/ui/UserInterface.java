@@ -3,7 +3,6 @@ package com.arisux.xlib.client.render.ui;
 import com.arisux.xlib.client.render.ui.elements.GuiElement;
 import net.minecraft.client.gui.GuiScreen;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class UserInterface extends GuiScreen

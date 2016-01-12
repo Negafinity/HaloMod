@@ -5,10 +5,9 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderMarineEntity extends RenderLiving
+public class RenderMarineEntity extends RenderLiving<EntityMarine>
 {
 	private static final ResourceLocation marineTextures = new ResourceLocation("halocraft:textures/entities/MarineRender.png");
 
@@ -18,13 +17,9 @@ public class RenderMarineEntity extends RenderLiving
 		this.addLayer(new LayerHeldItem(this));
 	}
 
+	@Override
 	protected ResourceLocation getEntityTexture(EntityMarine entity)
 	{
 		return marineTextures;
-	}
-
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return this.getEntityTexture((EntityMarine) entity);
 	}
 }

@@ -1,14 +1,14 @@
 package halocraft.entities.render;
 
+import halocraft.entities.EntityRedPlasma;
 import halocraft.models.ModelBullet;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class RenderRedPlasmaEntity extends Render
+public class RenderRedPlasmaEntity extends Render<EntityRedPlasma>
 {
 	private static final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/RedPlasmaRender.png");
 
@@ -18,13 +18,13 @@ public class RenderRedPlasmaEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	protected ResourceLocation getEntityTexture(EntityRedPlasma entity)
 	{
 		return textures;
 	}
 
 	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
+	public void doRender(EntityRedPlasma entity, double d, double d1, double d2, float f, float f1)
 	{
 		if (entity.ticksExisted < 1)
 			return;
@@ -41,5 +41,4 @@ public class RenderRedPlasmaEntity extends Render
 
 		GL11.glPopMatrix();
 	}
-
 }

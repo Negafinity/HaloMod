@@ -1,14 +1,14 @@
 package halocraft.entities.render;
 
+import halocraft.entities.EntityOrangePlasma;
 import halocraft.models.ModelBullet;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class RenderOrangePlasmaEntity extends Render
+public class RenderOrangePlasmaEntity extends Render<EntityOrangePlasma>
 {
 	private static final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/OrangePlasmaRender.png");
 
@@ -18,13 +18,14 @@ public class RenderOrangePlasmaEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityOrangePlasma entity)
 	{
 		return textures;
 	}
 
 	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
+	public void doRender(EntityOrangePlasma entity, double d, double d1, double d2, float f, float f1)
 	{
 		if (entity.ticksExisted < 1)
 			return;

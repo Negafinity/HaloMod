@@ -4,18 +4,17 @@ import com.arisux.xlib.api.wavefrontapi.Part;
 import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
 import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
 import com.arisux.xlib.client.render.XLibRenderer;
-import halocraft.entities.EntityWarthog;
+import halocraft.entities.EntityScorpion;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderScorpionEntity extends Render
+public class RenderScorpionEntity extends Render<EntityScorpion>
 {
 	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Scorpion", "/assets/halocraft/models/entity/Scorpion");
 
@@ -25,17 +24,14 @@ public class RenderScorpionEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(EntityWarthog entityWarthog)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityScorpion entityWarthog)
 	{
 		return null;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return null;
-	}
-
-	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
+	@Override
+	public void doRender(EntityScorpion entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
 		{

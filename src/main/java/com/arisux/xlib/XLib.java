@@ -1,10 +1,7 @@
 package com.arisux.xlib;
 
-import net.minecraft.client.Minecraft;
-
-import java.util.logging.Logger;
-
 import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
+import net.minecraft.client.Minecraft;
 
 public class XLib
 {

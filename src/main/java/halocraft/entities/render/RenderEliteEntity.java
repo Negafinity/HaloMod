@@ -5,10 +5,9 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEliteEntity extends RenderLiving
+public class RenderEliteEntity extends RenderLiving<EntityElite>
 {
 	private static final ResourceLocation mobTextures = new ResourceLocation("halocraft:textures/entities/EliteRender.png");
 
@@ -18,14 +17,9 @@ public class RenderEliteEntity extends RenderLiving
 		this.addLayer(new LayerHeldItem(this));
 	}
 
+	@Override
 	protected ResourceLocation getEntityTexture(EntityElite entity)
 	{
 		return mobTextures;
-	}
-
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return this.getEntityTexture((EntityElite) entity);
-
 	}
 }

@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.Attributes;
@@ -24,10 +23,11 @@ import org.lwjgl.opengl.GL11;
 import java.io.IOException;
 import java.util.List;
 
-public class RenderRocketEntity extends Render
+public class RenderRocketEntity extends Render<EntityRocket>
 {
 	private static final ResourceLocation rocketTextures = new ResourceLocation("halocraft:textures/entities/RocketRender.png");
 	private static final ModelResourceLocation rocketModelFile = new ModelResourceLocation("halocraft:models/entity/Rocket.b3d");
+	
 	Function<ResourceLocation, TextureAtlasSprite> textureGetter = new Function<ResourceLocation, TextureAtlasSprite>()
 	{
 		public TextureAtlasSprite apply(ResourceLocation location)
@@ -42,12 +42,14 @@ public class RenderRocketEntity extends Render
 		shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityRocket entity)
 	{
 		return rocketTextures;
 	}
 
-	public void render(EntityRocket rocket, double d, double d1, double d2, float f, float f1)
+	@Override
+	public void doRender(EntityRocket rocket, double d, double d1, double d2, float f, float f1)
 	{
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer worldRenderer = tessellator.getWorldRenderer();
@@ -90,11 +92,4 @@ public class RenderRocketEntity extends Render
 		tessellator.draw();
 		GL11.glPopMatrix();
 	}
-
-	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
-	{
-		render((EntityRocket) entity, d, d1, d2, f, f1);
-	}
-
 }

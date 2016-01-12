@@ -1,3 +1,7 @@
+v1.5.141:
+
+Parmaterized EntityRenderers
+
 v1.5.140:
 
 Lang fixes so entities have human-readable names.

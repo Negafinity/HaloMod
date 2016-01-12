@@ -8,15 +8,13 @@ import halocraft.entities.EntityWarthog;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderWarthogEntity extends Render
+public class RenderWarthogEntity extends Render<EntityWarthog>
 {
 	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Warthog", "/assets/halocraft/models/entity/Warthog");
 
@@ -26,6 +24,7 @@ public class RenderWarthogEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
+	@Override
 	public void doRender(EntityWarthog warthogIn, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		double curVelocity = Math.sqrt(warthogIn.motionX * warthogIn.motionX + warthogIn.motionZ * warthogIn.motionZ);
@@ -38,16 +37,14 @@ public class RenderWarthogEntity extends Render
 		{
 			GlStateManager.enableCull();
 			XLibRenderer.translate(posX + 0.5, posY + 0.83, posZ);
+			
 			if (time > 0.0F)
 			{
 				GlStateManager.rotate(MathHelper.sin(time) * time * damage / 10.0F * (float) warthogIn.getForwardDirection(), 1.0F, 0.0F, 0.0F);
 			}
 
-			if (warthogIn.riddenByEntity != null && warthogIn.riddenByEntity instanceof EntityPlayer)
-			{
-				EntityPlayer rider = (EntityPlayer) warthogIn.riddenByEntity;
-				GlStateManager.rotate(-warthogIn.rotationYaw - 90, 0, 1, 0);
-			}
+			GlStateManager.rotate(-warthogIn.rotationYaw - 90, 0, 1, 0);
+
 			for (Part p : model.nameToPartHash.values())
 			{
 				XLibRenderer.pushMatrix();
@@ -77,18 +74,9 @@ public class RenderWarthogEntity extends Render
 		XLibRenderer.popMatrix();
 	}
 
+	@Override
 	protected ResourceLocation getEntityTexture(EntityWarthog entityWarthog)
 	{
 		return null;
-	}
-
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return null;
-	}
-
-	public void doRender(Entity entity, double x, double y, double z, float yaw, float partialTicks)
-	{
-		this.doRender((EntityWarthog) entity, x, y, z, yaw, partialTicks);
 	}
 }

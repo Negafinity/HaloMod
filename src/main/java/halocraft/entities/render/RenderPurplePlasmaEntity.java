@@ -7,11 +7,10 @@ import halocraft.models.ModelBullet;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class RenderPurplePlasmaEntity extends Render
+public class RenderPurplePlasmaEntity extends Render<EntityPurplePlasma>
 {
 	public WavefrontModel needleModel = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Needle", "/assets/halocraft/models/entity/Needle");
 	private static final ResourceLocation plasmaTextures = new ResourceLocation("halocraft:textures/entities/PurplePlasmaRender.png");
@@ -22,27 +21,15 @@ public class RenderPurplePlasmaEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityPurplePlasma entity)
 	{
 		return plasmaTextures;
 	}
 
-	public void render(EntityPurplePlasma plasma, double posX, double posY, double posZ, float f, float f1)
+	@Override
+	public void doRender(EntityPurplePlasma plasma, double posX, double posY, double posZ, float f, float f1)
 	{
-		// if(plasma.damage == 6)
-		// {
-		// XLibRenderer.pushMatrix();
-		// {
-		// XLibRenderer.translate(posX, posY, posZ);
-		// for(Part p: needleModel.nameToPartHash.values())
-		// {
-		// p.draw();
-		// }
-		// }
-		// XLibRenderer.popMatrix();
-		// }
-		// else
-		// {
 		bindEntityTexture(plasma);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float) posX, (float) posY, (float) posZ);
@@ -52,13 +39,5 @@ public class RenderPurplePlasmaEntity extends Render
 		if (model != null)
 			model.render(plasma, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
 		GL11.glPopMatrix();
-		// }
 	}
-
-	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
-	{
-		render((EntityPurplePlasma) entity, d, d1, d2, f, f1);
-	}
-
 }

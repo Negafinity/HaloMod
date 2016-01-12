@@ -5,11 +5,10 @@ import halocraft.models.ModelBullet;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class RenderGreenPlasmaEntity extends Render
+public class RenderGreenPlasmaEntity extends Render<EntityGreenPlasma>
 {
 	private static final ResourceLocation plasmaTextures = new ResourceLocation("halocraft:textures/entities/GreenPlasmaRender.png");
 
@@ -19,12 +18,14 @@ public class RenderGreenPlasmaEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityGreenPlasma entity)
 	{
 		return plasmaTextures;
 	}
 
-	public void render(EntityGreenPlasma plasma, double d, double d1, double d2, float f, float f1)
+	@Override
+	public void doRender(EntityGreenPlasma plasma, double d, double d1, double d2, float f, float f1)
 	{
 		if (plasma.ticksExisted < 1)
 			return;
@@ -38,11 +39,4 @@ public class RenderGreenPlasmaEntity extends Render
 			model.render(plasma, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
 		GL11.glPopMatrix();
 	}
-
-	@Override
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1)
-	{
-		render((EntityGreenPlasma) entity, d, d1, d2, f, f1);
-	}
-
 }

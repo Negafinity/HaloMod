@@ -4,17 +4,16 @@ import com.arisux.xlib.api.wavefrontapi.Part;
 import com.arisux.xlib.api.wavefrontapi.WavefrontAPI;
 import com.arisux.xlib.api.wavefrontapi.WavefrontModel;
 import com.arisux.xlib.client.render.XLibRenderer;
-import halocraft.entities.EntityWarthog;
+import halocraft.entities.EntityGhost;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderGhostEntity extends Render
+public class RenderGhostEntity extends Render<EntityGhost>
 {
 	public WavefrontModel model = WavefrontAPI.instance().loadModel(halocraft.HaloCraft.class, "halocraft", "Ghost", "/assets/halocraft/models/entity/Ghost");
 
@@ -24,17 +23,14 @@ public class RenderGhostEntity extends Render
 		this.shadowSize = 0.5F;
 	}
 
-	protected ResourceLocation getEntityTexture(EntityWarthog entityWarthog)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityGhost entityWarthog)
 	{
 		return null;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return null;
-	}
-
-	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
+	@Override
+	public void doRender(EntityGhost entity, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		XLibRenderer.pushMatrix();
 		{

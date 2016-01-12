@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.IBakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.Attributes;
@@ -24,7 +23,7 @@ import org.lwjgl.opengl.GL11;
 import java.io.IOException;
 import java.util.List;
 
-public class RenderBulletEntity extends Render
+public class RenderBulletEntity extends Render<EntityBullet>
 {
 	private static final ResourceLocation bulletTextures = new ResourceLocation("halocraft:textures/entities/BulletRender.png");
 	private static final ModelResourceLocation bulletModelFile = new ModelResourceLocation("halocraft:models/entity/Bullet.b3d");
@@ -43,18 +42,20 @@ public class RenderBulletEntity extends Render
 		this.shadowSize = 0.25F;
 	}
 
-	protected ResourceLocation getEntityTexture(Entity entity)
+	@Override
+	protected ResourceLocation getEntityTexture(EntityBullet entity)
 	{
 		return bulletTextures;
 	}
 
-	public void render(EntityBullet bullet, double posX, double posY, double posZ, float yaw, float partialTicks)
+	@Override
+	public void doRender(EntityBullet bullet, double posX, double posY, double posZ, float yaw, float partialTicks)
 	{
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer worldRenderer = tessellator.getWorldRenderer();
 		if (bullet.ticksExisted < 1)
 			return;
-		
+
 		bindEntityTexture(bullet);
 
 		GL11.glPushMatrix();
@@ -72,19 +73,19 @@ public class RenderBulletEntity extends Render
 			{
 				bulletModel = ModelLoaderRegistry.getMissingModel();
 			}
-			
+
 			IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
 			worldRenderer.begin(7, Attributes.DEFAULT_BAKED_FORMAT);
-			
+
 			// Get Quads
 			List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
-			
+
 			for (BakedQuad q : generalQuads)
 			{
 				int[] vd = q.getVertexData();
 				worldRenderer.addVertexData(vd);
 			}
-			
+
 			for (EnumFacing face : EnumFacing.values())
 			{
 				List<BakedQuad> faceQuads = bakedBullet.getFaceQuads(face);
@@ -98,11 +99,4 @@ public class RenderBulletEntity extends Render
 		}
 		GL11.glPopMatrix();
 	}
-
-	@Override
-	public void doRender(Entity entity, double posX, double posY, double posZ, float yaw, float partialTicks)
-	{
-		render((EntityBullet) entity, posX, posY, posZ, yaw, partialTicks);
-	}
-
 }
