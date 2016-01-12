@@ -54,11 +54,11 @@ public class Vertex
 	{
 		if (uv == null)
 		{
-			XLibRenderer.tessellator().getWorldRenderer().func_181662_b(x, y, z).func_181675_d();
+			XLibRenderer.tessellator().getWorldRenderer().pos(x, y, z).endVertex();
 		}
 		else
 		{
-		    XLibRenderer.tessellator().getWorldRenderer().func_181662_b(x, y, (double) z).func_181673_a(uv.getU(), uv.getV()).func_181675_d();
+		    XLibRenderer.tessellator().getWorldRenderer().pos(x, y, (double) z).tex(uv.getU(), uv.getV()).endVertex();
 		}
 		
 		return this;

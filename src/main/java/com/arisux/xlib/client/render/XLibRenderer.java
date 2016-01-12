@@ -281,11 +281,11 @@ public class XLibRenderer
 
     public static void drawQuad(int x1, int y1, int x2, int y2, int z, float minU, float maxU, float minV, float maxV)
     {
-        worldRenderer().func_181668_a(7, DefaultVertexFormats.field_181707_g);
-        worldRenderer().func_181662_b(x1, y2, (double) z).func_181673_a(minU, maxV).func_181675_d();
-        worldRenderer().func_181662_b(x2, y2, (double) z).func_181673_a(maxU, maxV).func_181675_d();
-        worldRenderer().func_181662_b(x2, y1, (double) z).func_181673_a(maxU, minV).func_181675_d();
-        worldRenderer().func_181662_b(x1, y1, (double) z).func_181673_a(minU, minV).func_181675_d();
+        worldRenderer().begin(7, DefaultVertexFormats.POSITION_TEX);
+        worldRenderer().pos(x1, y2, (double) z).tex(minU, maxV).endVertex();
+        worldRenderer().pos(x2, y2, (double) z).tex(maxU, maxV).endVertex();
+        worldRenderer().pos(x2, y1, (double) z).tex(maxU, minV).endVertex();
+        worldRenderer().pos(x1, y1, (double) z).tex(minU, minV).endVertex();
         tessellator().draw();
     }
 

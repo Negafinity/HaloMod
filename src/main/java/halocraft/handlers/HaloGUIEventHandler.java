@@ -71,11 +71,11 @@ public class HaloGUIEventHandler extends Gui
 	protected void drawQuad(int x, int y, int w, int h, float minU, float minV, float maxU, float maxV)
 	{
 		WorldRenderer tessellator = Tessellator.getInstance().getWorldRenderer();
-		tessellator.func_181668_a(7, DefaultVertexFormats.field_181707_g); // StartDrawingQuads
-		tessellator.func_181662_b(x + 0, y + h, (double) zLevel).func_181673_a(minU, maxV).func_181675_d();
-		tessellator.func_181662_b(x + w, y + h, (double) zLevel).func_181673_a(maxU, maxV).func_181675_d();
-		tessellator.func_181662_b(x + w, y + 0, (double) zLevel).func_181673_a(maxU, minV).func_181675_d();
-		tessellator.func_181662_b(x + 0, y + 0, (double) zLevel).func_181673_a(minU, minV).func_181675_d();
+		tessellator.begin(7, DefaultVertexFormats.POSITION_TEX); // StartDrawingQuads
+		tessellator.pos(x + 0, y + h, (double) zLevel).tex(minU, maxV).endVertex();
+		tessellator.pos(x + w, y + h, (double) zLevel).tex(maxU, maxV).endVertex();
+		tessellator.pos(x + w, y + 0, (double) zLevel).tex(maxU, minV).endVertex();
+		tessellator.pos(x + 0, y + 0, (double) zLevel).tex(minU, minV).endVertex();
 		Tessellator.getInstance().draw();
 	}
 

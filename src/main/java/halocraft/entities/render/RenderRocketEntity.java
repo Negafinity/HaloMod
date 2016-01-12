@@ -70,7 +70,7 @@ public class RenderRocketEntity extends Render
 			e.printStackTrace();
 		}
 		IBakedModel bakedRocket = rocketModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-		worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);// StartDrawingQuads
+		worldRenderer.begin(7, Attributes.DEFAULT_BAKED_FORMAT);// StartDrawingQuads
 		// Get Quads
 		List<BakedQuad> generalQuads = bakedRocket.getGeneralQuads();
 		for (BakedQuad q : generalQuads)

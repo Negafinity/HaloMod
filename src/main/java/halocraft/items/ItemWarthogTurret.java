@@ -57,7 +57,7 @@ public class ItemWarthogTurret extends Item
 			Vec3 vec32 = playerIn.getLook(f);
 			boolean flag = false;
 			float f9 = 1.0F;
-			List list = worldIn.getEntitiesWithinAABBExcludingEntity(playerIn, playerIn.getEntityBoundingBox().addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double) f9, (double) f9, (double) f9));
+			List<Entity> list = worldIn.getEntitiesWithinAABBExcludingEntity(playerIn, playerIn.getEntityBoundingBox().addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double) f9, (double) f9, (double) f9));
 
 			for (int i = 0; i < list.size(); ++i)
 			{

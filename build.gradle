@@ -28,9 +28,9 @@ tasks.withType(JavaCompile) {
 }
 
 minecraft {
-    version = "1.8.8-11.15.0.1628-1.8.8"
+    version = "1.8.9-11.15.0.1695"
     runDir = "run"
-    mappings = "snapshot_20151122"
+    mappings = "stable_20"
 }
 
 curseforge {
@@ -39,7 +39,7 @@ curseforge {
 		id = '232011'
 		changelog = 'Look at the CHANGELOG.txt to see changes.'
 		releaseType = 'beta'
-		addGameVersion '1.8.8'
+		addGameVersion '1.8.9'
 		
 		mainArtifact(jar) {
 			displayName = "${project.archivesBaseName} ${project.version}"

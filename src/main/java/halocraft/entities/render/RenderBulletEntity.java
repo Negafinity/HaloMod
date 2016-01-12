@@ -54,6 +54,7 @@ public class RenderBulletEntity extends Render
 		WorldRenderer worldRenderer = tessellator.getWorldRenderer();
 		if (bullet.ticksExisted < 1)
 			return;
+		
 		bindEntityTexture(bullet);
 
 		GL11.glPushMatrix();
@@ -71,15 +72,19 @@ public class RenderBulletEntity extends Render
 			{
 				bulletModel = ModelLoaderRegistry.getMissingModel();
 			}
+			
 			IBakedModel bakedBullet = bulletModel.bake((TRSRTransformation.identity()), Attributes.DEFAULT_BAKED_FORMAT, textureGetter);
-			worldRenderer.func_181668_a(7, Attributes.DEFAULT_BAKED_FORMAT);
+			worldRenderer.begin(7, Attributes.DEFAULT_BAKED_FORMAT);
+			
 			// Get Quads
 			List<BakedQuad> generalQuads = bakedBullet.getGeneralQuads();
+			
 			for (BakedQuad q : generalQuads)
 			{
 				int[] vd = q.getVertexData();
 				worldRenderer.addVertexData(vd);
 			}
+			
 			for (EnumFacing face : EnumFacing.values())
 			{
 				List<BakedQuad> faceQuads = bakedBullet.getFaceQuads(face);
