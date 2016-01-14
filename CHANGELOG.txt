@@ -1,3 +1,7 @@
+v1.5.142:
+
+Bug fixes + Updated Textures.
+
 v1.5.141:
 
 Parmaterized EntityRenderers

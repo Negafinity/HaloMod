@@ -82,6 +82,7 @@ item.itemRubber.name=Rubber
 item.ammoPlasma.name=Plasma
 item.halocraft:itemrocketlauncher.name=Rocket Launcher
 item.ammoAssaultRifle.name=Magazine
+item.ammoLightRifle.name=Light Rifle Ammo
 item.halocraft:greenplasmaingot.name=Green Plasma Ingot
 item.halocraft:itemghost.name=Ghost
 item.halocraft:itemcarbineammo.name=Carbine Ammo

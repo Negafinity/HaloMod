@@ -16,7 +16,7 @@ public class ItemLightRifle extends ItemFirearm
 		super();
 
 		this.damage = 15;
-		this.ammo = CommonProxy.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoLightRifle;
 		this.clipRounds = 32;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

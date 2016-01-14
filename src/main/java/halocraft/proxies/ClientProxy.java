@@ -277,6 +277,9 @@ public class ClientProxy extends CommonProxy
 
 		ModelResourceLocation res43 = new ModelResourceLocation("halocraft:" + ItemForerunnerShard.name, "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemForerunnerShard.instance, 0, res43);
+		
+		ModelResourceLocation res44 = new ModelResourceLocation("halocraft:ammoLightRifle", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.ammoLightRifle, 0, res44);
 	}
 
 	@Override
@@ -383,10 +386,10 @@ public class ClientProxy extends CommonProxy
 
 	public void registerHandlers()
 	{
-		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
+		MinecraftForge.EVENT_BUS.register(new KeyInputHandler());
 		KeyBindings.init();
 		MinecraftForge.EVENT_BUS.register(new HaloGUIEventHandler(Minecraft.getMinecraft()));
 		MinecraftForge.EVENT_BUS.register(new VehicleEventHandler());
-		FMLCommonHandler.instance().bus().register(new HaloEventHandler());
+		MinecraftForge.EVENT_BUS.register(new HaloEventHandler());
 	}
 }
