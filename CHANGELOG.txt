@@ -1,3 +1,7 @@
+v1.5.144:
+
+Added Recon crafting recipes
+
 v1.5.143:
 
 Preparing for release.

@@ -638,7 +638,7 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(ammoPrometheanMagazine, 1), new Object[] { "   ", "XXY", "   ", 'X', RedPlasmaIngot.instance, 'Y', ItemForerunnerShard.instance });
 		GameRegistry.addRecipe(new ItemStack(itemFusionCoil, 1), new Object[] { "   ", "XYX", "   ", 'X', itemFusionCoil, 'Y', SteelIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(itemAntiChip, 1), new Object[] { "XXX", "YYY", "XXX", 'X', TitaniumIngot.instance, 'Y', RedPlasmaIngot.instance });
-		
+
 		GameRegistry.addRecipe(new ItemStack(jetpack, 1), new Object[] { "XXX", "YXY", " Z ", 'X', TitaniumIngot.instance, 'Y', itemFusionCoil, 'Z', new ItemStack(Items.leather) });
 
 		// Red Spartan Armor
@@ -676,6 +676,18 @@ public class CommonProxy
 		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierChestplate, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierChestplate);
 		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierLeggings, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierBoots, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierBoots);
+
+		// Red Recon Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(redReconHelmet, 1), new ItemStack(Items.dye, 1, 1), reconHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(redReconChestplate, 1), new ItemStack(Items.dye, 1, 1), reconChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(redReconLeggings, 1), new ItemStack(Items.dye, 1, 1), reconLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(redReconBoots, 1), new ItemStack(Items.dye, 1, 1), reconBoots);
+
+		// Blue Recon Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(blueReconHelmet, 1), new ItemStack(Items.dye, 1, 6), reconHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueReconChestplate, 1), new ItemStack(Items.dye, 1, 6), reconChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueReconLeggings, 1), new ItemStack(Items.dye, 1, 6), reconLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(blueReconBoots, 1), new ItemStack(Items.dye, 1, 6), reconBoots);
 
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
