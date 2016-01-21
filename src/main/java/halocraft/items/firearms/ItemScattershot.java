@@ -16,7 +16,7 @@ public class ItemScattershot extends ItemFirearm
 		super();
 
 		this.damage = 10;
-		this.ammo = CommonProxy.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoPrometheanMagazine;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 	

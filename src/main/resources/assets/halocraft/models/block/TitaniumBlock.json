@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/TitaniumBlock",
+        "up": "halocraft:blocks/TitaniumBlock",
+        "north": "halocraft:blocks/TitaniumBlock",
+        "east": "halocraft:blocks/TitaniumBlock",
+        "south": "halocraft:blocks/TitaniumBlock",
+        "west": "halocraft:blocks/TitaniumBlock",
+        "particle": "blocks/lapis_block"
+    }
+}

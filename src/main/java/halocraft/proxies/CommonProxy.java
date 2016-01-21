@@ -18,6 +18,8 @@ import halocraft.blocks.HaloOre;
 import halocraft.blocks.PurplePlasmaBlock;
 import halocraft.blocks.RedPlasmaBlock;
 import halocraft.blocks.RoofBlock;
+import halocraft.blocks.SteelBlock;
+import halocraft.blocks.TitaniumBlock;
 import halocraft.creativetabs.HaloCreativeTab;
 import halocraft.entities.EntityBlueElite;
 import halocraft.entities.EntityBullet;
@@ -43,12 +45,14 @@ import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
 import halocraft.items.ItemAmmoAssaultRifle;
-import halocraft.items.ItemAmmoLightRifle;
 import halocraft.items.ItemAmmoPlasma;
 import halocraft.items.ItemAmmoPlasmaRocket;
+import halocraft.items.ItemAmmoPrometheanMagazine;
+import halocraft.items.ItemAntiChip;
 import halocraft.items.ItemCarbineAmmo;
 import halocraft.items.ItemEnergySword;
 import halocraft.items.ItemForerunnerShard;
+import halocraft.items.ItemFusionCoil;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
 import halocraft.items.ItemMongoose;
@@ -66,7 +70,9 @@ import halocraft.items.PulseGrenade;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
 import halocraft.items.SpartaniumIngot;
+import halocraft.items.SteelIngot;
 import halocraft.items.TankHarvester;
+import halocraft.items.TitaniumIngot;
 import halocraft.items.firearms.ItemAssaultRifle;
 import halocraft.items.firearms.ItemBattleRifle;
 import halocraft.items.firearms.ItemBoltshot;
@@ -117,10 +123,12 @@ public class CommonProxy
 	public static Item spartaniumIngot;
 	public static Item ammoRocket;
 	public static Item ammoAssaultRifle;
-	public static Item ammoLightRifle;
+	public static Item ammoPrometheanMagazine;
 	public static Item ammoPlasma;
 	public static Item itemWheel;
 	public static Item itemOil;
+	public static Item itemAntiChip;
+	public static Item itemFusionCoil;
 	public static Item ammoPlasmaRocket;
 	public static Item tankHarvester;
 	public static Item itemRubber;
@@ -221,6 +229,7 @@ public class CommonProxy
 
 	// Armor Material
 	public static ArmorMaterial haloArmor;
+	public static ArmorMaterial spartanLockeArmor;
 	public static ArmorMaterial covenantArmor;
 	public static ArmorMaterial activeCamoArmor;
 	public static ArmorMaterial prometheanArmor;
@@ -235,8 +244,9 @@ public class CommonProxy
 	{
 		haloMaterial = EnumHelper.addToolMaterial("HaloMaterial", 3, 1750, 9.0F, 6.0F, 10);
 		prometheanMaterial = EnumHelper.addToolMaterial("PrometheanMaterial", 3, 1750, 9.0F, 8.0F, 10);
-		prometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[] { 6, 9, 7, 5 }, 30);
 		haloArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/HaloArmor", 75, new int[] { 5, 7, 7, 5 }, 30);
+		spartanLockeArmor = EnumHelper.addArmorMaterial("HaloArmor", "halocraft:textures/models/armor/SpartanLockeArmor", 75, new int[] { 6, 7, 6, 6 }, 30);
+		prometheanArmor = EnumHelper.addArmorMaterial("PrometheanArmor", "halocraft:textures/models/armor/PrometheanArmor", 100, new int[] { 6, 9, 7, 5 }, 30);
 		covenantArmor = EnumHelper.addArmorMaterial("CovenantArmor", "halocraft:textures/models/armor/CovenantArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
 		marineArmor = EnumHelper.addArmorMaterial("MarineArmor", "halocraft:textures/models/armor/MarineArmor", 50, new int[] { 5, 6, 6, 5 }, 30);
 		activeCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[] { 6, 6, 10, 8 }, 30);
@@ -246,12 +256,14 @@ public class CommonProxy
 	{
 		spartaniumIngot = new SpartaniumIngot();
 		itemOil = new ItemOil();
+		itemAntiChip = new ItemAntiChip();
+		itemFusionCoil = new ItemFusionCoil();
 		itemWheel = new ItemWheel();
 		itemRubber = new ItemRubber();
 		ammoPlasmaRocket = new ItemAmmoPlasmaRocket();
 		tankHarvester = new TankHarvester();
 		ammoPlasma = new ItemAmmoPlasma();
-		ammoLightRifle = new ItemAmmoLightRifle();
+		ammoPrometheanMagazine = new ItemAmmoPrometheanMagazine();
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
 		ammoAssaultRifle = new ItemAmmoAssaultRifle();
@@ -263,10 +275,10 @@ public class CommonProxy
 		prometheanBoots = new PrometheanArmor(prometheanArmor, BOOT_ID, 3).setUnlocalizedName("PrometheanBoots");
 
 		// Spartan Locke Armor
-		spartanLockeHelmet = new SpartanLockeArmor(haloArmor, HELMET_ID, 0).setUnlocalizedName("SpartanLockeHelmet");
-		spartanLockeChestplate = new SpartanLockeArmor(haloArmor, CHESTPLATE_ID, 1).setUnlocalizedName("SpartanLockeChestplate");
-		spartanLockeLeggings = new SpartanLockeArmor(haloArmor, LEGGING_ID, 2).setUnlocalizedName("SpartanLockeLeggings");
-		spartanLockeBoots = new SpartanLockeArmor(haloArmor, BOOT_ID, 3).setUnlocalizedName("SpartanLockeBoots");
+		spartanLockeHelmet = new SpartanLockeArmor(spartanLockeArmor, HELMET_ID, 0).setUnlocalizedName("SpartanLockeHelmet");
+		spartanLockeChestplate = new SpartanLockeArmor(spartanLockeArmor, CHESTPLATE_ID, 1).setUnlocalizedName("SpartanLockeChestplate");
+		spartanLockeLeggings = new SpartanLockeArmor(spartanLockeArmor, LEGGING_ID, 2).setUnlocalizedName("SpartanLockeLeggings");
+		spartanLockeBoots = new SpartanLockeArmor(spartanLockeArmor, BOOT_ID, 3).setUnlocalizedName("SpartanLockeBoots");
 
 		// Grenadier Armor
 		greenGrenadierHelmet = new GrenadierArmor(marineArmor, HELMET_ID, 0).setUnlocalizedName("GreenGrenadierHelmet");
@@ -342,6 +354,8 @@ public class CommonProxy
 		// Register Items
 		GameRegistry.registerItem(itemWheel, "itemWheel");
 		GameRegistry.registerItem(itemOil, "itemOil");
+		GameRegistry.registerItem(itemAntiChip, "itemAntiChip");
+		GameRegistry.registerItem(itemFusionCoil, "itemFusionCoil");
 		GameRegistry.registerItem(covenantPiece, "covenantPiece");
 		GameRegistry.registerItem(spartaniumIngot, "SpartaniumIngot");
 		GameRegistry.registerItem(ammoRocket, "ammoRocket");
@@ -350,7 +364,7 @@ public class CommonProxy
 		GameRegistry.registerItem(ammoPlasmaRocket, "ammoPlasmaRocket");
 		GameRegistry.registerItem(itemRubber, "itemRubber");
 		GameRegistry.registerItem(ammoPlasma, "ammoPlasma");
-		GameRegistry.registerItem(ammoLightRifle, "ammoLightRifle");
+		GameRegistry.registerItem(ammoPrometheanMagazine, "ammoPrometheanMagazine");
 		GameRegistry.registerItem(tankHarvester, "TankHarvester");
 		GameRegistry.registerItem(prometheanHelmet, "prometheanHelmet");
 		GameRegistry.registerItem(prometheanChestplate, "PrometheanChestplate");
@@ -413,7 +427,7 @@ public class CommonProxy
 		GameRegistry.registerItem(covenantLeggings, "CovenantLeggings");
 		GameRegistry.registerItem(covenantBoots, "CovenantBoots");
 		GameRegistry.registerItem(activeCamoChestplate, "ActiveCamoChestplate");
-		
+
 		GameRegistry.registerItem(ItemMongoose.instance, ItemMongoose.name);
 		GameRegistry.registerItem(ItemWarthogTurret.instance, ItemWarthogTurret.name);
 		GameRegistry.registerItem(FragGrenade.instance, FragGrenade.name);
@@ -434,6 +448,8 @@ public class CommonProxy
 		GameRegistry.registerItem(Pistol.instance, Pistol.name);
 		GameRegistry.registerItem(ItemNeedlerAmmo.instance, ItemNeedlerAmmo.name);
 		GameRegistry.registerItem(RedPlasmaIngot.instance, RedPlasmaIngot.name);
+		GameRegistry.registerItem(TitaniumIngot.instance, TitaniumIngot.name);
+		GameRegistry.registerItem(SteelIngot.instance, SteelIngot.name);
 		GameRegistry.registerItem(ItemSniperRifle.instance, ItemSniperRifle.name);
 		GameRegistry.registerItem(ItemLightRifle.instance, ItemLightRifle.name);
 		GameRegistry.registerItem(ItemScorpion.instance, ItemScorpion.name);
@@ -455,13 +471,15 @@ public class CommonProxy
 		GameRegistry.registerBlock(greenPlasmaOre, "GreenPlasmaOre");
 		GameRegistry.registerBlock(purplePlasmaOre, "PurplePlasmaOre");
 		GameRegistry.registerBlock(forerunnerOre, "ForerunnerOre");
-		
+
 		GameRegistry.registerBlock(RedPlasmaBlock.instance, RedPlasmaBlock.name);
 		GameRegistry.registerBlock(PurplePlasmaBlock.instance, PurplePlasmaBlock.name);
 		GameRegistry.registerBlock(RoofBlock.instance, RoofBlock.name);
 		GameRegistry.registerBlock(ForerunnerWallBlock.instance, ForerunnerWallBlock.name);
 		GameRegistry.registerBlock(ForerunnerFloorBlock.instance, ForerunnerFloorBlock.name);
 		GameRegistry.registerBlock(HaloBlock.instance, HaloBlock.name);
+		GameRegistry.registerBlock(SteelBlock.instance, SteelBlock.name);
+		GameRegistry.registerBlock(TitaniumBlock.instance, TitaniumBlock.name);
 	}
 
 	public void registerEntities()
@@ -522,9 +540,11 @@ public class CommonProxy
 	}
 
 	public void registerCraftingRecipies()
-	{	
+	{
 		// Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', spartaniumIngot });
+		GameRegistry.addRecipe(new ItemStack(TitaniumBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', TitaniumIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(SteelBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', SteelBlock.instance });
 		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', PurplePlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(RedPlasmaBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(itemRubber, 2), new Object[] { "XXX", "XXX", "XXX", 'X', itemOil });
@@ -552,6 +572,24 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(spartanLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', spartaniumIngot });
 		GameRegistry.addRecipe(new ItemStack(spartanBoots, 1), new Object[] { "X X", "X X", 'X', spartaniumIngot });
 
+		// Spartan Locke Armor
+		GameRegistry.addRecipe(new ItemStack(spartanLockeHelmet, 1), new Object[] { "XXX", "XYX", "XXX", 'X', TitaniumIngot.instance, 'Y', spartanHelmet });
+		GameRegistry.addRecipe(new ItemStack(spartanLockeChestplate, 1), new Object[] { "XXX", "XYX", "XXX", 'X', TitaniumIngot.instance, 'Y', spartanChestplate });
+		GameRegistry.addRecipe(new ItemStack(spartanLockeLeggings, 1), new Object[] { "XXX", "XYX", "XXX", 'X', TitaniumIngot.instance, 'Y', spartanLeggings });
+		GameRegistry.addRecipe(new ItemStack(spartanLockeBoots, 1), new Object[] { "XXX", "XYX", "XXX", 'X', TitaniumIngot.instance, 'Y', spartanBoots });
+
+		// Recon Armor
+		GameRegistry.addRecipe(new ItemStack(reconHelmet, 1), new Object[] { "XXX", "X X", 'X', SteelIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(reconChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', SteelIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(reconLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', SteelIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(reconBoots, 1), new Object[] { "X X", "X X", 'X', SteelIngot.instance });
+
+		// Grenadier Armor
+		GameRegistry.addRecipe(new ItemStack(greenGrenadierHelmet, 1), new Object[] { "XXX", "X X", 'X', TitaniumIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(greenGrenadierChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', TitaniumIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(greenGrenadierLeggings, 1), new Object[] { "XXX", "X X", "X X", 'X', TitaniumIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(greenGrenadierBoots, 1), new Object[] { "X X", "X X", 'X', TitaniumIngot.instance });
+
 		// Promethean Armor
 		GameRegistry.addRecipe(new ItemStack(prometheanHelmet, 1), new Object[] { "XXX", "X X", 'X', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(prometheanChestplate, 1), new Object[] { "X X", "XXX", "XXX", 'X', RedPlasmaIngot.instance });
@@ -570,6 +608,7 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(covenantBoots, 1), new Object[] { "X X", "X X", 'X', covenantPiece });
 		GameRegistry.addRecipe(new ItemStack(ammoRocket, 5), new Object[] { " X ", " X ", " YZ", 'X', spartaniumIngot, 'Y', new ItemStack(Items.gunpowder), 'Z', new ItemStack(Items.string) });
 		GameRegistry.addRecipe(new ItemStack(ammoPlasmaRocket, 5), new Object[] { " X ", " X ", " YZ", 'X', GreenPlasmaIngot.instance, 'Y', new ItemStack(Items.gunpowder), 'Z', new ItemStack(Items.string) });
+
 		GameRegistry.addRecipe(new ItemStack(ItemRedPlasmaAmmo.instance, 1), new Object[] { " X ", " X ", " YZ", 'X', RedPlasmaIngot.instance, 'Y', new ItemStack(Items.gunpowder), 'Z', new ItemStack(Items.string) });
 		GameRegistry.addRecipe(new ItemStack(ItemMongoose.instance, 1), new Object[] { "X  ", "YYY", "ZYZ", 'X', spartaniumIngot, 'Y', HaloBlock.instance, 'Z', itemWheel });
 
@@ -577,7 +616,7 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(ForerunnerFloorBlock.instance, 1), new Object[] { "XX ", "XX ", 'X', new ItemStack(ItemForerunnerShard.instance) });
 		GameRegistry.addRecipe(new ItemStack(ForerunnerWallBlock.instance, 1), new Object[] { "XX ", "XX ", 'X', new ItemStack(ForerunnerFloorBlock.instance) });
 		GameRegistry.addRecipe(new ItemStack(RoofBlock.instance, 1), new Object[] { "XX ", "XX ", 'X', new ItemStack(ForerunnerWallBlock.instance) });
-		
+
 		GameRegistry.addRecipe(new ItemStack(itemWheel, 1), new Object[] { "XXX", "XYX", "XXX", 'X', itemRubber, 'Y', Items.iron_ingot });
 		GameRegistry.addRecipe(new ItemStack(ItemEnergySword.instance, 1), new Object[] { " X ", " X ", " Y ", 'X', PurplePlasmaIngot.instance, 'Y', new ItemStack(Items.stick) });
 		GameRegistry.addRecipe(new ItemStack(PrometheanSword.instance, 1), new Object[] { " X ", " X ", " Y ", 'X', RedPlasmaIngot.instance, 'Y', new ItemStack(Items.stick) });
@@ -591,15 +630,17 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(ItemNeedler.instance, 1), new Object[] { "XXX", "YYY", "  Y", 'X', ItemNeedlerAmmo.instance, 'Y', PurplePlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(PlasmaRifle.instance, 1), new Object[] { "YY ", " XY", "YY ", 'X', ammoPlasma, 'Y', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(FragGrenade.instance, 1), new Object[] { " X ", "XYX", "XXX", 'X', new ItemStack(Items.iron_ingot), 'Y', new ItemStack(Blocks.tnt) });
+
+		GameRegistry.addRecipe(new ItemStack(ItemScattershot.instance, 1), new Object[] { "X  ", "YYY", "YZZ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine });
+		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "XY ", "YYY", "YZA", 'X', new ItemStack(Blocks.stained_glass_pane, 1, 14), 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine, 'A', itemOil });
+		GameRegistry.addRecipe(new ItemStack(ItemSuppressor.instance, 1), new Object[] { "   ", "XYY", "YY ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(ItemBoltshot.instance, 1), new Object[] { "   ", "XYY", "Y  ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(ammoPrometheanMagazine, 1), new Object[] { "   ", "XXY", "   ", 'X', RedPlasmaIngot.instance, 'Y', ItemForerunnerShard.instance });
+		GameRegistry.addRecipe(new ItemStack(itemFusionCoil, 1), new Object[] { "   ", "XYX", "   ", 'X', itemFusionCoil, 'Y', SteelIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(itemAntiChip, 1), new Object[] { "XXX", "YYY", "XXX", 'X', TitaniumIngot.instance, 'Y', RedPlasmaIngot.instance });
 		
-		//TODO: Fix these
-		GameRegistry.addRecipe(new ItemStack(ItemScattershot.instance, 1), new Object[] { "X  ", "YYY", "YZZ", 'X', itemOil, 'Y', RedPlasmaIngot.instance, 'Z', ammoLightRifle });
-		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "XY ", "YYY", "YZA", 'X', new ItemStack(Blocks.stained_glass_pane, 1, 14), 'Y', RedPlasmaIngot.instance, 'Z', ammoLightRifle, 'A', itemOil });
-		GameRegistry.addRecipe(new ItemStack(ItemSuppressor.instance, 1), new Object[] { "   ", "XYY", "YY ", 'X', itemOil, 'Y', RedPlasmaIngot.instance});
-		GameRegistry.addRecipe(new ItemStack(ItemBoltshot.instance, 1), new Object[] { "   ", "XYY", "Y  ", 'X', itemOil, 'Y', RedPlasmaIngot.instance});
-		
-		GameRegistry.addRecipe(new ItemStack(jetpack, 1), new Object[] { "XXX", "YXY", " Z ", 'X', itemOil, 'Y', itemOil, 'Z', new ItemStack(Items.leather)});
-		
+		GameRegistry.addRecipe(new ItemStack(jetpack, 1), new Object[] { "XXX", "YXY", " Z ", 'X', TitaniumIngot.instance, 'Y', itemFusionCoil, 'Z', new ItemStack(Items.leather) });
+
 		// Red Spartan Armor
 		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanHelmet, 1), new ItemStack(Items.dye, 1, 1), spartanHelmet);
 		GameRegistry.addShapelessRecipe(new ItemStack(redSpartanChestplate, 1), new ItemStack(Items.dye, 1, 1), spartanChestplate);
@@ -630,9 +671,18 @@ public class CommonProxy
 		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanLeggings, 1), new ItemStack(Items.dye, 1, 6), spartanLeggings);
 		GameRegistry.addShapelessRecipe(new ItemStack(blueSpartanBoots, 1), new ItemStack(Items.dye, 1, 6), spartanBoots);
 
+		// Orange Grenadier Armor
+		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierHelmet, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierHelmet);
+		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierChestplate, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierChestplate);
+		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierLeggings, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierLeggings);
+		GameRegistry.addShapelessRecipe(new ItemStack(orangeGrenadierBoots, 1), new ItemStack(Items.dye, 1, 14), greenGrenadierBoots);
+
 		GameRegistry.addShapelessRecipe(new ItemStack(covenantPiece, 1), new ItemStack(Items.blaze_rod, 1), new ItemStack(Items.coal, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemHealthPack.instance, 1), new ItemStack(Items.nether_wart, 1), new ItemStack(Items.speckled_melon, 1), new ItemStack(Blocks.wool, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(activeCamoChestplate, 1), new ItemStack(Items.golden_carrot, 1), new ItemStack(Items.fermented_spider_eye, 1), new ItemStack(Items.nether_wart, 1), spartanChestplate);
+
+		GameRegistry.addShapelessRecipe(new ItemStack(SteelIngot.instance, 1), Items.iron_ingot, spartaniumIngot);
+		GameRegistry.addShapelessRecipe(new ItemStack(TitaniumIngot.instance, 1), SteelIngot.instance, spartaniumIngot);
 
 		GameRegistry.addSmelting(haloOre, new ItemStack(spartaniumIngot, 1), 0.1f);
 		GameRegistry.addSmelting(new ItemStack(Blocks.dirt), new ItemStack(itemOil, 1), 0.1f);

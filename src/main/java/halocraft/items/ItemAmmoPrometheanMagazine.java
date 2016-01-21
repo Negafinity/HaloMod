@@ -3,12 +3,12 @@ package halocraft.items;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.item.Item;
 
-public class ItemAmmoLightRifle extends Item
+public class ItemAmmoPrometheanMagazine extends Item
 {
-	public ItemAmmoLightRifle()
+	public ItemAmmoPrometheanMagazine()
 	{
 		setCreativeTab(CommonProxy.haloCreativeTab);
-		setUnlocalizedName("ammoLightRifle");
+		setUnlocalizedName("ammoPrometheanMagazine");
 		setMaxStackSize(1);
 		setMaxDamage(32);
 	}

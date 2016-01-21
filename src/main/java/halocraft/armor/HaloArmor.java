@@ -16,7 +16,12 @@ public class HaloArmor extends ItemArmor
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer)
 	{
-		if (stack.getItem().equals(CommonProxy.spartanHelmet) || stack.getItem().equals(CommonProxy.jetpack) || stack.getItem().equals(CommonProxy.spartanChestplate) || stack.getItem().equals(CommonProxy.spartanBoots))
+		if(stack.getItem().equals(CommonProxy.jetpack))
+		{
+			return "halocraft:textures/armor/Jetpack_layer_1.png";
+		}
+		
+		if (stack.getItem().equals(CommonProxy.spartanHelmet) || stack.getItem().equals(CommonProxy.spartanChestplate) || stack.getItem().equals(CommonProxy.spartanBoots))
 		{
 			return "halocraft:textures/armor/HaloArmor_layer_1.png";
 		}
@@ -25,6 +30,7 @@ public class HaloArmor extends ItemArmor
 		{
 			return "halocraft:textures/armor/HaloArmor_layer_2.png";
 		}
+		
 		if (stack.getItem().equals(CommonProxy.redSpartanHelmet) || stack.getItem().equals(CommonProxy.redSpartanChestplate) || stack.getItem().equals(CommonProxy.redSpartanBoots))
 		{
 			return "halocraft:textures/armor/RedHaloArmor_layer_1.png";
@@ -43,6 +49,7 @@ public class HaloArmor extends ItemArmor
 		{
 			return "halocraft:textures/armor/GreenHaloArmor_layer_2.png";
 		}
+		
 		if (stack.getItem().equals(CommonProxy.blueSpartanHelmet) || stack.getItem().equals(CommonProxy.blueSpartanChestplate) || stack.getItem().equals(CommonProxy.blueSpartanBoots))
 		{
 			return "halocraft:textures/armor/BlueHaloArmor_layer_1.png";

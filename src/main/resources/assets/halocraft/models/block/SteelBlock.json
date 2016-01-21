@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "down": "halocraft:blocks/SteelBlock",
+        "up": "halocraft:blocks/SteelBlock",
+        "north": "halocraft:blocks/SteelBlock",
+        "east": "halocraft:blocks/SteelBlock",
+        "south": "halocraft:blocks/SteelBlock",
+        "west": "halocraft:blocks/SteelBlock",
+        "particle": "blocks/stone"
+    }
+}

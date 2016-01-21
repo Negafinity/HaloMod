@@ -16,7 +16,7 @@ public class ItemSuppressor extends ItemFirearm
 		super();
 
 		this.damage = 7;
-		this.ammo = CommonProxy.ammoAssaultRifle;
+		this.ammo = CommonProxy.ammoPrometheanMagazine;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 	

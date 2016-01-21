@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "halocraft:items/LightRifleAmmo"
+		"layer0": "halocraft:items/PrometheanMagazine"
 	},
 	"display": {
 		"thirdperson": {

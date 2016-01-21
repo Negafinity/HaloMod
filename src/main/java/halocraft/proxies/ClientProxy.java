@@ -6,6 +6,8 @@ import halocraft.blocks.ForerunnerFloorBlock;
 import halocraft.blocks.ForerunnerWallBlock;
 import halocraft.blocks.HaloBlock;
 import halocraft.blocks.RoofBlock;
+import halocraft.blocks.SteelBlock;
+import halocraft.blocks.TitaniumBlock;
 import halocraft.entities.EntityBlueElite;
 import halocraft.entities.EntityBullet;
 import halocraft.entities.EntityElite;
@@ -65,6 +67,8 @@ import halocraft.items.PrometheanSword;
 import halocraft.items.PulseGrenade;
 import halocraft.items.PurplePlasmaIngot;
 import halocraft.items.RedPlasmaIngot;
+import halocraft.items.SteelIngot;
+import halocraft.items.TitaniumIngot;
 import halocraft.items.firearms.ItemAssaultRifle;
 import halocraft.items.firearms.ItemBattleRifle;
 import halocraft.items.firearms.ItemBoltshot;
@@ -88,7 +92,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy
@@ -278,8 +281,23 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation res43 = new ModelResourceLocation("halocraft:" + ItemForerunnerShard.name, "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemForerunnerShard.instance, 0, res43);
 		
-		ModelResourceLocation res44 = new ModelResourceLocation("halocraft:ammoLightRifle", "inventory");
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.ammoLightRifle, 0, res44);
+		ModelResourceLocation res44 = new ModelResourceLocation("halocraft:ammoPrometheanMagazine", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.ammoPrometheanMagazine, 0, res44);
+		
+		ModelResourceLocation steelIngotRes = new ModelResourceLocation("halocraft:SteelIngot", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SteelIngot.instance, 0, steelIngotRes);
+		
+		ModelResourceLocation titaniumIngotRes = new ModelResourceLocation("halocraft:TitaniumIngot", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(TitaniumIngot.instance, 0, titaniumIngotRes);
+		
+		ModelResourceLocation jetPackRes = new ModelResourceLocation("halocraft:Jetpack", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.jetpack, 0, jetPackRes);
+		
+		ModelResourceLocation antiChipRes = new ModelResourceLocation("halocraft:itemAntiChip", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.itemAntiChip, 0, antiChipRes);
+		
+		ModelResourceLocation fusionCoilRes = new ModelResourceLocation("halocraft:itemFusionCoil", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.itemFusionCoil, 0, fusionCoilRes);
 	}
 
 	@Override
@@ -323,6 +341,8 @@ public class ClientProxy extends CommonProxy
 		Item itemRoofBlock = GameRegistry.findItem("halocraft", RoofBlock.name);
 		Item itemWallBlock = GameRegistry.findItem("halocraft", ForerunnerWallBlock.name);
 		Item itemFloorBlock = GameRegistry.findItem("halocraft", ForerunnerFloorBlock.name);
+		Item itemTitaniumBlock = GameRegistry.findItem("halocraft", TitaniumBlock.name);
+		Item itemSteelBlock = GameRegistry.findItem("halocraft", SteelBlock.name);
 
 		ModelResourceLocation forerunnerOreBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerOre", "inventory");
 		ModelResourceLocation roofBlockResourceLocation = new ModelResourceLocation("halocraft:RoofBlock", "inventory");
@@ -335,6 +355,8 @@ public class ClientProxy extends CommonProxy
 		ModelResourceLocation greenPlasmaOreModelResourceLocation = new ModelResourceLocation("halocraft:GreenPlasmaOre", "inventory");
 		ModelResourceLocation purplePlasmaOreModelResourceLocation = new ModelResourceLocation("halocraft:PurplePlasmaOre", "inventory");
 		ModelResourceLocation redPlasmaBlockModelResourceLocation = new ModelResourceLocation("halocraft:RedPlasmaBlock", "inventory");
+		ModelResourceLocation titaniumBlockModelResourceLocation = new ModelResourceLocation("halocraft:TitaniumBlock", "inventory");
+		ModelResourceLocation steelBlockModelResourceLocation = new ModelResourceLocation("halocraft:SteelBlock", "inventory");
 
 		final int DEFAULT_ITEM_SUBTYPE = 0;
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemHaloOre, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
@@ -348,6 +370,8 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemWallBlock, DEFAULT_ITEM_SUBTYPE, wallBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemFloorBlock, DEFAULT_ITEM_SUBTYPE, floorBlockResourceLocation);
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemForerunnerOre, DEFAULT_ITEM_SUBTYPE, forerunnerOreBlockResourceLocation);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemTitaniumBlock, DEFAULT_ITEM_SUBTYPE, titaniumBlockModelResourceLocation);
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSteelBlock, DEFAULT_ITEM_SUBTYPE, steelBlockModelResourceLocation);
 	}
 
 	public void registerCustomModelResources()
