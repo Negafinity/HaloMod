@@ -551,7 +551,6 @@ public class CommonProxy
 
 		// Gun Recipes
 		GameRegistry.addRecipe(new ItemStack(ItemBattleRifle.instance, 1), new Object[] { "ZA ", "XXY", " AX", 'X', spartaniumIngot, 'Y', new ItemStack(Items.gunpowder), 'Z', new ItemStack(Blocks.glass_pane), 'A', new ItemStack(Items.iron_ingot) });
-		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "ZX ", "YXX", " XX", 'X', RedPlasmaIngot.instance, 'Y', ItemRedPlasmaAmmo.instance, 'Z', new ItemStack(Blocks.stained_glass_pane, 1, 14) });
 		GameRegistry.addRecipe(new ItemStack(Pistol.instance, 1), new Object[] { "   ", " XY", "  Z", 'X', spartaniumIngot, 'Y', new ItemStack(Items.gunpowder), 'Z', new ItemStack(Items.iron_ingot) });
 		GameRegistry.addRecipe(new ItemStack(ItemSniperRifle.instance, 1), new Object[] { "XYX", "ZYY", " IY", 'X', new ItemStack(Blocks.glass_pane), 'Y', spartaniumIngot, 'Z', new ItemStack(Items.gunpowder), 'I', new ItemStack(Items.iron_ingot) });
 
@@ -632,7 +631,7 @@ public class CommonProxy
 		GameRegistry.addRecipe(new ItemStack(FragGrenade.instance, 1), new Object[] { " X ", "XYX", "XXX", 'X', new ItemStack(Items.iron_ingot), 'Y', new ItemStack(Blocks.tnt) });
 
 		GameRegistry.addRecipe(new ItemStack(ItemScattershot.instance, 1), new Object[] { "X  ", "YYY", "YZZ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine });
-		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "XY ", "YYY", "YZA", 'X', new ItemStack(Blocks.stained_glass_pane, 1, 14), 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine, 'A', itemOil });
+		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "XY ", "YYY", "YZA", 'X', new ItemStack(Blocks.stained_glass_pane, 1, 14), 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine, 'A', itemAntiChip });
 		GameRegistry.addRecipe(new ItemStack(ItemSuppressor.instance, 1), new Object[] { "XYY", "YY ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(ItemBoltshot.instance, 1), new Object[] { "XYY", "Y  ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(ammoPrometheanMagazine, 1), new Object[] { "XXY", 'X', RedPlasmaIngot.instance, 'Y', ItemForerunnerShard.instance });
