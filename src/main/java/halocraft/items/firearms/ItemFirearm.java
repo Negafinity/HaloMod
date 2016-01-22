@@ -1,7 +1,6 @@
 package halocraft.items.firearms;
 
 import halocraft.entities.EntityBullet;
-import halocraft.items.ItemAmmoAssaultRifle;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -48,7 +47,7 @@ public class ItemFirearm extends Item
 		{
 			for (ItemStack itemStack : playerIn.inventory.mainInventory)
 			{
-				if (itemStack != null && itemStack.getItem() != null && itemStack.getItem() instanceof ItemAmmoAssaultRifle)
+				if (itemStack != null && itemStack.getItem() != null && this.ammo.getUnlocalizedName().equals(itemStack.getItem().getUnlocalizedName()))
 				{
 					if (itemStack.getItemDamage() < this.clipRounds)
 					{
