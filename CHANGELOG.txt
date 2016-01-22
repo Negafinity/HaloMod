@@ -1,3 +1,7 @@
+v1.5.145:
+
+Updated Recon Armor Textures.
+
 v1.5.144:
 
 Added Recon crafting recipes
