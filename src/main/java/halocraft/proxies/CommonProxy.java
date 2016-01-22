@@ -633,10 +633,10 @@ public class CommonProxy
 
 		GameRegistry.addRecipe(new ItemStack(ItemScattershot.instance, 1), new Object[] { "X  ", "YYY", "YZZ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine });
 		GameRegistry.addRecipe(new ItemStack(ItemLightRifle.instance, 1), new Object[] { "XY ", "YYY", "YZA", 'X', new ItemStack(Blocks.stained_glass_pane, 1, 14), 'Y', RedPlasmaIngot.instance, 'Z', ammoPrometheanMagazine, 'A', itemOil });
-		GameRegistry.addRecipe(new ItemStack(ItemSuppressor.instance, 1), new Object[] { "   ", "XYY", "YY ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(ItemBoltshot.instance, 1), new Object[] { "   ", "XYY", "Y  ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(ammoPrometheanMagazine, 1), new Object[] { "   ", "XXY", "   ", 'X', RedPlasmaIngot.instance, 'Y', ItemForerunnerShard.instance });
-		GameRegistry.addRecipe(new ItemStack(itemFusionCoil, 1), new Object[] { "   ", "XYX", "   ", 'X', itemFusionCoil, 'Y', SteelIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(ItemSuppressor.instance, 1), new Object[] { "XYY", "YY ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(ItemBoltshot.instance, 1), new Object[] { "XYY", "Y  ", 'X', itemAntiChip, 'Y', RedPlasmaIngot.instance });
+		GameRegistry.addRecipe(new ItemStack(ammoPrometheanMagazine, 1), new Object[] { "XXY", 'X', RedPlasmaIngot.instance, 'Y', ItemForerunnerShard.instance });
+		GameRegistry.addRecipe(new ItemStack(itemFusionCoil, 1), new Object[] { "XYX", 'X', itemFusionCoil, 'Y', SteelIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(itemAntiChip, 1), new Object[] { "XXX", "YYY", "XXX", 'X', TitaniumIngot.instance, 'Y', RedPlasmaIngot.instance });
 
 		GameRegistry.addRecipe(new ItemStack(jetpack, 1), new Object[] { "XXX", "YXY", " Z ", 'X', TitaniumIngot.instance, 'Y', itemFusionCoil, 'Z', new ItemStack(Items.leather) });
