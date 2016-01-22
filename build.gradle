@@ -17,9 +17,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
 
-version = "v1.5.${System.env.BUILD_NUMBER}"
+version = "v1.5"
 group= "io.github.hsyyid"
-archivesBaseName = "halocraft-2.0-DEV"
+archivesBaseName = "halocraft-2.0"
 
 tasks.withType(JavaCompile) {
 	sourceCompatibility = "1.6"
@@ -38,7 +38,7 @@ curseforge {
 	project {
 		id = '232011'
 		changelog = 'Look at the CHANGELOG.txt to see changes.'
-		releaseType = 'beta'
+		releaseType = 'release'
 		addGameVersion '1.8.9'
 		
 		mainArtifact(jar) {
