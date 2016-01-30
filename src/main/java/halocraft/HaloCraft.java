@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 public class HaloCraft
 {
 	public static final String MODID = "halocraft";
-	public static final String VERSION = "1.5";
+	public static final String VERSION = "1.6";
 	
 	@SidedProxy(clientSide = "halocraft.proxies.ClientProxy", serverSide = "halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
