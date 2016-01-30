@@ -17,9 +17,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
 
-version = "v1.6-DEV"
+version = "v1.6-DEV.${System.env.BUILD_NUMBER}"
 group= "io.github.hsyyid"
-archivesBaseName = "halocraft-2.0"
+archivesBaseName = "halocraft-2.0-DEV"
 
 tasks.withType(JavaCompile) {
 	sourceCompatibility = "1.6"
