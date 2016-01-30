@@ -44,7 +44,6 @@ import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
-import halocraft.items.ItemMagazine;
 import halocraft.items.ItemAmmoPlasma;
 import halocraft.items.ItemAmmoPlasmaRocket;
 import halocraft.items.ItemAmmoPrometheanMagazine;
@@ -55,6 +54,7 @@ import halocraft.items.ItemForerunnerShard;
 import halocraft.items.ItemFusionCoil;
 import halocraft.items.ItemGhost;
 import halocraft.items.ItemHealthPack;
+import halocraft.items.ItemMagazine;
 import halocraft.items.ItemMongoose;
 import halocraft.items.ItemNeedlerAmmo;
 import halocraft.items.ItemOil;
@@ -694,6 +694,12 @@ public class CommonProxy
 
 		GameRegistry.addShapelessRecipe(new ItemStack(SteelIngot.instance, 1), Items.iron_ingot, spartaniumIngot);
 		GameRegistry.addShapelessRecipe(new ItemStack(TitaniumIngot.instance, 1), SteelIngot.instance, spartaniumIngot);
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(TitaniumIngot.instance, 9), TitaniumBlock.instance);
+		GameRegistry.addShapelessRecipe(new ItemStack(SteelIngot.instance, 9), SteelBlock.instance);
+		GameRegistry.addShapelessRecipe(new ItemStack(RedPlasmaIngot.instance, 9), RedPlasmaBlock.instance);
+		GameRegistry.addShapelessRecipe(new ItemStack(PurplePlasmaIngot.instance, 9), PurplePlasmaBlock.instance);
+		GameRegistry.addShapelessRecipe(new ItemStack(spartaniumIngot, 9), HaloBlock.instance);
 
 		GameRegistry.addSmelting(haloOre, new ItemStack(spartaniumIngot, 1), 0.1f);
 		GameRegistry.addSmelting(new ItemStack(Blocks.dirt), new ItemStack(itemOil, 1), 0.1f);

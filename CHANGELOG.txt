@@ -1,3 +1,7 @@
+v1.6.148:
+
+Added crafting recipes for blocks.
+
 v1.6.146:
 
 Fixed stack sizes of ingots and ammo.
