@@ -9,7 +9,7 @@ public class ItemAmmoPlasma extends Item
 	{
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("ammoPlasma");
-		setMaxStackSize(1);
+		setMaxStackSize(64);
 		setMaxDamage(32);
 	}
 }

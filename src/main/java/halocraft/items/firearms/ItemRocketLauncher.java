@@ -3,25 +3,22 @@ package halocraft.items.firearms;
 import halocraft.entities.EntityRocket;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemRocketLauncher extends Item
+public class ItemRocketLauncher extends ItemFirearm
 {
-	// Following is so you can access it in pre-init
 	public static final ItemRocketLauncher instance = new ItemRocketLauncher();
 	public static final String name = "itemRocketLauncher";
 
 	public ItemRocketLauncher()
 	{
 		super();
-		setCreativeTab(CommonProxy.haloCreativeTab);
-		setUnlocalizedName("halocraft:" + name.toLowerCase());
-		setMaxStackSize(1);
-		setMaxDamage(1000);
+
+		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
 		if (playerIn.capabilities.isCreativeMode || playerIn.inventory.consumeInventoryItem(CommonProxy.ammoRocket))

@@ -1,3 +1,7 @@
+v1.6.146:
+
+Fixed stack sizes of ingots and ammo.
+
 v1.5.145:
 
 Updated Recon Armor Textures.

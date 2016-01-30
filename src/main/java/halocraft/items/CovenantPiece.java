@@ -9,6 +9,6 @@ public class CovenantPiece extends Item
 	{
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("CovenantPiece");
-		setMaxStackSize(16);
+		setMaxStackSize(64);
 	}
 }

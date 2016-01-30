@@ -15,14 +15,14 @@ public class ItemIncinerationCannon extends ItemFirearm
 	{
 		super();
 
-		this.ammo = ItemRedPlasmaAmmo.instance;
+		this.ammoItem = ItemRedPlasmaAmmo.instance;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
-		if (playerIn.capabilities.isCreativeMode || playerIn.inventory.consumeInventoryItem(this.ammo))
+		if (playerIn.capabilities.isCreativeMode || playerIn.inventory.consumeInventoryItem(this.ammoItem))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 

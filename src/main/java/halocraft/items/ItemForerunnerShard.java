@@ -10,7 +10,7 @@ public class ItemForerunnerShard extends Item
 
 	public ItemForerunnerShard()
 	{
-		setMaxStackSize(16);
+		setMaxStackSize(64);
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

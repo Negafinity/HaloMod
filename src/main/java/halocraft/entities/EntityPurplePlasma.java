@@ -2,14 +2,12 @@ package halocraft.entities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityPurplePlasma extends EntityThrowable
+public class EntityPurplePlasma extends EntityBullet
 {
-	public int damage = 6;
 	public EntityGrunt shotByGrunt;
 	public Entity shootingEntity;
 
@@ -28,38 +26,24 @@ public class EntityPurplePlasma extends EntityThrowable
 		super(par1World, par2, par4, par6);
 	}
 
+	@Override
 	protected void onImpact(MovingObjectPosition movingobjectpos)
 	{
-		if (movingobjectpos.entityHit != null)
+		if (!this.worldObj.isRemote)
 		{
-			if (this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit)
-				;
-			else if (this.shootingEntity != null && this.shootingEntity == movingobjectpos.entityHit)
-				;
-			else
+			if (movingobjectpos.entityHit != null)
 			{
-				if (!(this.worldObj.isRemote))
+				if (this.shotByGrunt != null && this.shotByGrunt == movingobjectpos.entityHit)
+					;
+				else if (this.shootingEntity != null && this.shootingEntity == movingobjectpos.entityHit)
+					;
+				else
 				{
 					movingobjectpos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
-					this.setDead();
 				}
+
+				this.setDead();
 			}
-		}
-	}
-
-	@Override
-	protected float getGravityVelocity()
-	{
-		return 0F;
-	}
-
-	@Override
-	public void onUpdate()
-	{
-		super.onUpdate();
-		if (this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
-		{
-			this.setDead();
 		}
 	}
 }

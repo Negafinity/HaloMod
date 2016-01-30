@@ -9,7 +9,7 @@ public class ItemAmmoPrometheanMagazine extends Item
 	{
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("ammoPrometheanMagazine");
-		setMaxStackSize(1);
+		setMaxStackSize(64);
 		setMaxDamage(32);
 	}
 }

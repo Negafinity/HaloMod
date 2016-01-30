@@ -10,7 +10,7 @@ public class ItemNeedlerAmmo extends Item
 
 	public ItemNeedlerAmmo()
 	{
-		setMaxStackSize(1);
+		setMaxStackSize(64);
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setMaxDamage(32);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());

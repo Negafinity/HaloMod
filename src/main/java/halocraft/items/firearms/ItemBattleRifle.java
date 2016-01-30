@@ -12,7 +12,7 @@ public class ItemBattleRifle extends ItemFirearm
 		super();
 
 		this.damage = 8;
-		this.ammo = CommonProxy.ammoAssaultRifle;
+		this.ammoItem = CommonProxy.ammoAssaultRifle;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 }

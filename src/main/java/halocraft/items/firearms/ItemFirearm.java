@@ -2,18 +2,21 @@ package halocraft.items.firearms;
 
 import halocraft.entities.EntityBullet;
 import halocraft.proxies.CommonProxy;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import java.util.Random;
+import java.lang.reflect.Constructor;
 
 public class ItemFirearm extends Item
 {
-	public Item ammo;
+	public Item ammoItem;
 	public int damage;
 	public int clipRounds;
+	public int remainingBullets = 0;
+	public Class<? extends EntityBullet> bulletClass;
 
 	public ItemFirearm()
 	{
@@ -23,20 +26,29 @@ public class ItemFirearm extends Item
 		this.setMaxDamage(1000);
 	}
 
+	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn)
 	{
 		if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 		{
 			worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-			
+
 			if (!worldIn.isRemote)
 			{
-				EntityBullet bullet = new EntityBullet(worldIn, playerIn);
-				bullet.damage = this.damage;
-				worldIn.spawnEntityInWorld(bullet);
-				itemStackIn.damageItem(1, playerIn);
+				try
+				{
+					Constructor<? extends EntityBullet> bulletConstructor = bulletClass.getConstructor(new Class[] { World.class, EntityLivingBase.class });
+					EntityBullet bullet = bulletConstructor.newInstance(new Object[] { worldIn, (EntityLivingBase) playerIn });
+					bullet.damage = this.damage;
+					worldIn.spawnEntityInWorld(bullet);
+					itemStackIn.damageItem(1, playerIn);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
 			}
-			
+
 			return itemStackIn;
 		}
 
@@ -45,26 +57,30 @@ public class ItemFirearm extends Item
 
 	public boolean canDamageAmmo(World worldIn, EntityPlayer playerIn)
 	{
-		if (playerIn.inventory.hasItem(this.ammo))
+		if (!worldIn.isRemote)
 		{
-			for (ItemStack itemStack : playerIn.inventory.mainInventory)
+			if (playerIn.inventory.hasItem(this.ammoItem))
 			{
-				if (itemStack != null && itemStack.getItem() != null && this.ammo.getUnlocalizedName().equals(itemStack.getItem().getUnlocalizedName()))
+				for (ItemStack itemStack : playerIn.inventory.mainInventory)
 				{
-					if (itemStack.getItemDamage() < this.clipRounds)
+					if (itemStack != null && itemStack.getItem() != null && this.ammoItem.getUnlocalizedName().equals(itemStack.getItem().getUnlocalizedName()))
 					{
-						itemStack.attemptDamageItem(1, new Random());
-					}
-					else
-					{
-						playerIn.inventory.consumeInventoryItem(itemStack.getItem());
-					}
+						if (this.remainingBullets > 0)
+						{
+							this.remainingBullets--;
+						}
+						else
+						{
+							playerIn.inventory.consumeInventoryItem(this.ammoItem);
+							this.remainingBullets = this.clipRounds;
+						}
 
-					return true;
+						return true;
+					}
 				}
 			}
 		}
-		
+
 		return false;
 	}
 }

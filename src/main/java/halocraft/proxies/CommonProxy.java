@@ -44,7 +44,7 @@ import halocraft.entities.EntityWarthogTurret;
 import halocraft.items.CovenantPiece;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
-import halocraft.items.ItemAmmoAssaultRifle;
+import halocraft.items.ItemMagazine;
 import halocraft.items.ItemAmmoPlasma;
 import halocraft.items.ItemAmmoPlasmaRocket;
 import halocraft.items.ItemAmmoPrometheanMagazine;
@@ -266,7 +266,7 @@ public class CommonProxy
 		ammoPrometheanMagazine = new ItemAmmoPrometheanMagazine();
 		covenantPiece = new CovenantPiece();
 		ammoRocket = new ItemRocket();
-		ammoAssaultRifle = new ItemAmmoAssaultRifle();
+		ammoAssaultRifle = new ItemMagazine();
 
 		// Promethean Armor
 		prometheanHelmet = new PrometheanArmor(prometheanArmor, HELMET_ID, 0).setUnlocalizedName("prometheanHelmet");

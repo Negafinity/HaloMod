@@ -10,7 +10,7 @@ public class TitaniumIngot extends Item
 
 	public TitaniumIngot()
 	{
-		setMaxStackSize(16);
+		setMaxStackSize(64);
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

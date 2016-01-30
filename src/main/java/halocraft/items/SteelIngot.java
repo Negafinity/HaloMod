@@ -10,7 +10,7 @@ public class SteelIngot extends Item
 
 	public SteelIngot()
 	{
-		setMaxStackSize(16);
+		setMaxStackSize(64);
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}

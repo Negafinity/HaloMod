@@ -27,14 +27,13 @@ public class EntityBullet extends EntityThrowable
 
 	protected void onImpact(MovingObjectPosition movingObjectPos)
 	{
-		if (movingObjectPos.entityHit != null)
-		{
-			movingObjectPos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
-			this.setDead();
-		}
-		
 		if (!this.worldObj.isRemote)
 		{
+			if (movingObjectPos.entityHit != null)
+			{
+				movingObjectPos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
+			}
+			
 			this.setDead();
 		}
 	}
@@ -43,6 +42,7 @@ public class EntityBullet extends EntityThrowable
 	public void onUpdate()
 	{
 		super.onUpdate();
+
 		if (this.motionX < 0.001 && this.motionY < 0.001 && this.motionZ < 0.001)
 		{
 			this.setDead();

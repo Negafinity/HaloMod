@@ -7,7 +7,7 @@ public class SpartaniumIngot extends Item
 {
 	public SpartaniumIngot()
 	{
-		setMaxStackSize(16);
+		setMaxStackSize(64);
 		setCreativeTab(CommonProxy.haloCreativeTab);
 		setUnlocalizedName("SpartaniumIngot");
 	}

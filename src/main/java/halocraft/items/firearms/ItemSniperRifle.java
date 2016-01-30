@@ -1,7 +1,7 @@
 package halocraft.items.firearms;
 
 import halocraft.entities.EntityBullet;
-import halocraft.items.IntervalTask;
+import halocraft.items.SniperRifleTask;
 import halocraft.proxies.CommonProxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -22,7 +22,8 @@ public class ItemSniperRifle extends ItemFirearm
 		super();
 
 		this.damage = 10;
-		this.ammo = CommonProxy.ammoAssaultRifle;
+		this.ammoItem = CommonProxy.ammoAssaultRifle;
+		this.bulletClass = EntityBullet.class;
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 	}
 
@@ -34,6 +35,7 @@ public class ItemSniperRifle extends ItemFirearm
 			if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
 			{
 				worldIn.playSoundAtEntity(playerIn, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+				
 				if (!worldIn.isRemote)
 				{
 					EntityBullet bullet = new EntityBullet(worldIn, playerIn);
@@ -41,7 +43,7 @@ public class ItemSniperRifle extends ItemFirearm
 					worldIn.spawnEntityInWorld(bullet);
 					itemStackIn.damageItem(1, playerIn);
 					canShoot = false;
-					t.schedule(new IntervalTask(this), 1000);
+					t.schedule(new SniperRifleTask(this), 1000);
 				}
 
 				return itemStackIn;
