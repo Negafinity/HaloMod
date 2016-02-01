@@ -19,7 +19,6 @@ public class FireMessageHandler implements IMessageHandler<FireMessage, IMessage
 	@Override
 	public IMessage onMessage(FireMessage message, MessageContext ctx)
 	{
-
 		final EntityPlayerMP serverPlayerIn = ctx.getServerHandler().playerEntity;
 		final World worldIn = serverPlayerIn.worldObj;
 		WorldServer mainThread = (WorldServer) (serverPlayerIn.worldObj);

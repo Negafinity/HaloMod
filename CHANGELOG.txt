@@ -1,3 +1,7 @@
+v1.6.162:
+
+Bug fixes for Jetpacks.
+
 v1.6.148:
 
 Added crafting recipes for blocks.
