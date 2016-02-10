@@ -1,3 +1,7 @@
+v1.6.163:
+
+Added Spartan Laser
+
 v1.6.162:
 
 Bug fixes for Jetpacks.

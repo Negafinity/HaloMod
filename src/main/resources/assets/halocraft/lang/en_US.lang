@@ -115,6 +115,7 @@ item.halocraft:needler.name=Needler
 item.halocraft:itemscorpion.name=Scorpion
 item.halocraft:pistol.name=UNSC G6 Pistol
 item.halocraft:plasmarifle.name=Plasma Rifle
+item.halocraft:itemspartanlaser.name=Spartan Laser
 item.TankHarvester.name=Tank Harvester
 
 tile.GreenPlasmaOre.name=Green Plasma Ore

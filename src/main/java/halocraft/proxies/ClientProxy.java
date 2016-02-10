@@ -46,9 +46,9 @@ import halocraft.entities.render.RenderRocketEntity;
 import halocraft.entities.render.RenderScorpionEntity;
 import halocraft.entities.render.RenderWarthogEntity;
 import halocraft.entities.render.RenderWarthogTurretEntity;
-import halocraft.handlers.PlayerTickHandler;
 import halocraft.handlers.HaloGUIEventHandler;
 import halocraft.handlers.KeyInputHandler;
+import halocraft.handlers.PlayerTickHandler;
 import halocraft.handlers.VehicleEventHandler;
 import halocraft.items.FragGrenade;
 import halocraft.items.GreenPlasmaIngot;
@@ -80,6 +80,7 @@ import halocraft.items.firearms.ItemNeedler;
 import halocraft.items.firearms.ItemRocketLauncher;
 import halocraft.items.firearms.ItemScattershot;
 import halocraft.items.firearms.ItemSniperRifle;
+import halocraft.items.firearms.ItemSpartanLaser;
 import halocraft.items.firearms.ItemSuppressor;
 import halocraft.items.firearms.Pistol;
 import halocraft.items.firearms.PlasmaRifle;
@@ -406,6 +407,7 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(ItemRedPlasmaAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemRedPlasmaAmmo.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemScattershot.instance, 0, new ModelResourceLocation("halocraft:" + ItemScattershot.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemSuppressor.instance, 0, new ModelResourceLocation("halocraft:" + ItemSuppressor.name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(ItemSpartanLaser.instance, 0, new ModelResourceLocation("halocraft:" + ItemSpartanLaser.name, "inventory"));
 	}
 
 	public void registerHandlers()
