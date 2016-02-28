@@ -1,4 +1,4 @@
-HaloCraft 2.0 ![Build Status](173.79.220.242:8080/buildStatus/icon?job=HaloCraft 2.0)
+HaloCraft 2.0 [![Build Status](173.79.220.242:8080/buildStatus/icon?job=HaloCraft 2.0)](173.79.220.242:8080/job/HaloCraft%202.0/)
 =============
 A Minecraft Forge Mod that adds the universe of Halo to Minecraft!
 
