@@ -546,7 +546,7 @@ public class CommonProxy
 		// Block Recipes
 		GameRegistry.addRecipe(new ItemStack(HaloBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', spartaniumIngot });
 		GameRegistry.addRecipe(new ItemStack(TitaniumBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', TitaniumIngot.instance });
-		GameRegistry.addRecipe(new ItemStack(SteelBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', SteelBlock.instance });
+		GameRegistry.addRecipe(new ItemStack(SteelBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', SteelIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(PurplePlasmaBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', PurplePlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(RedPlasmaBlock.instance, 1), new Object[] { "XXX", "XXX", "XXX", 'X', RedPlasmaIngot.instance });
 		GameRegistry.addRecipe(new ItemStack(itemRubber, 2), new Object[] { "XXX", "XXX", "XXX", 'X', itemOil });

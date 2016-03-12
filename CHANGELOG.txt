@@ -1,3 +1,7 @@
+v1.6.164:
+
+Fixed incorrect Steel Block recipe.
+
 v1.6.163:
 
 Added Spartan Laser
