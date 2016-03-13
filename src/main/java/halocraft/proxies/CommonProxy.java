@@ -83,6 +83,7 @@ import halocraft.items.firearms.ItemLightRifle;
 import halocraft.items.firearms.ItemNeedler;
 import halocraft.items.firearms.ItemRocketLauncher;
 import halocraft.items.firearms.ItemScattershot;
+import halocraft.items.firearms.ItemShotgun;
 import halocraft.items.firearms.ItemSniperRifle;
 import halocraft.items.firearms.ItemSpartanLaser;
 import halocraft.items.firearms.ItemSuppressor;
@@ -463,6 +464,7 @@ public class CommonProxy
 		GameRegistry.registerItem(ItemRedPlasmaAmmo.instance, ItemRedPlasmaAmmo.name);
 		GameRegistry.registerItem(ItemGhost.instance, ItemGhost.name);
 		GameRegistry.registerItem(ItemSpartanLaser.instance, ItemSpartanLaser.name);
+		GameRegistry.registerItem(ItemShotgun.instance, ItemShotgun.name);
 	}
 
 	public void registerBlocks()

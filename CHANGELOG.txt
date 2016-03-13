@@ -1,3 +1,7 @@
+v1.6.165:
+
+Added Shotgun
+
 v1.6.164:
 
 Fixed incorrect Steel Block recipe.
