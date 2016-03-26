@@ -8,17 +8,16 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = HaloCraft.MODID, version = HaloCraft.VERSION)
 public class HaloCraft
 {
 	public static final String MODID = "halocraft";
 	public static final String VERSION = "1.6";
-	
+
 	@SidedProxy(clientSide = "io.github.hsyyid.halocraft.proxies.ClientProxy", serverSide = "io.github.hsyyid.halocraft.proxies.CommonProxy")
 	public static CommonProxy proxy;
-	
+
 	@Mod.Instance(HaloCraft.MODID)
 	private static HaloCraft instance;
 
@@ -26,7 +25,7 @@ public class HaloCraft
 	{
 		return HaloCraft.instance;
 	}
-	
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -34,16 +33,16 @@ public class HaloCraft
 
 		proxy.initializeCreativeTabs();
 		proxy.initializeMaterials();
-		
+
 		proxy.initializeItems();
 		proxy.registerBlocks();
 		proxy.registerEntities();
 		proxy.registerCraftingRecipies();
-		
+
 		proxy.initializeWorldGeneration();
-		
-		if (event.getSide() == Side.CLIENT)
-			proxy.registerCustomModelResources();
+
+		proxy.registerCustomModelResources();
+		proxy.registerEntityRenderers();
 	}
 
 	@EventHandler
@@ -55,8 +54,7 @@ public class HaloCraft
 		// Register Rendering Classes
 		proxy.registerItemRenderers();
 		proxy.registerBlockRenderers();
-		proxy.registerEntityRenderers();
-		
+
 		proxy.registerPackets();
 	}
 

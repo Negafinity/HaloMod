@@ -1,6 +1,7 @@
-package io.github.hsyyid.halocraft.entities.render;
+package io.github.hsyyid.halocraft.entities.vehicles.render;
 
-import io.github.hsyyid.halocraft.entities.EntityGhost;
+import io.github.hsyyid.halocraft.entities.render.RenderingUtil;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityGhost;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
@@ -31,8 +32,8 @@ public class RenderGhostEntity extends Render<EntityGhost>
 	{
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(posX + 1.75f, posY, posZ + 0.25f);
-			GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
+			GlStateManager.translate(posX, posY + 0.35, posZ);
+			GlStateManager.rotate(-(entity.rotationYaw + 90), 0, 1, 0);
 
 			GlStateManager.pushMatrix();
 			{

@@ -1,6 +1,6 @@
 package io.github.hsyyid.halocraft.items;
 
-import io.github.hsyyid.halocraft.entities.EntityScorpion;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
 import io.github.hsyyid.halocraft.proxies.CommonProxy;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

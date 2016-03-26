@@ -2,8 +2,8 @@ package io.github.hsyyid.halocraft.handlers;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import io.github.hsyyid.halocraft.KeyBindings;
-import io.github.hsyyid.halocraft.entities.EntityGhost;
-import io.github.hsyyid.halocraft.entities.EntityScorpion;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityGhost;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
 import io.github.hsyyid.halocraft.items.firearms.ItemBattleRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemSniperRifle;
 import io.github.hsyyid.halocraft.packets.FireMessage;

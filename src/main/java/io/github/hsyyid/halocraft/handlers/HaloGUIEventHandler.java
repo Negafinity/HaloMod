@@ -106,8 +106,6 @@ public class HaloGUIEventHandler extends Gui
 		if (KeyInputHandler.keyPressed == true)
 		{
 			ScaledResolution scaled = new ScaledResolution(mc);
-			int xPos = (scaled.getScaledWidth() - 420) / 2;
-			int yPos = (scaled.getScaledHeight() - 250) / 2;
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			GL11.glDisable(GL11.GL_LIGHTING);
 			this.mc.renderEngine.bindTexture(brscope);

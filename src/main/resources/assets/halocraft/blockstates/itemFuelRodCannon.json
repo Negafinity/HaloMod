@@ -17,11 +17,11 @@
         "inventory": [
             {
                 "transform": {
-                    "thirdperson": {
+                    "thirdperson_righthand": {
                         "translation": [
-                            .25,
+                            0.25,
                             -0.1,
-                            -.5
+                            -0.5
                         ],
                         "rotation": [
                             {
@@ -55,7 +55,7 @@
                         ],
                         "scale": 1
                     },
-                    "firstperson": {
+                    "firstperson_righthand": {
                         "translation": [
                             -0.25,
                             1,

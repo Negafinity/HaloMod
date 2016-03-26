@@ -1,7 +1,7 @@
 package io.github.hsyyid.halocraft.entities.render;
 
 import io.github.hsyyid.halocraft.entities.EntityBlueElite;
-import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
@@ -11,10 +11,9 @@ public class RenderBlueEliteEntity extends RenderLiving<EntityBlueElite>
 {
 	private final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/BlueEliteRender.png");
 
-	public RenderBlueEliteEntity(RenderManager renderManager, ModelBase par1Model, float par2)
+	public RenderBlueEliteEntity(RenderManager renderManager)
 	{
-		super(renderManager, par1Model, par2);
-
+		super(renderManager, new ModelBiped(), 0);
 		this.addLayer(new LayerHeldItem(this));
 	}
 

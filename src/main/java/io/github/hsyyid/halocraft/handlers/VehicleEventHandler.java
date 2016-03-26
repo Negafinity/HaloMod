@@ -1,6 +1,6 @@
 package io.github.hsyyid.halocraft.handlers;
 
-import io.github.hsyyid.halocraft.entities.EntityScorpion;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 

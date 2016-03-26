@@ -11,11 +11,9 @@ import io.github.hsyyid.halocraft.entities.EntityBlueElite;
 import io.github.hsyyid.halocraft.entities.EntityBullet;
 import io.github.hsyyid.halocraft.entities.EntityElite;
 import io.github.hsyyid.halocraft.entities.EntityFragGrenade;
-import io.github.hsyyid.halocraft.entities.EntityGhost;
 import io.github.hsyyid.halocraft.entities.EntityGreenPlasma;
 import io.github.hsyyid.halocraft.entities.EntityGrunt;
 import io.github.hsyyid.halocraft.entities.EntityMarine;
-import io.github.hsyyid.halocraft.entities.EntityMongoose;
 import io.github.hsyyid.halocraft.entities.EntityOrangePlasma;
 import io.github.hsyyid.halocraft.entities.EntityPlasmaRocket;
 import io.github.hsyyid.halocraft.entities.EntityPromethean;
@@ -24,17 +22,12 @@ import io.github.hsyyid.halocraft.entities.EntityPurplePlasma;
 import io.github.hsyyid.halocraft.entities.EntityRedElite;
 import io.github.hsyyid.halocraft.entities.EntityRedPlasma;
 import io.github.hsyyid.halocraft.entities.EntityRocket;
-import io.github.hsyyid.halocraft.entities.EntityScorpion;
-import io.github.hsyyid.halocraft.entities.EntityWarthog;
-import io.github.hsyyid.halocraft.entities.EntityWarthogTurret;
 import io.github.hsyyid.halocraft.entities.render.RenderBlueEliteEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderBulletEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderEliteEntity;
-import io.github.hsyyid.halocraft.entities.render.RenderGhostEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderGreenPlasmaEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderGruntEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderMarineEntity;
-import io.github.hsyyid.halocraft.entities.render.RenderMongooseEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderOrangePlasmaEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderPlasmaRocketEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderPrometheanEntity;
@@ -42,9 +35,16 @@ import io.github.hsyyid.halocraft.entities.render.RenderPurplePlasmaEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderRedEliteEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderRedPlasmaEntity;
 import io.github.hsyyid.halocraft.entities.render.RenderRocketEntity;
-import io.github.hsyyid.halocraft.entities.render.RenderScorpionEntity;
-import io.github.hsyyid.halocraft.entities.render.RenderWarthogEntity;
-import io.github.hsyyid.halocraft.entities.render.RenderWarthogTurretEntity;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityGhost;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityMongoose;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityWarthog;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityWarthogTurret;
+import io.github.hsyyid.halocraft.entities.vehicles.render.RenderGhostEntity;
+import io.github.hsyyid.halocraft.entities.vehicles.render.RenderMongooseEntity;
+import io.github.hsyyid.halocraft.entities.vehicles.render.RenderScorpionEntity;
+import io.github.hsyyid.halocraft.entities.vehicles.render.RenderWarthogEntity;
+import io.github.hsyyid.halocraft.entities.vehicles.render.RenderWarthogTurretEntity;
 import io.github.hsyyid.halocraft.handlers.HaloGUIEventHandler;
 import io.github.hsyyid.halocraft.handlers.KeyInputHandler;
 import io.github.hsyyid.halocraft.handlers.PlayerTickHandler;
@@ -80,7 +80,6 @@ import io.github.hsyyid.halocraft.items.firearms.ItemSuppressor;
 import io.github.hsyyid.halocraft.items.firearms.Pistol;
 import io.github.hsyyid.halocraft.items.firearms.PlasmaRifle;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
@@ -300,27 +299,28 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerEntityRenderers()
 	{
-		// Rendering Entities
+		// TODO: Fix deprecated shizzles
 		RenderingRegistry.registerEntityRenderingHandler(EntityPulseGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), PulseGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityFragGrenade.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FragGrenade.instance, Minecraft.getMinecraft().getRenderItem()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, new RenderMongooseEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, new RenderGhostEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityWarthog.class, new RenderWarthogEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityWarthogTurret.class, new RenderWarthogTurretEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class, new RenderScorpionEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBulletEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, new RenderRocketEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityPlasmaRocket.class, new RenderPlasmaRocketEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityRedPlasma.class, new RenderRedPlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityGreenPlasma.class, new RenderGreenPlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityPurplePlasma.class, new RenderPurplePlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityOrangePlasma.class, new RenderOrangePlasmaEntity(Minecraft.getMinecraft().getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, new RenderEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityRedElite.class, new RenderRedEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityBlueElite.class, new RenderBlueEliteEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityPromethean.class, new RenderPrometheanEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityMarine.class, new RenderMarineEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, new RenderGruntEntity(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0));
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, RenderMongooseEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, RenderGhostEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityWarthog.class, RenderWarthogEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityWarthogTurret.class, RenderWarthogTurretEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityScorpion.class, RenderScorpionEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, RenderBulletEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityRocket.class, RenderRocketEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPlasmaRocket.class, RenderPlasmaRocketEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedPlasma.class, RenderRedPlasmaEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityGreenPlasma.class, RenderGreenPlasmaEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPurplePlasma.class, RenderPurplePlasmaEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityOrangePlasma.class, RenderOrangePlasmaEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityElite.class, RenderEliteEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityRedElite.class, RenderRedEliteEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityBlueElite.class, RenderBlueEliteEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPromethean.class, RenderPrometheanEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityMarine.class, RenderMarineEntity::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityGrunt.class, RenderGruntEntity::new);
 	}
 
 	@Override
@@ -374,8 +374,8 @@ public class ClientProxy extends CommonProxy
 
 	public void registerCustomModelResources()
 	{
-		ModelLoaderRegistry.registerLoader(OBJLoader.instance);
-		OBJLoader.instance.addDomain("halocraft");
+		ModelLoaderRegistry.registerLoader(OBJLoader.INSTANCE);
+		OBJLoader.INSTANCE.addDomain("halocraft");
 
 		ModelLoader.setCustomModelResourceLocation(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PulseGrenade.instance, 0, new ModelResourceLocation("halocraft:" + PulseGrenade.name, "inventory"));

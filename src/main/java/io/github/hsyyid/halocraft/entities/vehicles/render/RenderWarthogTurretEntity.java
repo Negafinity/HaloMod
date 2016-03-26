@@ -1,6 +1,7 @@
-package io.github.hsyyid.halocraft.entities.render;
+package io.github.hsyyid.halocraft.entities.vehicles.render;
 
-import io.github.hsyyid.halocraft.entities.EntityWarthogTurret;
+import io.github.hsyyid.halocraft.entities.render.RenderingUtil;
+import io.github.hsyyid.halocraft.entities.vehicles.EntityWarthogTurret;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
@@ -12,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogTurretEntity extends Render<EntityWarthogTurret>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/Warthog.obj");
+	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/WarthogTurret.obj");
 
 	public RenderWarthogTurretEntity(RenderManager renderManager)
 	{
@@ -31,8 +32,8 @@ public class RenderWarthogTurretEntity extends Render<EntityWarthogTurret>
 	{
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(posX, posY, posZ);
-			GlStateManager.rotate(-(entity.rotationYaw - 180), 0, 1, 0);
+			GlStateManager.translate(posX, posY + 0.8, posZ);
+			GlStateManager.rotate(-entity.rotationYaw, 0, 1, 0);
 
 			GlStateManager.pushMatrix();
 			{
