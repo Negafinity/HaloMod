@@ -374,7 +374,6 @@ public class ClientProxy extends CommonProxy
 
 	public void registerCustomModelResources()
 	{
-		ModelLoaderRegistry.registerLoader(OBJLoader.INSTANCE);
 		OBJLoader.INSTANCE.addDomain("halocraft");
 
 		ModelLoader.setCustomModelResourceLocation(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
