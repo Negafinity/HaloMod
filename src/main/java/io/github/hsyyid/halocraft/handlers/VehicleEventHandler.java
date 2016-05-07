@@ -9,7 +9,7 @@ public class VehicleEventHandler
 	@SubscribeEvent
 	public void onRenderPlayerEvent(RenderPlayerEvent.Pre event)
 	{
-		if (event.entityPlayer.isRiding() && event.entityPlayer.getRidingEntity() instanceof EntityScorpion)
+		if (event.getEntityPlayer().isRiding() && event.getEntityPlayer().getRidingEntity() instanceof EntityScorpion)
 		{
 			event.setCanceled(true);
 		}

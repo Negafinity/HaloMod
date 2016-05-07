@@ -90,14 +90,14 @@ public class HaloGUIEventHandler extends Gui
 		{
 			if (helmet.getItem() == CommonProxy.spartanHelmet || helmet.getItem() == CommonProxy.spartanLockeHelmet || helmet.getItem() == CommonProxy.greenSpartanHelmet || helmet.getItem() == CommonProxy.blueSpartanHelmet || helmet.getItem() == CommonProxy.redSpartanHelmet)
 			{
-				if (event.isCancelable() && event.type == ElementType.HEALTH)
+				if (event.isCancelable() && event.getType() == ElementType.HEALTH)
 				{
 					event.setCanceled(true);
 				}
 			}
 		}
 
-		if (event.isCancelable() || event.type != ElementType.EXPERIENCE)
+		if (event.isCancelable() || event.getType() != ElementType.EXPERIENCE)
 		{
 			return;
 		}
