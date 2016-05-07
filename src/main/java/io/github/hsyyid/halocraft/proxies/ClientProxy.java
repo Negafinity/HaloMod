@@ -216,6 +216,7 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.redSpartanLeggings, 0, res15);
 		ModelResourceLocation res16 = new ModelResourceLocation("halocraft:RedSpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.redSpartanBoots, 0, res16);
+
 		// Rendering Green Spartan Armor
 		ModelResourceLocation res17 = new ModelResourceLocation("halocraft:GreenSpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.greenSpartanChestplate, 0, res17);
@@ -225,6 +226,7 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.greenSpartanLeggings, 0, res19);
 		ModelResourceLocation res20 = new ModelResourceLocation("halocraft:GreenSpartanBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.greenSpartanBoots, 0, res20);
+
 		// Rendering Blue Spartan Armor
 		ModelResourceLocation res21 = new ModelResourceLocation("halocraft:BlueSpartanChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.blueSpartanChestplate, 0, res21);
@@ -236,6 +238,7 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.blueSpartanBoots, 0, res24);
 		ModelResourceLocation res25 = new ModelResourceLocation("halocraft:covenantPiece", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.covenantPiece, 0, res25);
+
 		// Rendering Default Covenant Armor
 		ModelResourceLocation res26 = new ModelResourceLocation("halocraft:CovenantChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.covenantChestplate, 0, res26);
@@ -245,6 +248,7 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.covenantLeggings, 0, res28);
 		ModelResourceLocation res29 = new ModelResourceLocation("halocraft:CovenantBoots", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.covenantBoots, 0, res29);
+
 		// Rendering ActiveCamo Armor
 		ModelResourceLocation res30 = new ModelResourceLocation("halocraft:ActiveCamoChestplate", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.activeCamoChestplate, 0, res30);
@@ -297,6 +301,7 @@ public class ClientProxy extends CommonProxy
 
 		// Weapons
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 	}
 
 	@Override
@@ -379,7 +384,6 @@ public class ClientProxy extends CommonProxy
 	{
 		OBJLoader.INSTANCE.addDomain("halocraft");
 
-		ModelLoader.setCustomModelResourceLocation(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PulseGrenade.instance, 0, new ModelResourceLocation("halocraft:" + PulseGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemRocketLauncher.instance, 0, new ModelResourceLocation("halocraft:" + ItemRocketLauncher.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemEnergySword.instance, 0, new ModelResourceLocation("halocraft:" + ItemEnergySword.name, "inventory"));

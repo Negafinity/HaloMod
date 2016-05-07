@@ -1,47 +1,51 @@
 package io.github.hsyyid.halocraft.entities.render;
 
+import org.lwjgl.opengl.GL11;
+
 import io.github.hsyyid.halocraft.entities.EntityBullet;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
+import io.github.hsyyid.halocraft.models.ModelBullet;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-@SideOnly(Side.CLIENT)
 public class RenderBulletEntity extends Render<EntityBullet>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/Bullet.obj");
-	private static final ResourceLocation bulletTextures = new ResourceLocation("halocraft:textures/entities/BulletRender.png");
+	private static final ResourceLocation textures = new ResourceLocation("halocraft:textures/entities/BulletRender.png");
 
-	public RenderBulletEntity(RenderManager renderManager)
+	public RenderBulletEntity(RenderManager rendermanager)
 	{
-		super(renderManager);
+		super(rendermanager);
 		this.shadowSize = 0.5F;
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityBullet entity)
 	{
-		return bulletTextures;
+		return textures;
 	}
 
 	@Override
-	public void doRender(EntityBullet entity, double posX, double posY, double posZ, float yaw, float partialTicks)
+	public void doRender(EntityBullet entity, double d, double d1, double d2, float f, float f1)
 	{
-		GlStateManager.pushMatrix();
+		if (entity.ticksExisted < 1)
 		{
-			this.bindTexture(bulletTextures);
-			GlStateManager.translate(posX, posY, posZ);
-
-			GlStateManager.pushMatrix();
-			{
-				RenderingUtil.renderModel(model, -1);
-			}
-			GlStateManager.popMatrix();
+			return;
 		}
-		GlStateManager.popMatrix();
+
+		this.bindEntityTexture(entity);
+		GL11.glPushMatrix();
+		GL11.glTranslatef((float) d, (float) d1, (float) d2);
+		GL11.glRotatef(f, 0.0F, 1.0F, 0.0F);
+		GL11.glRotatef(90F - entity.prevRotationPitch - (entity.rotationPitch - entity.prevRotationPitch) * f1, 1.0F, 0.0F, 0.0F);
+		ModelBase model = new ModelBullet();
+
+		if (model != null)
+		{
+			model.render(entity, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+		}
+
+		GL11.glPopMatrix();
 	}
+
 }
