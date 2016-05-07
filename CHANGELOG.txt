@@ -1,3 +1,8 @@
+v1.6.179:
+
+Many bug fixes, made bullets render as boxes, as the models had issues with rotations. Began fixing up weapon rendering (Battle Rifle and Boltshot)
+they now use the ItemRenderer enabling them to look good on the ground and in ItemFrames (finally).
+
 v1.6.167:
 
 1.9 bug fixes.
