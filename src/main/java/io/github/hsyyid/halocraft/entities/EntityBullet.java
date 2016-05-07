@@ -27,6 +27,7 @@ public class EntityBullet extends EntityThrowable
 		super(worldIn, x, y, z);
 	}
 
+	@Override
 	protected void onImpact(RayTraceResult rayTraceResult)
 	{
 		if (!this.worldObj.isRemote)

@@ -47,6 +47,7 @@ import io.github.hsyyid.halocraft.entities.vehicles.render.RenderWarthogEntity;
 import io.github.hsyyid.halocraft.entities.vehicles.render.RenderWarthogTurretEntity;
 import io.github.hsyyid.halocraft.handlers.HaloGUIEventHandler;
 import io.github.hsyyid.halocraft.handlers.KeyInputHandler;
+import io.github.hsyyid.halocraft.handlers.ModelBakeEventHandler;
 import io.github.hsyyid.halocraft.handlers.PlayerTickHandler;
 import io.github.hsyyid.halocraft.handlers.VehicleEventHandler;
 import io.github.hsyyid.halocraft.items.FragGrenade;
@@ -83,11 +84,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -293,6 +294,9 @@ public class ClientProxy extends CommonProxy
 
 		ModelResourceLocation fusionCoilRes = new ModelResourceLocation("halocraft:itemFusionCoil", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(CommonProxy.itemFusionCoil, 0, fusionCoilRes);
+
+		// Weapons
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
 	}
 
 	@Override
@@ -326,19 +330,19 @@ public class ClientProxy extends CommonProxy
 	public void registerBlockRenderers()
 	{
 		// Rendering Blocks
-		Item itemHaloBlock = GameRegistry.findItem("halocraft", HaloBlock.name);
-		Item itemHaloOre = GameRegistry.findItem("halocraft", "HaloOre");
-		Item itemForerunnerOre = GameRegistry.findItem("halocraft", "ForerunnerOre");
-		Item itemRedPlasmaOre = GameRegistry.findItem("halocraft", "RedPlasmaOre");
-		Item itemGreenPlasmaOre = GameRegistry.findItem("halocraft", "GreenPlasmaOre");
-		Item itemPurplePlasmaOre = GameRegistry.findItem("halocraft", "PurplePlasmaOre");
-		Item itemPurplePlasmaBlock = GameRegistry.findItem("halocraft", "PurplePlasmaBlock");
-		Item itemRedPlasmaBlock = GameRegistry.findItem("halocraft", "RedPlasmaBlock");
-		Item itemRoofBlock = GameRegistry.findItem("halocraft", RoofBlock.name);
-		Item itemWallBlock = GameRegistry.findItem("halocraft", ForerunnerWallBlock.name);
-		Item itemFloorBlock = GameRegistry.findItem("halocraft", ForerunnerFloorBlock.name);
-		Item itemTitaniumBlock = GameRegistry.findItem("halocraft", TitaniumBlock.name);
-		Item itemSteelBlock = GameRegistry.findItem("halocraft", SteelBlock.name);
+		Item itemHaloBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", HaloBlock.name));
+		Item itemHaloOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "HaloOre"));
+		Item itemForerunnerOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "ForerunnerOre"));
+		Item itemRedPlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "RedPlasmaOre"));
+		Item itemGreenPlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "GreenPlasmaOre"));
+		Item itemPurplePlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "PurplePlasmaOre"));
+		Item itemPurplePlasmaBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "PurplePlasmaBlock"));
+		Item itemRedPlasmaBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "RedPlasmaBlock"));
+		Item itemRoofBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", RoofBlock.name));
+		Item itemWallBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", ForerunnerWallBlock.name));
+		Item itemFloorBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", ForerunnerFloorBlock.name));
+		Item itemTitaniumBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", TitaniumBlock.name));
+		Item itemSteelBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", SteelBlock.name));
 
 		ModelResourceLocation forerunnerOreBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerOre", "inventory");
 		ModelResourceLocation roofBlockResourceLocation = new ModelResourceLocation("halocraft:RoofBlock", "inventory");
@@ -384,7 +388,6 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(FragGrenade.instance, 0, new ModelResourceLocation("halocraft:" + FragGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PlasmaRifle.instance, 0, new ModelResourceLocation("halocraft:" + PlasmaRifle.name, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemCarbineRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemSniperRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemSniperRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemLightRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemLightRifle.name, "inventory"));
@@ -413,5 +416,6 @@ public class ClientProxy extends CommonProxy
 		MinecraftForge.EVENT_BUS.register(new VehicleEventHandler());
 		MinecraftForge.EVENT_BUS.register(new KeyInputHandler());
 		MinecraftForge.EVENT_BUS.register(new PlayerTickHandler());
+		MinecraftForge.EVENT_BUS.register(new ModelBakeEventHandler());
 	}
 }

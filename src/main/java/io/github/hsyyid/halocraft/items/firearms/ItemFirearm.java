@@ -27,6 +27,7 @@ public class ItemFirearm extends Item
 	public ItemFirearm()
 	{
 		this.clipRounds = 32;
+		this.bulletClass = EntityBullet.class;
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setMaxStackSize(1);
 		this.setMaxDamage(1000);
@@ -56,8 +57,8 @@ public class ItemFirearm extends Item
 			{
 				try
 				{
-					Constructor<? extends EntityBullet> bulletConstructor = bulletClass.getConstructor(new Class[] { World.class, EntityLivingBase.class });
-					EntityBullet bullet = bulletConstructor.newInstance(new Object[] { worldIn, (EntityLivingBase) playerIn });
+					Constructor<? extends EntityBullet> bulletConstructor = bulletClass.getConstructor(World.class, EntityLivingBase.class);
+					EntityBullet bullet = bulletConstructor.newInstance(worldIn, playerIn);
 					bullet.damage = this.damage;
 					worldIn.spawnEntityInWorld(bullet);
 					stack.damageItem(1, playerIn);

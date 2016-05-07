@@ -29,7 +29,7 @@ public class HaloCraft
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		FMLLog.getLogger().info("[HaloCraft 2.0]: Starting to load...");
+		FMLLog.getLogger().info("[HaloCraft 2.0] Pre-initialization...");
 
 		proxy.initializeCreativeTabs();
 		proxy.initializeMaterials();
@@ -62,6 +62,6 @@ public class HaloCraft
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		FMLLog.getLogger().info("[HaloCraft 2.0]: Loaded Successfully!");
-		FMLLog.getLogger().info("[HaloCraft 2.0]: This mod was created by NEGAFINITY, if you have issues please post them on GitHub!");
+		FMLLog.getLogger().info("[HaloCraft 2.0]: This mod was created by NEGAFINITY, if you have issues post them on GitHub!");
 	}
 }

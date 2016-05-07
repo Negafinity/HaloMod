@@ -1,7 +1,7 @@
 package io.github.hsyyid.halocraft.entities.vehicles.render;
 
-import io.github.hsyyid.halocraft.entities.render.RenderingUtil;
 import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
+import io.github.hsyyid.halocraft.util.RenderingUtil;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;

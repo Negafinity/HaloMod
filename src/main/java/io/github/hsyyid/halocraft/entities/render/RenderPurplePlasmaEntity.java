@@ -1,6 +1,7 @@
 package io.github.hsyyid.halocraft.entities.render;
 
 import io.github.hsyyid.halocraft.entities.EntityPurplePlasma;
+import io.github.hsyyid.halocraft.util.RenderingUtil;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;

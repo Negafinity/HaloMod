@@ -1,4 +1,4 @@
-package io.github.hsyyid.halocraft.entities.render;
+package io.github.hsyyid.halocraft.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
@@ -30,21 +30,21 @@ public class RenderingUtil
 		VertexBuffer worldrenderer = tessellator.getBuffer();
 
 		List<BakedQuad> quads = model.getQuads(null, null, 1);
-		// RenderingUtil.renderQuads(worldrenderer, quads, color);//TODO will prob explode
+
 		for (BakedQuad quad : quads)
 		{
 			worldrenderer.begin(GL11.GL_QUADS, quad.getFormat());
 			LightUtil.renderQuadColor(worldrenderer, quad, color);
 			tessellator.draw();
 		}
-
-		// tessellator.draw();
 	}
 
 	public static void renderQuads(VertexBuffer renderer, List<BakedQuad> quads, int color)
 	{
 		for (BakedQuad bakedquad : quads)
+		{
 			LightUtil.renderQuadColor(renderer, bakedquad, color);
+		}
 	}
 
 	public static IBakedModel loadModel(String resourceName)
