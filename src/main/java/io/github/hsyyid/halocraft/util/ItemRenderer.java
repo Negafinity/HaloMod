@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.block.model.ItemOverrideList;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -148,5 +149,11 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel
 	public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand)
 	{
 		return Lists.newArrayList();
+	}
+	
+	@Override
+	public ItemOverrideList getOverrides()
+	{
+		return new ItemOverrideList(Lists.newArrayList());
 	}
 }

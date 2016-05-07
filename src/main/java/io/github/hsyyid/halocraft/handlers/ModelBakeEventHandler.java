@@ -1,7 +1,9 @@
 package io.github.hsyyid.halocraft.handlers;
 
+import io.github.hsyyid.halocraft.items.firearms.ItemAssaultRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemBattleRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemBoltshot;
+import io.github.hsyyid.halocraft.items.firearms.render.AssaultRifleItemRenderer;
 import io.github.hsyyid.halocraft.items.firearms.render.BattleRifleItemRenderer;
 import io.github.hsyyid.halocraft.items.firearms.render.BoltshotItemRenderer;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,5 +18,6 @@ public class ModelBakeEventHandler
 		// Firearms
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"), new BattleRifleItemRenderer());
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"), new BoltshotItemRenderer());
+		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"), new AssaultRifleItemRenderer());
 	}
 }

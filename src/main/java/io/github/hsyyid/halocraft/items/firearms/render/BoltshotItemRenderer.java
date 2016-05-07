@@ -4,7 +4,6 @@ import io.github.hsyyid.halocraft.util.ItemRenderer;
 import io.github.hsyyid.halocraft.util.RenderingUtil;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.client.renderer.block.model.ItemOverrideList;
 import net.minecraft.util.ResourceLocation;
 
 public class BoltshotItemRenderer extends ItemRenderer
@@ -14,12 +13,6 @@ public class BoltshotItemRenderer extends ItemRenderer
 	public BoltshotItemRenderer()
 	{
 		super(new ResourceLocation(""));
-	}
-
-	@Override
-	public ItemOverrideList getOverrides()
-	{
-		return model.getOverrides();
 	}
 
 	@Override

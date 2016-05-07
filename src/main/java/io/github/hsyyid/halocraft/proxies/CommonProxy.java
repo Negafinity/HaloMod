@@ -259,6 +259,7 @@ public class CommonProxy
 		activeCamoArmor = EnumHelper.addArmorMaterial("ActiveCamoArmor", "halocraft:textures/models/armor/ActiveCamoArmor", 100, new int[] { 6, 6, 10, 8 }, 30, SoundEvents.item_armor_equip_generic);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void initializeItems()
 	{
 		spartaniumIngot = new SpartaniumIngot();
@@ -479,6 +480,7 @@ public class CommonProxy
 		GameRegistry.registerItem(ItemShotgun.instance, ItemShotgun.name);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void registerBlocks()
 	{
 		// Register Blocks

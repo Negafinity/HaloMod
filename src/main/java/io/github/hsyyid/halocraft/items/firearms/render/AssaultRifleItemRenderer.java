@@ -6,11 +6,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.util.ResourceLocation;
 
-public class BattleRifleItemRenderer extends ItemRenderer
+public class AssaultRifleItemRenderer extends ItemRenderer
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:item/BattleRifle.obj");
+	private final IBakedModel model = RenderingUtil.loadModel("halocraft:item/AssaultRifle.obj");
 
-	public BattleRifleItemRenderer()
+	public AssaultRifleItemRenderer()
 	{
 		super(new ResourceLocation(""));
 	}
@@ -31,7 +31,7 @@ public class BattleRifleItemRenderer extends ItemRenderer
 	{
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(0, 0.15, 0.25);
+			GlStateManager.translate(-0.15, 0.3, 0.15);
 			GlStateManager.rotate(180f, 0, 1, 0);
 			RenderingUtil.renderModel(model, -1);
 		}
@@ -41,9 +41,11 @@ public class BattleRifleItemRenderer extends ItemRenderer
 	@Override
 	public void renderInInventory()
 	{
+		GlStateManager.scale(1.1, 1.1, 1.1);
+
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(0.15, -0.2, 0);
+			GlStateManager.translate(0.1, 0, 0);
 			GlStateManager.rotate(-90f, 0, 1, 0);
 			GlStateManager.rotate(-45f, 1, 0, 0);
 			RenderingUtil.renderModel(model, -1);
@@ -54,7 +56,7 @@ public class BattleRifleItemRenderer extends ItemRenderer
 	@Override
 	public void renderOnGround()
 	{
-		GlStateManager.scale(0.5, 0.5, 0.5);
+		GlStateManager.scale(0.75, 0.75, 0.75);
 
 		GlStateManager.pushMatrix();
 		{
