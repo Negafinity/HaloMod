@@ -10,19 +10,21 @@ public class EntityBullet extends EntityThrowable
 {
 	public int damage = 6;
 
-	public EntityBullet(World par1World)
+	public EntityBullet(World worldIn)
 	{
-		super(par1World);
+		super(worldIn);
 	}
 
-	public EntityBullet(World par1World, EntityLivingBase par2EntityLivingBase)
+	public EntityBullet(World worldIn, EntityLivingBase livingBaseIn)
 	{
-		super(par1World, par2EntityLivingBase);
+		super(worldIn, livingBaseIn);
+		
+		this.setThrowableHeading(livingBaseIn.getLookVec().xCoord, livingBaseIn.getLookVec().yCoord, livingBaseIn.getLookVec().zCoord, 1.5f, 0.0f);
 	}
 
-	public EntityBullet(World par1World, double par2, double par4, double par6)
+	public EntityBullet(World worldIn, double x, double y, double z)
 	{
-		super(par1World, par2, par4, par6);
+		super(worldIn, x, y, z);
 	}
 
 	protected void onImpact(RayTraceResult rayTraceResult)

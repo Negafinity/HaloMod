@@ -33,11 +33,11 @@ public class ItemSniperRifle extends ItemFirearm
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn, EnumHand hand)
 	{
 		if (canShoot)
 		{
-			if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn))
+			if (playerIn.capabilities.isCreativeMode || this.canDamageAmmo(worldIn, playerIn, stack))
 			{
 				worldIn.playSound(playerIn, playerIn.getPosition(), SoundEvents.entity_skeleton_shoot, SoundCategory.HOSTILE, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
@@ -46,15 +46,15 @@ public class ItemSniperRifle extends ItemFirearm
 					EntityBullet bullet = new EntityBullet(worldIn, playerIn);
 					bullet.damage = 10;
 					worldIn.spawnEntityInWorld(bullet);
-					itemStackIn.damageItem(1, playerIn);
+					stack.damageItem(1, playerIn);
 					canShoot = false;
 					t.schedule(new SniperRifleTask(this), 1000);
 				}
 			}
 
-			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 		}
 
-		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
+		return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);
 	}
 }
