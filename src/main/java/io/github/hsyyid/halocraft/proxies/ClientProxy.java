@@ -303,6 +303,7 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemShotgun.instance, 0, new ModelResourceLocation("halocraft:" + ItemShotgun.name, "inventory"));
 	}
 
 	@Override
@@ -410,7 +411,6 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(ItemScattershot.instance, 0, new ModelResourceLocation("halocraft:" + ItemScattershot.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemSuppressor.instance, 0, new ModelResourceLocation("halocraft:" + ItemSuppressor.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemSpartanLaser.instance, 0, new ModelResourceLocation("halocraft:" + ItemSpartanLaser.name, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemShotgun.instance, 0, new ModelResourceLocation("halocraft:" + ItemShotgun.name, "inventory"));
 	}
 
 	public void registerHandlers()

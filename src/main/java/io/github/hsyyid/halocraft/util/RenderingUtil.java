@@ -1,5 +1,11 @@
 package io.github.hsyyid.halocraft.util;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.lwjgl.opengl.GL11;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.VertexBuffer;
@@ -14,11 +20,6 @@ import net.minecraftforge.client.model.Attributes;
 import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.pipeline.LightUtil;
-import org.lwjgl.opengl.GL11;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class RenderingUtil
 {
@@ -63,6 +64,30 @@ public class RenderingUtil
 			TextureMap textures = Minecraft.getMinecraft().getTextureMapBlocks();
 			IModel mod = ModelLoaderRegistry.getModel(new ResourceLocation(resourceName));
 			model = mod.bake(mod.getDefaultState(), fmt, (location) -> textures.getAtlasSprite(location.toString()));
+			loadedModels.put(resourceName, model);
+			return model;
+		}
+		catch (Exception e)
+		{
+			throw new ReportedException(new CrashReport("Error loading custom model " + resourceName, e));
+		}
+	}
+	
+	public static IBakedModel loadModelWithTexture(String resourceName)
+	{
+		return loadModelWithTexture(resourceName, Attributes.DEFAULT_BAKED_FORMAT);
+	}
+	
+	public static IBakedModel loadModelWithTexture(String resourceName, VertexFormat fmt)
+	{
+		IBakedModel model = loadedModels.get(resourceName);
+		if (model != null)
+			return model;
+
+		try
+		{
+			IModel mod = ModelLoaderRegistry.getModel(new ResourceLocation(resourceName));
+			model = mod.bake(mod.getDefaultState(), fmt, (location) -> new TAS(location.toString()));
 			loadedModels.put(resourceName, model);
 			return model;
 		}
