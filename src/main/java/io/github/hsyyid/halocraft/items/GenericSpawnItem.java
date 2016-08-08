@@ -85,7 +85,7 @@ public class GenericSpawnItem extends Item
 				{
 					BlockPos blockpos = movingobjectposition.getBlockPos();
 
-					if (worldIn.getBlockState(blockpos).getBlock() == Blocks.snow_layer)
+					if (worldIn.getBlockState(blockpos).getBlock() == Blocks.SNOW_LAYER)
 					{
 						blockpos = blockpos.down();
 					}
@@ -97,7 +97,7 @@ public class GenericSpawnItem extends Item
 						entity.setLocationAndAngles((double) ((float) blockpos.getX() + 0.5F), (double) ((float) blockpos.getY() + 1.0F), (double) ((float) blockpos.getZ() + 0.5F), 0, 0);
 						entity.rotationYaw = (float) (((MathHelper.floor_double((double) (playerIn.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) - 1) * 90);
 
-						if (!worldIn.getCubes(entity, entity.getEntityBoundingBox().expand(-0.1D, -0.1D, -0.1D)).isEmpty())
+						if (!worldIn.getCollisionBoxes(entity, entity.getEntityBoundingBox().expand(-0.1D, -0.1D, -0.1D)).isEmpty())
 						{
 							worldIn.getEntitiesWithinAABBExcludingEntity(playerIn, entity.getEntityBoundingBox()).forEach(Entity::setDead);
 						}

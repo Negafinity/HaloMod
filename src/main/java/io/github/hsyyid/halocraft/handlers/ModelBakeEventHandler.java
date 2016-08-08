@@ -3,10 +3,14 @@ package io.github.hsyyid.halocraft.handlers;
 import io.github.hsyyid.halocraft.items.firearms.ItemAssaultRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemBattleRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemBoltshot;
+import io.github.hsyyid.halocraft.items.firearms.ItemCarbineRifle;
+import io.github.hsyyid.halocraft.items.firearms.ItemSMG;
 import io.github.hsyyid.halocraft.items.firearms.ItemShotgun;
 import io.github.hsyyid.halocraft.items.firearms.render.AssaultRifleItemRenderer;
 import io.github.hsyyid.halocraft.items.firearms.render.BattleRifleItemRenderer;
 import io.github.hsyyid.halocraft.items.firearms.render.BoltshotItemRenderer;
+import io.github.hsyyid.halocraft.items.firearms.render.CarbineRifleItemRenderer;
+import io.github.hsyyid.halocraft.items.firearms.render.SMGItemRenderer;
 import io.github.hsyyid.halocraft.items.firearms.render.ShotgunItemRenderer;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.event.ModelBakeEvent;
@@ -21,6 +25,8 @@ public class ModelBakeEventHandler
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"), new BattleRifleItemRenderer());
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"), new BoltshotItemRenderer());
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"), new AssaultRifleItemRenderer());
+		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemCarbineRifle.name, "inventory"), new CarbineRifleItemRenderer());
 		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemShotgun.name, "inventory"), new ShotgunItemRenderer());
+		event.getModelRegistry().putObject(new ModelResourceLocation("halocraft:" + ItemSMG.name, "inventory"), new SMGItemRenderer());
 	}
 }

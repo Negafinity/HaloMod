@@ -1,9 +1,10 @@
 package io.github.hsyyid.halocraft.entities.vehicles.render;
 
+import com.arisux.airix.api.wavefrontapi.Part;
+
 import io.github.hsyyid.halocraft.entities.vehicles.EntityWarthogTurret;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,8 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWarthogTurretEntity extends Render<EntityWarthogTurret>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/WarthogTurret.obj");
-
 	public RenderWarthogTurretEntity(RenderManager renderManager)
 	{
 		super(renderManager);
@@ -37,7 +36,10 @@ public class RenderWarthogTurretEntity extends Render<EntityWarthogTurret>
 
 			GlStateManager.pushMatrix();
 			{
-				RenderingUtil.renderModel(model, -1);
+				for (Part p : Models.WARTHOG_TURRET.nameToPartHash.values())
+				{
+					p.draw();
+				}
 			}
 			GlStateManager.popMatrix();
 		}

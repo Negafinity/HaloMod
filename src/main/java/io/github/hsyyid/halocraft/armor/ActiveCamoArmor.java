@@ -24,7 +24,7 @@ public class ActiveCamoArmor extends ItemArmor
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor)
 	{
-		player.addPotionEffect(new PotionEffect(Potion.getPotionById(PotionType.getID(PotionTypes.invisibility)), 500, 4));
+		player.addPotionEffect(new PotionEffect(Potion.getPotionById(PotionType.getID(PotionTypes.INVISIBILITY)), 500, 4));
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class PulseGrenade extends Item
 			--itemStackIn.stackSize;
 		}
 
-		worldIn.playSound(playerIn, playerIn.getPosition(), SoundEvents.entity_generic_explode, SoundCategory.NEUTRAL, 0.7F, 0.8F);
+		worldIn.playSound(playerIn, playerIn.getPosition(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 0.7F, 0.8F);
 
 		if (!worldIn.isRemote)
 		{

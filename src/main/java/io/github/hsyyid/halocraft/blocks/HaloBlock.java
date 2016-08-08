@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class HaloBlock extends Block
 {
-	public static final HaloBlock instance = new HaloBlock(Material.iron);
+	public static final HaloBlock instance = new HaloBlock(Material.IRON);
 	public static final String name = "HaloBlock";
 
 	public HaloBlock(Material material)
@@ -17,7 +17,7 @@ public class HaloBlock extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);

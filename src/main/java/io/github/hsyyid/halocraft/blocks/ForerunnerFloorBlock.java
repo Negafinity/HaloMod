@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class ForerunnerFloorBlock extends Block
 {
-	public static final ForerunnerFloorBlock instance = new ForerunnerFloorBlock(Material.iron);
+	public static final ForerunnerFloorBlock instance = new ForerunnerFloorBlock(Material.IRON);
 	public static final String name = "ForerunnerFloorBlock";
 
 	public ForerunnerFloorBlock(Material material)
@@ -17,7 +17,7 @@ public class ForerunnerFloorBlock extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);

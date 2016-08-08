@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class ForerunnerWallBlock extends Block
 {
-	public static final ForerunnerWallBlock instance = new ForerunnerWallBlock(Material.iron);
+	public static final ForerunnerWallBlock instance = new ForerunnerWallBlock(Material.IRON);
 	public static final String name = "ForerunnerWallBlock";
 
 	public ForerunnerWallBlock(Material material)
@@ -17,7 +17,7 @@ public class ForerunnerWallBlock extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);

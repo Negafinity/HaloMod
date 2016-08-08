@@ -1,9 +1,10 @@
 package io.github.hsyyid.halocraft.entities.render;
 
+import com.arisux.airix.api.wavefrontapi.Part;
+
 import io.github.hsyyid.halocraft.entities.EntityPlasmaRocket;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,8 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderPlasmaRocketEntity extends Render<EntityPlasmaRocket>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/Rod-Plasma.obj");
-
 	public RenderPlasmaRocketEntity(RenderManager renderManager)
 	{
 		super(renderManager);
@@ -36,7 +35,10 @@ public class RenderPlasmaRocketEntity extends Render<EntityPlasmaRocket>
 
 			GlStateManager.pushMatrix();
 			{
-				RenderingUtil.renderModel(model, -1);
+				for (Part p : Models.PLASMA_ROCKET.nameToPartHash.values())
+				{
+					p.draw();
+				}
 			}
 			GlStateManager.popMatrix();
 		}

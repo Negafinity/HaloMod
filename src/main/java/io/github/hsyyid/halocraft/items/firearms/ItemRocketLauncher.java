@@ -29,7 +29,7 @@ public class ItemRocketLauncher extends ItemFirearm
 	{
 		if (playerIn.capabilities.isCreativeMode || playerIn.inventory.clearMatchingItems(this.ammoItem, -1, 1, null) == 1)
 		{
-			worldIn.playSound(playerIn, playerIn.getPosition(), SoundEvents.entity_skeleton_shoot, SoundCategory.HOSTILE, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			worldIn.playSound(playerIn, playerIn.getPosition(), SoundEvents.ENTITY_SKELETON_SHOOT, SoundCategory.HOSTILE, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
 			if (!worldIn.isRemote)
 			{

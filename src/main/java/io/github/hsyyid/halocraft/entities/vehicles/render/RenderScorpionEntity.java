@@ -1,9 +1,10 @@
 package io.github.hsyyid.halocraft.entities.vehicles.render;
 
+import com.arisux.airix.api.wavefrontapi.Part;
+
 import io.github.hsyyid.halocraft.entities.vehicles.EntityScorpion;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,8 +15,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderScorpionEntity extends Render<EntityScorpion>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/Scorpion.obj");
-
 	public RenderScorpionEntity(RenderManager renderManager)
 	{
 		super(renderManager);
@@ -33,19 +32,28 @@ public class RenderScorpionEntity extends Render<EntityScorpion>
 	{
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(posX - 2.5, posY, posZ + 3);
+			GlStateManager.translate(posX + 2.5, posY, posZ - 2.75);
 
-			if (entity.isBeingRidden() && entity.getControllingPassenger() instanceof EntityPlayer)
+			for (Part p : Models.SCORPION.nameToPartHash.values())
 			{
-				EntityPlayer entityPlayer = (EntityPlayer) entity.getControllingPassenger();
-				GlStateManager.rotate(-(entityPlayer.rotationYawHead + 180), 0, 1, 0);
-			}
+				GlStateManager.pushMatrix();
+				{
+					if (p == Models.SCORPION.getPart("the_node.025_tri_714_geometry") && entity.getControllingPassenger() != null && entity.getControllingPassenger() instanceof EntityPlayer)
+					{
+						EntityPlayer rider = (EntityPlayer) entity.getControllingPassenger();
 
-			GlStateManager.pushMatrix();
-			{
-				RenderingUtil.renderModel(model, -1);
+						GlStateManager.translate(-2.5, 0, 2.5);
+						GlStateManager.rotate(-(rider.rotationYawHead - 180), 0F, 1F, 0F);
+						GlStateManager.translate(2.5, 0, -2.5);
+						p.draw();
+					}
+					else
+					{
+						p.draw();
+					}
+				}
+				GlStateManager.popMatrix();
 			}
-			GlStateManager.popMatrix();
 		}
 		GlStateManager.popMatrix();
 	}

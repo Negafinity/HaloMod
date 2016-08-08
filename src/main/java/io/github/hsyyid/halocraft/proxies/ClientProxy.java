@@ -73,6 +73,7 @@ import io.github.hsyyid.halocraft.items.firearms.ItemIncinerationCannon;
 import io.github.hsyyid.halocraft.items.firearms.ItemLightRifle;
 import io.github.hsyyid.halocraft.items.firearms.ItemNeedler;
 import io.github.hsyyid.halocraft.items.firearms.ItemRocketLauncher;
+import io.github.hsyyid.halocraft.items.firearms.ItemSMG;
 import io.github.hsyyid.halocraft.items.firearms.ItemScattershot;
 import io.github.hsyyid.halocraft.items.firearms.ItemShotgun;
 import io.github.hsyyid.halocraft.items.firearms.ItemSniperRifle;
@@ -303,7 +304,9 @@ public class ClientProxy extends CommonProxy
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBattleRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemBattleRifle.name, "inventory"));
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemBoltshot.instance, 0, new ModelResourceLocation("halocraft:" + ItemBoltshot.name, "inventory"));
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemAssaultRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemAssaultRifle.name, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemSMG.instance, 0, new ModelResourceLocation("halocraft:" + ItemSMG.name, "inventory"));
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemShotgun.instance, 0, new ModelResourceLocation("halocraft:" + ItemShotgun.name, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ItemCarbineRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineRifle.name, "inventory"));
 	}
 
 	@Override
@@ -337,19 +340,19 @@ public class ClientProxy extends CommonProxy
 	public void registerBlockRenderers()
 	{
 		// Rendering Blocks
-		Item itemHaloBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", HaloBlock.name));
-		Item itemHaloOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "HaloOre"));
-		Item itemForerunnerOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "ForerunnerOre"));
-		Item itemRedPlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "RedPlasmaOre"));
-		Item itemGreenPlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "GreenPlasmaOre"));
-		Item itemPurplePlasmaOre = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "PurplePlasmaOre"));
-		Item itemPurplePlasmaBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "PurplePlasmaBlock"));
-		Item itemRedPlasmaBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", "RedPlasmaBlock"));
-		Item itemRoofBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", RoofBlock.name));
-		Item itemWallBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", ForerunnerWallBlock.name));
-		Item itemFloorBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", ForerunnerFloorBlock.name));
-		Item itemTitaniumBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", TitaniumBlock.name));
-		Item itemSteelBlock = Item.itemRegistry.getObject(new ResourceLocation("halocraft", SteelBlock.name));
+		Item itemHaloBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", HaloBlock.name));
+		Item itemHaloOre = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "HaloOre"));
+		Item itemForerunnerOre = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "ForerunnerOre"));
+		Item itemRedPlasmaOre = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "RedPlasmaOre"));
+		Item itemGreenPlasmaOre = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "GreenPlasmaOre"));
+		Item itemPurplePlasmaOre = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "PurplePlasmaOre"));
+		Item itemPurplePlasmaBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "PurplePlasmaBlock"));
+		Item itemRedPlasmaBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", "RedPlasmaBlock"));
+		Item itemRoofBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", RoofBlock.name));
+		Item itemWallBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", ForerunnerWallBlock.name));
+		Item itemFloorBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", ForerunnerFloorBlock.name));
+		Item itemTitaniumBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", TitaniumBlock.name));
+		Item itemSteelBlock = Item.REGISTRY.getObject(new ResourceLocation("halocraft", SteelBlock.name));
 
 		ModelResourceLocation forerunnerOreBlockResourceLocation = new ModelResourceLocation("halocraft:ForerunnerOre", "inventory");
 		ModelResourceLocation roofBlockResourceLocation = new ModelResourceLocation("halocraft:RoofBlock", "inventory");
@@ -393,7 +396,6 @@ public class ClientProxy extends CommonProxy
 		ModelLoader.setCustomModelResourceLocation(Pistol.instance, 0, new ModelResourceLocation("halocraft:" + Pistol.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(FragGrenade.instance, 0, new ModelResourceLocation("halocraft:" + FragGrenade.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(PlasmaRifle.instance, 0, new ModelResourceLocation("halocraft:" + PlasmaRifle.name, "inventory"));
-		ModelLoader.setCustomModelResourceLocation(ItemCarbineRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemSniperRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemSniperRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemLightRifle.instance, 0, new ModelResourceLocation("halocraft:" + ItemLightRifle.name, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ItemCarbineAmmo.instance, 0, new ModelResourceLocation("halocraft:" + ItemCarbineAmmo.name, "inventory"));

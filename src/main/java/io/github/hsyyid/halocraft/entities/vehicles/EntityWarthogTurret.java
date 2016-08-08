@@ -38,6 +38,17 @@ public class EntityWarthogTurret extends EntityAnimal
 	}
 
 	@Override
+	protected boolean canFitPassenger(Entity passenger)
+	{
+		if (this.getPassengers().size() < 3)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
 	public boolean hitByEntity(Entity entityIn)
 	{
 		if (entityIn instanceof EntityPlayer)

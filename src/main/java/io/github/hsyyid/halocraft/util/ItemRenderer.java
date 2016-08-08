@@ -19,7 +19,6 @@ import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.block.model.ItemOverrideList;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.IPerspectiveAwareModel;
 
 public abstract class ItemRenderer implements IPerspectiveAwareModel
@@ -32,14 +31,13 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel
 	protected static final float DEFAULT_BOX_TRANSLATION = 0.625F;
 	private final Pair<? extends IBakedModel, Matrix4f> selfPair;
 	protected Minecraft mc = Minecraft.getMinecraft();
-	protected ResourceLocation resource;
 
-	public ItemRenderer(ResourceLocation resource)
+	public ItemRenderer()
 	{
 		this.selfPair = Pair.of(this, null);
-		this.resource = resource;
 	}
 
+	@SuppressWarnings("incomplete-switch")
 	@Override
 	public Pair<? extends IBakedModel, Matrix4f> handlePerspective(ItemCameraTransforms.TransformType cameraTransformType)
 	{
@@ -95,16 +93,6 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel
 
 	public abstract void renderOnGround();
 
-	public ResourceLocation getResourceLocation()
-	{
-		return resource;
-	}
-
-	public void setResourceLocation(ResourceLocation resource)
-	{
-		this.resource = resource;
-	}
-
 	@Override
 	public boolean isAmbientOcclusion()
 	{
@@ -135,11 +123,6 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel
 		return ItemCameraTransforms.DEFAULT;
 	}
 
-	public void bindTexture()
-	{
-		this.mc.renderEngine.bindTexture(this.resource);
-	}
-
 	public boolean firstPersonRenderCheck(Object o)
 	{
 		return o == mc.getRenderViewEntity() && mc.gameSettings.thirdPersonView == 0 && (!(mc.currentScreen instanceof GuiInventory) && !(mc.currentScreen instanceof GuiContainerCreative));
@@ -150,7 +133,7 @@ public abstract class ItemRenderer implements IPerspectiveAwareModel
 	{
 		return Lists.newArrayList();
 	}
-	
+
 	@Override
 	public ItemOverrideList getOverrides()
 	{

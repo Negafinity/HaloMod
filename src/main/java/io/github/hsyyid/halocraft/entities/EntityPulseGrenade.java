@@ -40,9 +40,9 @@ public class EntityPulseGrenade extends EntityThrowable
 				BlockPos fire3 = new BlockPos(hit.getX(), hit.getY() + 1, hit.getZ() + 1);
 
 				this.worldObj.setBlockToAir(fire);
-				this.worldObj.setBlockState(fire, Blocks.fire.getDefaultState());
-				this.worldObj.setBlockState(fire2, Blocks.fire.getDefaultState());
-				this.worldObj.setBlockState(fire3, Blocks.fire.getDefaultState());
+				this.worldObj.setBlockState(fire, Blocks.FIRE.getDefaultState());
+				this.worldObj.setBlockState(fire2, Blocks.FIRE.getDefaultState());
+				this.worldObj.setBlockState(fire3, Blocks.FIRE.getDefaultState());
 				this.setDead();
 			}
 		}

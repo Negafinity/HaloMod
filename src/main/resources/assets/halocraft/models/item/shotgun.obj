@@ -1,6 +1,7 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
 mtllib shotgun.mtl
+o shotgun
 g default
 v 24.719704 3.398004 -0.319243
 v 24.719704 2.949816 -0.530382

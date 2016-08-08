@@ -1,9 +1,10 @@
 package io.github.hsyyid.halocraft.entities.render;
 
+import com.arisux.airix.api.wavefrontapi.Part;
+
 import io.github.hsyyid.halocraft.entities.EntityRocket;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -13,7 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderRocketEntity extends Render<EntityRocket>
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:entity/Rocket.obj");
 	private static final ResourceLocation rocketTextures = new ResourceLocation("halocraft:textures/entities/RocketRender.png");
 
 	public RenderRocketEntity(RenderManager renderManager)
@@ -38,7 +38,10 @@ public class RenderRocketEntity extends Render<EntityRocket>
 
 			GlStateManager.pushMatrix();
 			{
-				RenderingUtil.renderModel(model, -1);
+				for (Part p : Models.ROCKET.nameToPartHash.values())
+				{
+					p.draw();
+				}
 			}
 			GlStateManager.popMatrix();
 		}

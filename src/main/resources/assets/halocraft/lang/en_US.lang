@@ -92,6 +92,7 @@ item.halocraft:itemghost.name=Ghost
 item.halocraft:itemcarbineammo.name=Carbine Ammo
 item.halocraft:itemshotgun.name=Shotgun
 item.halocraft:itemassaultrifle.name=Assault Rifle
+item.halocraft:itemsmg.name=SMG
 item.halocraft:itembattlerifle.name=Battle Rifle
 item.halocraft:itemcarbinerifle.name=Carbine Rifle
 item.halocraft:itemsniperrifle.name=Sniper Rifle

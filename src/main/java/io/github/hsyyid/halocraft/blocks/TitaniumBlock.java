@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class TitaniumBlock extends Block
 {
-	public static final TitaniumBlock instance = new TitaniumBlock(Material.iron);
+	public static final TitaniumBlock instance = new TitaniumBlock(Material.IRON);
 	public static final String name = "TitaniumBlock";
 
 	public TitaniumBlock(Material material)
@@ -17,7 +17,7 @@ public class TitaniumBlock extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);

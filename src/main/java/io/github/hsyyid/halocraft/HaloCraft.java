@@ -1,6 +1,7 @@
 package io.github.hsyyid.halocraft;
 
 import io.github.hsyyid.halocraft.proxies.CommonProxy;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,6 +9,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = HaloCraft.MODID, version = HaloCraft.VERSION)
 public class HaloCraft
@@ -43,6 +45,11 @@ public class HaloCraft
 
 		proxy.registerCustomModelResources();
 		proxy.registerEntityRenderers();
+		
+		if (event.getSide() == Side.CLIENT)
+		{
+			Models.loadModels();
+		}
 	}
 
 	@EventHandler

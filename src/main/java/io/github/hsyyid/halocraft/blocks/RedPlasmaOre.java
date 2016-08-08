@@ -16,9 +16,9 @@ public class RedPlasmaOre extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("RedPlasmaOre");
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.setHarvestLevel("pickaxe", 3);
 	}
 

@@ -1,18 +1,16 @@
 package io.github.hsyyid.halocraft.items.firearms.render;
 
+import com.arisux.airix.api.wavefrontapi.Part;
+
 import io.github.hsyyid.halocraft.util.ItemRenderer;
-import io.github.hsyyid.halocraft.util.RenderingUtil;
+import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.util.ResourceLocation;
 
 public class BattleRifleItemRenderer extends ItemRenderer
 {
-	private final IBakedModel model = RenderingUtil.loadModel("halocraft:item/BattleRifle.obj");
-
 	public BattleRifleItemRenderer()
 	{
-		super(new ResourceLocation(""));
+		super();
 	}
 
 	@Override
@@ -21,7 +19,11 @@ public class BattleRifleItemRenderer extends ItemRenderer
 		GlStateManager.pushMatrix();
 		{
 			GlStateManager.rotate(180f, 0, 1, 0);
-			RenderingUtil.renderModel(model, -1);
+
+			for (Part p : Models.BATTLE_RIFLE.nameToPartHash.values())
+			{
+				p.draw();
+			}
 		}
 		GlStateManager.popMatrix();
 	}
@@ -33,7 +35,11 @@ public class BattleRifleItemRenderer extends ItemRenderer
 		{
 			GlStateManager.translate(0, 0.15, 0.25);
 			GlStateManager.rotate(180f, 0, 1, 0);
-			RenderingUtil.renderModel(model, -1);
+
+			for (Part p : Models.BATTLE_RIFLE.nameToPartHash.values())
+			{
+				p.draw();
+			}
 		}
 		GlStateManager.popMatrix();
 	}
@@ -46,7 +52,11 @@ public class BattleRifleItemRenderer extends ItemRenderer
 			GlStateManager.translate(0.15, -0.2, 0);
 			GlStateManager.rotate(-90f, 0, 1, 0);
 			GlStateManager.rotate(-45f, 1, 0, 0);
-			RenderingUtil.renderModel(model, -1);
+
+			for (Part p : Models.BATTLE_RIFLE.nameToPartHash.values())
+			{
+				p.draw();
+			}
 		}
 		GlStateManager.popMatrix();
 	}
@@ -58,7 +68,10 @@ public class BattleRifleItemRenderer extends ItemRenderer
 
 		GlStateManager.pushMatrix();
 		{
-			RenderingUtil.renderModel(model, -1);
+			for (Part p : Models.BATTLE_RIFLE.nameToPartHash.values())
+			{
+				p.draw();
+			}
 		}
 		GlStateManager.popMatrix();
 	}

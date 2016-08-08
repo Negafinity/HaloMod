@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class PurplePlasmaBlock extends Block
 {
-	public static final PurplePlasmaBlock instance = new PurplePlasmaBlock(Material.iron);
+	public static final PurplePlasmaBlock instance = new PurplePlasmaBlock(Material.IRON);
 	public static final String name = "PurplePlasmaBlock";
 
 	public PurplePlasmaBlock(Material material)
@@ -17,7 +17,7 @@ public class PurplePlasmaBlock extends Block
 		super(material);
 
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);

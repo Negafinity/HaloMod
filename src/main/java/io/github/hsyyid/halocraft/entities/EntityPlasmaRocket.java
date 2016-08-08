@@ -12,9 +12,11 @@ public class EntityPlasmaRocket extends EntityThrowable
 		super(par1World);
 	}
 
-	public EntityPlasmaRocket(World par1World, EntityLivingBase par2EntityLivingBase)
+	public EntityPlasmaRocket(World par1World, EntityLivingBase livingBaseIn)
 	{
-		super(par1World, par2EntityLivingBase);
+		super(par1World, livingBaseIn);
+
+		this.setThrowableHeading(livingBaseIn.getLookVec().xCoord, livingBaseIn.getLookVec().yCoord, livingBaseIn.getLookVec().zCoord, 1.5f, 0.0f);
 	}
 
 	public EntityPlasmaRocket(World par1World, double par2, double par4, double par6)

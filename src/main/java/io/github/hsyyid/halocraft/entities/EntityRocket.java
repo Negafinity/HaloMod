@@ -15,9 +15,11 @@ public class EntityRocket extends EntityThrowable
 		super(par1World);
 	}
 
-	public EntityRocket(World par1World, EntityLivingBase par2EntityLivingBase)
+	public EntityRocket(World worldIn, EntityLivingBase livingBaseIn)
 	{
-		super(par1World, par2EntityLivingBase);
+		super(worldIn, livingBaseIn);
+		
+		this.setThrowableHeading(livingBaseIn.getLookVec().xCoord, livingBaseIn.getLookVec().yCoord, livingBaseIn.getLookVec().zCoord, 1.5f, 0.0f);
 	}
 
 	public EntityRocket(World par1World, double par2, double par4, double par6)

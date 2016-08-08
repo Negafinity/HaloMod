@@ -6,9 +6,9 @@ import io.github.hsyyid.halocraft.util.ItemRenderer;
 import io.github.hsyyid.halocraft.util.Models;
 import net.minecraft.client.renderer.GlStateManager;
 
-public class AssaultRifleItemRenderer extends ItemRenderer
+public class CarbineRifleItemRenderer extends ItemRenderer
 {
-	public AssaultRifleItemRenderer()
+	public CarbineRifleItemRenderer()
 	{
 		super();
 	}
@@ -18,9 +18,10 @@ public class AssaultRifleItemRenderer extends ItemRenderer
 	{
 		GlStateManager.pushMatrix();
 		{
+			GlStateManager.translate(0, -0.1, 0);
 			GlStateManager.rotate(180f, 0, 1, 0);
 
-			for (Part p : Models.ASSAULT_RIFLE.nameToPartHash.values())
+			for (Part p : Models.CARBINE_RIFLE.nameToPartHash.values())
 			{
 				p.draw();
 			}
@@ -33,10 +34,10 @@ public class AssaultRifleItemRenderer extends ItemRenderer
 	{
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(-0.15, 0.3, 0.15);
+			GlStateManager.translate(-0.15, 0.25, 0.15);
 			GlStateManager.rotate(180f, 0, 1, 0);
 
-			for (Part p : Models.ASSAULT_RIFLE.nameToPartHash.values())
+			for (Part p : Models.CARBINE_RIFLE.nameToPartHash.values())
 			{
 				p.draw();
 			}
@@ -47,15 +48,15 @@ public class AssaultRifleItemRenderer extends ItemRenderer
 	@Override
 	public void renderInInventory()
 	{
-		GlStateManager.scale(1.1, 1.1, 1.1);
+		GlStateManager.scale(0.75, 0.75, 0.75);
 
 		GlStateManager.pushMatrix();
 		{
-			GlStateManager.translate(0.1, 0, 0);
+			GlStateManager.translate(0.1, -0.3, 0);
 			GlStateManager.rotate(-90f, 0, 1, 0);
 			GlStateManager.rotate(-45f, 1, 0, 0);
 
-			for (Part p : Models.ASSAULT_RIFLE.nameToPartHash.values())
+			for (Part p : Models.CARBINE_RIFLE.nameToPartHash.values())
 			{
 				p.draw();
 			}
@@ -70,7 +71,7 @@ public class AssaultRifleItemRenderer extends ItemRenderer
 
 		GlStateManager.pushMatrix();
 		{
-			for (Part p : Models.ASSAULT_RIFLE.nameToPartHash.values())
+			for (Part p : Models.CARBINE_RIFLE.nameToPartHash.values())
 			{
 				p.draw();
 			}

@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class RoofBlock extends Block
 {
-	public static final RoofBlock instance = new RoofBlock(Material.iron);
+	public static final RoofBlock instance = new RoofBlock(Material.IRON);
 	public static final String name = "RoofBlock";
 
 	public RoofBlock(Material material)
@@ -18,7 +18,7 @@ public class RoofBlock extends Block
 
 		this.lightValue = 15;
 		this.setHardness(4.0F);
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.setUnlocalizedName("halocraft:" + name.toLowerCase());
 		this.setCreativeTab(CommonProxy.haloCreativeTab);
 		this.setHarvestLevel("pickaxe", 3);
