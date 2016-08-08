@@ -1,4 +1,4 @@
-v1.6.180:
+v1.6.183:
 
 Using ItemRenderer, moved a few more models over, as well as added the SMG. Furthermore, mod has been update to 1.10.2, and we will be skipping 1.9.x
 
