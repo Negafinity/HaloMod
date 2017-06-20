@@ -1,4 +1,4 @@
-HaloCraft 2.0
+HaloCraft 2.0 [![Build Status](https://travis-ci.org/hsyyid/HaloMod.svg?branch=master)](https://travis-ci.org/hsyyid/HaloMod)
 =============
 A Minecraft Forge Mod that adds the universe of Halo to Minecraft!
 
