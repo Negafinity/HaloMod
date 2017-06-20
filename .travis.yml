@@ -1,12 +1,11 @@
-sudo: required
 dist: trusty
-
-language: java
-jdk:
+env: "GRADLE_OPTS=\"-Xms1g -Xmx3g\""
+jdk: 
   - oraclejdk8
-
-env: GRADLE_OPTS="-Xms1g -Xmx3g"
-script: ./gradlew build
-
-notifications:
+language: java
+notifications: 
   email: true
+script: 
+  - "./gradlew build"
+  - "./gradlew curseforge --stacktrace"
+sudo: required
