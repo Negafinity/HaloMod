@@ -33,8 +33,10 @@ minecraft {
     mappings = "snapshot_20160808"
 }
 
+def curseForgeApiKey = hasProperty('curseForgeApiKey') ? curseForgeApiKey : System.getenv('curseForgeApiKey')
+
 curseforge {
-    apiKey = project.curseForgeApiKey
+    apiKey = curseForgeApiKey
 	project {
 		id = '232011'
 		changelog = 'Look at the CHANGELOG.txt to see changes.'
